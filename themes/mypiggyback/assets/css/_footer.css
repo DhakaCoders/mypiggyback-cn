@@ -4,6 +4,12 @@
 	padding-top: 100px;
 	padding-bottom: 80px;
 	background: #D61225;
+	position: relative;
+}
+.ftr-top-bg{
+	position: absolute;
+	right: 0;
+	bottom: 0;
 }
 
 .ftr-logo-ctlr{
