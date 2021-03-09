@@ -326,3 +326,23 @@ form .dropdown-menu li a{
 .dropdown-menu.show{
 	width: 100%;
 }
+
+/*common btn*/
+.fl-red-btn {
+    width: 200px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #F2101C;
+    background: #F2101C;
+    font-size: 20px;
+    color: #fff;
+    line-height: 1;
+    text-transform: uppercase;
+    font-family: 'GoboldThin';
+}
+.fl-red-btn:hover{
+	background: transparent;
+	color: #F2101C;
+}
