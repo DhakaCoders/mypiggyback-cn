@@ -1,11 +1,56 @@
 
+
 @font-face {
-    font-family: 'LatoRegular';
-    src: url('LatoRegular/LatoRegular.eot');
-    src: url('LatoRegular/LatoRegular.eot') format('embedded-opentype'),
-         url('LatoRegular/LatoRegular.woff2') format('woff2'),
-         url('LatoRegular/LatoRegular.woff') format('woff'),
-         url('LatoRegular/LatoRegular.ttf') format('truetype'),
-         url('LatoRegular/LatoRegular.svg#LatoRegular') format('svg');
+    font-family: 'GoboldBold';
+    src: url('GoboldBold/GoboldBold.eot');
+    src: url('GoboldBold/GoboldBold.eot') format('embedded-opentype'),
+         url('GoboldBold/GoboldBold.woff2') format('woff2'),
+         url('GoboldBold/GoboldBold.woff') format('woff'),
+         url('GoboldBold/GoboldBold.ttf') format('truetype'),
+         url('GoboldBold/GoboldBold.svg#GoboldBold') format('svg');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'GoboldExtra2';
+    src: url('GoboldExtra2/GoboldExtra2.eot');
+    src: url('GoboldExtra2/GoboldExtra2.eot') format('embedded-opentype'),
+         url('GoboldExtra2/GoboldExtra2.woff2') format('woff2'),
+         url('GoboldExtra2/GoboldExtra2.woff') format('woff'),
+         url('GoboldExtra2/GoboldExtra2.ttf') format('truetype'),
+         url('GoboldExtra2/GoboldExtra2.svg#GoboldExtra2') format('svg');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'GoboldLowplus';
+    src: url('GoboldLowplus/GoboldLowplus.eot');
+    src: url('GoboldLowplus/GoboldLowplus.eot') format('embedded-opentype'),
+         url('GoboldLowplus/GoboldLowplus.woff2') format('woff2'),
+         url('GoboldLowplus/GoboldLowplus.woff') format('woff'),
+         url('GoboldLowplus/GoboldLowplus.ttf') format('truetype'),
+         url('GoboldLowplus/GoboldLowplus.svg#GoboldLowplus') format('svg');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'GoboldRegular';
+    src: url('GoboldRegular/GoboldRegular.eot');
+    src: url('GoboldRegular/GoboldRegular.eot') format('embedded-opentype'),
+         url('GoboldRegular/GoboldRegular.woff2') format('woff2'),
+         url('GoboldRegular/GoboldRegular.woff') format('woff'),
+         url('GoboldRegular/GoboldRegular.ttf') format('truetype'),
+         url('GoboldRegular/GoboldRegular.svg#GoboldRegular') format('svg');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'GoboldThin';
+    src: url('GoboldThin/GoboldThin.eot');
+    src: url('GoboldThin/GoboldThin.eot') format('embedded-opentype'),
+         url('GoboldThin/GoboldThin.woff2') format('woff2'),
+         url('GoboldThin/GoboldThin.woff') format('woff'),
+         url('GoboldThin/GoboldThin.ttf') format('truetype'),
+         url('GoboldThin/GoboldThin.svg#GoboldThin') format('svg');
     font-weight: normal;
 }
