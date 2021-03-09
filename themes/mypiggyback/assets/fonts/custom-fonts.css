@@ -61,13 +61,13 @@
 }
 
 @font-face {
-    font-family: 'SegoeUI';
-    src: url('SegoeUI/SegoeUI.eot');
-    src: url('SegoeUI/SegoeUI.eot?#iefix') format('embedded-opentype'),
-        url('SegoeUI/SegoeUI.woff2') format('woff2'),
-        url('SegoeUI/SegoeUI.woff') format('woff'),
-        url('SegoeUI/SegoeUI.ttf') format('truetype'),
-        url('SegoeUI/SegoeUI.svg#SegoeUI') format('svg');
+    font-family: 'SegoeUIRegular';
+    src: url('SegoeUIRegular/SegoeUIRegular.eot');
+    src: url('SegoeUIRegular/SegoeUIRegular.eot?#iefix') format('embedded-opentype'),
+        url('SegoeUIRegular/SegoeUIRegular.woff2') format('woff2'),
+        url('SegoeUIRegular/SegoeUIRegular.woff') format('woff'),
+        url('SegoeUIRegular/SegoeUIRegular.ttf') format('truetype'),
+        url('SegoeUIRegular/SegoeUIRegular.svg#SegoeUIRegular') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
