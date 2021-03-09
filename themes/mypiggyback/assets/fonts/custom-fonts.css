@@ -9,6 +9,7 @@
          url('GoboldBold/GoboldBold.ttf') format('truetype'),
          url('GoboldBold/GoboldBold.svg#GoboldBold') format('svg');
     font-weight: bold;
+    font-display: swap;
 }
 
 @font-face {
@@ -20,6 +21,7 @@
          url('GoboldExtra2/GoboldExtra2.ttf') format('truetype'),
          url('GoboldExtra2/GoboldExtra2.svg#GoboldExtra2') format('svg');
     font-weight: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -31,6 +33,7 @@
          url('GoboldLowplus/GoboldLowplus.ttf') format('truetype'),
          url('GoboldLowplus/GoboldLowplus.svg#GoboldLowplus') format('svg');
     font-weight: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -42,6 +45,7 @@
          url('GoboldRegular/GoboldRegular.ttf') format('truetype'),
          url('GoboldRegular/GoboldRegular.svg#GoboldRegular') format('svg');
     font-weight: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -53,4 +57,18 @@
          url('GoboldThin/GoboldThin.ttf') format('truetype'),
          url('GoboldThin/GoboldThin.svg#GoboldThin') format('svg');
     font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SegoeUI';
+    src: url('SegoeUI/SegoeUI.eot');
+    src: url('SegoeUI/SegoeUI.eot?#iefix') format('embedded-opentype'),
+        url('SegoeUI/SegoeUI.woff2') format('woff2'),
+        url('SegoeUI/SegoeUI.woff') format('woff'),
+        url('SegoeUI/SegoeUI.ttf') format('truetype'),
+        url('SegoeUI/SegoeUI.svg#SegoeUI') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
