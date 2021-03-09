@@ -4,6 +4,7 @@
 .top-bar{
 	background: #d61324;
 	padding: 13px 0;
+	border-bottom: 1px dotted #fff;
 }
 .top-bar-cntlr{
 	display: flex;
@@ -47,6 +48,9 @@
 	line-height: 1;
 	margin-bottom: 0;
 }
+.top-bar-rt ul li a:hover{
+	opacity: 0.7;
+}
 .top-bar-rt ul li.hdr-tel a{
 	padding-left: 24px;
 }
@@ -56,6 +60,37 @@
 	left: 0;
 }
 
+
+.header{
+	
+	background: #fff;
+}
+.header-inr{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	position: relative;
+}
+.hdr-lft{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.logo{
+
+}
+.logo a{
+	display: inline-block;
+}
+.hdr-right{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-left: auto;
+}
+.hdr-menu{
+	padding-right: 22px;
+}
 
 nav.main-nav ul{
 
@@ -67,13 +102,44 @@ nav.main-nav ul li a{
 	
 }
 nav.main-nav > ul{
-
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 0 -14px;
+	padding-top: 38px;
 }
 nav.main-nav > ul > li{
-
+	padding-left: 14px;
+	padding-right: 14px;
+	line-height: 1;
+	position: relative;
 }
 nav.main-nav > ul > li > a{
-
+	display: inline-block;
+    font-family: 'GoboldLowplus';
+	line-height: 1;
+	font-size: 18px;
+	color: #141414;
+	position: relative;
+	padding-bottom: 38px;
+}
+nav.main-nav > ul > li.current-menu-item > a{
+	padding-left: 10px;
+}
+nav.main-nav > ul > li.current-menu-item > a:before{
+	position: absolute;
+	content: "\f3c5";
+	font-weight: 700;
+	font-size: 20px;
+	left: -14px;
+	top: -3px;
+	font-family: 'Font Awesome 5 Free';
+	/*background-image: url(../images/location-icon.svg);*/
+}
+nav.main-nav > ul > li > a:hover,
+nav.main-nav > ul > li.current-menu-item > a,
+nav.main-nav > ul > li.menu-item-has-children:hover > a{
+	color: #F2101C;
 }
 
 nav.main-nav > ul > li.current-menu-item > a{
@@ -83,7 +149,93 @@ nav.main-nav > ul > li.current-menu-item > a{
 nav.main-nav > ul > li.menu-item-has-children > a{
 
 }
+nav.main-nav > ul > li.menu-item-has-children ul.sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    z-index: 10;
+    width: 225px;
+    padding: 0 6px 0 0;
+    transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transform: scale3d(1,0,1);
+    -ms-transform: scale3d(1,0,1);
+    -webkit-transform: scale3d(1,0,1);
+    -o-transform: scale3d(1,0,1);
+    transform-origin: top;
+    opacity: 0;
+    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 15%);
+    -ms-box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.15%);
+    -webkit-box-shadow: 0 2px 12px 0 rgb(0 0 0 / 15%);
+}
+nav.main-nav > ul > li.menu-item-has-children:hover ul.sub-menu{
+    transform: scale3d(1,1,1);
+    -ms-transform: scale3d(1,1,1);
+    -webkit-transform: scale3d(1,1,1);
+    -o-transform: scale3d(1,1,1);
+    opacity: 1;
+}
+nav.main-nav > ul > li.menu-item-has-children ul.sub-menu li{
+	padding: 6px 0;
+	line-height: 1;
+    display: block;
+    position: relative;
+    border-bottom: 1px solid #F2101C;
+}
+nav.main-nav > ul > li.menu-item-has-children ul.sub-menu li:last-child{
+    border-bottom: none;
+}
+nav.main-nav > ul > li.menu-item-has-children ul.sub-menu li a{
+	display: block;
+    padding: 5px 14px;
+    position: relative;
+    font-family: 'GoboldLowplus';
+	line-height: 1;
+	font-size: 15px;
+	color: #141414;
+}
+nav.main-nav > ul > li.menu-item-has-children ul.sub-menu li:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 2px;
+    height: 0;
+    background: #F2101C;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
+nav.main-nav > ul > li.menu-item-has-children ul.sub-menu li:hover:after{
+    height: 100%;
+}
+nav.main-nav > ul > li.menu-item-has-children ul.sub-menu li:hover a{
+	color: #F2101C;
+}
 
-nav.main-nav > ul > li.menu-item-has-children ul.sub-menu{
-	
+
+.hdr-order-icon{
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 9px;
+}
+.hdr-order-icon span{
+	display: inline-block;
+	line-height: 1;
+    font-family: 'SegoeUIRegular';
+	color: #F2101C;
+	font-size: 20px;
+	margin-bottom: 0;
+}
+.hdr-order-icon i{
+	position: absolute;
+	bottom: -5px;
+	left: 0;
+	right: 0;
 }
