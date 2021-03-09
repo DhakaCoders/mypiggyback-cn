@@ -1,0 +1,87 @@
+
+.mpb-about-sec{
+	padding-top: 125px;
+	position: relative;
+}
+.mbp-about-sec-bg{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+.mpb-about-lft{
+	float: left;
+	width: 42.9824%;
+}
+.mpb-about-rgt{
+	float: right;
+	width: 57.0175%;
+}
+
+.mpb-about-img{
+	margin-left: -55px;
+}
+.mbp-about-des p{
+	line-height: 2.35;
+	margin-bottom: 40px;
+}
+
+
+
+.default-page-con ul,
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	padding-bottom: 10px;
+}
+.default-page-con ul li,
+ul li {
+	padding: 5px 0 15px 25px;
+	position: relative;
+	line-height: 22px;
+}
+.default-page-con ul li::before,
+ul li::before {
+	content: "\f00c"!important;
+    font-family: 'Font Awesome 5 Free';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	font-weight: 700;
+    text-decoration: inherit;
+    color: #F2101C;
+    margin-top: -7px;
+}
+ul li.refGridItem:before{
+	display: none;
+}
+.default-page-con ol, ol {
+	padding: 0 0 0 0;
+	list-style: none;
+	counter-reset: my-awesome-counter;
+	-ms-counter-reset: my-awesome-counter;
+	-webkit-counter-reset: my-awesome-counter;
+}
+.default-page-con ol li ,ol li {
+	counter-increment: my-awesome-counter;
+	-ms-counter-increment: my-awesome-counter;
+	-webkit-counter-increment: my-awesome-counter;
+	padding-bottom: 15px;
+	line-height: 24px;
+}
+.default-page-con ol li::before,
+ol li::before {
+	content: counter(my-awesome-counter) ".";
+	color: #F2101C;
+	font-weight: 700;
+	margin-right: 10px;
+	text-align: center;
+	font-size: 16px;
+	line-height: 16px;
+	text-align: center;
+	padding: 0 5.5px 0 1px;
+}
