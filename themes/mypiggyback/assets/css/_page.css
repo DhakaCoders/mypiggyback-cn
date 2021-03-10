@@ -41,3 +41,54 @@
 .sitemap ol li a:focus{
 	text-decoration: underline;
 }
+
+/*
+---------------
+ Page Banner
+---------------
+*/
+.page-banner-sec-wrp{
+	background:url(../images/page-banner-sec-bg.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	padding: 30px 0;
+}
+.page-banner-dsc{
+	float: left;
+}
+.bnr-breadcum {
+    float: right;
+    padding-top: 12px;
+}
+.page-banner-dsc .fl-h1{
+	color: #fff;
+	margin-bottom: 0;
+}
+
+.bnr-breadcum ul li{
+	float: left;
+	font-size: 16px;
+	line-height: 1;
+	padding: 0 6px;
+	position: relative;
+}
+.bnr-breadcum ul li:after{
+    content: ">";
+    position: absolute;
+    right: -3px;
+    top: 3px;
+    color: #fff;
+    font-size: 10px;
+    line-height: 1;
+}
+.bnr-breadcum ul li:last-child{
+	padding-right: 0;
+}
+.bnr-breadcum ul li:last-child:after{
+	content: none;
+}
+.bnr-breadcum ul li a{
+	color: #fff;
+	font-family: 'GoboldRegular';
+}
