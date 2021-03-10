@@ -89,7 +89,7 @@
 	margin-left: auto;
 }
 .hdr-menu{
-	padding-right: 22px;
+	padding-right: 50px;
 }
 
 nav.main-nav ul{
@@ -219,27 +219,31 @@ nav.main-nav > ul > li.menu-item-has-children ul.sub-menu li:hover a{
 
 
 .hdr-order-icon{
-	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 0 9px;
-	cursor: pointer;
+	position: absolute;
+	width: 27px;
+	height: 63.44px;
+	top: -3px;
+	right: 0;
 }
 .hdr-order-icon a{
 	display: flex;
+    align-items: center;
+    position: absolute;
+    justify-content: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 23px;
 }
 .hdr-order-icon span{
 	display: inline-block;
 	line-height: 1;
-    font-family: 'SegoeUIRegular';
 	color: #F2101C;
-	font-size: 20px;
+	margin-top: -1px;
+	letter-spacing: -1px;
+	font-size: 16px;
 	margin-bottom: 0;
 }
 .hdr-order-icon i{
-	position: absolute;
-	bottom: -5px;
-	left: 0;
-	right: 0;
+	display: inline-block;
 }
