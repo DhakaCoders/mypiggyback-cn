@@ -74,7 +74,7 @@
 	background: #5b5b5b;
 	padding: 11px 0;
 }
-.piggyback-item-hding > span{
+.piggyback-active-item .piggyback-item-hding > span{
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -107,6 +107,17 @@
 .piggyback-active-item .piggyback-item-hding{
 	background: #d61324;
 	
+}
+.piggyback-active-item .piggyback-item-hding:before{
+	position: absolute;
+	content: "";
+	bottom: -25px;
+	width: 80px;
+	height: 8px;
+	background: #85446e;
+	border-radius: 100%;
+	left: 50%;
+	transform: translateX(-50%);
 }
 .piggyback-active-item .piggyback-item-hding:after{
 	border-top: 20px solid #d61324;
@@ -144,7 +155,7 @@
 }
 .Vehicle-desc-cntlr{
 	width: 64.78%;
-	padding: 140px 25px 100px 25px;
+	padding: 150px 25px 100px 25px;
 }
 .Vehicle-desc{
 	max-width: 590px;
@@ -153,13 +164,13 @@
 }
 .Vehicle-desc-title{
 	color: #fff;
-	margin-bottom: 45px;
+	margin-bottom: 55px;
 }
 .Vehicle-desc > p{
 	font-size: 18px;
 }
 .Vehicle-desc > p:last-of-type{
-	margin-bottom: 60px;
+	margin-bottom: 65px;
 }
 .vcl-btn-cntlr{
 	display: flex;
@@ -196,14 +207,18 @@
 	display: flex;
 	align-items: center;
 	flex-wrap: wrap;
-	margin: 0 -9px;
+	margin: 0 -7px;
 }
 .vcl-tab-link{
-	padding: 0 9px;
+	padding: 0 7px;
 	width: 50%;
-	margin-bottom: 18px;
+	margin-bottom: 12px;
 	position: relative;
 	height: 160px;
+}
+.vcl-tab-link:last-child,
+.vcl-tab-link:nth-last-child(2){
+	margin-bottom: 0;
 }
 .vcl-tab-link button{
 	background: transparent;
