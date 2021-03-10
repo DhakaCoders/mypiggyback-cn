@@ -1,0 +1,117 @@
+.piggyback-sec{
+	padding: 35px 0 54px 0;
+}
+.piggyback-cntlr{
+
+}
+.left-icon-title{
+
+	padding-left: 50px;
+	position: relative;
+}
+.left-icon-title i{
+	position: absolute;
+	left: 3px;
+	top: 50%;
+	-o-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	margin-top: -5px;
+}
+.piggyback-title{
+	
+}
+.piggyback-slider{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 0 -14px;
+}
+.piggyback-slide-item-cntlr{
+	padding: 0 14px;
+	width: 33.33%;
+	margin-bottom: 28px;
+}
+.piggyback-item{
+	border-left: 1px dashed #5b5b5b;
+	border-right: 1px dashed #5b5b5b;
+	border-top: 1px dashed #5b5b5b;
+}
+/*.piggyback-slide-item .piggyback-active-item{
+	border-left-color: 1px dashed #d61324;
+	border-right-color: 1px dashed #d61324;
+	border-top-color: 1px dashed #d61324;
+}*/
+.piggyback-active-item.piggyback-item{
+	border-color: #d61324;
+}
+.piggyback-slide-item:hover .piggyback-item-img{
+	transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	-o-transform: scale(1.1);
+}
+.piggyback-item-img-cntlr{
+	height: 256px;
+	overflow: hidden;
+	display: flex;
+	justify-content: start;
+	align-items: flex-end;
+}
+.piggyback-item-img{
+	height: 100%;
+	width: 100%;
+	transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+}
+.piggyback-item-desc-cntlr{
+
+}
+.piggyback-item-desc{
+	padding: 28px 0 25px 0;
+}
+.piggyback-item-desc p{
+	text-align: center;
+    font-family: 'SegoeUIRegular';
+
+}
+.piggyback-item-desc p:last-of-type{
+	margin-bottom: 0;
+}
+.piggyback-item-hding{
+	position: relative;
+	background: #5b5b5b;
+	padding: 11px 0;
+}
+.piggyback-item-hding:after{
+	position: absolute;
+	content: "";
+	left: 50%;
+	transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	bottom: -20px;
+	border-top: 20px solid #5b5b5b;
+    border-left: 44px solid transparent;
+    border-right: 44px solid transparent;
+}
+.piggyback-item-title{
+	margin-bottom: 0;
+	text-align: center;
+	line-height: 1;
+	color: #fff;
+}
+.piggyback-active-item .piggyback-item-desc p{
+    font-family: 'Chivo', sans-serif;	
+    color: #141414;
+}
+.piggyback-active-item .piggyback-item-hding{
+	background: #d61324;
+	
+}
+.piggyback-active-item .piggyback-item-hding:after{
+	border-top: 20px solid #d61324;
+}
