@@ -346,3 +346,20 @@ form .dropdown-menu li a{
 	background: transparent;
 	color: #F2101C;
 }
+.fl-trnsprnt-btn {
+    width: 200px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;
+    background: transparent;
+    font-size: 20px;
+    color: #F2101C;
+    line-height: 1;
+    text-transform: uppercase;
+    font-family: 'GoboldThin';
+}
+.fl-trnsprnt-btn:hover{
+	
+}

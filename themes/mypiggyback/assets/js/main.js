@@ -216,7 +216,17 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
 /*Start of Noyon*/
+(function(){
+  $('div.vcl-tabs button').click(function(){
+    var tab_id = $(this).attr('data-tab');
 
+    $('div.vcl-tabs .vcl-tab-link').removeClass('current');
+    $('.fl-tab-content').removeClass('current');
+
+    $(this).parent().addClass('current');
+    $("#"+tab_id).addClass('current');
+  });
+})(jQuery);
 
 
 
