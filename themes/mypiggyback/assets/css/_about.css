@@ -1,0 +1,21 @@
+
+.mpb-about-des-sec{
+	padding-top: 35px;
+}
+
+
+.mbp-about-des-lft{
+	float: left;
+	width: 62.7192%;
+	padding-right: 20px;
+	padding-top: 30px;
+}
+.mbp-about-des-rgt{
+	float: right;
+	width: 37.2807%;
+	padding-left: 50px;
+}
+
+.mbp-about-des-lft p strong{
+	font-size: 18px;
+}
