@@ -1,0 +1,26 @@
+.service-items-cntrl{
+	position: relative;
+	height: 603px;
+}
+.srv-fea-img{
+	width: 49%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+.siccc-cntrl{
+	display: flex;
+    align-items: center;
+    height: 100%;
+}
+.siccc {
+	padding-left: 33px;
+}
+.sicc-title{
+	line-height: 1.3;
+	text-transform: uppercase;
+	font-family: 'GoboldExtra2';
+	margin-bottom: 40px;
+	color: #F2101C;	
+}
+.services-page:nth-child(2n+2)
