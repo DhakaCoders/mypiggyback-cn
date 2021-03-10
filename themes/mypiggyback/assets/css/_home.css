@@ -23,6 +23,9 @@
 	
 }
 .piggyback-slider{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
 	margin: 0 -14px;
 }
 .piggyback-slide-item-cntlr{
@@ -258,4 +261,13 @@
 }
 .fl-tab-content.current{
 	display: block;
+}
+
+
+@media(max-width: 767px){
+	.piggyback-slider{
+		display: block;
+		align-items: initial;
+		flex-wrap: initial;
+	}
 }

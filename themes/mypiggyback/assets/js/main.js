@@ -216,17 +216,20 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
 /*Start of Noyon*/
-if( $('.piggybackSlider').length ){
-  $('.piggybackSlider').slick({
-    dots: false,
-    infinite: false,
-    autoplay: false,
-    autoplaySpeed: 4000,
-    speed: 700,
-    slidesToShow: 3,
-    slidesToScroll: 1,
- });
+if (windowWidth <= 767) {
+  if( $('.piggybackSlider').length ){
+    $('.piggybackSlider').slick({
+      dots: true,
+      infinite: false,
+      autoplay: false,
+      autoplaySpeed: 4000,
+      speed: 700,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    });
+  }
 }
+
 
 
 (function(){

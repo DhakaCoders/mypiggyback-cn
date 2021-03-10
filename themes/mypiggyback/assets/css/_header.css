@@ -73,7 +73,7 @@
 }
 .hdr-lft{
 	position: absolute;
-	left: 0;
+	left: -23px;
 	top: 0;
 }
 .logo{
