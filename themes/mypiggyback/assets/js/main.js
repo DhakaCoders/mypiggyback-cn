@@ -231,8 +231,7 @@ if (windowWidth <= 767) {
 }
 
 
-
-(function(){
+if ($('.div.vcl-tabs').length) {
   $('div.vcl-tabs button').click(function(){
     var tab_id = $(this).attr('data-tab');
 
@@ -242,7 +241,25 @@ if (windowWidth <= 767) {
     $(this).parent().addClass('current');
     $("#"+tab_id).addClass('current');
   });
-})(jQuery);
+}
+
+
+
+    if( $('.testimonialSlider').length ){
+      $('.testimonialSlider').slick({
+        dots: true,
+        infinite: false,
+        autoplay: false,
+        autoplaySpeed: 4000,
+        speed: 700,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        customPaging: function (slider, i) {
+          console.log(slider);
+          return  (i + 1);
+        }
+      });
+    }
 
 
 

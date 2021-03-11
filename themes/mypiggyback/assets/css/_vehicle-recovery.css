@@ -1,0 +1,123 @@
+.order-pgbk-home{
+
+}
+.order-pgbk-home .Vehicle-title{
+	margin-bottom: 60px;
+}
+.order-pgbk-home .vcl-right-wrap{
+	padding-left: 37px;
+	padding-top: 0;
+}
+.ordr-pgbk-hm-rt-img{
+	/*padding-left: 20px;*/
+	text-align: center;
+	margin-bottom: -10px;
+}
+.ordr-pgbk-hm-rt-img img{
+	max-height: 540px;
+	width: auto;
+}
+/*testimonials-sec*/
+.testimonials-sec{
+	position: relative;
+	overflow: hidden;
+	padding-top: 112px;
+
+}
+.testimonials-bg{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
+.testimonials-cntlr{
+	position: relative;
+	padding-bottom: 80px;
+}
+.super-piggs-img{
+	position: absolute;
+	right: -65px;
+	bottom: -7px;
+}
+.testimonials-sec .left-icon-title{
+	padding-left: 70px;
+}
+.testimonials-title{
+	margin-bottom: 57px;
+}
+.testimonials-slider-wrap{
+	max-width: 750px;
+	width: 100%;
+	position: relative;
+}
+.tstmnl-item{
+
+}
+.tstmnl-item p{
+	font-size: 18px;
+	font-weight: 300;
+}
+.tstmnl-item p:last-of-type{
+	margin-bottom: 32px;
+}
+.tstmnl-item-rating{
+	margin-bottom: 25px;
+}
+.tstmnl-item-rating ul{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+
+}
+.tstmnl-item-rating ul li{
+	padding: 0 4px;
+}
+.tstmnl-item-rating ul li a{
+	display: inline-block;
+}
+.tstmnl-item-rating ul li i{
+	font-size: 22px;
+	color: #ffc833;
+}
+.tstmnl-person-name{
+	color: #141414;
+	font-family: 'GoboldLowplus';
+	margin-bottom: 15px;
+}
+.tstmnl-person-title{
+	font-size: 14px;
+    font-family: 'GoboldThin';
+    margin-bottom: 0;
+}
+.testimonials-slider-wrap .slick-dotted.slick-slider{
+	margin-bottom: 0!important;
+}
+
+.testimonials-slider.slick-slider ul.slick-dots{
+	position: absolute;
+	display: flex;
+	right: 0;
+	bottom: 0;
+	padding: 0!important;
+	width: auto!important;
+	height: 26px;
+	margin: 0 3!important;
+}
+.testimonials-slider.slick-slider ul.slick-dots li{
+	font-size: 16px;
+	padding: 0 3!important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 1;
+	height: 26px!important;;
+	width: 26px!important;;
+	border: 1px solid #131313!important;;
+	color: #131313!important;
+	background: transparent!important;
+}
+.testimonials-slider.slick-slider ul.slick-dots li.slick-active{
+	border-color: #f2101c!important;
+	background: #f2101c!important;
+	color: #fff!important;
+}
