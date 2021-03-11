@@ -50,6 +50,8 @@ Contact page
 	height: 60px;
 	font-family: 'GoboldExtra2';
 	cursor: pointer;
+	letter-spacing: 2px;
+	text-shadow: 1px 3px 2px rgba(212,0,53,0.65);
 }
 .input-field-col input[type="text"]:focus,
 .input-field-col input[type="email"]:focus,
@@ -111,7 +113,7 @@ contact-info-sec-wrp
 .contact-info-bg{
 	position: absolute;
 	right: 0;
-	bottom: 0;
+	bottom: -1px;
 }
 .contact-info-title{
 	margin-bottom: 75px;
@@ -126,6 +128,9 @@ contact-info-sec-wrp
 	float: left;
 	width: 33.3333%;
 	padding: 0 25px;
+}
+.contact-info-wrp ul li:last-child{
+	padding-right: 0;
 }
 .contact-info-box-title{
 	color:#514C4E;
