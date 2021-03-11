@@ -34,6 +34,10 @@
 	background: #4189ff;
 	border: 2px solid #4189ff;
 }
+.fl-red-btn.blue-btn:hover{
+	background: transparent;
+	color: #4189ff;
+}
 .mbp-about-des{
 	padding-bottom: 150px;
 }
@@ -159,8 +163,14 @@
 .mbp-abot-team-grds > ul > li:nth-child(3n+1){
 	clear: left;
 }
+.mbp-atgi-img-ctlr{
+	overflow: hidden;
+}
 .mbp-atgi-img{
 	min-height: 230px;
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-ms-transition: all 0.5s;
 }
 .mbp-atgi-des{
 	border-right: 1px solid #CCCCCC;
@@ -209,6 +219,9 @@
 	vertical-align: baseline;
 	color: #fff;
 }
+.mbp-atgism-lft > ul > li a:hover{
+	color: #141414;
+}
 .mbp-atgism-rgt{
 	margin-left: auto;
 }
@@ -234,7 +247,15 @@
     border-top: 14px solid transparent;
     border-bottom: 14px solid transparent;
 }
+.mbp-atgism-rgt a:hover{
+	color: #D61225;
+}
 
+.mbpat-grd-item:hover .mbp-atgi-img{
+	transform: scale(1.05);
+	-webkit-transform: scale(1.05);
+	-ms-transform: scale(1.05);
+}
 
 
 .mbp-loaction-lft{
@@ -258,6 +279,12 @@
 	font-size: 30px;
 	color: #514C4E;
 	font-family: 'GoboldLowplus';
+}
+
+.mbp-loca-title i{
+	margin-top: -2px;
+	max-width: 17px;
+	width: 100%;
 }
 
 .mbp-location-rgt p{
