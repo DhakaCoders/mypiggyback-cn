@@ -196,6 +196,9 @@
 	background: #f9f9f9;
 	width: 100%;
 }
+.vehicle-form input[type="text"]:focus{
+	border-color: #585757;
+}
 .vehicle-form .input-field-row{
 	padding-bottom: 17px;
 }
