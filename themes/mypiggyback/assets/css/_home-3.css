@@ -269,7 +269,25 @@
 	align-items: center;
 	justify-content: center;
 }
-
+.bnr-booking-form-tabs .tab-link:after{
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	border-left: 32px solid transparent;
+	border-right: 32px solid transparent;
+	border-top: 16px solid #D61225;
+	opacity: 0;
+}
+.bnr-booking-form-tabs .tab-link.vt-title:after{
+	border-top: 16px solid #0074D3;
+}
+.bnr-booking-form-tabs .tab-link.current:after{
+	opacity: 1;
+}
 .vr-title{
 	background: #D61225;
 }
