@@ -166,9 +166,9 @@
 
 .bnr-booking-form-cntlr{
 	background: #FFFFFF;
-	-webkit-box-shadow: 0px 2px 8px 0px rgba(156,155,155,1);
-	-moz-box-shadow: 0px 2px 8px 0px rgba(156,155,155,1);
-	box-shadow: 0px 2px 8px 0px rgba(156,155,155,1);
+	-webkit-box-shadow: 0px 3px 16px 0px rgba(156,155,155,1);
+	-moz-box-shadow: 0px 3px 16px 0px rgba(156,155,155,1);
+	box-shadow: 0px 3px 16px 0px rgba(156,155,155,1);
 	max-width: 360px;
 	width: 100%;
 	margin-left: auto;
@@ -195,6 +195,9 @@
 	height: 46px;
 	background: #f9f9f9;
 	width: 100%;
+}
+.vehicle-form input[type="text"]:focus{
+	border-color: #585757;
 }
 .vehicle-form .input-field-row{
 	padding-bottom: 17px;
@@ -230,7 +233,84 @@
     font-family: 'GoboldExtra2';
     padding-top: 2px;
     cursor: pointer;
+/*    border: 2px solid #F2101C;*/
+}
+.vehicle-form input[type="submit"]:hover{
+	background: #c10913;
 }
 .input-field-row-submit{
 	margin-bottom: 0;
+}
+.bnr-booking-form-tabs-col-cntlr{
+	display: flex;
+}
+.bnr-booking-form-tabs-col-cntlr .tab-link{
+	width: 50%; 
+}
+
+.bnr-booking-form-tabs .tab-link{
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	border: none;
+	color: #fff;
+	font-weight: normal;
+	font-family: 'GoboldLowplus';
+	font-size: 18px;
+	line-height: 1;
+	position: relative;
+	
+}
+.bnr-booking-form-tabs button.tab-link{
+	cursor: pointer;
+}
+
+.bnr-booking-form-tabs .tab-link i{
+	position: absolute;
+	width: 21px;
+	height: 21px;
+	border-left: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	right: 0;
+	top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.bnr-booking-form-tabs .tab-link:after{
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	border-left: 32px solid transparent;
+	border-right: 32px solid transparent;
+	border-top: 16px solid #D61225;
+	opacity: 0;
+}
+.bnr-booking-form-tabs .tab-link.vt-title:after{
+	border-top: 16px solid #0074D3;
+}
+.bnr-booking-form-tabs .tab-link.current:after{
+	opacity: 1;
+}
+.vr-title{
+	background: #D61225;
+}
+.vt-title{
+	background: #0074D3;
+}
+.vr-title i{
+	background: #D40035;
+}
+.vt-title i{
+	background: #4089FF;
+}
+
+.bnr-booking-form-tabs .vr-title.current{
+	position: relative;
 }

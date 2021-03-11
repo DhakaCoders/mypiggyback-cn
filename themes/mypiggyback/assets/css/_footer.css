@@ -49,6 +49,7 @@
 .ftr-logo a{
 	display: inline-block;
 	vertical-align: baseline;
+	margin-left: -25px;
 }
 .ftr-logo span{
 	display: inline-block;
