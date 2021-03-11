@@ -3,10 +3,15 @@
 	padding-top: 125px;
 	position: relative;
 }
-.mbp-about-sec-bg{
+
+.mpb-about-sec-inr{
+	min-height: 670px;
+	position: relative;
+}
+.mpb-about-img{
 	position: absolute;
-	right: 0;
 	bottom: 0;
+	left: -55px;
 }
 
 .mpb-about-lft{
@@ -18,9 +23,9 @@
 	width: 57.0175%;
 }
 
-.mpb-about-img{
+/*.mpb-about-img{
 	margin-left: -55px;
-}
+}*/
 .mbp-about-des p{
 	line-height: 2.35;
 	margin-bottom: 40px;
