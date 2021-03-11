@@ -19,3 +19,256 @@
 .mbp-about-des-lft p strong{
 	font-size: 18px;
 }
+
+.mbp-abot-btn-red{
+	display: inline-block;
+	vertical-align: baseline;
+	margin-right: 5px;
+}
+.mbp-abot-btn-blue{
+	display: inline-block;
+	vertical-align: baseline;
+	margin-left: 5px;
+}
+.fl-red-btn.blue-btn{
+	background: #4189ff;
+	border: 2px solid #4189ff;
+}
+.mbp-about-des{
+	padding-bottom: 150px;
+}
+
+
+.mbp-about-num-sec{
+	padding-bottom: 50px;
+	margin-top: -110px;
+	position: relative;
+}
+.mbp-about-num-lft-bg{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	max-width: 80%;
+	width: 100%;
+	max-height: 610px;
+}
+.mbp-about-num-lft-bg img{
+	max-height: 610px;
+}
+
+.mbp-about-num-sec-inr{
+	padding-top: 120px;
+	padding-bottom: 135px;
+	position: relative;
+}
+.mbp-about-num-lft-bg-color{
+	
+	background: #D61225;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 63%;
+}
+
+.mbp-about-entry-title{
+	color: #fff;
+	margin-bottom: 40px;
+	padding-left: 42px;
+}
+.mbp-about-num-grds ul{
+	margin-left: -12px;
+	margin-right: -12px;
+}
+.mbp-about-num-grds ul li{
+	float: left;
+	width: 25%;
+	padding-left: 12px;
+	padding-right: 12px;
+	position: relative;
+}
+.mbp-about-num-btm-icon{
+	position: absolute;
+	bottom: -50px;
+	left: 50%;
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+}
+.mbp-about-num-grd-item{
+	padding: 35px 40px;
+	border: 3px solid #D61225;
+	background: #fff;
+	text-align: center;
+	position: relative;
+}
+
+.down-angle{
+	position: absolute;
+	bottom: -24px;
+	left: 50%;
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+}
+
+.mbp-angi-img i{
+	display: inline-block;
+	vertical-align: baseline;
+	margin-bottom: 30px;
+}
+
+.mbp-angi-des span{
+	display: inline-block;
+	vertical-align: baseline;
+	font-size: 40px;
+	line-height: 1;
+	margin-bottom: 10px;
+	color: #141414;
+	font-family: 'GoboldExtra2';
+}
+.mbp-angi-des strong{
+	display: inline-block;
+	vertical-align: baseline;
+	font-size: 20px;
+	line-height: 1;
+	font-family: 'GoboldBold';
+	color: #141414;
+}
+
+
+.mbp-about-team-sec{
+	padding-bottom: 100px;
+}
+
+.mbp-about-team-entry-hdr-title{
+	margin-bottom: 50px;
+}
+
+.mbp-abot-team-grds > ul{
+	margin-left: -15px;
+	margin-right: -15px;
+}
+.mbp-abot-team-grds > ul > li{
+	float: left;
+	width: 33.3333%;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.mbp-abot-team-grds > ul > li:nth-child(3n+1){
+	clear: left;
+}
+.mbp-atgi-img{
+	min-height: 230px;
+}
+.mbp-atgi-des{
+	border-right: 1px solid #CCCCCC;
+	border-left: 1px solid #CCCCCC;
+	/*border: 1px solid #CCCCCC;*/
+}
+.mbp-atgi-des-hdr{
+	padding-top: 15px;
+	padding-bottom: 1px;
+	margin-bottom: 30px;
+	background: #141414;
+}
+.mbp-atgi-des-title{
+	margin-bottom: 8px;
+	padding-left: 15px;
+	color: #fff;
+	font-family: 'GoboldLowplus';
+}
+
+.mbp-atgi-des p{
+	padding-left: 14px;
+	line-height: 2.2;
+	font-size: 14px;
+	font-weight: 300;
+	margin-bottom: 20px;
+}
+
+.mbp-atgi-socials-media{
+	padding: 10px 15px;
+	background: #D61225;
+	display: flex;
+	align-items: center;
+}
+.mbp-atgism-lft > ul{
+	margin-left: -3px;
+	margin-right: -3px;
+}
+.mbp-atgism-lft > ul > li{
+	display: inline-block;
+	vertical-align: baseline;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+.mbp-atgism-lft > ul > li a{
+	display: inline-block;
+	vertical-align: baseline;
+	color: #fff;
+}
+.mbp-atgism-rgt{
+	margin-left: auto;
+}
+.mbp-atgism-rgt a{
+	display: inline-block;
+	vertical-align: baseline;
+	padding: 8px 15px 8px 25px;
+	font-size: 12px;
+	line-height: 1;
+	font-family: 'GoboldThin';
+	color: #333333;
+	background: #fff;
+	position: relative;
+}
+.mbp-atgism-rgt a:after{
+	content: "";
+    position: absolute;
+    left: -1px;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 10px solid #D61225;
+    border-top: 14px solid transparent;
+    border-bottom: 14px solid transparent;
+}
+
+
+
+.mbp-loaction-lft{
+	float: left;
+	width: 50%;
+}
+.mbp-location-rgt{
+	float: right;
+	width: 50%;
+}
+
+
+
+.mbp-location-entry-hdr-title{
+	margin-bottom: 35px;
+}
+
+.mbp-loca-title{
+	margin-bottom: 15px;
+	padding-left: 27px;
+	font-size: 30px;
+	color: #514C4E;
+	font-family: 'GoboldLowplus';
+}
+
+.mbp-location-rgt p{
+	line-height: 2.25;
+	margin-bottom: 20px;
+}
+
+
+.mbp-location-btn{
+	margin-top: 20px;
+}
+.fl-red-btn.mbp-loca-btn{
+	width: 260px;
+}
