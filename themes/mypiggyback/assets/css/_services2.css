@@ -1,6 +1,7 @@
 .service-items-cntrl{
 	position: relative;
 	height: 603px;
+	margin-top: 65px;
 }
 .srv-fea-img{
 	width: 49%;
@@ -8,12 +9,15 @@
     top: 0;
     bottom: 0;
 }
+.srv-fea-img img{
+	width: 100%;
+}
 .siccc-cntrl{
 	display: flex;
     align-items: center;
     height: 100%;
 }
-.siccc {
+.sicc {
 	padding-left: 33px;
 }
 .sicc-title{
