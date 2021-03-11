@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="8" height="18.526" viewBox="0 0 8 18.526">
+  <g id="Destination_Switcher_button" data-name="Destination Switcher button" transform="translate(-197.769 -207.214)">
+    <path id="Btn" d="M205.512,222.371l-3.127,3.114a.875.875,0,0,1-1.233,0l-3.126-3.114a.868.868,0,0,1,.617-1.482h1.673v-8.825h-1.673a.868.868,0,0,1-.617-1.482l3.126-3.114a.875.875,0,0,1,1.233,0l3.127,3.114a.868.868,0,0,1-.617,1.482h-1.673v8.825H204.9A.868.868,0,0,1,205.512,222.371Z" fill="#ccc"/>
+  </g>
+</svg>
