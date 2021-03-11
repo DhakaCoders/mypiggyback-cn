@@ -57,4 +57,8 @@ Desktop-->
 	breadcumbs ar markup amon hobe, r parent class name thik korte hobe, 'breadcumbs' hobe
 
 
+13. https://prnt.sc/10imlse
+	right alignment ta footer ar sathe mil thakbe.
+
+
 N.B---> browser check korte hobe and sob sprite icon front-page a sathe sathe diye dite hobe, pore deoar mone thake r missing hoye jay.
