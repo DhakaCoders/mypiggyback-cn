@@ -1,7 +1,12 @@
+.services-page{
+	display: flex;
+	flex-direction: column;
+}
 .service-items-cntrl{
 	position: relative;
-	height: 603px;
+	min-height: 603px;
 	margin-top: 65px;
+	display: flex;
 }
 .srv-fea-img{
 	width: 49%;
@@ -16,6 +21,7 @@
 	display: flex;
     align-items: center;
     height: 100%;
+    width: 100%;
 }
 .sicc {
 	padding-left: 33px;
@@ -27,4 +33,27 @@
 	margin-bottom: 40px;
 	color: #F2101C;	
 }
-.services-page:nth-child(2n+2) .service-items-cntrl:nth-child()
+.sicc p{
+	line-height: 2.1;
+	margin-bottom: 35px;
+}
+.service-items-cntrl{
+	display: flex;
+	align-items: center;
+}
+.services-page .service-items-cntrl:nth-child(2n+2) .srv-fea-img {
+	right: 0;
+}
+.services-page .service-items-cntrl:nth-child(2n+2) .srv-fea-img .emrs{
+	left: 0;
+}
+.services-page .service-items-cntrl:nth-child(2n+2) .siccc-cntrl .container .row > div:nth-child(1){
+	order: 2;
+}
+.services-page .service-items-cntrl:nth-child(2n+2) .siccc-cntrl .container .row > div:nth-child(2){
+	order: 1;
+	padding-right: 33px;
+}
+.services-page .service-items-cntrl:nth-child(2n+2) .siccc-cntrl .container .row > div:nth-child(2) .sicc{
+	padding-left: 0;
+}
