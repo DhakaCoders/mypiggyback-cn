@@ -27,4 +27,4 @@
 	margin-bottom: 40px;
 	color: #F2101C;	
 }
-.services-page:nth-child(2n+2)
+.services-page:nth-child(2n+2) .service-items-cntrl:nth-child()
