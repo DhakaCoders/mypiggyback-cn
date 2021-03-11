@@ -10,6 +10,10 @@
 .s-f-img-cntrl {
     position: relative;
     margin-left: auto;
+    width: 100%;
+}
+.s-f-img-cntrl img{
+	width: 100%;
 }
 .emrs{
 	position: absolute;
