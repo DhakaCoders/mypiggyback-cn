@@ -7,17 +7,29 @@ Contact page
 	position: relative;
 }
 .contat-frm-wrp{
-	width: 40%;
-	float: left;
+	width: 100%;
+	max-width: 460px;
+	float: right;
 	padding-right: 25px;
 	padding-top: 80px;
+}
+.contat-frm-lft{
+	width: 44%;
+	float: left;
+}
+.contact-map{
+	width: 56%;
+	float: right;
 }
 .contact-title {
     padding-left: 60px;
     margin-bottom: 30px;
 }
 .contact-title i{
-	margin-top: -7px;
+	margin-top: -2px;
+}
+.contact-info-title i{
+	margin-top: -2px;
 }
 .contat-frm-dsc p {
     line-height: 2.2;
@@ -92,13 +104,6 @@ Contact page
   opacity: 1;
 }
 
-.contact-map{
-	width: 56%;
-	position: absolute;
-	right: 0;
-	top: 0;
-	bottom: 0;
-}
 /*
 ------------------
 contact-info-sec-wrp
@@ -202,6 +207,9 @@ we-accept-sec-wrp
 	margin-bottom: 0;
 	padding-left: 30px;
 }
+.we-accept-title i{
+	margin-top: -1px;
+}
 .we-accept-rgt ul{
 	float: right;
 }
@@ -211,4 +219,58 @@ we-accept-sec-wrp
 }
 .we-accept-rgt ul li:last-child{
 	padding-right: 0;
+}
+
+
+/*
+----------------
+ Responsive Css
+----------------
+*/
+
+@media(max-width: 1499px){
+
+}
+
+@media(max-width: 1399px){
+
+}
+
+@media(max-width: 1299px){
+
+}
+
+@media(max-width: 1199px){
+	
+
+}
+
+@media(max-width: 991px){
+	.breadcumbs {
+	    padding-top: 13px;
+	}
+	.breadcumbs ul li{
+		font-size: 15px;
+	}
+	.breadcumbs ul li:after{
+		top: 2px;
+	}
+}
+
+@media(max-width: 767px){
+	
+}
+
+@media(max-width: 575px){
+	
+
+}
+
+@media(max-width: 479px){
+
+
+}
+
+@media(max-width: 359px){
+
 }
