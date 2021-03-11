@@ -288,20 +288,20 @@ if ($('.div.vcl-tabs').length) {
 
 /*Start of Sabbir*/
   //service-page
-function servimgupdate(){
-  var windowsize = $(window).width();
-  var containerwidth = $(".container").width();
-  var mlr = ((windowsize+containerwidth)/2);
-  var divheight = $(".srv-fea-img").height();
-  $(".srv-fea-img img").css({
-    "width":mlr,
-    "height":divheight,
-  });
-}
-servimgupdate();
-$(window).resize(function(){
-    servimgupdate();
-  });
+// function servimgupdate(){
+//   var windowsize = $(window).width();
+//   var containerwidth = $(".container").width();
+//   var mlr = ((windowsize+containerwidth)/2);
+//   var divheight = $(".srv-fea-img").height();
+//   $(".srv-fea-img img").css({
+//     "width":mlr,
+//     "height":divheight,
+//   });
+// }
+// servimgupdate();
+// $(window).resize(function(){
+//     servimgupdate();
+//   });
 
 
 
