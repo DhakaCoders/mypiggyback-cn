@@ -234,3 +234,55 @@
 .input-field-row-submit{
 	margin-bottom: 0;
 }
+.bnr-booking-form-tabs-col-cntlr{
+	display: flex;
+}
+.bnr-booking-form-tabs-col-cntlr .tab-link{
+	width: 50%; 
+}
+
+.bnr-booking-form-tabs .tab-link{
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	border: none;
+	color: #fff;
+	font-weight: normal;
+	font-family: 'GoboldLowplus';
+	font-size: 18px;
+	line-height: 1;
+	position: relative;
+	cursor: pointer;
+}
+
+.bnr-booking-form-tabs .tab-link i{
+	position: absolute;
+	width: 21px;
+	height: 21px;
+	border-left: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	right: 0;
+	top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.vr-title{
+	background: #D61225;
+}
+.vt-title{
+	background: #0074D3;
+}
+.vr-title i{
+	background: #D40035;
+}
+.vt-title i{
+	background: #4089FF;
+}
+
+.bnr-booking-form-tabs .vr-title.current{
+	position: relative;
+}
