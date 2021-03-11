@@ -258,6 +258,9 @@
 	font-size: 18px;
 	line-height: 1;
 	position: relative;
+	
+}
+.bnr-booking-form-tabs button.tab-link{
 	cursor: pointer;
 }
 
