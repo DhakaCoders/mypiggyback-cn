@@ -342,7 +342,15 @@
 }
 
 @media(max-width: 991px){
-	
+	.bnr-booking-form-cntlr{
+		max-width: 350px;
+	}
+	.bnr-booking-form-tabs .tab-link{
+		font-size: 17px;
+	}
+	.loc-searching-form-cntlr {
+	    max-width: 360px;
+	}
 }
 
 @media(max-width: 767px){
