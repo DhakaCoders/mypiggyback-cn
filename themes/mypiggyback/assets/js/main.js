@@ -288,7 +288,10 @@ if( $('.Vehicle-left-bg').length ){
 
 
 /*Start of Shariful*/
-
+  /*$('.counter').counterUp({
+    delay: 10,
+    time: 1000
+  });*/
 
 
 
