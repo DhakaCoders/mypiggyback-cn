@@ -269,3 +269,6 @@
 	font-weight: 300;
 	color: #fff;
 }
+.ftr-btm-menu ul li a:hover{
+	color: #D61225;
+}
