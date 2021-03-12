@@ -77,7 +77,10 @@
 }
 
 @media(max-width: 1399px){
-	
+	.sic-des p{
+		margin-bottom: 30px;
+		line-height: 2;
+	}
 }
 
 @media(max-width: 1299px){
@@ -97,7 +100,7 @@
 @media(max-width: 1199px){
 	svg.Icon-1, svg.Icon-2, svg.Icon-3, svg.Icon-4{
 		width: 80px;
-    	height: 57px;
+    	height: auto;
 	}
 	.emrs {
     	width: 128px;
@@ -132,6 +135,13 @@
 	.sic-des p{
 		line-height: 1.4;
 		margin-bottom: 20px;
+	}
+	.emrs {
+    	width: 110px;
+    	height: 110px;
+	}
+	svg.Icon-1, svg.Icon-2, svg.Icon-3, svg.Icon-4{
+		width: 70px;
 	}	
 	
 }
