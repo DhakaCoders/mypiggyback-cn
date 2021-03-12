@@ -23,10 +23,18 @@
 	width: 57.0175%;
 }
 
+.mbp-about-rgt-des{
+	padding-top: 15px;
+}
+
 /*.mpb-about-img{
 	margin-left: -55px;
 }*/
-.mbp-about-des p{
+
+.mbp-about-des-title{
+	margin-bottom: 50px;
+}
+.mbp-about-rgt-des p{
 	line-height: 2.35;
 	margin-bottom: 40px;
 }
