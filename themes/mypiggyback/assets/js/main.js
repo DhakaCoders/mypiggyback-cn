@@ -244,7 +244,7 @@ if (windowWidth <= 767) {
     var tab_id = $(this).attr('data-tab');
 
     $('div.vcl-tabs .vcl-tab-link').removeClass('current');
-    $('.fl-tab-content').removeClass('current');
+    $('.vcl-tab-content').removeClass('current');
 
     $(this).parent().addClass('current');
     $("#"+tab_id).addClass('current');
