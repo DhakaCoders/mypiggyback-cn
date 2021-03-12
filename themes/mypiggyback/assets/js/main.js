@@ -240,7 +240,6 @@ if (windowWidth <= 767) {
 }
 
 
-if ($('.div.vcl-tabs').length) {
   $('div.vcl-tabs button').click(function(){
     var tab_id = $(this).attr('data-tab');
 
@@ -250,7 +249,6 @@ if ($('.div.vcl-tabs').length) {
     $(this).parent().addClass('current');
     $("#"+tab_id).addClass('current');
   });
-}
 
 
 
