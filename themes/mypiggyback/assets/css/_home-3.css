@@ -247,7 +247,12 @@
 .bnr-booking-form-tabs-col-cntlr .tab-link{
 	width: 50%; 
 }
-
+.bnr-booking-form-tabs-col-cntlr .tab-link.vr-title{
+	border-right: 1px solid #fff;
+} 
+.bnr-booking-form-tabs-col-cntlr .tab-link.vt-title{
+	border-left: 1px solid #fff;
+} 
 .bnr-booking-form-tabs .tab-link{
 	height: 60px;
 	display: flex;
@@ -291,6 +296,7 @@
 	border-right: 32px solid transparent;
 	border-top: 16px solid #D61225;
 	opacity: 0;
+	margin-top: -1px;
 }
 .bnr-booking-form-tabs .tab-link.vt-title:after{
 	border-top: 16px solid #0074D3;
