@@ -365,6 +365,7 @@ we-accept-sec-wrp
 	.contat-frm-wrp {
 	    padding-top: 40px;
 	    max-width: 100%;
+	    width: 100%;
 	    background: #fff;
 	    padding-left: 20px;
 	    padding-right: 20px;

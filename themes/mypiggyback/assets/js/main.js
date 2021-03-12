@@ -282,7 +282,7 @@ if( $('.Vehicle-left-bg').length ){
 
 /*Start of Milon*/
 
-if( $('.contact-map').length ){
+/*if( $('.contact-map').length ){
   var conWidth = $('.container').width();
 
   var OutConRgt = (windowWidth - conWidth)/2;
@@ -292,7 +292,7 @@ if( $('.contact-map').length ){
   $('.contact-map').css("width",w3);
 
   console.log(w3);
-}
+}*/
 
 
 
