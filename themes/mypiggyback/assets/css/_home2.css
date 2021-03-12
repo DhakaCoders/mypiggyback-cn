@@ -2,6 +2,9 @@
 .mpb-about-sec{
 	padding-top: 125px;
 	position: relative;
+	background-repeat: no-repeat!important;
+	background-position: right bottom!important;
+	background-size: cover!important;
 }
 
 .mpb-about-sec-inr{

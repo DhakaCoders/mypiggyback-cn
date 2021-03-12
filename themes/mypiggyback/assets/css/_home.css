@@ -62,7 +62,7 @@
 	-webkit-transition: all 0.5s;
 }
 .piggyback-item-desc{
-	padding: 28px 0 25px 0;
+	padding: 28px 15px 25px 15px;
 }
 .piggyback-item-desc p{
 	text-align: center;
@@ -136,7 +136,7 @@
 	top: 0;
 	left: 0;
 	bottom: 0;
-	width: 62.5%;
+	width: 62.6%;
 	z-index: 1;
 }
 .Vehicle-left-bg:after{
@@ -151,14 +151,17 @@
 .Vehicle-sec{
 	position: relative;
 	z-index: 3;
+	min-height: 643px;
 }
 .Vehicle-cntlr{
 	display: flex;
 	flex-wrap: wrap;
 }
 .Vehicle-desc-cntlr{
-	width: 64.78%;
-	padding: 150px 25px 100px 25px;
+	width: 65.79%;
+	display: flex;
+	align-items: center;
+	padding: 25px 15px 25px 15px;
 }
 .Vehicle-desc{
 	max-width: 590px;
@@ -188,18 +191,28 @@
 .vcl-fst-btn .fl-red-btn{
 	color: #fff;
 	border-color: #fff;
+	-webkit-box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.35);
+	-moz-box-shadow:    1px 2px 10px 0px rgba(0, 0, 0, 0.35);
+	box-shadow:         1px 2px 10px 0px rgba(0, 0, 0, 0.35);
+}
+.vcl-fst-btn .fl-red-btn:hover{
+	background: #fff;
+	color: #F2101C;
 }
 .vcl-scnd-btn .fl-trnsprnt-btn{
 	background: #fff;
+	-webkit-box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.35);
+	-moz-box-shadow:    1px 2px 10px 0px rgba(0, 0, 0, 0.35);
+	box-shadow:         1px 2px 10px 0px rgba(0, 0, 0, 0.35);
 
 }
 .vcl-scnd-btn .fl-trnsprnt-btn:hover{
-	background: transparent;
+	background: #F2101C;
 	color: #fff;
 	border-color: #fff;
 }
 .vcl-right-wrap{
-	width: 35.22%;
+	width: 34.21%;
 	padding-left: 42px;
 	padding-top: 45px;
 }

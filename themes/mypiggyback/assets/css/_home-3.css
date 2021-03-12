@@ -354,7 +354,14 @@
 }
 
 @media(max-width: 767px){
-
+/*	.home-page-bnr-con-cntlr{
+		position: static;
+	}
+	.loc-searching-form-cntlr{
+		position: absolute;
+		left: 20px;
+		top: 20px;
+	}*/
 }
 
 @media(max-width: 575px){
