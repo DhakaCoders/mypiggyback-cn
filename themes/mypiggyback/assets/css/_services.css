@@ -50,6 +50,7 @@
 }
 .services-item-cntrl:nth-child(2n+2) .serv-fea-img{
 	order: 2;
+	height: 100%;
 }
 .services-item-cntrl:nth-child(2n+2) .serv-fea-img .s-f-img-cntrl{
 	margin-right: auto;
@@ -68,61 +69,94 @@
 	margin-left: auto;
 }
 
-/* .services-item-cntrl{
-	position: relative;
-	margin-bottom: 63px;
+/* =========== */
+/* responsive */
+/* ========= */
+@media(max-width: 1499px){
+
 }
-.serv-fea-img{
-	width: 50%;
-	position: absolute;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	min-height: 603px;
+
+@media(max-width: 1399px){
+	.sic-des p{
+		line-height: 2;
+	}
 }
-.serv-fea-img img{
-	width: 100%;
+
+@media(max-width: 1299px){
+	.sic-des .sic-title{
+		margin-bottom: 30px;
+	}
+	.sic-des p{
+		line-height: 1.8;
+		margin-bottom: 30px;
+	}
+	.emrs{
+		width: 135px;
+		height: 135px;
+	}
 }
-.emrs{
-	position: absolute;
-	top: 0;
-	right: 0;
-	height: 150px;
-	width: 150px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background: #fff;
-    border: 3px dashed #0178d4;
+
+@media(max-width: 1199px){
+	svg.Icon-1, svg.Icon-2, svg.Icon-3, svg.Icon-4{
+		width: 80px;
+    	height: 57px;
+	}
+	.emrs {
+    	width: 128px;
+    	height: 128px;
+	}
+	.sic{
+		padding-left: 38px;
+	}
+	.services-item-cntrl:nth-child(2n+2) .sic{
+		padding-right: 38px;
+	}
+	.sic-des{
+		max-width: 495px;
+	}
+	.sic-des .sic-title{
+		margin-bottom: 25px;
+		line-height: 1.2;
+	}
+	.sic-des p{
+		line-height: 1.6;
+		margin-bottom: 25px;
+	}
 }
-.sic{
-	padding-left: 58px;
-	width: 51%;
-	margin-left: auto;
-	display: flex;
-    flex-direction: column;
-    justify-content: center;
+
+@media(max-width: 1099px){
+	.sic-des{
+		max-width: 440px;
+	}
+	.sic-des .sic-title{
+		margin-bottom: 20px;
+	}
+	.sic-des p{
+		line-height: 1.4;
+		margin-bottom: 20px;
+	}	
+	
 }
-.sic .sic-title{
-	line-height: 1.3;
-	text-transform: uppercase;
-	font-family: 'GoboldExtra2';
-	margin-bottom: 40px;
-	color: #F2101C;	
+
+@media(max-width: 991px){
+
+	
 }
-.sic p{
-	line-height: 2.1;
-	margin-bottom: 35px;
+
+@media(max-width: 767px){
+
 }
-.lft-des-rgt-img .serv-fea-img{
-	left: initial;
-	right: 0;
+
+@media(max-width: 575px){
+
+
 }
-.lft-des-rgt-img .sic{
-	padding-left: 0;
-	padding-right: 58px;
-	margin-left: initial;
+
+@media(max-width: 479px){
+
+
 }
-.lft-des-rgt-img .serv-fea-img .emrs{
-	left: 0;
-} */
+
+@media(max-width: 359px){
+
+}

@@ -3,11 +3,15 @@
 }
 
 @media(max-width: 1399px){
-
+	h2, .fl-h2{
+		font-size: 42px;
+	}
 }
 
 @media(max-width: 1299px){
-
+	h2, .fl-h2{
+		font-size: 40px;
+	}
 }
 
 @media(max-width: 1199px){
@@ -16,6 +20,9 @@
 	}
 	.show-lg{
 		display: block!important;
+	}
+	h2, .fl-h2{
+		font-size: 38px;
 	}
 
 }
@@ -26,6 +33,9 @@
 	}
 	.show-md{
 		display: block!important;
+	}
+	h2, .fl-h2{
+		font-size: 36px;
 	}
 	
 }
