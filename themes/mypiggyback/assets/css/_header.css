@@ -132,10 +132,10 @@ nav.main-nav > ul > li.current-menu-item > a:before{
 	content: "\f3c5";
 	font-weight: 700;
 	font-size: 20px;
-	left: -14px;
+	right: 100%;
+	margin-right: -5px;
 	top: -3px;
 	font-family: 'Font Awesome 5 Free';
-	/*background-image: url(../images/location-icon.svg);*/
 }
 nav.main-nav > ul > li > a:hover,
 nav.main-nav > ul > li.current-menu-item > a,
@@ -244,6 +244,12 @@ nav.main-nav > ul > li.menu-item-has-children ul.sub-menu li:hover a{
 	letter-spacing: -1px;
 	font-size: 16px;
 	margin-bottom: 0;
+	transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+}
+.hdr-order-icon a:hover span{
+	color: #141414;
 }
 .hdr-order-icon i{
 	display: inline-block;
