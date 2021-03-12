@@ -1,3 +1,6 @@
+.services-page {
+    padding-bottom: 63px;
+}
 .services-item-cntrl{
 	display: flex;
 	padding-top: 65px;
@@ -58,6 +61,7 @@
 	margin-right: auto;
 	margin-left: initial;
 	margin-left: 29px;
+	
 }
 .services-item-cntrl:nth-child(2n+2) .serv-fea-img .s-f-img-cntrl .emrs{
 	left: 0;
@@ -172,6 +176,9 @@
 }
 
 @media(max-width: 767px){
+	.services-page {
+    	padding-bottom: 99px;
+	}
 	.services-item-cntrl{
 		display: block;
 		padding: 50px 20px 0;
