@@ -39,9 +39,14 @@
 	color: #4189ff;
 }
 .mbp-about-des{
-	padding-bottom: 150px;
+	padding-bottom: 170px;
 }
 
+.mbp-about-des p{
+	font-size: 18px;
+	line-height: 2;
+	margin-bottom: 28px;
+}
 
 .mbp-about-num-sec{
 	padding-bottom: 50px;
@@ -63,7 +68,7 @@
 
 .mbp-about-num-sec-inr{
 	padding-top: 120px;
-	padding-bottom: 135px;
+	padding-bottom: 110px;
 	position: relative;
 }
 .mbp-about-num-lft-bg-color{
@@ -90,11 +95,12 @@
 	width: 25%;
 	padding-left: 12px;
 	padding-right: 12px;
+	padding-bottom: 25px;
 	position: relative;
 }
 .mbp-about-num-btm-icon{
 	position: absolute;
-	bottom: -50px;
+	bottom: -25px;
 	left: 50%;
 	transform: translateX(-50%);
 	-webkit-transform: translateX(-50%);
@@ -142,9 +148,9 @@
 }
 
 
-.mbp-about-team-sec{
+/*.mbp-about-team-sec{
 	padding-bottom: 100px;
-}
+}*/
 
 .mbp-about-team-entry-hdr-title{
 	margin-bottom: 50px;
@@ -159,6 +165,7 @@
 	width: 33.3333%;
 	padding-left: 15px;
 	padding-right: 15px;
+	padding-bottom: 30px;
 }
 .mbp-abot-team-grds > ul > li:nth-child(3n+1){
 	clear: left;
@@ -298,4 +305,9 @@
 }
 .fl-red-btn.mbp-loca-btn{
 	width: 260px;
+}
+
+
+.about-ctlr .mpb-about-sec{
+	padding-top: 90px;
 }
