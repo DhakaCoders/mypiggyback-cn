@@ -212,17 +212,17 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
 /*Start of Ranojit*/
+if( $('.fl-tabs').length ){
+  $('div.fl-tabs button').click(function(){
+    var tab_id = $(this).attr('data-tab');
 
-$('div.fl-tabs button').click(function(){
-  var tab_id = $(this).attr('data-tab');
+    $('div.fl-tabs button').removeClass('current');
+    $('.fl-tab-content').removeClass('current');
 
-  $('div.fl-tabs button').removeClass('current');
-  $('.fl-tab-content').removeClass('current');
-
-  $(this).addClass('current');
-  $("#"+tab_id).addClass('current');
-});
-
+    $(this).addClass('current');
+    $("#"+tab_id).addClass('current');
+  });
+}
 
 /*Start of Noyon*/
 if (windowWidth <= 767) {
