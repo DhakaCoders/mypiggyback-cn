@@ -256,10 +256,12 @@
 .vcl-tab-link.current span{
 	background: #d4141f;
 }
-.fl-tab-content{
+.fl-tab-content,
+.vcl-tab-content{
 	display: none;
 }
-.fl-tab-content.current{
+.fl-tab-content.current,
+.vcl-tab-content.current{
 	display: block;
 }
 
