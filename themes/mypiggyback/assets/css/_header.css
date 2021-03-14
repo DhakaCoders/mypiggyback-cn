@@ -267,6 +267,7 @@ nav.main-nav > ul > li.menu-item-has-children ul.sub-menu li:hover a{
 .xs-hamburger{
 	display: none;
 	padding-right: 67px;
+	cursor: pointer;
 }
 .hamburger-icon{
 	position: relative;
