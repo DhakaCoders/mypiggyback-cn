@@ -61,7 +61,7 @@
 	max-width: 80%;
 	width: 100%;
 	max-height: 610px;
-	z-index: 1;
+	z-index: 2;
 }
 .mbp-about-num-lft-bg img{
 	max-height: 610px;
@@ -70,19 +70,20 @@
 .mbp-about-num-sec-inr{
 	padding-top: 120px;
 	padding-bottom: 110px;
-	position: relative;
-	z-index: 2;
 }
 .mbp-about-num-lft-bg-color{
-	
 	background: #D61225;
 	position: absolute;
 	top: 0;
 	bottom: 0;
 	left: 0;
 	width: 63%;
+	z-index: 1;
 }
-
+.mbp-about-num-des{
+	position: relative;
+	z-index: 3;
+}
 .mbp-about-entry-title{
 	color: #fff;
 	margin-bottom: 40px;
@@ -229,7 +230,7 @@
 	color: #fff;
 }
 .mbp-atgism-lft > ul > li a:hover{
-	color: #141414;
+	color: #FCCACA;
 }
 .mbp-atgism-rgt{
 	margin-left: auto;
@@ -292,8 +293,7 @@
 
 .mbp-loca-title i{
 	margin-top: -2px;
-	max-width: 17px;
-	width: 100%;
+	font-size: 22px;
 }
 
 .mbp-location-rgt p{

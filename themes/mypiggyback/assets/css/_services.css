@@ -1,3 +1,6 @@
+.services-page {
+    padding-bottom: 63px;
+}
 .services-item-cntrl{
 	display: flex;
 	padding-top: 65px;
@@ -7,6 +10,7 @@
 	display: flex;
 	width: 50%;
 	align-items: center;
+	padding-right: 14px;
 }
 .s-f-img-cntrl {
     position: relative;
@@ -53,11 +57,12 @@
 .services-item-cntrl:nth-child(2n+2) .serv-fea-img{
 	order: 2;
 	height: 100%;
+	padding-left: 14px;
+	padding-right: 0;
 }
 .services-item-cntrl:nth-child(2n+2) .serv-fea-img .s-f-img-cntrl{
 	margin-right: auto;
 	margin-left: initial;
-	margin-left: 29px;
 }
 .services-item-cntrl:nth-child(2n+2) .serv-fea-img .s-f-img-cntrl .emrs{
 	left: 0;
@@ -134,7 +139,7 @@
 		max-width: 440px;
 	}
 	.sic-des .sic-title{
-		margin-bottom: 20px;
+		margin-bottom: 30px;
 	}
 	.sic-des p{
 		margin-bottom: 20px;
@@ -150,9 +155,14 @@
 }
 
 @media(max-width: 991px){
-	.sic, 
-	.services-item-cntrl:nth-child(2n+2) .sic{
+	.sic {
 		padding-left: 25px;
+	} 
+	.services-item-cntrl:nth-child(2n+2) .sic{
+		padding-left: 20px;
+	}
+	.services-item-cntrl:nth-child(2n+2) .sic{
+		padding-right: 25px;
 	}
 	.sic-des .sic-title{
 		font-size: 30px;
@@ -167,13 +177,20 @@
 }
 
 @media(max-width: 767px){
+	.services-page {
+    	padding-bottom: 99px;
+	}
 	.services-item-cntrl{
 		display: block;
-		padding: 20px;
+		padding: 50px 20px 0;
 	}
 	.serv-fea-img{
 		width: 100%;
-		padding-bottom: 30px;
+		padding-bottom: 37px;
+		padding-right: 0;
+	}
+	.services-item-cntrl:nth-child(2n+2) .serv-fea-img{
+		padding-left: 0;
 	}
 	.sic{
 		width: 100%;
@@ -181,12 +198,15 @@
 	.sic, .services-item-cntrl:nth-child(2n+2) .sic{
 		padding-left: 0;
 		padding-right: 0;
-	}
+	}	
 	.services-item-cntrl:nth-child(2n+2) .serv-fea-img .s-f-img-cntrl .emrs{
 		left: initial;
 	}
 	.sic-des{
 		max-width: 100%;
+	}
+	.sic-des p{
+		margin-bottom: 35px;
 	}
 }
 
