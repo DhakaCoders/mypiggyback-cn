@@ -50,9 +50,12 @@
 	margin-bottom: 40px;
 	color: #F2101C;	
 }
-.sic-des p{
+.sic-p p{
 	line-height: 2.2;
-	margin-bottom: 35px;
+}
+.sic-p p:last-child{
+	margin-bottom: 0;
+	padding-bottom: 35px;
 }
 .services-item-cntrl:nth-child(2n+2) .serv-fea-img{
 	order: 2;
@@ -84,8 +87,7 @@
 }
 
 @media(max-width: 1399px){
-	.sic-des p{
-		margin-bottom: 30px;
+	.sic-p p{
 		line-height: 2;
 	}
 }
@@ -94,9 +96,8 @@
 	.sic-des .sic-title{
 		margin-bottom: 30px;
 	}
-	.sic-des p{
+	.sic-p p{
 		line-height: 1.8;
-		margin-bottom: 30px;
 	}
 	.emrs{
 		width: 135px;
@@ -129,9 +130,6 @@
 		margin-bottom: 25px;
 		line-height: 1.2;
 	}
-	.sic-des p{
-		margin-bottom: 25px;
-	}
 }
 
 @media(max-width: 1099px){
@@ -140,9 +138,6 @@
 	}
 	.sic-des .sic-title{
 		margin-bottom: 30px;
-	}
-	.sic-des p{
-		margin-bottom: 20px;
 	}
 	.emrs {
     	width: 110px;
@@ -204,9 +199,6 @@
 	}
 	.sic-des{
 		max-width: 100%;
-	}
-	.sic-des p{
-		margin-bottom: 35px;
 	}
 }
 
