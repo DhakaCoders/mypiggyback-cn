@@ -132,10 +132,13 @@
 	}
 	.sic-des{
 		max-width: 495px;
-	}
+	}	
 	.sic-des .sic-title{
 		margin-bottom: 25px;
 		line-height: 1.2;
+	}
+	.sic-p p{
+		line-height: 1.6;	
 	}
 }
 
