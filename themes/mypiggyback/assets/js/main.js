@@ -303,10 +303,14 @@ if( $('.Vehicle-left-bg').length ){
 
 
 /*Start of Shariful*/
-  /*$('.counter').counterUp({
-    delay: 10,
-    time: 1000
-  });*/
+
+  if( $('.counter').length ){
+    $('.counter').counterUp({
+      delay: 10,
+      time: 2000
+    });
+  }
+  
 
 
 
