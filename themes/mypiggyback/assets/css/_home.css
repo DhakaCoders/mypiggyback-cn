@@ -63,6 +63,9 @@
 }
 .piggyback-item-desc{
 	padding: 28px 15px 25px 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .piggyback-item-desc p{
 	text-align: center;
@@ -259,7 +262,7 @@
 	height: 26px;
 	background: #5b5b5b;
 	top: 0;
-	right: 9px;
+	right: 7px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -279,10 +282,31 @@
 }
 
 
+/*responsive*/
+@media(max-width: 1199px){
+
+}
+@media(max-width: 991px){
+	.piggyback-item-desc p br{
+		display: none!important;
+	}
+}
 @media(max-width: 767px){
 	.piggyback-slider{
 		display: block;
 		align-items: initial;
 		flex-wrap: initial;
 	}
+}
+@media(max-width: 639px){
+
+}
+@media(max-width: 575px){
+
+}
+@media(max-width: 479px){
+
+}
+@media(max-width: 359px){
+
 }

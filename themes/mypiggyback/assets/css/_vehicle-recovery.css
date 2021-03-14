@@ -1,8 +1,17 @@
+.vr-piggyback-sec{
+	padding: 75px 0 132px 0; 
+}
+.vr-piggyback-sec .piggyback-title{
+	margin-bottom: 60px;
+}
+
+
 .order-pgbk-home{
 
 }
 .order-pgbk-home .Vehicle-title{
 	margin-bottom: 60px;
+	padding-top: 8px;
 }
 .order-pgbk-home .vcl-right-wrap{
 	padding-left: 37px;

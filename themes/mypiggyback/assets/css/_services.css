@@ -1,5 +1,5 @@
 .services-page {
-    padding-bottom: 63px;
+   
 }
 .services-item-cntrl{
 	display: flex;
@@ -50,9 +50,12 @@
 	margin-bottom: 40px;
 	color: #F2101C;	
 }
-.sic-des p{
+.sic-p p{
 	line-height: 2.2;
-	margin-bottom: 35px;
+}
+.sic-p p:last-child{
+	margin-bottom: 0;
+	padding-bottom: 35px;
 }
 .services-item-cntrl:nth-child(2n+2) .serv-fea-img{
 	order: 2;
@@ -66,6 +69,13 @@
 }
 .services-item-cntrl:nth-child(2n+2) .serv-fea-img .s-f-img-cntrl .emrs{
 	left: 0;
+}
+.services-item-cntrl:last-child{
+	background-image: url('../images/testimonials-bg-img.png');
+	background-repeat: no-repeat;
+	background-position: bottom center;
+	background-size: cover;
+	padding-bottom: 63px;
 }
 .services-item-cntrl:nth-child(2n+2) .sic{
 	order: 1;
@@ -84,8 +94,7 @@
 }
 
 @media(max-width: 1399px){
-	.sic-des p{
-		margin-bottom: 30px;
+	.sic-p p{
 		line-height: 2;
 	}
 }
@@ -94,9 +103,8 @@
 	.sic-des .sic-title{
 		margin-bottom: 30px;
 	}
-	.sic-des p{
+	.sic-p p{
 		line-height: 1.8;
-		margin-bottom: 30px;
 	}
 	.emrs{
 		width: 135px;
@@ -124,13 +132,13 @@
 	}
 	.sic-des{
 		max-width: 495px;
-	}
+	}	
 	.sic-des .sic-title{
 		margin-bottom: 25px;
 		line-height: 1.2;
 	}
-	.sic-des p{
-		margin-bottom: 25px;
+	.sic-p p{
+		line-height: 1.6;	
 	}
 }
 
@@ -140,9 +148,6 @@
 	}
 	.sic-des .sic-title{
 		margin-bottom: 30px;
-	}
-	.sic-des p{
-		margin-bottom: 20px;
 	}
 	.emrs {
     	width: 110px;
@@ -177,7 +182,7 @@
 }
 
 @media(max-width: 767px){
-	.services-page {
+	.services-item-cntrl:last-child {
     	padding-bottom: 99px;
 	}
 	.services-item-cntrl{
@@ -204,9 +209,6 @@
 	}
 	.sic-des{
 		max-width: 100%;
-	}
-	.sic-des p{
-		margin-bottom: 35px;
 	}
 }
 
