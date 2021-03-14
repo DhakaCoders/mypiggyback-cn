@@ -273,3 +273,80 @@
 .ftr-btm-menu ul li a:hover{
 	color: #FCCACA;
 }
+
+
+@media(max-width: 1499px){
+
+}
+
+@media(max-width: 1399px){
+	
+}
+
+@media(max-width: 1299px){
+	
+}
+
+@media(max-width: 1199px){
+	
+
+}
+
+@media(max-width: 991px){
+	.ftr-logo-ctlr,
+	.ftr-col-1,
+	.ftr-col-2,
+	.ftr-col-3{
+		width: 50%;
+		margin-bottom: 50px;
+	}
+	.ftr-col-1{
+		margin-bottom: 92px;
+	}
+	.ftr-top{
+		padding-top: 85px;
+		padding-bottom: 70px;
+	}
+	.ftr-logo-title{
+		display: block;
+	}
+}
+
+@media(max-width: 767px){
+	.ftr-logo-ctlr, 
+	.ftr-col-1, 
+	.ftr-col-2, 
+	.ftr-col-3{
+		width: 100%;
+	}
+	.ftr-menu-location a br{
+		display: none;
+	}
+	.ftr-menu > ul > li{
+		float: left;
+		width: 50%;
+	}
+	.ftr-btm-inr{
+		display: block;
+	}
+	.ftr-btm-copywrite{
+		text-align: center;
+	}
+	.ftr-btm-menu{
+		text-align: center;
+	}
+}
+
+@media(max-width: 575px){
+	
+
+}
+
+@media(max-width: 479px){
+
+
+}
+
+@media(max-width: 359px){
+
+}
