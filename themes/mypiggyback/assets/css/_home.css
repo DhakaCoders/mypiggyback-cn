@@ -63,6 +63,9 @@
 }
 .piggyback-item-desc{
 	padding: 28px 15px 25px 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .piggyback-item-desc p{
 	text-align: center;
