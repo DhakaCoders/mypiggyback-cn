@@ -293,6 +293,26 @@ if( $('.Vehicle-left-bg').length ){
   $('.Vehicle-left-bg').css("width",VclLefBg);
 }
 
+  if (windowWidth <= 767) {
+    $('.xs-hamburger').on('click', function(e){
+      $('.hdr-menu').slideToggle();
+    });
+/*    $('.close-icon-cntlr').on('click', function(e){
+      $('.bdoverlay').removeClass('active');
+      $('.xs-mbl-menu-cntlr').removeClass('opacity-1');
+      $('body').removeClass('active-scroll-off');
+      $(this).parent().removeClass('hmbrgr-close-hide-show');
+    });*/
+    
+    $('li.menu-item-has-children > a').on('click', function(e){
+      e.preventDefault();
+    $(this).toggleClass('sub-menu-active');
+    $(this).parent().toggleClass('sub-menu-arrow');
+    $(this).next().slideToggle(300);
+
+  });
+  }
+
 
 /*Start of Milon*/
 
