@@ -6,7 +6,7 @@
 	padding: 13px 0;
 	
 	position: relative;
-}.top-bar span{
+}.top-bar > span{
 	position: absolute;
 	bottom: 0;
 	right: 0;
@@ -275,6 +275,7 @@ nav.main-nav > ul > li.menu-item-has-children ul.sub-menu li:hover a{
 	height: 22px;
 	margin-bottom: 5px;
 }
+
 .hamburger-icon span{
 	background: #141414;
 	height: 4px;
@@ -299,7 +300,23 @@ nav.main-nav > ul > li.menu-item-has-children ul.sub-menu li:hover a{
     font-family: 'SegoeUIRegular';
     letter-spacing: -1px;
 }
-
+.cross-icon .hamburger-icon span:nth-child(1){
+	top: 6px;
+	transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+}
+.cross-icon .hamburger-icon span:nth-child(2){
+	top: 6px;
+	transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+}
+.cross-icon .hamburger-icon span:nth-child(3){
+	display: none;
+}
 
 /*responsive*/
 @media(max-width: 1199px){
@@ -320,6 +337,9 @@ nav.main-nav > ul > li.menu-item-has-children ul.sub-menu li:hover a{
 	nav.main-nav > ul > li.current-menu-item > a:before{
 		top: -5px;
 		margin-right: -7px;
+	}
+	.hdr-order-icon{
+		top: -4px;
 	}
 }
 @media(max-width: 991px){
@@ -361,6 +381,11 @@ nav.main-nav > ul > li.menu-item-has-children ul.sub-menu li:hover a{
 		align-items: center;
 	}
 	.hdr-menu{
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 100%; 
+		z-index: 9999;
 		display: none;
 	}
 	.logo a{
