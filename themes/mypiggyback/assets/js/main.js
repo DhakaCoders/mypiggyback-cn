@@ -295,7 +295,8 @@ if( $('.Vehicle-left-bg').length ){
 
   if (windowWidth <= 767) {
     $('.xs-hamburger').on('click', function(e){
-      $('.hdr-menu').slideToggle();
+      $('.hdr-menu').slideToggle(500);
+      $(this).toggleClass('cross-icon');
     });
 /*    $('.close-icon-cntlr').on('click', function(e){
       $('.bdoverlay').removeClass('active');
