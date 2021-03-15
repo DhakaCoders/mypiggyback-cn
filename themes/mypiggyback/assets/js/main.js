@@ -6,9 +6,9 @@ var CustomMapStyles  = [{"featureType":"water","elementType":"geometry","stylers
 
 var windowWidth = $(window).width();
 $('.navbar-toggle').on('click', function(){
-	$('#mobile-nav').slideToggle(300);
+  $('#mobile-nav').slideToggle(300);
 });
-	
+  
   
 //matchHeightCol
 if($('.mHc').length){
@@ -233,8 +233,22 @@ if (windowWidth <= 767) {
       autoplay: false,
       autoplaySpeed: 4000,
       speed: 700,
-      slidesToShow: 1,
+      slidesToShow: 2,
       slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: true
+          }
+        }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ]
     });
   }
 }
@@ -279,6 +293,26 @@ if( $('.Vehicle-left-bg').length ){
   $('.Vehicle-left-bg').css("width",VclLefBg);
 }
 
+  if (windowWidth <= 767) {
+    $('.xs-hamburger').on('click', function(e){
+      $('.hdr-menu').slideToggle();
+    });
+/*    $('.close-icon-cntlr').on('click', function(e){
+      $('.bdoverlay').removeClass('active');
+      $('.xs-mbl-menu-cntlr').removeClass('opacity-1');
+      $('body').removeClass('active-scroll-off');
+      $(this).parent().removeClass('hmbrgr-close-hide-show');
+    });*/
+    
+    $('li.menu-item-has-children > a').on('click', function(e){
+      e.preventDefault();
+    $(this).toggleClass('sub-menu-active');
+    $(this).parent().toggleClass('sub-menu-arrow');
+    $(this).next().slideToggle(300);
+
+  });
+  }
+
 
 /*Start of Milon*/
 
@@ -297,12 +331,23 @@ if( $('.Vehicle-left-bg').length ){
 if( $('.contact-map').length ){
   var conWidth = $('.container').width();
 
-  var OutConRgt = (windowWidth - conWidth)/2;
+  var OutConrgt = (windowWidth - conWidth)/2;
   var VclLftWidth = $('.contat-frm-wrp').outerWidth();
   var VclRtBgOuter = OutConRgt + VclLftWidth;
   var VclRtBg = windowWidth - VclRtBgOuter;
   $('.contact-map').css("width",VclRtBg);
 }
+
+$(window).resize(function() { 
+  var window2Width = $(window).width();
+  var conWidth = $('.container').width();
+
+  var OutConLft = (window2Width - conWidth)/2;
+  var VclRtWidth = $('.contat-frm-wrp').outerWidth();
+  var VclLefBgOuter = OutConLft + VclRtWidth;
+  var VclLefBg = window2Width - VclLefBgOuter;
+  $('.contact-map').css("width",VclLefBg);
+});
 
 
 
@@ -313,10 +358,14 @@ if( $('.contact-map').length ){
 
 
 /*Start of Shariful*/
-  /*$('.counter').counterUp({
-    delay: 10,
-    time: 1000
-  });*/
+
+  if( $('.counter').length ){
+    $('.counter').counterUp({
+      delay: 10,
+      time: 2000
+    });
+  }
+  
 
 
 
