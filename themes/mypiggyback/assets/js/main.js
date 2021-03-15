@@ -331,7 +331,7 @@ if( $('.Vehicle-left-bg').length ){
 if( $('.contact-map').length ){
   var conWidth = $('.container').width();
 
-  var OutConrgt = (windowWidth - conWidth)/2;
+  var OutConRgt = (windowWidth - conWidth)/2;
   var VclLftWidth = $('.contat-frm-wrp').outerWidth();
   var VclRtBgOuter = OutConRgt + VclLftWidth;
   var VclRtBg = windowWidth - VclRtBgOuter;
@@ -342,11 +342,11 @@ $(window).resize(function() {
   var window2Width = $(window).width();
   var conWidth = $('.container').width();
 
-  var OutConLft = (window2Width - conWidth)/2;
-  var VclRtWidth = $('.contat-frm-wrp').outerWidth();
-  var VclLefBgOuter = OutConLft + VclRtWidth;
-  var VclLefBg = window2Width - VclLefBgOuter;
-  $('.contact-map').css("width",VclLefBg);
+  var OutConRgt = (window2Width - conWidth)/2;
+  var VclLftWidth = $('.contat-frm-wrp').outerWidth();
+  var VclRtBgOuter = OutConRgt + VclLftWidth;
+  var VclRtBg = window2Width - VclRtBgOuter;
+  $('.contact-map').css("width",VclRtBg);
 });
 
 
