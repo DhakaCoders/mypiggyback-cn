@@ -244,20 +244,6 @@ if (windowWidth <= 767) {
             infinite: true,
             dots: true
           }
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
         }
         // You can unslick at a given breakpoint now by adding:
         // settings: "unslick"
@@ -321,6 +307,27 @@ if( $('.Vehicle-left-bg').length ){
 
   console.log(w3);
 }*/
+
+if( $('.contact-map').length ){
+  var conWidth = $('.container').width();
+
+  var OutConLft = (windowWidth - conWidth)/2;
+  var VclRtWidth = $('.contat-frm-wrp').outerWidth();
+  var VclLefBgOuter = OutConLft + VclRtWidth;
+  var VclLefBg = windowWidth - VclLefBgOuter;
+  $('.contact-map').css("width",VclLefBg);
+}
+
+$(window).resize(function() { 
+  var window2Width = $(window).width();
+  var conWidth = $('.container').width();
+
+  var OutConLft = (window2Width - conWidth)/2;
+  var VclRtWidth = $('.contat-frm-wrp').outerWidth();
+  var VclLefBgOuter = OutConLft + VclRtWidth;
+  var VclLefBg = window2Width - VclLefBgOuter;
+  $('.contact-map').css("width",VclLefBg);
+});
 
 
 
