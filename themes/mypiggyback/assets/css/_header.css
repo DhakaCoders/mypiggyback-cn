@@ -275,6 +275,7 @@ nav.main-nav > ul > li.menu-item-has-children ul.sub-menu li:hover a{
 	height: 22px;
 	margin-bottom: 5px;
 }
+
 .hamburger-icon span{
 	background: #141414;
 	height: 4px;
@@ -299,7 +300,23 @@ nav.main-nav > ul > li.menu-item-has-children ul.sub-menu li:hover a{
     font-family: 'SegoeUIRegular';
     letter-spacing: -1px;
 }
-
+.cross-icon .hamburger-icon span:nth-child(1){
+	top: 6px;
+	transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+}
+.cross-icon .hamburger-icon span:nth-child(2){
+	top: 6px;
+	transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+}
+.cross-icon .hamburger-icon span:nth-child(3){
+	display: none;
+}
 
 /*responsive*/
 @media(max-width: 1199px){
