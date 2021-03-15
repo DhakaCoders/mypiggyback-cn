@@ -247,8 +247,8 @@ we-accept-sec-wrp
 
 @media(max-width: 1199px){
 	.contat-frm-wrp {
-	    padding-left: 15px;
-	    padding-right: 25px;
+	    padding-left: 0;
+	    padding-right: 15px;
 	}
 	.contact-title {
 	    margin-bottom: 20px;
@@ -350,7 +350,7 @@ we-accept-sec-wrp
 	    padding: 24px 0 20px;
 	}
 	.contact-map {
-	    width: 100%;
+	    width: 100% !important;
 	    position: static;
 	}
 	.contat-frm-cntlr{

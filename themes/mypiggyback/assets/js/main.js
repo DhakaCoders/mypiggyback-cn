@@ -294,6 +294,16 @@ if( $('.Vehicle-left-bg').length ){
   console.log(w3);
 }*/
 
+if( $('.contact-map').length ){
+  var conWidth = $('.container').width();
+
+  var OutConRgt = (windowWidth - conWidth)/2;
+  var VclLftWidth = $('.contat-frm-wrp').outerWidth();
+  var VclRtBgOuter = OutConRgt + VclLftWidth;
+  var VclRtBg = windowWidth - VclRtBgOuter;
+  $('.contact-map').css("width",VclRtBg);
+}
+
 
 
 
