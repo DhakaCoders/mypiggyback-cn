@@ -220,6 +220,16 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php 
+$logoObj = get_field('hdlogo', 'options');
+if( is_array($logoObj) ){
+  $logo_tag = '<img src="'.$logoObj['url'].'" alt="'.$logoObj['alt'].'" title="'.$logoObj['title'].'">';
+}else{
+  $logo_tag = '';
+}
+$hdlogotext = get_field('hdlogotext', 'options');
+$hdinfo = get_field('headerinfo', 'options');
+?>  
 <header class="header-wrap">
   <div class="top-bar">
     <span></span>
@@ -228,24 +238,28 @@
         <div class="col-md-12">
           <div class="top-bar-cntlr">
             <div class="top-bar-left">
-              <p>A super quick piggyback from <strong>A</strong> to <strong>B</strong></p>
+              <?php if( !empty( $hdlogotext ) ) printf('<p>%s</p>', $hdlogotext); ?>
             </div>
             <div class="top-bar-rt">
               <ul class="reset-list">
+                <?php if( !empty( $hdinfo['telephone'] ) ): ?>
                 <li class="hdr-tel">
-                  <a href="tel:02920257">
-                    <span>02920 257</span>
+                  <a href="tel:<?php echo phone_preg($hdinfo['telephone']); ?>">
+                    <span><?php echo $hdinfo['telephone']; ?></span>
                     <i><svg class="tell-icon" width="16" height="15.2" viewBox="0 0 16 15.2" fill="#ffffff">
                       <use xlink:href="#tell-icon"></use></svg></i>
                   </a>
                 </li>
+                <?php endif; ?>
+                <?php if( !empty( $hdinfo['email'] ) ): ?>
                 <li class="hdr-mail">
-                  <a href="mailto:info@superlifts.co.uk">
-                    <span>info@superlifts.co.uk</span>
+                  <a href="mailto:<?php echo $hdinfo['email']; ?>">
+                    <span><?php echo $hdinfo['email']; ?></span>
                     <i><svg class="mail-icon" width="18" height="12" viewBox="0 0 18 12" fill="#ffffff">
                       <use xlink:href="#mail-icon"></use></svg></i>
                   </a>
                 </li>
+                <?php endif; ?>
               </ul>
             </div>
           </div>
@@ -259,29 +273,26 @@
         <div class="col-md-12">
           <div class="header-inr clearfix">
             <div class="hdr-lft">
+              <?php if( !empty($logo_tag) ): ?>
               <div class="logo">
-                <a href="#"><img src="<?php echo THEME_URI; ?>/assets/images/logo.svg"></a>
+               <a href="<?php echo esc_url(home_url('/')); ?>">
+                  <?php echo $logo_tag; ?>
+                 </a>
               </div>
+              <?php endif; ?>
             </div>
             <div class="hdr-right">
               <div class="hdr-menu">
                 <nav class="main-nav">
-                  <ul class="clearfix reset-list">
-                    <li class="current-menu-item"><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li class="menu-item-has-children">
-                      <a href="#">Vehicle Recovery</a>
-                      <ul class="sub-menu" style="">
-                        <li><a href="#">Sub Menu</a></li>
-                        <li><a href="#">Sub Menu</a></li>
-                        <li><a href="#">Sub Menu</a></li>
-                        <li><a href="#">Sub Menu</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="#">Vehicle Transport</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
-                  </ul>
+                  <?php 
+                    $mmenuOptions = array( 
+                        'theme_location' => 'cbv_main_menu', 
+                        'menu_class' => 'clearfix reset-list',
+                        'container' => '',
+                        'container_class' => ''
+                      );
+                    wp_nav_menu( $mmenuOptions ); 
+                  ?>
                 </nav>
               </div>
               <div class="xs-hamburger">
