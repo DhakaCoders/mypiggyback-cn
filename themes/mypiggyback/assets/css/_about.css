@@ -351,6 +351,8 @@
 	.mbp-about-num-lft-bg {
 	    max-width: 100%;
 	    width: 100%;
+	    left: initial;
+	    right: 0;
 	}
 	.mbp-about-num-lft-bg-color {
 	    width: 100%;
@@ -428,7 +430,7 @@
 	.mbp-about-des p{
 		font-size: 16px;
 	}
-	.xs-about-des{
+	.mpb-about-des-sec{
 		overflow: hidden;
 	}
 	.text-img img{
@@ -438,6 +440,9 @@
 	    margin-left: 25px;
 	    margin-top: 20px;
 	    margin-bottom: 20px;
+	}
+	.mbp-about-num-lft-bg img{
+		width: 100%;
 	}
 }
 
