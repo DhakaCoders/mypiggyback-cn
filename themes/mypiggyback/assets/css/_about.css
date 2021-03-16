@@ -431,11 +431,13 @@
 	.xs-about-des{
 		overflow: hidden;
 	}
-	.text-img{
-		float: left;
-	}
 	.text-img img{
 		float: right;
+	    max-width: 200px;
+	    margin-right: -120px;
+	    margin-left: 25px;
+	    margin-top: 20px;
+	    margin-bottom: 20px;
 	}
 }
 
