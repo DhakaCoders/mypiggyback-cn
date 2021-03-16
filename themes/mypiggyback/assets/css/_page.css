@@ -49,6 +49,7 @@
  Page Banner
 ---------------
 */
+
 .page-banner-sec-wrp{
 	background:url(../images/page-banner-sec-bg.png);
 	background-repeat: no-repeat;
@@ -56,16 +57,22 @@
 	background-position: center center;
 	padding: 30px 0;
 }
+.page-banner-wrp{
+	display: flex;
+	align-items: center;
+}
 .page-banner-dsc{
 	float: left;
 }
 .breadcumbs {
     float: right;
-    padding-top: 12px;
+    margin-left: auto;
+    padding-top: 0;
 }
 .page-banner-dsc .fl-h1{
 	color: #fff;
 	margin-bottom: 0;
+	margin-right: 20px;
 }
 
 .breadcumbs ul li{
