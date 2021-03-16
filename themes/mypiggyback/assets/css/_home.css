@@ -9,6 +9,10 @@
 	padding-left: 50px;
 	position: relative;
 }
+.left-icon-title > span > strong{
+	font-weight: normal;
+
+}
 .left-icon-title i{
 	position: absolute;
 	left: 3px;
@@ -324,17 +328,24 @@
 	.Vehicle-sec{
 		min-height: initial;
 	}
-	.Vehicle-tab-title{
+	.Vehicle-tab-title,
+	.Vehicle-title{
 		font-size: 30px!important;
 		padding-left: 35px!important;
 	}
-	.Vehicle-tab-title i{
+	.Vehicle-tab-title i,
+	.Vehicle-title i{
 		left: 0;
 		margin-top: -3px;
 	}
-	.Vehicle-tab-title i svg{
+	.Vehicle-tab-title i svg,
+	.Vehicle-title i svg{
 		max-width: 25px;
 	}
+	.Vehicle-title i{
+		margin-top: 0;
+	}
+	
 	.vcl-tabs{
 		margin: 0 -4px;
 	}
@@ -422,7 +433,10 @@
 		margin: 0 auto;
 	}
 
+	.left-icon-title > span > strong{
+		display: none;
 
+	}
 
 }
 @media(max-width: 639px){

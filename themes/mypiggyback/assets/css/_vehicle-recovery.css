@@ -130,3 +130,48 @@
 	background: #f2101c!important;
 	color: #fff!important;
 }
+
+/*responsive*/
+@media(max-width: 991px){
+	.order-pgbk-home .vcl-right-wrap{
+		padding-left: 20px;
+	}
+	.vr-piggyback-sec{
+		padding-bottom: 80px;
+	}
+}
+@media(max-width: 767px){
+	.vr-piggyback-sec{
+		padding-top: 43px;
+		padding-bottom: 50px;
+	}
+	.vr-Vehicle-sec .Vehicle-desc-cntlr{
+		padding-bottom: 135px;
+		margin-bottom: 0;
+	}
+	.vr-Vehicle-sec .Vehicle-desc-cntlr:before{
+		content: "";
+		position: absolute;
+		bottom: -160px;
+		right: -20px;
+		left: -20px;
+		background: #f2101c;
+		height: 160px;
+		z-index: 1;
+	}
+	.ordr-pgbk-hm-rt-img{
+		position: relative;
+		z-index: 3;
+	}
+	.ordr-pgbk-hm-rt-img{
+		margin-top: -90px;
+	}
+}
+@media(max-width: 575px){
+
+}
+@media(max-width: 479px){
+
+}
+
+
