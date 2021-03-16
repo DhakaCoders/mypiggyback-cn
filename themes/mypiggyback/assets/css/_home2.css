@@ -150,6 +150,7 @@ ol li::before {
 		padding-bottom: 100px;
 		padding-top: 100px;
 	}
+	
 }
 
 @media(max-width: 575px){
