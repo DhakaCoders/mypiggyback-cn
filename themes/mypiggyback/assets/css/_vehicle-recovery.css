@@ -166,6 +166,16 @@
 	.ordr-pgbk-hm-rt-img{
 		margin-top: -90px;
 	}
+	.vr-Vehicle-sec .Vehicle-desc-cntlr:after{
+		bottom: initial;
+		left: 16px;
+		top: -15px;
+		margin-left: 0;
+		-ms-transform: rotate(-90deg);
+		-o-transform: rotate(-90deg);
+		-webkit-transform: rotate(-90deg);
+		transform: rotate(-90deg);
+	}
 }
 @media(max-width: 575px){
 
