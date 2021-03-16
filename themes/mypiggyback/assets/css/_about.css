@@ -444,6 +444,12 @@
 	.mbp-about-num-lft-bg img{
 		width: 100%;
 	}
+	.xs-about-des p{
+		margin-bottom: 50px;
+	}
+	.xs-about-des{
+		margin-bottom: 60px;
+	}
 }
 
 @media(max-width: 575px){
@@ -461,6 +467,9 @@
 	}
 	.mbp-about-des p{
 		font-size: 14px;
+	}
+	.fl-red-btn.mbp-loca-btn {
+	    width: 200px!important;
 	}
 
 }
@@ -490,14 +499,29 @@
 	    font-size: 11px;
 	}
 	.mbp-about-num-grd-item {
-	    padding: 35px 20px;
+	    padding: 20px 20px;
 	}
 	.mbp-about-num-sec-inr{
 		padding-top: 60px;
+	}
+	.mbp-about-num-sec .mbp-about-entry-title{
+		display: inline-block;
+		vertical-align: baseline;
+		padding-left: 0;
+	}
+	.mbp-about-num-sec .mbp-about-entry-title span{
+		display: inline-block;
+		vertical-align: baseline;
+		padding-left: 30px;
 	}
 
 }
 
 @media(max-width: 359px){
-
+	.mbp-abot-btn-blue{
+		margin-left: 3px;
+	}
+	.mbp-abot-btn-red{
+		margin-right: 3px;
+	}
 }
