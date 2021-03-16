@@ -35,7 +35,6 @@
 }
 .testimonials-bg{
 	position: absolute;
-	top: 0;
 	right: 0;
 	bottom: 0;
 }
@@ -175,6 +174,13 @@
 		-o-transform: rotate(-90deg);
 		-webkit-transform: rotate(-90deg);
 		transform: rotate(-90deg);
+	}
+	.order-pgbk-home .vcl-right-wrap{
+		padding-left: 0;
+	}
+	.vr-Vehicle-sec .Vehicle-sec{
+		background: #f9f9f9;
+		padding-bottom: 45px;
 	}
 }
 @media(max-width: 575px){
