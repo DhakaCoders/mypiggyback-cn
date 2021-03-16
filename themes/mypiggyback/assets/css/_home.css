@@ -448,6 +448,17 @@
 		display: none;
 
 	}
+	/*swipper slide code*/
+	.vcl-tabs-slider-wrap .VclTabSlider .swiper-slide{
+		width: 130px!important;
+	}
+	.vcl-tabs-slider-wrap .VclTabSlider .vcl-tab-link{
+		width: 100%;
+	}
+	.vcl-tabs-slider-wrap{
+		width: 290px;
+		margin: 0 auto;
+	}
 
 }
 @media(max-width: 639px){

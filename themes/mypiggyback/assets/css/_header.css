@@ -537,6 +537,13 @@ nav.main-nav > ul > li.menu-item-has-children ul.sub-menu li:hover a{
 	.top-bar-left p{
 		font-size: 12px;
 	}
+	.hdr-order-icon{
+		width: 24px;
+		right: -6px;
+	}
+	.xs-hamburger{
+		padding-right: 34px;
+	}
 }
 @media(max-width: 479px){
 
