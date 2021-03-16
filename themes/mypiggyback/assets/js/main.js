@@ -306,6 +306,26 @@ if (windowWidth <= 767) {
   });
 }
 
+var swiper = new Swiper('.swiper-container', {
+ pagination: {
+  el: '.swiper-pagination',
+  clickable: true,
+  renderBullet: function (index, className) {
+    return '<span class="' + className + '">' + (index + 1) + '</span>';
+  },
+},
+  slidesPerView: 2,
+  loop: true,
+  navigation: {
+    nextEl: '.',
+    prevEl: '.',
+  },
+  breakpoints: {
+   639: {
+    slidesPerView: 2,
+  }
+}
+});
 
 /*Start of Milon*/
 
