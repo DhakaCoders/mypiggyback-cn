@@ -233,22 +233,8 @@ if (windowWidth <= 767) {
       autoplay: false,
       autoplaySpeed: 4000,
       speed: 700,
-      slidesToShow: 2,
+      slidesToShow: 1,
       slidesToScroll: 1,
-      responsive: [
-        {
-          breakpoint: 576,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            infinite: true,
-            dots: true
-          }
-        }
-        // You can unslick at a given breakpoint now by adding:
-        // settings: "unslick"
-        // instead of a settings object
-      ]
     });
   }
 }
@@ -283,36 +269,42 @@ if( $('.testimonialSlider').length ){
   });
 }
 
-if( $('.Vehicle-left-bg').length ){
-  var conWidth = $('.container').width();
+if (windowWidth >= 767){
+  if( $('.Vehicle-left-bg').length ){
+    var conWidth = $('.container').width();
 
-  var OutConLft = (windowWidth - conWidth)/2;
-  var VclRtWidth = $('.vcl-right-wrap').outerWidth();
-  var VclLefBgOuter = OutConLft + VclRtWidth;
-  var VclLefBg = windowWidth - VclLefBgOuter;
-  $('.Vehicle-left-bg').css("width",VclLefBg);
+    var OutConLft = (windowWidth - conWidth)/2;
+    var VclRtWidth = $('.vcl-right-wrap').outerWidth();
+    var VclLefBgOuter = OutConLft + VclRtWidth;
+    var VclLefBg = windowWidth - VclLefBgOuter;
+    $('.Vehicle-left-bg').css("width",VclLefBg);
+  }
 }
 
-  if (windowWidth <= 767) {
-    $('.xs-hamburger').on('click', function(e){
-      $('.hdr-menu').slideToggle(500);
-      $(this).toggleClass('cross-icon');
-    });
-/*    $('.close-icon-cntlr').on('click', function(e){
-      $('.bdoverlay').removeClass('active');
-      $('.xs-mbl-menu-cntlr').removeClass('opacity-1');
-      $('body').removeClass('active-scroll-off');
-      $(this).parent().removeClass('hmbrgr-close-hide-show');
-    });*/
-    
-    $('li.menu-item-has-children > a').on('click', function(e){
-      e.preventDefault();
-    $(this).toggleClass('sub-menu-active');
+$(window).resize(function() { 
+  var window2Width = $(window).width();
+  var conWidth = $('.container').width();
+
+  var OutConLft = (window2Width - conWidth)/2;
+  var VclRtWidth = $('.vcl-right-wrap').outerWidth();
+  var VclLefBgOuter = OutConLft + VclRtWidth;
+  var VclLefBg = window2Width - VclLefBgOuter;
+  $('.Vehicle-left-bg').css("width",VclLefBg);
+});
+
+if (windowWidth <= 767) {
+  $('.xs-hamburger').on('click', function(e){
+    $('.hdr-menu').slideToggle(500);
+    $(this).toggleClass('cross-icon');
+  });
+
+  $('li.menu-item-has-children > a').on('click', function(e){
+    e.preventDefault();
     $(this).parent().toggleClass('sub-menu-arrow');
     $(this).next().slideToggle(300);
 
   });
-  }
+}
 
 
 /*Start of Milon*/

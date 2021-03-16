@@ -161,6 +161,11 @@
 	h6,.fl-h6{
 		font-size: 18px;
 	}
+	.fl-trnsprnt-btn,
+	.fl-red-btn{
+		height: 45px!important;
+		width: 135px!important;
+	}
 
 }
 
