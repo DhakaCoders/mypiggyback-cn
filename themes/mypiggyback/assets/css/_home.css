@@ -92,6 +92,7 @@
 	right: 0;
 	bottom: -1px;
 	border-bottom: 2px dashed #de4d52;
+	z-index: 10;
 }
 .piggyback-item-hding:after{
 	position: absolute;
@@ -194,6 +195,9 @@
 .Vehicle-desc-title{
 	color: #fff;
 	margin-bottom: 55px;
+}
+.Vehicle-desc-title br{
+	display: none!important;
 }
 .Vehicle-desc > p{
 	font-size: 18px;
@@ -319,6 +323,10 @@
 	.piggyback-item-img-cntlr{
 		height: 210px;
 	}
+	.piggyback-item-img-cntlr img{
+		max-height: 185px;
+		width: auto;
+	}
 	.piggyback-item-desc{
 		padding: 22px 15px 18px 15px;
 	}
@@ -375,6 +383,9 @@
 	}
 	.piggyback-item-img-cntlr{
 		height: 195px;
+	}
+	.Vehicle-desc > p{
+		font-size: 16px;
 	}
 	
 	.piggyback-item-title{
@@ -454,6 +465,9 @@
 		padding-left: 34px;
 		line-height: 1.2!important;
 	}
+	.Vehicle-desc > p{
+		font-size: 14px;
+	}
 	.Vehicle-desc-title{
 		line-height: 1.7;
 		margin-bottom: 35px;
@@ -462,15 +476,24 @@
 		display: none;
 	}
 	.vcl-btn-cntlr{
-		margin-left: -6px;
+		margin-left: -10px;
 	}
 	.vcl-btn{
-		padding: 0 5px;
+		padding: 0 10px;
+		width: 50%;
+	}
+	.vcl-btn .fl-red-btn,
+	.vcl-btn .fl-trnsprnt-btn{
+		width: 100%!important;
 	}
 }
 @media(max-width: 479px){
-
+	.Vehicle-desc-title br{
+		display: block!important;
+	}
 }
 @media(max-width: 359px){
-
-}
+	.piggyback-sec{
+		overflow: hidden;
+	}
+}	
