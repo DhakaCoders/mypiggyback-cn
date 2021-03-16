@@ -425,6 +425,18 @@
 	.mbp-about-num-sec-inr{
 		padding-top: 90px;
 	}
+	.mbp-about-des p{
+		font-size: 16px;
+	}
+	.xs-about-des{
+		overflow: hidden;
+	}
+	.text-img{
+		float: left;
+	}
+	.text-img img{
+		float: right;
+	}
 }
 
 @media(max-width: 575px){
@@ -439,6 +451,9 @@
 	}
 	.mbp-about-num-sec-inr{
 		padding-top: 70px;
+	}
+	.mbp-about-des p{
+		font-size: 14px;
 	}
 
 }
