@@ -360,6 +360,13 @@
 	.ftr-menu-location a br{
 		display: none;
 	}
+	.ftr-logo-ctlr,
+	.ftr-menu{
+		max-width: 350px;
+	}
+	.ftr-menu-location{
+		max-width: 300px;
+	}
 	
 }
 
@@ -390,6 +397,10 @@
 	.ftr-btm-copywrite p{
 		font-size: 12px;
 		line-height: 1.2;
+	}
+	.ftr-btm-menu ul li:after{
+		width: 1px;
+    	height: 10px;
 	}
 
 }
