@@ -334,7 +334,6 @@ $('.VclTabSlider').slick({
     {
       breakpoint: 768,
       settings: {
-        arrows: false,
         centerMode: true,
         centerPadding: '70px',
         slidesToShow: 1
