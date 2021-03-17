@@ -260,6 +260,7 @@ if( $('.testimonialSlider').length ){
     autoplay: false,
     autoplaySpeed: 4000,
     speed: 700,
+      fade: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     customPaging: function (slider, i) {
@@ -316,10 +317,7 @@ var swiper = new Swiper('.swiper-container', {
 },
   slidesPerView: 2,
   loop: true,
-  navigation: {
-    nextEl: '.',
-    prevEl: '.',
-  },
+
   breakpoints: {
    639: {
     slidesPerView: 2,
