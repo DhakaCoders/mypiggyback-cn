@@ -329,15 +329,6 @@ if (windowWidth <= 767){
           centerPadding: '70px',
           slidesToShow: 1
         }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          arrows: false,
-          centerMode: true,
-          centerPadding: '40px',
-          slidesToShow: 1
-        }
       }
       ]
     });

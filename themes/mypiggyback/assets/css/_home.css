@@ -482,7 +482,7 @@
     	font-family: 'SegoeUIRegular';
     	font-size: 16px;
     	color: #000!important;
-
+    	margin-bottom: 8px!important;
 	}
 	.VclTabSlider.slick-slider .vcl-tab-link{
 		height: 100px;
@@ -517,7 +517,7 @@
 	}
 	.VclTabSlider button.slick-arrow.slick-prev{
 		left: 0px!important;
-		
+		background-repeat: no-repeat!important;
 		background: url('../images/hm-prev-icon.svg');
 	}
 	.VclTabSlider button.slick-arrow.slick-prev:before,
@@ -526,8 +526,17 @@
 	}
 	.VclTabSlider button.slick-arrow.slick-next{
 		right: 0px!important;
-		content: ""!important;
+		background-repeat: no-repeat!important;
 		background-image: url('../images/hm-next-icon.svg');
+	}
+	.VclTabSlider .vcl-tabs-slide-item-cntlr{
+		padding-top: 20px!important;
+	}
+	.VclTabSlider .vcl-tabs-slide-item-cntlr.slick-current.slick-active{
+		padding-top: 0!important;
+	}
+	.vcl-tabs{
+		display: none;
 	}
 
 }
