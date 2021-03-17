@@ -60,6 +60,7 @@
 .page-banner-wrp{
 	display: flex;
 	align-items: center;
+	flex-wrap: wrap;
 }
 .page-banner-dsc{
 	float: left;

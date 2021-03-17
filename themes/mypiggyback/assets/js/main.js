@@ -118,7 +118,7 @@ if( $('.responsive-slider').length ){
 }
 
 
-var swiper = new Swiper('.catagorySlider', {
+/*var swiper = new Swiper('.catagorySlider', {
     slidesPerView: 1,
     loop: true,
     navigation: {
@@ -145,7 +145,7 @@ var swiper = new Swiper('.catagorySlider', {
         spaceBetween: 0,
       },
     }
-  });
+  });*/
 
 if( $('#mapID').length ){
 var latitude = $('#mapID').data('latitude');
