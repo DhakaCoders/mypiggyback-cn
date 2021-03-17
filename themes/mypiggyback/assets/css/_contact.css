@@ -492,6 +492,14 @@ we-accept-sec-wrp
 		top: -1px;
 		transform: initial;
 	}
+	.breadcumbs{
+		margin-left: 0;
+		margin-top: 10px;
+		width: 100%;
+	}
+	.breadcumbs ul li:first-child{
+		padding-left: 0;
+	}
 }
 
 @media(max-width: 575px){	
@@ -539,6 +547,7 @@ we-accept-sec-wrp
 	.we-accept-title.left-icon-title.fl-h4{
 		font-size: 22px;
 	}
+
 }
 
 @media(max-width: 479px){
