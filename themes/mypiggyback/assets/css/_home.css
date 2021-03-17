@@ -448,16 +448,95 @@
 		display: none;
 
 	}
-	/*swipper slide code*/
-	.vcl-tabs-slider-wrap .VclTabSlider .swiper-slide{
-		width: 130px!important;
+
+	.vcl-tabs-slider-wrap{
+		max-width: 290px;
+		width: 100%;
+		margin: 0 auto;
 	}
-	.vcl-tabs-slider-wrap .VclTabSlider .vcl-tab-link{
+	.vcl-tabs-slide{
+		padding: 0 7px;
+	}
+	.VclTabSlider .vcl-tab-link{
 		width: 100%;
 	}
-	.vcl-tabs-slider-wrap{
-		width: 290px;
-		margin: 0 auto;
+	.VclTabSlider .vcl-tab-link svg{
+		width: 100%!important;
+		height: auto!important;
+	}
+	.VclTabSlider{
+		padding-bottom: 60px;
+	}
+	.VclTabSlider.slick-dotted.slick-slider{
+		margin-bottom: 0;
+	}
+	.VclTabSlider.slick-slider ul.slick-dots{
+		position: absolute!important;
+		bottom: 0!important;
+		padding: 0 40px!important;
+		height: 25px!important;
+	}
+	.VclTabSlider.slick-slider ul.slick-dots li{
+		width: 25px!important;
+		height: 25px!important;
+    	font-family: 'SegoeUIRegular';
+    	font-size: 16px;
+    	color: #000!important;
+    	margin-bottom: 8px!important;
+	}
+	.VclTabSlider.slick-slider .vcl-tab-link{
+		height: 100px;
+		margin-top: auto;
+
+	}
+	.VclTabSlider.slick-slider ul.slick-dots li.slick-active{
+		color: #fff!important;
+	}
+	.VclTabSlider .slick-current.slick-active .vcl-tab-link{
+		height: 120px;
+	}
+	.VclTabSlider .slick-current.slick-active .vcl-tab-link span{
+	    background: #d4141f;
+	}
+	.VclTabSlider .slick-current.slick-active .vcl-tab-link i svg{
+	    fill: #d4141f;
+	} 
+	.VclTabSlider .slick-current.slick-active .vcl-tab-link .tab-link{
+	    border-color: #d4141f;
+	}
+
+	.VclTabSlider button.slick-arrow{
+		bottom: 2px!important;
+		top: initial!important;
+		-webkit-transform: initial;
+		-ms-transform: initial;
+    	transform: initial;
+    	width: 33px!important;
+    	height: 18px!important;
+    	z-index: 20;
+	}
+	.VclTabSlider button.slick-arrow.slick-prev{
+		left: 0px!important;
+		background-repeat: no-repeat!important;
+		background: url('../images/hm-prev-icon.svg');
+	}
+	.VclTabSlider button.slick-arrow.slick-prev:before,
+	.VclTabSlider button.slick-arrow.slick-next:before{
+		content: none!important;
+	}
+	.VclTabSlider button.slick-arrow.slick-next{
+		right: 0px!important;
+		background-repeat: no-repeat!important;
+		background-image: url('../images/hm-next-icon.svg');
+	}
+	.VclTabSlider .vcl-tabs-slide-item-cntlr{
+		padding-top: 20px!important;
+	}
+	.VclTabSlider .vcl-tabs-slide-item-cntlr.slick-current.slick-active{
+		padding-top: 0!important;
+	}
+	.vcl-tabs{
+		display: none;
 	}
 
 }

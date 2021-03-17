@@ -422,17 +422,17 @@
 		font-size: 11px;
 	}
 	.loc-distance-miles div strong{
-		font-size: 15px;
+		font-size: 14px;
 	}
 	.loc-distance-miles div span{
-		font-size: 13px;
+		font-size: 11px;
 	}
 	.loc-distance-miles {
-	    width: 55px;
-	    height: 55px;
+	    width: 47px;
+	    height: 47px;
 	}
 	.loc-searching-form-cntlr form{
-		margin-right: 70px;
+		margin-right: 62px;
 	}
 	.loc-searching-form-cntlr {
 	    max-width: 280px;
@@ -445,13 +445,14 @@
 		height: 64px;
 	}
 	.loc-searching-form-cntlr .input-field-row input{
-		padding-left: 40px;
+		padding-left: 43px;
 	}
 	.destination-switcher-button{
-		left: 32px;
+		left: 31px;
 	}
-	.destination-switcher-button i{
-		
+	.destination-switcher-button i svg{
+		width: 6px!important;
+		height: auto!important;
 	}
 	.bnr-booking-form-tabs .tab-link {
 	    font-size: 13.5px;

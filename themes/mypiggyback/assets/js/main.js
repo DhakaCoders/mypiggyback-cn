@@ -118,7 +118,7 @@ if( $('.responsive-slider').length ){
 }
 
 
-var swiper = new Swiper('.catagorySlider', {
+/*var swiper = new Swiper('.catagorySlider', {
     slidesPerView: 1,
     loop: true,
     navigation: {
@@ -145,7 +145,7 @@ var swiper = new Swiper('.catagorySlider', {
         spaceBetween: 0,
       },
     }
-  });
+  });*/
 
 if( $('#mapID').length ){
 var latitude = $('#mapID').data('latitude');
@@ -260,6 +260,7 @@ if( $('.testimonialSlider').length ){
     autoplay: false,
     autoplaySpeed: 4000,
     speed: 700,
+      fade: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     customPaging: function (slider, i) {
@@ -306,26 +307,58 @@ if (windowWidth <= 767) {
   });
 }
 
-var swiper = new Swiper('.swiper-container', {
- pagination: {
-  el: '.swiper-pagination',
-  clickable: true,
-  renderBullet: function (index, className) {
-    return '<span class="' + className + '">' + (index + 1) + '</span>';
-  },
-},
-  slidesPerView: 2,
-  loop: true,
-  navigation: {
-    nextEl: '.',
-    prevEl: '.',
-  },
-  breakpoints: {
-   639: {
-    slidesPerView: 2,
+if (windowWidth <= 767){
+  if( $('.VclTabSlider').length ){
+    $('.VclTabSlider').slick({
+      centerMode: true,
+      dots: true,
+      speed: 700,
+      autoplaySpeed: 4000,
+      autoplay: false,
+      centerPadding: '70px',
+      slidesToShow: 1,
+      customPaging: function (slider, i) {
+        console.log(slider);
+        return  (i + 1);
+      },
+      responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          centerMode: true,
+          centerPadding: '70px',
+          slidesToShow: 1
+        }
+      }
+      ]
+    });
   }
 }
-});
+
+
+/*
+if( $('.VclTabSlider').length ){
+  $('.VclTabSlider').slick({
+    centerMode: true,
+    centerPadding: '60px',
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    dots: true,
+    speed: 700,
+    fade: true,
+    autoplaySpeed: 4000,
+    autoplay: false,
+    centerMode: true,
+   
+    
+      
+    customPaging: function (slider, i) {
+      console.log(slider);
+      return  (i + 1);
+    }
+  });
+}
+*/
 
 /*Start of Milon*/
 
