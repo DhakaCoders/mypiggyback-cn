@@ -307,7 +307,7 @@ if (windowWidth <= 767) {
   });
 }
 
-var swiper = new Swiper('.swiper-container', {
+/*var swiper = new Swiper('.swiper-container', {
  pagination: {
   el: '.swiper-pagination',
   clickable: true,
@@ -323,7 +323,57 @@ var swiper = new Swiper('.swiper-container', {
     slidesPerView: 2,
   }
 }
+});*/
+
+
+$('.VclTabSlider').slick({
+  centerMode: true,
+  centerPadding: '60px',
+  slidesToShow: 1,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '70px',
+        slidesToShow: 1
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 1
+      }
+    }
+  ]
 });
+/*
+if( $('.VclTabSlider').length ){
+  $('.VclTabSlider').slick({
+    centerMode: true,
+    centerPadding: '60px',
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    dots: true,
+    speed: 700,
+    fade: true,
+    autoplaySpeed: 4000,
+    autoplay: false,
+    centerMode: true,
+   
+    
+      
+    customPaging: function (slider, i) {
+      console.log(slider);
+      return  (i + 1);
+    }
+  });
+}
+*/
 
 /*Start of Milon*/
 

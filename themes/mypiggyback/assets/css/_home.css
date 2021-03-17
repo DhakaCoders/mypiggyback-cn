@@ -449,15 +449,26 @@
 
 	}
 	/*swipper slide code*/
-	.vcl-tabs-slider-wrap .VclTabSlider .swiper-slide{
+	/*.vcl-tabs-slider-wrap .VclTabSlider .swiper-slide{
 		width: 130px!important;
+	}*/
+	/*.vcl-tabs-slider-wrap .VclTabSlider .vcl-tab-link{
+		width: 100%;
+	}*/
+	.vcl-tabs-slider-wrap{
+		max-width: 290px;
+		width: 100%;
+		margin: 0 auto;
 	}
-	.vcl-tabs-slider-wrap .VclTabSlider .vcl-tab-link{
+	.vcl-tabs-slide{
+		padding: 0 7px;
+	}
+	.VclTabSlider .vcl-tab-link{
 		width: 100%;
 	}
-	.vcl-tabs-slider-wrap{
-		width: 290px;
-		margin: 0 auto;
+	.VclTabSlider .vcl-tab-link svg{
+		width: 100%!important;
+		height: auto!important;
 	}
 
 }
