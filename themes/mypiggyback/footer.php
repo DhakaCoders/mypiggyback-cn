@@ -92,7 +92,7 @@
               <h4 class="ftr-menu-title fl-h4"><?php _e( 'Site Links', THEME_NAME ); ?>...</h4>
               <?php 
                 wp_nav_menu( array(
-                'menu_class'     => 'reset-list clearfix',
+                'menu_class'     => 'clearfix',
                 'theme_location' => 'cbv_footer_menu',
                 'container' => false,
                 ) );
