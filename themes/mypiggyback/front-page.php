@@ -132,99 +132,74 @@
     </div>
   </div>
 </section>
-
+<?php 
+$showhidestep = get_field('showhidebooking', HOMEID);
+if( $showhidestep ):
+$booksystem = get_field('bookingsystem', HOMEID);
+$steps = $booksystem['booking_steps'];
+?>
 <section class="piggyback-sec">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
         <div class="piggyback-cntlr">
+          <?php if( !empty($booksystem['title']) ): ?>
           <h2 class="piggyback-title left-icon-title fl-h2">
-            <span>book A Piggyback...</span>
+            <?php printf('<span>%s</span>', $booksystem['title']); ?>
             <i><svg class="title-location-icon" width="30" height="44.234" viewBox="0 0 30 44.234" fill="#ec131b">
               <use xlink:href="#title-location-icon"></use> </svg></i>
           </h2>
+          <?php endif; ?>
+          <?php if( $steps ): ?>
           <div class="piggyback-slider piggybackSlider">
-
+            <?php 
+            $i = 1;
+            foreach( $steps as $step ): 
+            ?>
             <div class="piggyback-slide-item-cntlr">
               <div class="piggyback-slide-item">
-                <div class="piggyback-item piggyback-active-item">
+                <div class="piggyback-item<?php echo ( $i == 1 )?' piggyback-active-item':'';?>">
                   <div class="piggyback-item-bdr">
                     <div class="piggyback-item-img-cntlr">
-                      <img src="<?php echo THEME_URI; ?>/assets/images/piggyback-item-img-002.jpg" alt="">
-                      <!-- <div class="piggyback-item-img inline-bg" style="background-image: url('assets/images/piggyback-item-img-002.jpg');"></div> -->
+                      <?php if( !empty($step['icon']) ) echo cbv_get_image_tag($step['icon']); ?>
                     </div>
                     <div class="piggyback-item-desc mHc">
-                      <p>Use your phones location to book<br> 
-                      a service for your broken vehicle</p>
+                      <?php if( !empty($step['description']) ) echo wpautop($step['description']); ?>
                     </div>
                   </div>
                   <div class="piggyback-item-hding">
-                    <h3 class="piggyback-item-title fl-h3">1. book</h3>
+                    <?php printf('<h3 class="piggyback-item-title fl-h3">%d.%s</h3>', $i, $step['title']); ?>
                     <span></span>
                   </div>
                 </div>
               </div>
             </div>
-
-            <div class="piggyback-slide-item-cntlr">
-              <div class="piggyback-slide-item">
-                <div class="piggyback-item">
-                  <div class="piggyback-item-bdr">
-                    <div class="piggyback-item-img-cntlr">
-                      <img src="<?php echo THEME_URI; ?>/assets/images/piggyback-item-img-001.jpg" alt="">
-                      <!-- <div class="piggyback-item-img inline-bg" style="background-image: url('assets/images/piggyback-item-img-002.jpg');"></div> -->
-                    </div>
-                    <div class="piggyback-item-desc mHc">
-                      <p>Your super piggy back driver is on<br> 
-                     his way! they will contact you soon.</p>
-
-                    </div>
-                  </div>
-                  <div class="piggyback-item-hding">
-                    <h3 class="piggyback-item-title fl-h3">2. wait</h3>
-                    <span></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="piggyback-slide-item-cntlr">
-              <div class="piggyback-slide-item">
-                <div class="piggyback-item">
-                  <div class="piggyback-item-bdr">
-                    <div class="piggyback-item-img-cntlr">
-                      <img src="<?php echo THEME_URI; ?>/assets/images/piggyback-item-img-003.jpg" alt="">
-                      <!-- <div class="piggyback-item-img inline-bg" style="background-image: url('<?php echo THEME_URI; ?>/assets/images/piggyback-item-img-002.jpg');"></div> -->
-                    </div>
-                    <div class="piggyback-item-desc mHc">
-                      <p>Once your piggy back supper hero<br> 
-                      arrives they will provde your service.</p>
-                    </div>
-                  </div>
-                  <div class="piggyback-item-hding">
-                    <h3 class="piggyback-item-title fl-h3">3. celebrate!</h3>
-                    <span></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+            <?php $i++; endforeach; ?>
           </div>
+          <?php endif; ?>
         </div>
       </div>
     </div>
   </div>
 </section>
-
+<?php endif; ?>
+<?php 
+$showhide_services = get_field('showhide_services', HOMEID);
+if( $showhide_services ):
+$services = get_field('servicessec', HOMEID);
+$serv_steps = $services['service'];
+?>
 <section class="Vehicle-sec-wrap">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
+        <?php if( !empty($services['title']) ): ?>
         <h2 class="Vehicle-sec-title fl-h2 left-icon-title show-sm">
-          <span>Our Services...</span>
+          <?php printf('<span>%s</span>', $services['title']); ?>
           <i><svg class="title-location-icon" width="30" height="44.234" viewBox="0 0 30 44.234" fill="#ec131b">
-                    <use xlink:href="#title-location-icon"></use> </svg></i>
+          <use xlink:href="#title-location-icon"></use> </svg></i>
         </h2>
+        <?php endif; ?>
       </div>
     </div>
   </div>
@@ -232,185 +207,122 @@
     <div class="Vehicle-left-bg inline-bg hide-sm" style="background: url('<?php echo THEME_URI; ?>/assets/images/Vehicle-left-bg-img.jpg');">
 
     </div>
+    <?php if( $serv_steps ): ?>
     <div class="Vehicle-sec">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
             <div class="Vehicle-cntlr">
               <div class="Vehicle-desc-cntlr">
-
                 <div class="xs-Vehicle-left-bg inline-bg show-sm"style="background: url('<?php echo THEME_URI; ?>/assets/images/Vehicle-left-bg-img.jpg');"></div>
-                <div id="vcl-tab-1" class="Vehicle-desc fl-tab-content vcl-tab-content current">
-                  <h2 class="Vehicle-desc-title fl-h2">Vehicle Tow <br>& Recovery</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales sagittis lorem sed mattis. Nunc rutrum mattis pulvinar. In sem velit, faucibus non mauris sed, mattis auctor purus. Etiam egestas nisl eget dapibus suscipit. Nam rutrum nisl sapien, id hendrerit nulla ullamcorper a ipsum nisl.</p>
+                <?php 
+                  $i = 1;
+                  foreach( $serv_steps as $serv_step ): 
+                ?>
+                <div id="vcl-tab-<?php echo $i; ?>" class="Vehicle-desc fl-tab-content vcl-tab-content<?php echo ($i == 1)?' current':'';?>">
+                  <?php 
+                    if( !empty($serv_step['title']) ) printf('<h2 class="Vehicle-desc-title fl-h2">%s</h2>', $serv_step['title']); 
+                    if( !empty($serv_step['description']) ) echo wpautop( $serv_step['description'] );
+                  ?>
                   <div class="vcl-btn-cntlr">
-                    <div class="vcl-btn vcl-fst-btn">
-                      <a class="fl-red-btn" href="#">BOOK NOW</a>
-                    </div>
-                    <div class="vcl-btn vcl-scnd-btn">
-                      <a class="fl-trnsprnt-btn" href="#">FIND OUT MORE</a>
-                    </div>
+                  <?php 
+                    $link1 = $serv_step['link_1'];
+                    $link2 = $serv_step['link_2'];
+                    if( is_array( $link1 ) &&  !empty( $link1['url'] ) ){
+                      printf('<div class="vcl-btn vcl-scnd-btn"><a class="fl-red-btn" href="%s" target="%s">%s</a></div>', $link1['url'], $link1['target'], $link1['title']); 
+                    }
+                    if( is_array( $link2 ) &&  !empty( $link2['url'] ) ){
+                      printf('<div class="vcl-btn vcl-scnd-btn"><a class="fl-trnsprnt-btn" href="%s" target="%s">%s</a></div>', $link2['url'], $link2['target'], $link2['title']); 
+                    }
+                  ?>
                   </div>
                 </div>
-
-                <div id="vcl-tab-2" class="Vehicle-desc vcl-tab-content">
-                  <h2 class="Vehicle-desc-title fl-h2">Vehicle Tow & Recovery 2</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales sagittis lorem sed mattis. Nunc rutrum mattis pulvinar. In sem velit, faucibus non mauris sed, mattis auctor purus. Etiam egestas nisl eget dapibus suscipit. Nam rutrum nisl sapien, id hendrerit nulla ullamcorper a ipsum nisl.</p>
-                  <div class="vcl-btn-cntlr">
-                    <div class="vcl-btn vcl-fst-btn">
-                      <a class="fl-red-btn" href="#">BOOK NOW</a>
-                    </div>
-                    <div class="vcl-btn vcl-scnd-btn">
-                      <a class="fl-trnsprnt-btn" href="#">FIND OUT <span>MORE</span></a>
-                    </div>
-                  </div>
-                </div>
-
-                <div id="vcl-tab-3" class="Vehicle-desc vcl-tab-content">
-                  <h2 class="Vehicle-desc-title fl-h2">Vehicle Tow & Recovery 3</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales sagittis lorem sed mattis. Nunc rutrum mattis pulvinar. In sem velit, faucibus non mauris sed, mattis auctor purus. Etiam egestas nisl eget dapibus suscipit. Nam rutrum nisl sapien, id hendrerit nulla ullamcorper a ipsum nisl.</p>
-                  <div class="vcl-btn-cntlr">
-                    <div class="vcl-btn vcl-fst-btn">
-                      <a class="fl-red-btn" href="#">BOOK NOW</a>
-                    </div>
-                    <div class="vcl-btn vcl-scnd-btn">
-                      <a class="fl-trnsprnt-btn" href="#">FIND OUT <span>MORE</span></a>
-                    </div>
-                  </div>
-                </div>
-
-                <div id="vcl-tab-4" class="Vehicle-desc vcl-tab-content">
-                  <h2 class="Vehicle-desc-title fl-h2">Vehicle Tow & Recovery 4</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales sagittis lorem sed mattis. Nunc rutrum mattis pulvinar. In sem velit, faucibus non mauris sed, mattis auctor purus. Etiam egestas nisl eget dapibus suscipit. Nam rutrum nisl sapien, id hendrerit nulla ullamcorper a ipsum nisl.</p>
-                  <div class="vcl-btn-cntlr">
-                    <div class="vcl-btn vcl-fst-btn">
-                      <a class="fl-red-btn" href="#">BOOK NOW</a>
-                    </div>
-                    <div class="vcl-btn vcl-scnd-btn">
-                      <a class="fl-trnsprnt-btn" href="#">FIND OUT <span>MORE</span></a>
-                    </div>
-                  </div>
-                </div>
-
-                <div id="vcl-tab-5" class="Vehicle-desc vcl-tab-content">
-                  <h2 class="Vehicle-desc-title fl-h2">Vehicle Tow & Recovery 5</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales sagittis lorem sed mattis. Nunc rutrum mattis pulvinar. In sem velit, faucibus non mauris sed, mattis auctor purus. Etiam egestas nisl eget dapibus suscipit. Nam rutrum nisl sapien, id hendrerit nulla ullamcorper a ipsum nisl.</p>
-                  <div class="vcl-btn-cntlr">
-                    <div class="vcl-btn vcl-fst-btn">
-                      <a class="fl-red-btn" href="#">BOOK NOW</a>
-                    </div>
-                    <div class="vcl-btn vcl-scnd-btn">
-                      <a class="fl-trnsprnt-btn" href="#">FIND OUT <span>MORE</span></a>
-                    </div>
-                  </div>
-                </div>
-
-                <div id="vcl-tab-6" class="Vehicle-desc vcl-tab-content">
-                  <h2 class="Vehicle-desc-title fl-h2">Vehicle Tow & Recovery 6</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales sagittis lorem sed mattis. Nunc rutrum mattis pulvinar. In sem velit, faucibus non mauris sed, mattis auctor purus. Etiam egestas nisl eget dapibus suscipit. Nam rutrum nisl sapien, id hendrerit nulla ullamcorper a ipsum nisl.</p>
-                  <div class="vcl-btn-cntlr">
-                    <div class="vcl-btn vcl-fst-btn">
-                      <a class="fl-red-btn" href="#">BOOK NOW</a>
-                    </div>
-                    <div class="vcl-btn vcl-scnd-btn">
-                      <a class="fl-trnsprnt-btn" href="#">FIND OUT <span>MORE</span></a>
-                    </div>
-                  </div>
-                </div>
-                
-
+                <?php $i++; endforeach; ?>
               </div>
 
               <div class="vcl-right-wrap">
-                <h2 class="Vehicle-tab-title left-icon-title fl-h2 hide-sm"><span>Our Services...</span>
+                <?php if( !empty($services['title']) ): ?>
+                <h2 class="Vehicle-tab-title left-icon-title fl-h2 hide-sm">
+                  <?php printf('<span>%s</span>', $services['title']); ?>
                   <i><svg class="title-location-icon" width="30" height="44.234" viewBox="0 0 30 44.234" fill="#ec131b">
                     <use xlink:href="#title-location-icon"></use> </svg></i>
                   </h2>
-
+                <?php endif; ?>
                   <div class="vcl-tabs clearfix">
-                    <div class="vcl-tab-link current">
-                      <span>1</span>
-                      <button class="tab-link" data-tab="vcl-tab-1">
-                        <i><svg class="vcl-tab-icon-01" width="100" height="69.986" viewBox="0 0 100 69.986" fill="#141414">
-                          <use xlink:href="#vcl-tab-icon-01"></use> </svg>
+                    <?php 
+                      $i = 1;
+                      foreach( $serv_steps as $serv_step ): 
+                    ?>
+                    <div class="vcl-tab-link<?php echo ($i == 1)?' current':'';?>">
+                      <span><?php echo $i; ?></span>
+                      <button class="tab-link" data-tab="vcl-tab-<?php echo $i; ?>">
+                        <i><svg class="vcl-tab-icon-0<?php echo $i; ?>" width="100" height="69.986" viewBox="0 0 100 69.986" fill="#141414">
+                          <use xlink:href="#vcl-tab-icon-0<?php echo $i; ?>"></use> </svg>
                         </i>
                       </button>
                     </div>
-                    <div class="vcl-tab-link">
-                      <span>2</span>
-                      <button class="tab-link" data-tab="vcl-tab-2">
-                        <i><svg class="vcl-tab-icon-02" width="78.648" height="80" viewBox="0 0 78.648 80" fill="#141414">
-                          <use xlink:href="#vcl-tab-icon-02"></use> </svg>
-                        </i>
-                      </button>
-                    </div>
-                    <div class="vcl-tab-link">
-                      <span>3</span>
-                      <button class="tab-link" data-tab="vcl-tab-3">
-                        <i><svg class="vcl-tab-icon-03" width="95.048" height="70" viewBox="0 0 95.048 70" fill="#141414">
-                          <use xlink:href="#vcl-tab-icon-03"></use> </svg>
-                        </i>
-                      </button>
-                    </div>
-                    <div class="vcl-tab-link">
-                      <span>4</span>
-                      <button class="tab-link" data-tab="vcl-tab-4">
-                        <i><svg class="vcl-tab-icon-04" width="88" height="65.312" viewBox="0 0 88 65.312" fill="#141414">
-                          <use xlink:href="#vcl-tab-icon-04"></use> </svg>
-                        </i>
-                      </button>
-                    </div>
-                    <div class="vcl-tab-link">
-                      <span>5</span>
-                      <button class="tab-link" data-tab="vcl-tab-5">
-                        <i><svg class="vcl-tab-icon-05" width="80.001" height="74.689" viewBox="0 0 80.001 74.689" fill="#141414">
-                          <use xlink:href="#vcl-tab-icon-05"></use> </svg>
-                        </i>
-                      </button>
-                    </div>
-                    <div class="vcl-tab-link">
-                      <span>6</span>
-                      <button class="tab-link" data-tab="vcl-tab-6">
-                        <i><svg class="vcl-tab-icon-06" width="71.368" height="75" viewBox="0 0 71.368 75" fill="#141414">
-                          <use xlink:href="#vcl-tab-icon-06"></use> </svg>
-                        </i>
-                      </button>
+                    <?php $i++; endforeach; ?>
+                  </div>
+
+                  <div class="vcl-tabs-slider-wrap show-sm">
+                    <div class="vcl-tabs-slider VclTabSlider">
+                    <?php 
+                      $i = 1;
+                      foreach( $serv_steps as $serv_step ): 
+                    ?>
+                        <div class="vcl-tabs-slide-item-cntlr">
+                          <div class="vcl-tabs-slide-item">
+                            <div class="vcl-tabs-slide">
+                              <div class="vcl-tab-link">
+                                <span><?php echo $i; ?></span>
+                                <button class="tab-link" data-tab="vcl-tab-<?php echo $i; ?>">
+                                  <i><svg class="vcl-tab-icon-0<?php echo $i; ?>" width="100" height="69.986" viewBox="0 0 100 69.986" fill="#141414">
+                                    <use xlink:href="#vcl-tab-icon-0<?php echo $i; ?>"></use> </svg>
+                                  </i>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <?php $i++; endforeach; ?>
                     </div>
                   </div>
+
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+    <?php endif; ?>
   </div>
 </section>
-
-<section class="mpb-about-sec inline-bg" style="background: url('<?php echo THEME_URI; ?>/assets/images/mpb-about-sec-bg.png');">
+<?php endif; ?>
+<?php 
+$showhide_about = get_field('showhide_about', HOMEID);
+if( $showhide_about ):
+$about = get_field('aboutsec', HOMEID);
+?>
+<section class="mpb-about-sec inline-bg" style="background: url('<?php echo !empty($about['icon'])? cbv_get_image_src($about['icon']):''; ?>');">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
         <div class="mpb-about-sec-inr clearfix">
           <div class="mpb-about-lft">
             <div class="mpb-about-img">
-              <img src="<?php echo THEME_URI; ?>/assets/images/mpb-about-img-01.jpg">
+              <?php if( !empty($about['image']) ) echo cbv_get_image_tag($about['image']); ?>
             </div>
           </div>
           <div class="mpb-about-rgt">
             <div class="mbp-about-rgt-des">
+              <?php if( !empty($about['title']) ): ?>
               <h2 class="mbp-about-des-title left-icon-title fl-h2">
-                <span>A little about us...</span>
+                <?php printf('<span>%s</span>', $about['title']); ?>
                 <i><svg class="title-location-icon" width="30" height="44.234" viewBox="0 0 30 44.234" fill="#ec131b">
                   <use xlink:href="#title-location-icon"></use> </svg></i>
               </h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales sagittis lorem sed mattis. Nunc rutrum mattis pulvinar. In sem velit, faucibus non mauris sed, mattis auctor purus. Etiam egestas nisl eget dapibus suscipit. Nam rutrum nisl sapien, id hendrerit nulla ullamcorper a. Sed a ipsum nisl. Sed quam ex, vulputate vitae scelerisque quis, vulputate vel velit.</p>
-              <ul>
-                <li>We offer multiple services at great value</li>
-                <li>Use your phones location when you book</li>
-                <li>Biodegradable and eco-friendly products</li>
-                <li>Pay for your service electronically and securely</li>
-                <li>Trained and skilled mechanic team members</li>
-              </ul>
+              <?php endif; ?>
+              <?php if( !empty($about['description']) ) echo wpautop( $about['description'] ); ?>
             </div>
           </div>
         </div>
@@ -418,4 +330,5 @@
     </div>
   </div>
 </section>
+<?php endif; ?>
 <?php get_footer(); ?>
