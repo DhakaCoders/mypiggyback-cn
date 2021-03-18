@@ -104,7 +104,7 @@ $steps = $booksystem['booking_steps'];
             ?>
             <div class="piggyback-slide-item-cntlr">
               <div class="piggyback-slide-item">
-                <div class="piggyback-item piggyback-active-item">
+                <div class="piggyback-item<?php echo ( $i == 1 )?' piggyback-active-item':'';?>">
                   <div class="piggyback-item-bdr">
                     <div class="piggyback-item-img-cntlr">
                       <?php if( !empty($step['icon']) ) echo cbv_get_image_tag($step['icon']); ?>
