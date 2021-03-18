@@ -135,16 +135,21 @@
 	padding-bottom: 15px;
 	position: relative;
 }
-.ftr-menu > ul > li > i{
-	position: absolute;
-	top: 50%;
-	left: 0;
-	transform: translateY(-50%);
-	-webkit-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	color: #fff;
-	margin-top: -7.5px;
+.ftr-menu > ul > li:after{
+	content: "\f30b"!important;
+    font-family: 'Font Awesome 5 Free';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    font-weight: 600;
+    text-decoration: inherit;
+    color: #fff;
+    margin-top: -7.5px;
 }
+
 
 .ftr-menu > ul > li > a{
 	display: inline-block;
