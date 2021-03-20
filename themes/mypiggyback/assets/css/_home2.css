@@ -13,7 +13,7 @@
 }
 .mpb-about-img{
 	position: absolute;
-	bottom: 0;
+	bottom: -1px;
 	left: -55px;
 	width: 42.9824%;
 	padding-right: 20px;
