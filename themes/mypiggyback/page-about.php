@@ -7,7 +7,10 @@ $thisID = get_the_ID();
 get_template_part('templates/page', 'breadcrumb');
 ?>
 
-
+<?php 
+$intro_sec = get_field('intro_section', $thisID);
+  if( $intro_sec ): 
+?>
 <section class="mpb-about-des-sec">
   <div class="container">
     <div class="row">
