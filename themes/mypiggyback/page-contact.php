@@ -13,9 +13,9 @@ $form_sec = get_field('form_section', $thisID);
   if( $form_sec ): 
 ?>
 <section class="contact-form-sec-wrp clearfix">
-  <div class="contact-map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d66815.33056846341!2d-0.14238880307146762!3d51.51248988308131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2sbd!4v1615400813839!5m2!1sen!2sbd" width="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-  </div>
+  <?php 
+    if( !empty($form_sec['map_iframe']) ) printf('<div class="contact-map">%s</div>', $form_sec['map_iframe']);
+  ?>
   <div class="contact-form-sec">
     <div class="container">
       <div class="row">
@@ -85,7 +85,7 @@ $contact_sec = get_field('contact_section', $thisID);
               </div>
             </li>
             <?php 
-              $telephones = get_field('telephone', $thisID);
+              $telephones = $contact_sec['telephone'];
                 if( $telephones ): 
             ?>
             <li>
@@ -100,15 +100,12 @@ $contact_sec = get_field('contact_section', $thisID);
                   if(!empty($telephones['telephone_3'])) printf('<div><a href="tel:%s">%s</a></div>', phone_preg($telephones['telephone_3']), $telephones['telephone_3']);  
 
                 ?>
-                <!-- <div><a href="tel:02920 257257">02920 257257</a></div>
-                <div><a href="tel:01234 564584">01234 564584</a></div>
-                <div><a href="tel:01664 394273">01664 394273</a></div> -->
               </div>
             </li>
             <?php endif; ?>
 
             <?php 
-              $emails = get_field('email', $thisID);
+              $emails = $contact_sec['email'];
                 if( $emails ): 
             ?>
             <li>
@@ -122,9 +119,6 @@ $contact_sec = get_field('contact_section', $thisID);
                   if(!empty($emails['email_2'])) printf('<div><a href="mailto::%s">%s</a></div>', $emails['email_2'], $emails['email_2']); 
                   if(!empty($emails['email_3'])) printf('<div><a href="mailto::%s">%s</a></div>', $emails['email_3'], $emails['email_3']); 
                 ?>
-                <!-- <div><a href="mailto:info@mypiggyback.com">info@mypiggyback.com</a></div>
-                <div><a href="mailto:order@mypiggyback.com">order@mypiggyback.com</a></div>
-                <div><a href="mailto:drivers@mypiggyback.com">drivers@mypiggyback.com</a></div> -->
               </div>
             </li>
             <?php endif; ?>
@@ -152,13 +146,13 @@ $payment_sec = get_field('payment_section', $thisID);
           ?>
           <h4 class="we-accept-title left-icon-title fl-h4">
            <i class="far fa-bell"></i>
-           <?php  printf('<span>%s</span>', $payment_sec['title']); ?>
+           <?php  printf('<span>%s</span>', $payment_sec['title']); ?> 
           </h4>
           <?php endif; ?>
           </div>
 
           <?php 
-            $images = get_field('gallery');
+            $images = $payment_sec['gallery'];
             $size = 'full';
             if( $images ): 
           ?>
@@ -167,17 +161,6 @@ $payment_sec = get_field('payment_section', $thisID);
               <?php foreach( $images as $image_id ): ?>
               <li><?php echo wp_get_attachment_image( $image_id, $size ); ?></li>
               <?php endforeach; ?>
-<!--               <li class="show-sm"><img src="<?php echo THEME_URI; ?>/assets/images/visa.svg"></li>
-              <li class="show-sm"><img src="<?php echo THEME_URI; ?>/assets/images/mastercard.svg"></li>
-              <li class="show-sm"><img src="<?php echo THEME_URI; ?>/assets/images/maestro.svg"></li>
-
-
-              <li><img src="<?php echo THEME_URI; ?>/assets/images/discover-network.svg"></li>
-              <li><img src="<?php echo THEME_URI; ?>/assets/images/american-express.svg"></li>
-              <li><img src="<?php echo THEME_URI; ?>/assets/images/paypal.svg"></li>
-              <li class="hide-sm"><img src="<?php echo THEME_URI; ?>/assets/images/visa.svg"></li>
-              <li class="hide-sm"><img src="<?php echo THEME_URI; ?>/assets/images/mastercard.svg"></li>
-              <li class="hide-sm"><img src="<?php echo THEME_URI; ?>/assets/images/maestro.svg"></li> -->
             </ul>
           </div>
           <?php endif; ?>
