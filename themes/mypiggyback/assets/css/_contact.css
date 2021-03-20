@@ -48,6 +48,14 @@ Contact page
 .input-field-col {
     padding-bottom: 25px;
 }
+.input-field-col span{
+	display: block;
+	width: 100%;
+}
+.contact-submit-btn .ajax-loader{
+	position: absolute;
+	top: 100%;
+}
 .input-field-col input[type="text"],
 .input-field-col input[type="email"],
 .input-field-col textarea{

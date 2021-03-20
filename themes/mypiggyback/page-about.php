@@ -3,35 +3,10 @@
   Template Name: About Us
 */
 get_header(); 
+$thisID = get_the_ID();
+get_template_part('templates/page', 'breadcrumb');
 ?>
 
-<section class="page-banner-sec-wrp">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="page-banner-wrp clearfix">
-          <div class="page-banner-dsc">
-            <h1 class="fl-h1">About Us...</h1>
-          </div>
-          <div class="breadcumbs">
-            <ul class="reset-list clearfix">
-              <li>
-                <a href="#" class="fl-home-icon">
-                  <span class="item">HOME</span>
-                </a>
-              </li>
-              <li class="active">
-                <a href="#">
-                  <span>ABOUT</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="mpb-about-des-sec">
   <div class="container">
