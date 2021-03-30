@@ -184,13 +184,15 @@
 	}
 	.vr-Vehicle-sec .Vehicle-desc-cntlr:after{
 		bottom: initial;
-		left: 16px;
-		top: -15px;
+		left: 40px;
+		top: 0px;
 		margin-left: 0;
-		-ms-transform: rotate(-90deg);
-		-o-transform: rotate(-90deg);
-		-webkit-transform: rotate(-90deg);
-		transform: rotate(-90deg);
+		border: none;
+		background: url(../images/Top-whtie-arrow-xs.png);
+		width: 80px;
+		height: 18px;
+		background-repeat: no-repeat;
+		background-size: 100% auto;
 	}
 	.order-pgbk-home .vcl-right-wrap{
 		padding-left: 0;
@@ -231,6 +233,12 @@
 @media(max-width: 575px){
 	.tstmnl-item p{
 		font-size: 14px;
+	}
+	.testimonials-title {
+	    margin-bottom: 40px;
+	}
+	.tstmnl-item-rating ul li i {
+	    font-size: 17px;
 	}
 }
 @media(max-width: 479px){
