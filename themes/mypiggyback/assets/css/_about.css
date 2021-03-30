@@ -354,6 +354,15 @@
 	    margin-left: -10px;
 	    margin-right: -10px;
 	}
+	.mbp-angi-des span{
+		font-size: 35px;
+	}
+	.mbp-angi-des strong{
+		font-size: 18px;
+	}
+	.mbp-angi-img i{
+		max-width: 80px;
+	}
 }
 
 @media(max-width: 991px){
@@ -398,6 +407,7 @@
 	.mbp-about-num-sec{
 		margin-top: -60px;
 	}
+
 }
 
 @media(max-width: 767px){
@@ -431,6 +441,7 @@
 	.mbp-about-num-sec{
 		padding-bottom: 0;
 		margin-top: 0;
+		overflow: hidden;
 	}
 	.down-angle{
 		max-width: 45px;
@@ -454,14 +465,39 @@
 	    margin-top: 20px;
 	    margin-bottom: 20px;
 	}
+	.xs-red-bg{
+		background: #D61225;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		height: 70%;
+	}
+	.mbp-about-num-lft-bg {
+	    max-width: 500px;
+	    bottom: 0;
+	    display: flex;
+	    justify-content: flex-end;
+	    height: 70%;
+	    max-height: initial;
+	    right: -3px;
+	}
+
 	.mbp-about-num-lft-bg img{
-		width: 100%;
+		margin-bottom: auto;
+		margin-top: initial;
 	}
 	.xs-about-des p{
 		margin-bottom: 50px;
 	}
 	.xs-about-des{
 		margin-bottom: 60px;
+	}
+	.mbp-about-num-grd-item{
+		border-width: 2px;
+	}
+	.mbp-loca-title{
+		font-size: 28px;
 	}
 }
 
@@ -483,6 +519,9 @@
 	}
 	.fl-red-btn.mbp-loca-btn {
 	    width: 200px!important;
+	}
+	.mbp-loca-title{
+		font-size: 26px;
 	}
 
 }
@@ -527,7 +566,22 @@
 		vertical-align: baseline;
 		padding-left: 30px;
 	}
-
+	.mbp-about-num-sec-inr{
+		padding-bottom: 70px;
+	}
+	.xs-red-bg,
+	.mbp-about-num-lft-bg{
+		height: 70%;
+	}
+	.mbp-about-team-entry-hdr-title{
+		margin-bottom: 40px;
+	}
+	.mbp-atgi-des-title{
+		font-size: 20px!important;
+	}
+	.mbp-loca-title {
+	    font-size: 22px;
+	}
 }
 
 @media(max-width: 359px){
@@ -536,5 +590,8 @@
 	}
 	.mbp-abot-btn-red{
 		margin-right: 3px;
+	}
+	.mbp-about-team-entry-hdr-title{
+		margin-bottom: 35px;
 	}
 }

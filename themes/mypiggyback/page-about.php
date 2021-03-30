@@ -76,6 +76,7 @@ $our_story_sec = get_field('our_story_section', $thisID);
   if( $our_story_sec ): 
 ?>
 <section class="mbp-about-num-sec">
+  <div class="xs-red-bg"></div>
   <div class="mbp-about-num-lft-bg">
     <img class="hide-sm" src="<?php echo THEME_URI; ?>/assets/images/mbp-about-num-lft-bg.jpg">
     <img class="show-sm" src="<?php echo THEME_URI; ?>/assets/images/xs-mbp-about-num-lft-bg.jpg">
