@@ -4,9 +4,10 @@
 .top-bar{
 	background: #d61324;
 	padding: 13px 0;
-	
 	position: relative;
-}.top-bar > span{
+	/*z-index: 5;*/
+}
+.top-bar > span{
 	position: absolute;
 	bottom: 0;
 	right: 0;
@@ -232,7 +233,7 @@ nav.main-nav > ul > li.menu-item-has-children ul.sub-menu li:hover a{
 	width: 27px;
 	height: 63.44px;
 	top: -3px;
-	right: 0;
+	right: -10px;
 }
 .hdr-order-icon a{
 	display: flex;
@@ -266,7 +267,7 @@ nav.main-nav > ul > li.menu-item-has-children ul.sub-menu li:hover a{
 /*hamberger icon*/
 .xs-hamburger{
 	display: none;
-	padding-right: 67px;
+	padding-right: 33px;
 	cursor: pointer;
 }
 .hamburger-icon{
@@ -284,6 +285,7 @@ nav.main-nav > ul > li.menu-item-has-children ul.sub-menu li:hover a{
 	top: 0;
 	position: absolute;
 	content: "";
+	border-radius: 3px;
 }
 .hamburger-icon span:nth-child(2){
 	top: 9px;
@@ -297,8 +299,10 @@ nav.main-nav > ul > li.menu-item-has-children ul.sub-menu li:hover a{
 	color: #141414;
 	line-height: 1;
 	font-size: 11px;
-    font-family: 'SegoeUIRegular';
-    letter-spacing: -1px;
+	font-weight: normal;
+    font-family: 'GoboldLowplus';
+    letter-spacing: 1px;
+
 }
 .cross-icon .hamburger-icon span:nth-child(1){
 	top: 10px;

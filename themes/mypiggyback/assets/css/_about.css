@@ -62,9 +62,13 @@
 	width: 100%;
 	max-height: 610px;
 	z-index: 2;
+	background: #D61225;
+	display: flex;
 }
 .mbp-about-num-lft-bg img{
 	max-height: 610px;
+	width: auto;
+	margin-top: auto;
 }
 
 .mbp-about-num-sec-inr{

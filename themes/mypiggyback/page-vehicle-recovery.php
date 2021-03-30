@@ -227,13 +227,28 @@ $testim = get_field('testimonialsec', $thisID);
                   <use xlink:href="#quadarea-icon"></use> </svg></i>
           </h2>
         <?php endif; ?>
+
+
+          <?php 
+          $args = array(  
+                'post_type' => 'testimonial',
+                'post_status' => 'publish',
+                'posts_per_page' => -1, 
+                //'orderby’ => 'title', 
+                //'order’ => 'ASC', 
+            );
+            $loop = new WP_Query( $args );
+          ?>
           <div class="testimonials-slider-wrap">
             <div class="testimonials-slider testimonialSlider">
-
+              <?php 
+                while ( $loop->have_posts() ) : $loop->the_post(); 
+                  $service_type = $loop['intro']; 
+              ?>
               <div class="tstmnl-slide-item-cntlr">
                 <div class="tstmnl-slide-item">
                   <div class="tstmnl-item">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque condimentum nisl vitae ornare. Nullam dapibus, lectus vitae tristique porttitor, tortor dui congue magna, a iaculis nibh risus ut augue. Mauris ultrices est condimentum arcu tempus dictum. Vivamus fermentum, dui sit amet ultrices aliquam, magna quam gravida ipsum, vel auctor libero felis igula. </p>
+                    <?php the_content(); ?>
                     <div class="tstmnl-item-rating">
                       <ul class="reset-list">
                         <li><a href="#"><i class="fas fa-star"></i></a></li>
@@ -243,13 +258,16 @@ $testim = get_field('testimonialsec', $thisID);
                         <li><a href="#"><i class="fas fa-star"></i></a></li>
                       </ul>
                     </div>
-                    <h4 class="tstmnl-person-name fl-h4">Thomas Fide</h4>
-                    <h6 class="tstmnl-person-title">VEHICLE RECOVERY</h6>
+                    <h4 class="tstmnl-person-name fl-h4"><?php the_title(); ?></h4>
+                    <?php if( !empty($loop['title']) ):  ?>
+                    <h6 class="tstmnl-person-title"> <?php echo $loop['title']; ?></h6>
+                    <?php endif; ?>
                   </div>
                 </div>
               </div>
+              <?php endwhile; wp_reset_postdata(); ?>
 
-              <div class="tstmnl-slide-item-cntlr">
+<!--               <div class="tstmnl-slide-item-cntlr">
                 <div class="tstmnl-slide-item">
                   <div class="tstmnl-item">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque condimentum nisl vitae ornare. Nullam dapibus, lectus vitae tristique porttitor, tortor dui congue magna, a iaculis nibh risus ut augue. Mauris ultrices est condimentum arcu tempus dictum. Vivamus fermentum, dui sit amet ultrices aliquam, magna quam gravida ipsum, vel auctor libero felis igula. </p>
@@ -323,7 +341,7 @@ $testim = get_field('testimonialsec', $thisID);
                     <h6 class="tstmnl-person-title">VEHICLE RECOVERY</h6>
                   </div>
                 </div>
-              </div>
+              </div> -->
 
             </div>
           </div>

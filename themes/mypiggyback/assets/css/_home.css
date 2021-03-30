@@ -166,7 +166,7 @@
 	position: absolute;
 	content: "";
 	top: 35px;
-	right: 0;
+	right: -1px;
 	border-right: 28px solid #fff;
 	border-top: 28px solid transparent;
 	border-bottom: 28px solid transparent;
@@ -395,7 +395,7 @@
 		padding: 9px 0;
 	}
 	.Vehicle-sec-wrap{
-		padding-top: 54px;
+		padding-top: 45px;
 	}
 	.Vehicle-desc-cntlr{
 		position: relative;
@@ -404,16 +404,21 @@
 		padding: 57px 0 75px 0;
 	}
 	.Vehicle-desc-cntlr:after{
-		bottom: -15px;
+		bottom: 0;
 		right: initial;
 		top: initial;
 		left: 50%;
-		margin-left: -23px;
+		transform: initial;
+		transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
+		-webkit-transform: translateX(-50%);
 		z-index: 7;
-		-ms-transform: rotate(90deg);
-		-o-transform: rotate(90deg);
-		-webkit-transform: rotate(90deg);
-		transform: rotate(90deg);
+		border: none;
+		background: url(../images/triangle-white-top-xs.png);
+		width: 100px;
+		height: 20px;
+		background-repeat: no-repeat;
+		background-size: 100% auto;
 	}
 	.Vehicle-desc-title{
 		line-height: 1.2;
