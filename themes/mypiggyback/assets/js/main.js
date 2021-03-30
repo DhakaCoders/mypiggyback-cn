@@ -200,18 +200,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-/*Start of Ranojit*/
 if( $('.fl-tabs').length ){
   $('div.fl-tabs button').click(function(){
     var tab_id = $(this).attr('data-tab');
@@ -224,7 +212,7 @@ if( $('.fl-tabs').length ){
   });
 }
 
-/*Start of Noyon*/
+
 if (windowWidth <= 767) {
   if( $('.piggybackSlider').length ){
     $('.piggybackSlider').slick({
@@ -336,43 +324,6 @@ if (windowWidth <= 767){
 }
 
 
-/*
-if( $('.VclTabSlider').length ){
-  $('.VclTabSlider').slick({
-    centerMode: true,
-    centerPadding: '60px',
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    dots: true,
-    speed: 700,
-    fade: true,
-    autoplaySpeed: 4000,
-    autoplay: false,
-    centerMode: true,
-   
-    
-      
-    customPaging: function (slider, i) {
-      console.log(slider);
-      return  (i + 1);
-    }
-  });
-}
-*/
-
-/*Start of Milon*/
-
-/*if( $('.contact-map').length ){
-  var conWidth = $('.container').width();
-
-  var OutConRgt = (windowWidth - conWidth)/2;
-  var w1 = $('.contat-frm-wrp').outerWidth();
-  var w2 = $('.contat-frm-cntlr').outerWidth();
-  var w3 = (w2 - w1) + OutConRgt;
-  $('.contact-map').css("width",w3);
-
-  console.log(w3);
-}*/
 
 if( $('.contact-map').length ){
   var conWidth = $('.container').width();
@@ -399,12 +350,6 @@ $(window).resize(function() {
 
 
 
-
-
-
-
-/*Start of Shariful*/
-
   if( $('.counter').length ){
     $('.counter').counterUp({
       delay: 10,
@@ -414,24 +359,6 @@ $(window).resize(function() {
   
 
 
-
-
-/*Start of Sabbir*/
-  //service-page
-// function servimgupdate(){
-//   var windowsize = $(window).width();
-//   var containerwidth = $(".container").width();
-//   var mlr = ((windowsize+containerwidth)/2);
-//   var divheight = $(".srv-fea-img").height();
-//   $(".srv-fea-img img").css({
-//     "width":mlr,
-//     "height":divheight,
-//   });
-// }
-// servimgupdate();
-// $(window).resize(function(){
-//     servimgupdate();
-//   });
 
 
 
