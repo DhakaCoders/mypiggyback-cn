@@ -18,7 +18,10 @@ $intro_sec = get_field('intro_section', $thisID);
         <div class="mpb-about-des-sec-inr clearfix hide-sm">
           <div class="mbp-about-des-lft">
             <div class="mbp-about-des">
-              <?php if( !empty($intro_sec['description'])) echo wpautop($intro_sec['description']); ?>
+              <?php 
+                if( !empty($intro_sec['subtitle']) ) printf('<p><strong>%s</strong></p>', $intro_sec['subtitle']);
+                if( !empty($intro_sec['description'])) echo wpautop($intro_sec['description']); 
+              ?>
               <div class="mbp-about-btn">
                 <?php 
                   $intro_sec_link_1 = $intro_sec['link_1'];
@@ -40,13 +43,15 @@ $intro_sec = get_field('intro_section', $thisID);
           <?php endif; ?>
         </div>
         <div class="xs-about-des clearfix show-sm">
-          <p class="text-img">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque mauris vel turpis semper, pharetra tincidunt magna scelerisque. Ut finibus ex nec sodales ullamcorper. Phasellus a neque pretium, hendrerit tortor.
-            <img src="<?php echo THEME_URI; ?>/assets/images/mpb-about-des-rgt-img-01.jpg">
+          <p class="text-img">
+            <?php 
+              if( !empty($intro_sec['subtitle']) ) printf('<span>%s</span>', $intro_sec['subtitle']);
+              echo cbv_get_image_tag($intro_sec['image']) ;
+             ?>
           </p>
-          <p>Phasellus a neque pretium, hendrerit tortor vitae, accumsan neque. Suspendisse posuere odio quam, id elementum arcu egestas at. Phasellus ante magna, egestas a ultricies quis, dapibus at massa. Aliquam laoreet libero id tristique condimentum. Vivamus quis neque eu diam ultricies congue in non enim. 
-            
-          </p>
-          <p>Aliquam semper ex tortor, imperdiet consequat sapien efficitur et. Duis pretium velit non turpis luctus, vel maximus risus.. </p>
+          <?php 
+            if( !empty($intro_sec['description'])) echo wpautop($intro_sec['description']); 
+          ?>
           <div class="mbp-about-btn">
             <?php 
               $intro_sec_link_1 = $intro_sec['link_1'];
@@ -59,9 +64,6 @@ $intro_sec = get_field('intro_section', $thisID);
               } 
             ?>
           </div>
-
-
-
         </div>
       </div>
     </div>
@@ -176,7 +178,9 @@ $team_sec = get_field('team_section', $thisID);
                 <div class="mbpat-grd-item">
                   <div class="mbp-atgi-img-ctlr">
                     <?php if( !empty($team['image']) ): ?>
-                    <div class="mbp-atgi-img inline-bg" style="background: url(<?php echo cbv_get_image_src($team['image'], 'full'); ?>);">
+                    <div class="mbp-atgi-img-div">
+                      <div class="mbp-atgi-img inline-bg" style="background: url(<?php echo cbv_get_image_src($team['image'], 'full'); ?>);">
+                      </div>
                     </div>
                     <?php endif; ?>
                     <div class="mbp-atgi-des">
@@ -231,9 +235,11 @@ $our_locations_sec = get_field('our_locations_section', $thisID);
         <div class="col-md-12">
           <div class="mpb-about-sec-inr clearfix">
             <div class="mpb-about-lft">
+              <?php if(!empty($our_locations_sec['image'])): ?>
               <div class="mpb-about-img">
-                <img src="<?php echo THEME_URI; ?>/assets/images/mpb-about-img-01.png">
+                <?php echo cbv_get_image_tag($our_locations_sec['image']) ; ?>
               </div>
+              <?php endif; ?>
             </div>
             <div class="mpb-about-rgt">
               <div class="mbp-about-des">
