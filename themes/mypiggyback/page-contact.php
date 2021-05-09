@@ -8,13 +8,11 @@ get_template_part('templates/page', 'breadcrumb');
 ?>
 
 
-<?php 
-$form_sec = get_field('form_section', $thisID);
-  if( $form_sec ): 
-?>
+
 <section class="contact-form-sec-wrp clearfix">
   <?php 
-    if( !empty($form_sec['map_iframe']) ) printf('<div class="contact-map">%s</div>', $form_sec['map_iframe']);
+    $map_sec = get_field('gmap', $thisID);
+    if( !empty($map_sec['map_embedded']) ) printf('<div class="contact-map">%s</div>', $map_sec['map_embedded']);
   ?>
   <div class="contact-form-sec">
     <div class="container">
@@ -22,20 +20,31 @@ $form_sec = get_field('form_section', $thisID);
         <div class="col-md-12">
           <div class="contat-frm-cntlr clearfix">
             <div class="contat-frm-wrp">
+              <?php 
+                $intro_sec = get_field('introsec', $thisID);
+                  if( $intro_sec ): 
+              ?>
               <div class="contat-frm-dsc">
                 <?php 
-                  if( !empty($form_sec['title']) ) :
+                  if( !empty($intro_sec['title']) ) :
                 ?>
                 <h2 class="contact-title left-icon-title fl-h2">
-                 <?php printf('<span>%s...</span>', $form_sec['title']); ?>
+                 <?php printf('<span>%s...</span>', $intro_sec['title']); ?>
                  <i class="far fa-envelope-open"></i>
                 </h2>
                 <?php endif; ?>
-                <?php if( !empty($form_sec['description'])) echo wpautop($form_sec['description']); ?>
+                <?php if( !empty($intro_sec['description'])) echo wpautop($intro_sec['description']); ?>
               </div>
+              <?php endif; ?>
+
+              <?php 
+                $form_sec = get_field('formsec', $thisID);
+                if( $form_sec ): 
+              ?>
               <div class="cnt-form">
-                <?php if(!empty($form_sec['form_shortcode'])) echo do_shortcode( $form_sec['form_shortcode'] ); ?>
+                <?php if(!empty($form_sec['shortcode'])) echo do_shortcode( $form_sec['shortcode'] ); ?>
               </div>
+              <?php endif; ?>
             </div>
           </div>
         </div>
@@ -44,7 +53,7 @@ $form_sec = get_field('form_section', $thisID);
   </div>
 </section>
 
-<?php endif; ?>
+
 
 
 <?php 
