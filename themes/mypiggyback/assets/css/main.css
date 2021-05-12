@@ -6,6 +6,7 @@
 @import url('_page.css');
 @import url('_home.css');
 @import url('_contact.css');
+@import url('_account.css');
 @import url('_footer.css');
 
 
@@ -39,5 +40,4 @@
 
 /*Start of Sabbir*/
 @import url('_services.css');
-@import url('_index.css');
 

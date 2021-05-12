@@ -12,3 +12,10 @@ function get_register_form($atts) {
   return ob_get_clean();
 }
 add_shortcode('register_form', 'get_register_form');
+
+function get_user_account($atts) {
+  ob_start();
+  get_template_part(ACC_TEMP_PATH.'/user', 'account');
+  return ob_get_clean();
+}
+add_shortcode('user_account', 'get_user_account');
