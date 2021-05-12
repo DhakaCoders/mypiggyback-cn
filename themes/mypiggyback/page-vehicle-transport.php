@@ -218,7 +218,7 @@ $testim = get_field('testimonialsec', $thisID);
       <div class="col-md-12">
         <div class="testimonials-cntlr">
           <div class="super-piggs-img">
-            <?php if( !empty($testim['icon']) ) echo cbv_get_image_tag($testim['icon']); ?>
+            <img src="<?php echo THEME_URI; ?>/assets/images/super-piggs.png" alt="">
           </div>
           <?php if( !empty($testim['title']) ): ?>
           <h2 class="testimonials-title left-icon-title fl-h2">
@@ -227,106 +227,38 @@ $testim = get_field('testimonialsec', $thisID);
                   <use xlink:href="#quadarea-icon"></use> </svg></i>
           </h2>
         <?php endif; ?>
+        <?php 
+          $testimonials = $testim['select_testimonial'];
+          if($testimonials){
+        ?>
           <div class="testimonials-slider-wrap">
             <div class="testimonials-slider testimonialSlider">
-
+              <?php 
+              foreach( $testimonials as $testmonial ): 
+                $desc = get_field('description', $testmonial->ID);
+                $subtitle = get_field('subtitle', $testmonial->ID);
+                $review = (int)get_field('review', $testmonial->ID);
+              ?>
               <div class="tstmnl-slide-item-cntlr">
                 <div class="tstmnl-slide-item">
                   <div class="tstmnl-item">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque condimentum nisl vitae ornare. Nullam dapibus, lectus vitae tristique porttitor, tortor dui congue magna, a iaculis nibh risus ut augue. Mauris ultrices est condimentum arcu tempus dictum. Vivamus fermentum, dui sit amet ultrices aliquam, magna quam gravida ipsum, vel auctor libero felis igula. </p>
+                    <?php if( !empty($desc) ) echo wpautop($desc); ?>
                     <div class="tstmnl-item-rating">
                       <ul class="reset-list">
-                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                        <?php for( $i = 1; $i <= $review; $i++  ){ ?>
+                        <li><a><i class="fas fa-star"></i></a></li>
+                        <?php } ?>
                       </ul>
                     </div>
-                    <h4 class="tstmnl-person-name fl-h4">Thomas Fide</h4>
-                    <h6 class="tstmnl-person-title">VEHICLE RECOVERY</h6>
+                    <?php if( !empty(get_the_title()) ) printf('<h4 class="tstmnl-person-name fl-h4">%s</h4>', get_the_title());?>
+                    <?php if( !empty($subtitle) ) printf('<h6 class="tstmnl-person-title">%s</h6>', $subtitle);?>
                   </div>
                 </div>
               </div>
-
-              <div class="tstmnl-slide-item-cntlr">
-                <div class="tstmnl-slide-item">
-                  <div class="tstmnl-item">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque condimentum nisl vitae ornare. Nullam dapibus, lectus vitae tristique porttitor, tortor dui congue magna, a iaculis nibh risus ut augue. Mauris ultrices est condimentum arcu tempus dictum. Vivamus fermentum, dui sit amet ultrices aliquam, magna quam gravida ipsum, vel auctor libero felis igula. </p>
-                    <div class="tstmnl-item-rating">
-                      <ul class="reset-list">
-                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                      </ul>
-                    </div>
-                    <h4 class="tstmnl-person-name fl-h4">Thomas Fide 2</h4>
-                    <h6 class="tstmnl-person-title">VEHICLE RECOVERY</h6>
-                  </div>
-                </div>
-              </div>
-
-              <div class="tstmnl-slide-item-cntlr">
-                <div class="tstmnl-slide-item">
-                  <div class="tstmnl-item">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque condimentum nisl vitae ornare. Nullam dapibus, lectus vitae tristique porttitor, tortor dui congue magna, a iaculis nibh risus ut augue. Mauris ultrices est condimentum arcu tempus dictum. Vivamus fermentum, dui sit amet ultrices aliquam, magna quam gravida ipsum, vel auctor libero felis igula. </p>
-                    <div class="tstmnl-item-rating">
-                      <ul class="reset-list">
-                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                      </ul>
-                    </div>
-                    <h4 class="tstmnl-person-name fl-h4">Thomas Fide 3</h4>
-                    <h6 class="tstmnl-person-title">VEHICLE RECOVERY</h6>
-                  </div>
-                </div>
-              </div>
-
-              <div class="tstmnl-slide-item-cntlr">
-                <div class="tstmnl-slide-item">
-                  <div class="tstmnl-item">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque condimentum nisl vitae ornare. Nullam dapibus, lectus vitae tristique porttitor, tortor dui congue magna, a iaculis nibh risus ut augue. Mauris ultrices est condimentum arcu tempus dictum. Vivamus fermentum, dui sit amet ultrices aliquam, magna quam gravida ipsum, vel auctor libero felis igula. </p>
-                    <div class="tstmnl-item-rating">
-                      <ul class="reset-list">
-                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                      </ul>
-                    </div>
-                    <h4 class="tstmnl-person-name fl-h4">Thomas Fide 4</h4>
-                    <h6 class="tstmnl-person-title">VEHICLE RECOVERY</h6>
-                  </div>
-                </div>
-              </div>
-
-              <div class="tstmnl-slide-item-cntlr">
-                <div class="tstmnl-slide-item">
-                  <div class="tstmnl-item">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque condimentum nisl vitae ornare. Nullam dapibus, lectus vitae tristique porttitor, tortor dui congue magna, a iaculis nibh risus ut augue. Mauris ultrices est condimentum arcu tempus dictum. Vivamus fermentum, dui sit amet ultrices aliquam, magna quam gravida ipsum, vel auctor libero felis igula. </p>
-                    <div class="tstmnl-item-rating">
-                      <ul class="reset-list">
-                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                      </ul>
-                    </div>
-                    <h4 class="tstmnl-person-name fl-h4">Thomas Fide 5</h4>
-                    <h6 class="tstmnl-person-title">VEHICLE RECOVERY</h6>
-                  </div>
-                </div>
-              </div>
-
+              <?php endforeach; ?>
             </div>
           </div>
+        <?php } ?>
         </div>
       </div>
     </div>
