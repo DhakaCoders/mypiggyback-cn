@@ -185,7 +185,9 @@
 	padding: 29px 30px;
 }
 
-.vehicle-form input[type="text"]{
+.vehicle-form input[type="text"],
+.vehicle-form input[type="email"],
+.vehicle-form input[type="password"]{
 	color: #7F7F7F;
 	font-weight: 300;
 	font-size: 16px;
@@ -218,8 +220,50 @@
 	color: #7F7F7F;
 	opacity: 1;
 }
-
-
+.vehicle-form input[type="email"]:focus{
+	border-color: #585757;
+}
+.vehicle-form .input-field-row{
+	padding-bottom: 17px;
+}
+.vehicle-form input[type="email"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	color: #7F7F7F;
+	opacity: 1;
+}
+.vehicle-form input[type="email"]::-moz-placeholder { /* Firefox 19+ */
+	color: #7F7F7F;
+	opacity: 1;
+}
+.vehicle-form input[type="email"]:-ms-input-placeholder { /* IE 10+ */
+	color: #7F7F7F;
+	opacity: 1;
+}
+.vehicle-form input[type="email"]:-moz-placeholder { /* Firefox 18- */
+	color: #7F7F7F;
+	opacity: 1;
+}
+.vehicle-form input[type="password"]:focus{
+	border-color: #585757;
+}
+.vehicle-form .input-field-row{
+	padding-bottom: 17px;
+}
+.vehicle-form input[type="password"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	color: #7F7F7F;
+	opacity: 1;
+}
+.vehicle-form input[type="password"]::-moz-placeholder { /* Firefox 19+ */
+	color: #7F7F7F;
+	opacity: 1;
+}
+.vehicle-form input[type="password"]:-ms-input-placeholder { /* IE 10+ */
+	color: #7F7F7F;
+	opacity: 1;
+}
+.vehicle-form input[type="password"]:-moz-placeholder { /* Firefox 18- */
+	color: #7F7F7F;
+	opacity: 1;
+}
 .vehicle-form input[type="submit"]{
 	width: 100%;
 	height: 50px;
