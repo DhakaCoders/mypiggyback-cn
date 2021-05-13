@@ -323,6 +323,15 @@
                 <h1 class="fl-h3 acph-title">Registration</h1>
               </div>
               <form>
+                <div class="fl-input-field-row mp-input">
+                  <div class="profile-img-edit">
+                    <input type="file" name="" value="" id="choose-file">
+                    <label for="choose-file">
+                      <i><img src="assets/images/plus-icon-2.png"></i>
+                      <span class="file-up-instruction-txt">CLICK TO ADD<br> PROFILE PHOTO</span>
+                    </label>
+                  </div>
+                </div>
                 <div class="fl-input-field-row-grd">
                   <div class="fl-input-field-row mp-input">
                     <label>First Name</label>
@@ -381,12 +390,16 @@
                   </div>
                 </div>
                 <div class="fl-input-field-row mp-input">
-                  <textarea placeholder="About yourself"></textarea>
+                  <div class="input-field">
+                    <label>About yourself</label>
+                    <textarea placeholder="About yourself"></textarea>
+                  </div>
                 </div>
-                <div class="fl-input-field-row mp-input">
-                  <label>Profile Photo</label>
-                  <input type="file" name="phone" placeholder="Profile Photo">
+                
+                <div class="fl-input-field-row mp-input fl-submit-btn w-full">
+                  <input type="submit" value="Submit">
                 </div>
+
               </form>
             </div>
           </div>

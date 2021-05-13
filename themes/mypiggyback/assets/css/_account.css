@@ -135,13 +135,15 @@ button.tab-link.current:after{
 .mp-input input[type="text"],
 .mp-input input[type="email"],
 .mp-input input[type="number"],
-.mp-input input[type="password"]{
+.mp-input input[type="password"],
+.mp-input textarea{
 	background: #f7f7f7;
 	width: 100%;
 	height: 50px;
 	padding: 18px 20px;
 	font-size: 14px;
 	line-height: 20px;
+	 font-family: 'Chivo', sans-serif;
 }
 
 
@@ -185,6 +187,43 @@ button.tab-link.current:after{
 .mp-input input[type="email"]:focus,
 .mp-input input[type="number"]:focus,
 .mp-input input[type="password"]:focus{
+	background: #e5e2e2;
+}
+
+
+
+.mp-input textarea::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #727272;
+  opacity: 1;
+  font-style: normal;
+   font-family: 'Chivo', sans-serif;
+}
+.mp-input textarea::-moz-placeholder { /* Firefox 19+ */
+  color: #727272;
+  opacity: 1;
+  font-style: normal;
+   font-family: 'Chivo', sans-serif;
+}
+.mp-input textarea:-ms-input-placeholder { /* IE 10+ */
+  color: #727272;
+  opacity: 1;
+  font-style: normal;
+   font-family: 'Chivo', sans-serif;
+}
+.mp-input textarea:-moz-placeholder { /* Firefox 18- */
+  color: #727272;
+  opacity: 1;
+  font-style: normal;
+   font-family: 'Chivo', sans-serif;
+}
+.mp-input textarea::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #727272;
+  opacity: 1;
+  font-style: normal;
+   font-family: 'Chivo', sans-serif;
+}
+
+.mp-input textarea:focus{
 	background: #e5e2e2;
 }
 .search-by-name input:focus{
@@ -249,15 +288,22 @@ button.tab-link.current:after{
 }
 
 .fl-submit-btn input[type="submit"]{
-	background: #0055FF;
+	background: #d61324;
 	border-radius: 5px;
 	color: #fff;
 	font-weight: 900;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 16px;
 	text-align: center;
 	cursor: pointer;
 	height: 50px;
+	max-width: 300px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
 }
 .fl-submit-btn input[type="submit"]:hover{
 	background-color: #000000;
@@ -697,9 +743,9 @@ a.linkedin-login-btn:hover{
 
 span.file-up-instruction-txt {
     position: absolute;
-    left: -12px;
+    left: 0;
     right: 0;
-    width: 60px;
+    width: 100%;
     bottom: -29px;
     font-size: 9px!important;
     font-style: italic;
@@ -728,8 +774,8 @@ span.file-up-instruction-txt {
 }
 .profile-img-edit{
 	border-radius: 100% 100%;
-	width: 93px;
-	height: 93px;
+	width: 150px;
+	height: 150px;
 	margin-left: auto;
 	margin-right: auto;
 	box-shadow: 0 0 25px #e6e3e3;
@@ -737,6 +783,7 @@ span.file-up-instruction-txt {
 	background: #e9eaef;
 	position: relative;
 	transition: all 0.3s;
+	margin-bottom: 20px;
 }
 .profile-img-edit:hover{
 	background: #e1e2e9;
@@ -770,12 +817,14 @@ span.file-up-instruction-txt {
 .profile-img-edit label{
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
+    left: 0;
+    transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
     z-index: 1;
     margin: 0;
+    text-align: center;
+    right: 0;
 }
 
 
