@@ -357,9 +357,43 @@ $(window).resize(function() {
     });
   }
   
+/* account */
+$('div.fl-tabs button').click(function(){
+    var tab_id = $(this).attr('data-tab');
+
+    $('div.fl-tabs button').removeClass('current');
+    $('.fl-tab-content').removeClass('current');
+
+    $(this).addClass('current');
+    $("#"+tab_id).addClass('current');
+});
+
+
+$('.edit-profile-btn').on('click', function(){
+  $('.profile-img-step-1').addClass('modeEdit');
+  $('.profile-submit-btn.profile-edit-step-1').hide();
+  $('.profile-edit-step-2').show();
+});
+
+$('#edit-profile-cancle-btn').on('click', function(){
+  //$('.profile-edit-step-1').show();
+  $('.profile-submit-btn.profile-edit-step-1').show();
+  $('.profile-img-step-1').removeClass('modeEdit');
+  $('.profile-edit-step-2').hide();
+});
 
 
 
+$('.hdr-login-profile').on('click', function(){
+  $(this).toggleClass('login-btn-expend');
+  $('.hdr-login-profile ul').slideToggle(300);
+});
+
+$('.humberger-menu-items > ul > li.menu-item-has-children > a').on('click', function(e){
+  e.preventDefault();
+  $(this).toggleClass('xs-sub-menu-expend');
+  $(this).parent().find('.sub-menu').slideToggle(300);
+});
 
 
 
