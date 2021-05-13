@@ -278,12 +278,11 @@ $our_locations_sec = get_field('our_locations_section', $thisID);
                 <?php endif; ?>
   
                 <?php 
-                  if( !empty($our_locations_sec['link']) ) :
+                  $loclink = $our_locations_sec['link'];
+                  if( is_array( $loclink ) &&  !empty( $loclink['url'] ) ){
+                      printf('<div class="mbp-location-btn"><a class="fl-red-btn mbp-loca-btn" href="%s" target="%s">%s</a></div>', $loclink['url'], $loclink['target'], $loclink['title']); 
+                  } 
                 ?>
-                <div class="mbp-location-btn">
-                  <a class="fl-red-btn mbp-loca-btn" href="<?php echo $our_locations_sec['link']; ?>">BOOK LOCAL SERVICE</a>
-                </div>
-                <?php endif; ?>
               </div>
             </div>
           </div>

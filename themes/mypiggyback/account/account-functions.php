@@ -74,7 +74,8 @@ function user_register_save(){
         if( isset($_POST['password']) && !empty($_POST['password'])){
             $user_password = $_POST['password'];
         }
-        $firstname = (isset($_POST['fullname']) && !empty($_POST['fullname']))? sanitize_text_field($_POST['fullname']):'';
+        $firstname = (isset($_POST['fname']) && !empty($_POST['fname']))? sanitize_text_field($_POST['fname']):'';
+        $lastname = (isset($_POST['lname']) && !empty($_POST['lname']))? sanitize_text_field($_POST['lname']):'';
         if(isset($email) && !empty($email)){
             $exp = explode('@', $email);
             $user_login = $exp[0];
@@ -89,6 +90,7 @@ function user_register_save(){
                 'user_pass'         => $user_password,
                 'user_email'        => $email,
                 'first_name'        => $firstname,
+                'last_name'        => $lastname,
                 'user_registered'   => date('Y-m-d H:i:s'),
                 'role'              => 'driver'
                 )
@@ -97,15 +99,23 @@ function user_register_save(){
                 if( isset($_POST['phone']) && !empty($_POST['phone'])){
                     update_user_meta( $customerId, "driver_phone", sanitize_text_field($_POST['phone']) );
                 }
-                if( isset($_POST['location']) && !empty($_POST['location']) ){
-                    update_user_meta( $customerId, "driver_location", sanitize_text_field($_POST['location']) );
+                if( isset($_POST['address_1']) && !empty($_POST['address_1']) ){
+                    update_user_meta( $customerId, "driver_address_1", sanitize_text_field($_POST['address_1']) );
                 }
-
+                if( isset($_POST['address_2']) && !empty($_POST['address_2']) ){
+                    update_user_meta( $customerId, "driver_address_2", sanitize_text_field($_POST['address_2']) );
+                }
                 if( isset($_POST['city']) && !empty($_POST['city']) ){
                     update_user_meta( $customerId, "driver_city", sanitize_text_field($_POST['city']));
                 }
-                if( isset($_POST['postcode']) && !empty($_POST['postcode']) ){
-                    update_user_meta( $customerId, "driver_postcode", sanitize_text_field($_POST['postcode']) );
+                if( isset($_POST['driving_year']) && !empty($_POST['driving_year']) ){
+                    update_user_meta( $customerId, "driving_year", sanitize_text_field($_POST['driving_year']) );
+                }
+                if( isset($_POST['country']) && !empty($_POST['country']) ){
+                    update_user_meta( $customerId, "driver_country", sanitize_text_field($_POST['country']) );
+                }
+                if( isset($_POST['yourself']) && !empty($_POST['yourself']) ){
+                    update_user_meta( $customerId, "driver_yourself", sanitize_text_field($_POST['yourself']) );
                 }
 				add_user_meta( $customerId, '_account_status', 'draft', true );
 				if (! add_user_meta( $customerId, 'show_admin_bar_front', 'false', true )){ 
