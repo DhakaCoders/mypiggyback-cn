@@ -8,7 +8,9 @@ add_action('init', 'action_init_hooks');
 function action_init_hooks(){
 	if( !is_user_logged_in() ){
 		user_login_account();
+		user_register_save();
 	}
+
 }
 function user_login_account(){
 	global $login_errors;
@@ -18,11 +20,8 @@ function user_login_account(){
 		if (filter_var($_POST["username"], FILTER_VALIDATE_EMAIL)) {
 			$user = get_user_by( 'email', sanitize_email($_POST["username"]) );
 			$data['username'] = ' ';
-		}elseif ( !empty($_POST["username"]) ) {
-			$user = get_user_by( 'login', sanitize_email($_POST["username"]) );
-			$data['username'] = ' ';
 		}elseif(empty($_POST["username"])){
-			$login_errors['username'] = 'Username is required';
+			$login_errors['username'] = 'Email is required';
 			$success = false;
 			$user = false;
 		}
@@ -40,7 +39,7 @@ function user_login_account(){
 
 	 		if(!$user || !wp_check_password($password, $user->user_pass, $user->ID)) {
 				// if the user name doesn't exist
-				$login_errors['loging_error'] = 'Unsuccessful Login';
+				$login_errors['loging_error'] = 'Invalid username or password.';
 				$success = false;
 			}
 
@@ -58,9 +57,79 @@ function user_login_account(){
 	            }
 	        }
 		}else{
-			$login_errors['loging_error'] = 'Unsuccessful Login';
+			$login_errors['loging_error'] = 'Invalid username or password.';
 		}
 
 	}
 	return false;
+}
+function user_register_save(){
+    global $data_reg;
+    $data_reg = array();
+    if (isset( $_POST["email"] ) && wp_verify_nonce($_POST['user_register_nonce'], 'user-register-nonce')) {
+
+        if( isset($_POST['email']) && !empty($_POST['email'])){
+            $email = sanitize_email($_POST['email']);
+        }
+        if( isset($_POST['password']) && !empty($_POST['password'])){
+            $user_password = $_POST['password'];
+        }
+        $firstname = (isset($_POST['fullname']) && !empty($_POST['fullname']))? sanitize_text_field($_POST['fullname']):'';
+        if(isset($email) && !empty($email)){
+            $exp = explode('@', $email);
+            $user_login = $exp[0];
+
+        }
+        if(email_exists($email)) {
+            //Email address already registered
+            $data_reg['exists_email'] = 'Email already registered';
+        }else{
+            $customerId = wp_insert_user(array(
+                'user_login'        => $user_login,
+                'user_pass'         => $user_password,
+                'user_email'        => $email,
+                'first_name'        => $firstname,
+                'user_registered'   => date('Y-m-d H:i:s'),
+                'role'              => 'driver'
+                )
+            );
+            if( $customerId ){
+                if( isset($_POST['phone']) && !empty($_POST['phone'])){
+                    update_user_meta( $customerId, "driver_phone", sanitize_text_field($_POST['phone']) );
+                }
+                if( isset($_POST['location']) && !empty($_POST['location']) ){
+                    update_user_meta( $customerId, "driver_location", sanitize_text_field($_POST['location']) );
+                }
+
+                if( isset($_POST['city']) && !empty($_POST['city']) ){
+                    update_user_meta( $customerId, "driver_city", sanitize_text_field($_POST['city']));
+                }
+                if( isset($_POST['postcode']) && !empty($_POST['postcode']) ){
+                    update_user_meta( $customerId, "driver_postcode", sanitize_text_field($_POST['postcode']) );
+                }
+				add_user_meta( $customerId, '_account_status', 'draft', true );
+				if (! add_user_meta( $customerId, 'show_admin_bar_front', 'false', true )){ 
+					update_user_meta ( $customerId, 'show_admin_bar_front', 'false' );
+				}
+                $user = get_user_by( 'id', $customerId );
+                if($user){
+                    wp_clear_auth_cookie();
+                    wp_set_current_user( $user->ID, $user->user_login );
+                    if (wp_validate_auth_cookie()==FALSE)
+                    {
+                        wp_set_auth_cookie($user->ID, false, true);
+                    }
+                    do_action( 'wp_login', $user->user_login );
+                    if ( is_user_logged_in() ){
+                        $data_reg['username'] = $user->user_login;
+                        echo '<script>window.location.href ="'.home_url('account').'";</script>';
+                        wp_die();
+                    }
+                }
+
+            }
+            $data_reg['error'] = 'Could Not register.';
+        }
+    }
+     return false;
 }

@@ -1,5 +1,6 @@
 <?php
 function get_login_form($atts) {
+  wpCheckLoggedin();
   ob_start();
   get_template_part(ACC_TEMP_PATH.'/login', 'form');
   return ob_get_clean();
@@ -7,6 +8,7 @@ function get_login_form($atts) {
 add_shortcode('login_form', 'get_login_form');
 
 function get_register_form($atts) {
+  wpCheckLoggedin();
   ob_start();
   get_template_part(ACC_TEMP_PATH.'/register', 'form');
   return ob_get_clean();
@@ -14,6 +16,7 @@ function get_register_form($atts) {
 add_shortcode('register_form', 'get_register_form');
 
 function get_user_account($atts) {
+  wpCheckLogout();
   ob_start();
   get_template_part(ACC_TEMP_PATH.'/user', 'account');
   return ob_get_clean();

@@ -15,7 +15,7 @@
   <?php endif; ?>
   <form action="" method="post">
     <div class="input-field-row">
-      <input type="text" name="username" placeholder="Username/Email Address" value="<?php echo $emailindex; ?>">
+      <input type="email" name="username" placeholder="Email Address" value="<?php echo $emailindex; ?>">
     <?php if( array_key_exists("username", $login_errors) ): ?>
         <?php printf('<p class="error"><span>%s</span></p>', $login_errors['username']); ?>
     <?php endif; ?>
