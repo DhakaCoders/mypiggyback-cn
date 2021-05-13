@@ -291,8 +291,8 @@ button.tab-link.current:after{
 	background: #d61324;
 	border-radius: 5px;
 	color: #fff;
-	font-weight: 900;
-	font-size: 16px;
+	font-weight: 600;
+	font-size: 17px;
 	line-height: 16px;
 	text-align: center;
 	cursor: pointer;
