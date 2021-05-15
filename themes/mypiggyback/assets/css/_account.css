@@ -127,10 +127,10 @@ button.mp-tab-link:hover:after,
 button.mp-tab-link.current:after{
 	width: 100%;
 }
-.fl-tab-content{
+.mp-tab-content{
 	display: none;
 }
-.fl-tab-content.current{
+.mp-tab-content.current{
 	display: block;
 }
 
@@ -2057,7 +2057,7 @@ a.ui-datepicker-next:after {
 .job-grd-item > div{
 	padding-bottom: 1px;
 }
-.job-grd-item{
+.mpac-grd{
 	box-shadow: 0 0 5px #e6e3e3;
 	padding: 15px 15px;
 }
@@ -2174,6 +2174,28 @@ a.ui-datepicker-next:after {
 	-ms-transform: translate(-50%, -50%);
 	-webkit-transform: translate(-50%, -50%);
 }
+.driver-grd-item,
+.customer-grd-item{
+	text-align: center;
+}
+.author-info > div{
+	padding-bottom: 1px;
+}
+.author-pro-img{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 15px;	
+}
+.author-pro-img img{
+	max-width: 100px;
+	height: auto;
+	border-radius: 100% 100%;
+}
+.author-info p{
+	line-height: 1.4;
+}
+
 @media(max-width: 1499px){
 
 }
