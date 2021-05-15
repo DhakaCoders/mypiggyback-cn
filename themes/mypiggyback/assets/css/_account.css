@@ -82,12 +82,12 @@ z-index: 5;
 	justify-content: center;
 	align-items: center;
 }
-.fl-tabs{
+.mp-tabs{
 	border-bottom: 3px solid #D6DAE0;
 }
 
-button.tab-link,
-a.tab-link{
+button.mp-tab-link,
+a.mp-tab-link{
 	padding: 0 15px 10px;
 	position: relative;
 	color: #000000;
@@ -100,18 +100,18 @@ a.tab-link{
 	margin-right: 35px;
 	font-size: 16px;
 }
-button.tab-link:last-child,
-a.tab-link:last-child{
+button.mp-tab-link:last-child,
+a.mp-tab-link:last-child{
 	margin-right: 0;
 }
-button.tab-link:hover,
-button.tab-link.current,
-a.tab-link:hover,
-a.tab-link.current{
+button.mp-tab-link:hover,
+button.mp-tab-link.current,
+a.mp-tab-link:hover,
+a.mp-tab-link.current{
 	color: #0054FD;
 }
-button.tab-link:after,
-a.tab-link:after{
+button.mp-tab-link:after,
+a.mp-tab-link:after{
 	content: "";
 	background: #0055FF;
 	position: absolute;
@@ -123,8 +123,8 @@ a.tab-link:after{
 	-ms-transition: all 0.5s;
 	-webkit-transition: all 0.5s;	
 }
-button.tab-link:hover:after,
-button.tab-link.current:after{
+button.mp-tab-link:hover:after,
+button.mp-tab-link.current:after{
 	width: 100%;
 }
 .fl-tab-content{
@@ -666,8 +666,8 @@ a.linkedin-login-btn:hover{
 	padding: 50px 0 105px;
 }
 
-.user-profile-sec-tab button.tab-link,
-.user-profile-sec-tab a.tab-link{
+.user-profile-sec-tab button.mp-tab-link,
+.user-profile-sec-tab a.mp-tab-link{
 	padding-left: 0;
 	padding-right: 0;
 }
@@ -2448,8 +2448,8 @@ a.ui-datepicker-next:after {
 		text-align: center;
 
 	}
-	.ngo-profile-sec-iner .user-profile-sec-tab button.tab-link, 
-	.ngo-profile-sec-iner .user-profile-sec-tab a.tab-link{
+	.ngo-profile-sec-iner .user-profile-sec-tab button.mp-tab-link, 
+	.ngo-profile-sec-iner .user-profile-sec-tab a.mp-tab-link{
 		margin-right: 20px!important;
 		margin-left: 20px!important;
 		margin-bottom: 10px;
@@ -2493,7 +2493,7 @@ a.ui-datepicker-next:after {
 	.sort-by{
 		margin-left: 0
 	}
-	button.tab-link, a.tab-link{
+	button.mp-tab-link, a.mp-tab-link{
 		margin-top: 15px;
 	}
 }
