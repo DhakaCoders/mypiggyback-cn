@@ -66,10 +66,11 @@
                 <div class="fl-input-field-row mp-input mp-selctpicker-ctlr">
                   <label>Country</label>
                   <select class="selectpicker" name="country" required>
-                    <option>Country</option>
-                    <option>Country</option>
-                    <option>Country</option>
-                    <option>Country</option>
+                    <?php if( get_countries() ): ?>
+                    <?php foreach( get_countries() as $key => $country_list ): ?>
+                    <option value="<?php echo $key; ?>"><?php echo $country_list; ?></option>
+                    <?php endforeach; ?>
+                    <?php endif; ?>
                   </select>
                 </div>
                 <div class="fl-input-field-row-grd">
