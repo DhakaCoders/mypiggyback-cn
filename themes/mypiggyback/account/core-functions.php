@@ -25,9 +25,11 @@ add_action('init', 'allow_custom_role_uploads');
 if(!function_exists('allow_custom_role_uploads')){
   function allow_custom_role_uploads() {
     $d_role = get_role('driver');
-    $d_role->add_cap('read');
-    $d_role->add_cap('upload_files');
-    $d_role->add_cap('edit_posts');
+    if($d_role){
+      $d_role->add_cap('read');
+      $d_role->add_cap('upload_files');
+      $d_role->add_cap('edit_posts');
+    }
   }
 }
 

@@ -79,6 +79,7 @@
                 <div class="vehicle-recovery-form vehicle-form">
                   <form id="vehicle-recovery" onsubmit="vehicleRecoveryOrder(); return false">
                     <input type="hidden" name="action" value="mpb_order_create">
+                    <input type="hidden" name="order_type" value="recovery">
                     <div class="input-field-row">
                       <input type="text" name="from_location" placeholder="From location A (Postcode)">
                     </div>
@@ -96,7 +97,7 @@
                     </div>
                     <div class="input-field-row input-field-row-submit">
                       <input type="hidden" name="mpb_order_nonce" value="<?php echo wp_create_nonce('mpb-order-nonce'); ?>"/>
-                      <input type="submit" name="submit" id="recoverybtn" value="SUPER-FASTBOOKING">
+                      <input type="submit" name="submit" id="recoverybtn" value="SUPER-FASTBOOKING A">
                     </div>
                   </form>
                 </div>

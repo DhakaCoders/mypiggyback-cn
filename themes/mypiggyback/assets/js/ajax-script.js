@@ -26,14 +26,14 @@ jQuery(document).ready(function($) {
 function vehicleRecoveryOrder(){
     var error = false;
     var serialized = jQuery( '#vehicle-recovery' ).serialize();
-    //console.log(serialized);
+    console.log(serialized);
     jQuery.ajax({
         type: 'POST',
         dataType: 'JSON',
         url: ajax_mpb_order_object.ajaxurl,
         data: serialized,
         success: function(data){
-            //console.log(data);
+            console.log(data);
             if(typeof(data['user_status']) != "undefined" &&  data['user_status'].length != 0 && data['user_status'] == 'success'){
                 
             }else{
