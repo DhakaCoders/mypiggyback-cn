@@ -1,7 +1,5 @@
 <?php 
-
 $user = wp_get_current_user();
-
 ?>
 <div class="ac-page-cntlr">
 <section class="dashboard-sec">
@@ -15,15 +13,13 @@ $user = wp_get_current_user();
             </div>
             <div id="tab-1" class="fl-tab-content current">
               <div class="tab-con-inr">
-                <?php var_dump($user);
-                ?>
-                <form>
+                <form action="" method="post">
                   <div class="fl-input-field-row mp-input profile-edit-step-cntlr" id="choose-file">
-                    <div class="profile-img-edit profile-edit-step-1 profile-img-step-1" >
-                      <img src="<?php echo THEME_URI; ?>/assets/images/hdr-login-profile-img.png">
+                    <div class="profile-img-edit profile-edit-step-1 profile-img-step-1" id="profile-priview">
+                      <img src="<?php echo esc_attr( get_the_author_meta( 'image', $user->ID ) ); ?>">
                     </div>
                     <div class="profile-img-edit profile-edit-step-2 profile-img-step-2">
-                      <input type="hidden" name="" value="" id="_profile_logo_id">
+                      <input type="hidden" name="prfile_image" value="<?php echo esc_attr( get_the_author_meta( 'image', $user->ID ) ); ?>" id="_profile_logo">
                       <label for="choose-file">
                         <i><img src="<?php echo THEME_URI; ?>/assets/images/plus-icon-2.png"></i>
                         <span class="file-up-instruction-txt">CLICK TO ADD<br> PROFILE PHOTO</span>
@@ -43,62 +39,68 @@ $user = wp_get_current_user();
                   <div class="fl-input-field-row-grd">
                     <div class="fl-input-field-row mp-input">
                       <label>Email</label>
-                      <input type="email" name="email" value="<?php echo esc_attr($user->email); ?>">
+                      <input type="email" name="email" value="<?php echo esc_attr($user->user_email); ?>">
                     </div>
                     <div class="fl-input-field-row mp-input">
                       <label>Phone</label>
-                      <input type="text" name="phone" value="Phone">
+                      <input type="text" name="phone" value="<?php echo esc_attr(get_user_meta( $user->ID, 'driver_phone', true )); ?>">
                     </div>
                   </div>
                   <div class="fl-input-field-row mp-input">
                     <label>Address</label>
-                    <input type="text" name="phone" value="Address">
+                    <input type="text" name="address_1" value="<?php echo esc_attr(get_user_meta( $user->ID, 'driver_address_1', true )); ?>">
                   </div>
                   <div class="fl-input-field-row mp-input">
                     <label>Street Address</label>
-                    <input type="text" name="phone" value="Street Address">
+                    <input type="text" name="address_2" value="<?php echo esc_attr(get_user_meta( $user->ID, 'driver_address_2', true )); ?>">
                   </div>
                   <div class="fl-input-field-row-grd">
                     <div class="fl-input-field-row mp-input">
                       <label>City</label>
-                      <input type="text" name="phone" value="City">
+                      <input type="text" name="city" value="<?php echo esc_attr(get_user_meta( $user->ID, 'driver_city', true )); ?>">
                     </div>
                     <div class="fl-input-field-row mp-input">
                       <label>Year of driving</label>
-                      <input type="text" name="phone" value="Year of driving">
+                      <input type="text" name="driving_year" value="<?php echo esc_attr(get_user_meta( $user->ID, 'driving_year', true )); ?>">
                     </div>
                   </div>
                   <div class="fl-input-field-row mp-input mp-selctpicker-ctlr">
                     <label>Country</label>
-                    <select class="selectpicker">
-                      <option>Country</option>
-                      <option>Country</option>
-                      <option>Country</option>
-                      <option>Country</option>
-                    </select>
+                  <select class="selectpicker" name="country" required>
+                    <?php 
+                    $countryCode = get_user_meta( $user->ID, 'driver_country', true );
+                    if( get_countries() ): 
+                    ?>
+                    <?php foreach( get_countries() as $key => $country_list ): ?>
+                    <option value="<?php echo $key; ?>" <?php echo ($countryCode == $key)?'selected':'';?>><?php echo $country_list; ?></option>
+                    <?php endforeach; ?>
+                    <?php endif; ?>
+                  </select>
                   </div>
                   <div class="fl-input-field-row-grd">
                     <div class="fl-input-field-row mp-input">
                       <label>Password*</label>
-                      <input type="text" name="phone" value="Password">
+                      <input type="password" name="password" value="Password">
                     </div>
                     <div class="fl-input-field-row mp-input">
                       <label>Retype password*</label>
-                      <input type="text" name="phone" value="Retype password">
+                      <input type="password" name="confirm_password" value="Retype password">
                     </div>
                   </div>
                   <div class="fl-input-field-row mp-input">
                     <div class="input-field">
                       <label>About yourself</label>
-                      <textarea value="About yourself"></textarea>
+                      <textarea name="yourself"><?php echo esc_attr(get_user_meta( $user->ID, 'description', true )); ?></textarea>
                     </div>
                   </div>
+                  <input type="hidden" name="user_update_register_nonce" value="<?php echo wp_create_nonce('user-update-register-nonce'); ?>"/>
                   <div class="plr-30">
                     <div class="profile-submit-btn profile-edit-step-1 flx-btn-center">
                       <!-- <input type="submit" name="" value="Edit Profile"> -->
                       <a class="edit-profile-btn" href="javascript:void(0)">Edit Profile</a>
                     </div>
                     <div class="profile-submit-btn profile-edit-step-2 flx-btn-center clearfix">
+                      
                       <input type="submit" name="" value="Save Changes">
                       <!-- <input id="edit-profile-cancle-btn" type="reset" name="" value="Cancel"> -->
                       <a href="javascript:void(0)" id="edit-profile-cancle-btn">Cancel</a>

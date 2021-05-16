@@ -11,7 +11,9 @@ function action_init_hooks(){
 	if( !is_user_logged_in() ){
 		user_login_account();
 		user_register_save();
-	}
+	}else{
+        user_register_update();
+    }
 
 }
 function user_login_account(){
@@ -117,7 +119,7 @@ function user_register_save(){
                     update_user_meta( $customerId, "driver_country", sanitize_text_field($_POST['country']) );
                 }
                 if( isset($_POST['yourself']) && !empty($_POST['yourself']) ){
-                    update_user_meta( $customerId, "driver_yourself", sanitize_text_field($_POST['yourself']) );
+                    update_user_meta( $customerId, "description", sanitize_text_field($_POST['yourself']) );
                 }
 				add_user_meta( $customerId, '_account_status', 'draft', true );
 				if (! add_user_meta( $customerId, 'show_admin_bar_front', 'false', true )){ 
@@ -138,6 +140,73 @@ function user_register_save(){
                         wp_die();
                     }
                 }
+
+            }
+            $data_reg['error'] = 'Could Not register.';
+        }
+    }
+     return false;
+}
+
+function user_register_update(){
+    global $data_reg;
+    $data_reg = array();
+    if (isset( $_POST["email"] ) && wp_verify_nonce($_POST['user_update_register_nonce'], 'user-update-register-nonce')) {
+        $user_id = get_current_user_id();
+        if( isset($_POST['email']) && !empty($_POST['email'])){
+            $email = sanitize_email($_POST['email']);
+        }
+        if( isset($_POST['password']) && !empty($_POST['password'])){
+            $user_password = $_POST['password'];
+        }
+        $firstname = (isset($_POST['fname']) && !empty($_POST['fname']))? sanitize_text_field($_POST['fname']):'';
+        $lastname = (isset($_POST['lname']) && !empty($_POST['lname']))? sanitize_text_field($_POST['lname']):'';
+        if( !empty($user_id ) ){
+            if( !empty($user_password) ){
+                $customerId = wp_update_user(array(
+                    'ID'         => $user_id,
+                    'user_pass'  => $user_password,
+                    'user_email' => $email,
+                    'first_name' => $firstname,
+                    'last_name'  => $lastname
+                    )
+                );
+            }else{
+                $customerId = wp_update_user(array(
+                    'ID'         => $user_id,
+                    'user_email' => $email,
+                    'first_name' => $firstname,
+                    'last_name'  => $lastname
+                    )
+                );
+            }
+            if( $customerId ){
+                if( isset($_POST['phone']) && !empty($_POST['phone'])){
+                    update_user_meta( $customerId, "driver_phone", sanitize_text_field($_POST['phone']) );
+                }
+                if( isset($_POST['address_1']) && !empty($_POST['address_1']) ){
+                    update_user_meta( $customerId, "driver_address_1", sanitize_text_field($_POST['address_1']) );
+                }
+                if( isset($_POST['address_2']) && !empty($_POST['address_2']) ){
+                    update_user_meta( $customerId, "driver_address_2", sanitize_text_field($_POST['address_2']) );
+                }
+                if( isset($_POST['city']) && !empty($_POST['city']) ){
+                    update_user_meta( $customerId, "driver_city", sanitize_text_field($_POST['city']));
+                }
+                if( isset($_POST['driving_year']) && !empty($_POST['driving_year']) ){
+                    update_user_meta( $customerId, "driving_year", sanitize_text_field($_POST['driving_year']) );
+                }
+                if( isset($_POST['country']) && !empty($_POST['country']) ){
+                    update_user_meta( $customerId, "driver_country", sanitize_text_field($_POST['country']) );
+                }
+                if( isset($_POST['yourself']) && !empty($_POST['yourself']) ){
+                    update_user_meta( $customerId, "description", sanitize_text_field($_POST['yourself']) );
+                }
+                if( isset($_POST['prfile_image']) && !empty($_POST['prfile_image']) ){
+                    update_user_meta( $user_id, 'image', $_POST[ 'prfile_image' ] );
+                }
+                echo '<script>window.location.href ="'.home_url('account').'";</script>';
+                wp_die();
 
             }
             $data_reg['error'] = 'Could Not register.';

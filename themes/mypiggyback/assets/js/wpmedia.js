@@ -19,7 +19,7 @@ jQuery(document).ready( function($){
         logoMediaUploader.on('select', function(){
           attachment = logoMediaUploader.state().get('selection').first().toJSON(); 
           console.log(attachment.id);
-          $('#_profile_logo_id').val(attachment.id);
+          $('#_profile_logo').val(attachment.url);
           //$('#profile-picture-priview').css('background-image', 'url(' + attachment.url + ')');
           $('#profile-priview').html($('<img>',{id:'set-post-thumb',src:attachment.url}));
         })

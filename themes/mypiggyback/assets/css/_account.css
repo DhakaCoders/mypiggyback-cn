@@ -2210,6 +2210,9 @@ a.ui-datepicker-next:after {
 	transform: rotate(90deg);
 	top: 3px;
 }
+h2.media-frame-actions-heading.screen-reader-text {
+    display: none !important;
+}
 @media(max-width: 1499px){
 
 }
