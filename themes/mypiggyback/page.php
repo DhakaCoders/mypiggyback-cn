@@ -1,7 +1,11 @@
-<?php 
-get_header(); 
-$thisID = get_the_ID();
-get_template_part('templates/page', 'breadcrumb');
+<?php
+if(is_page('account')){
+	get_header('loggedin'); 
+}else{
+	get_header(); 
+	$thisID = get_the_ID();
+	get_template_part('templates/page', 'breadcrumb');
+} 
 ?>
 <section class="mbp-about-team-sec">
   <div class="container">
