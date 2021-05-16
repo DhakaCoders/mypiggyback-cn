@@ -56,3 +56,36 @@ function filter_media( $query ) {
 
 	return $query;
 }
+function get_current_user_name(){
+   $user = wp_get_current_user();
+   if ( $user &&  is_user_logged_in() ) {
+      if(!empty($user->display_name)){
+        echo $user->display_name;
+      }else{
+        echo $user->user_nicename;
+      }
+   }
+   return false;
+}
+
+
+function get_user_image(){
+  $user = wp_get_current_user();
+  if( $user ):
+  $imageurl = get_the_author_meta( 'image', $user->ID );
+  if( isset($imageurl) && !empty($imageurl)){
+    $imgtag = '<img src="'.$imageurl.'" alt="Profile Image">';
+    echo $imgtag;
+  }else{
+    echo '<img src="'.THEME_URI.'/assets/images/hdr-login-profile-img.png" alt="Profile Image">';
+  }
+  endif;
+}
+add_filter( 'template_include', 'single_vehicle_order_callback' );
+function single_vehicle_order_callback( $original_template ) {
+  if ( is_singular( 'vehicle_order' ) ) {
+    return THEME_DIR .'/account/single-vehicle_order.php';
+  }else{
+    return $original_template;
+  }
+}

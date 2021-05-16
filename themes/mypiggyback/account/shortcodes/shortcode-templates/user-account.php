@@ -112,93 +112,37 @@ $user = wp_get_current_user();
             <div id="tab-2" class="fl-tab-content">
               <div class="tab-con-inr">
                 <div class="job-grds-cntlr">
-                  <ul class="reset-list clearfix">
-                    <li>
-                      <div class="job-grd-item mpac-grd">
-                        <div class="mHc">
-                          <h5 class="fl-h5">Job Title</h5>
-                        </div>
-                        <div class="mHc1">
-                          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                          tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                        <div class="mHc2">
-                          <a href="#">More</a>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="job-grd-item mpac-grd">
-                        <div class="mHc">
-                          <h5 class="fl-h5">Job Title</h5>
-                        </div>
-                        <div class="mHc1">
-                          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                          tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                        <div class="mHc2">
-                          <a href="#">More</a>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="job-grd-item mpac-grd">
-                        <div class="mHc">
-                          <h5 class="fl-h5">Job Title</h5>
-                        </div>
-                        <div class="mHc1">
-                          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                          tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                        <div class="mHc2">
-                          <a href="#">More</a>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="job-grd-item mpac-grd">
-                        <div class="mHc">
-                          <h5 class="fl-h5">Job Title</h5>
-                        </div>
-                        <div class="mHc1">
-                          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                          tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                        <div class="mHc2">
-                          <a href="#">More</a>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="job-grd-item mpac-grd">
-                        <div class="mHc">
-                          <h5 class="fl-h5">Job Title</h5>
-                        </div>
-                        <div class="mHc1">
-                          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                          tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                        <div class="mHc2">
-                          <a href="#">More</a>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="job-grd-item mpac-grd">
-                        <div class="mHc">
-                          <h5 class="fl-h5">Job Title</h5>
-                        </div>
-                        <div class="mHc1">
-                          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                          tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                        <div class="mHc2">
-                          <a href="#">More</a>
-                        </div>
-                      </div>
-                    </li>
+                  <?php 
+                    $Query = new WP_Query(array(
+                      'post_type' => 'vehicle_order',
+                      'posts_per_page'=> -1,
+                      'orderby' => 'date',
+                      'order'=> 'desc',
 
+                    ));
+                  if( $Query->have_posts() ):
+                  ?>
+                  <ul class="reset-list clearfix">
+                    <?php 
+                      while($Query->have_posts()): $Query->the_post(); 
+                    ?>
+                    <li>
+                      <div class="job-grd-item mpac-grd">
+                        <div class="mHc">
+                          <h5 class="fl-h5"><?php the_title(); ?></h5>
+                        </div>
+                        <div class="mHc1">
+                          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                          tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <div class="mHc2">
+                          <a href="<?php the_permalink(); ?>">More</a>
+                        </div>
+                      </div>
+                    </li>
+                    <?php endwhile; ?>
                   </ul>
+                  <?php endif; wp_reset_postdata(); ?>
                 </div>
               </div>
             </div>

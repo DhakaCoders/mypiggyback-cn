@@ -270,9 +270,9 @@ $hdinfo = get_field('headerinfo', 'options');
             <div class="hdr-right">
               <div class="hdr-login-profile login-btn-expend">
                 <div class="hdr-login-profile-img">
-                  <img src="<?php echo THEME_URI; ?>/assets/images/hdr-login-profile-img.png">
+                  <?php get_user_image(); ?>
                 </div>
-                <strong>Georgio</strong>
+                <strong><?php get_current_user_name(); ?></strong>
                 <ul class="reset-list clearfix">
                   <li>
                     <i class="fas fa-sign-out-alt"></i>
