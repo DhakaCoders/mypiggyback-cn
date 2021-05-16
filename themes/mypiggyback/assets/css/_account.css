@@ -12,8 +12,8 @@
 
 /*-----*/
 
-.block-700{
-	max-width: 700px;
+.block-800{
+	max-width: 800px;
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
@@ -2059,7 +2059,7 @@ a.ui-datepicker-next:after {
 }
 .mpac-grd{
 	box-shadow: 0 0 5px #e6e3e3;
-	padding: 15px 15px;
+	padding: 20px 15px;
 }
 
 .logged-header .hdr-menu,
@@ -2195,7 +2195,21 @@ a.ui-datepicker-next:after {
 .author-info p{
 	line-height: 1.4;
 }
-
+.author-tel a,
+.author-mail a{
+	padding-left: 20px;
+	position: relative;
+}
+.author-tel a i,
+.author-mail a i{
+	position: absolute;
+	left: 0;
+	top:2px;
+}
+.author-tel a i{
+	transform: rotate(90deg);
+	top: 3px;
+}
 @media(max-width: 1499px){
 
 }
