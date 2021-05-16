@@ -82,12 +82,12 @@ z-index: 5;
 	justify-content: center;
 	align-items: center;
 }
-.fl-tabs{
+.mp-tabs{
 	border-bottom: 3px solid #D6DAE0;
 }
 
-button.tab-link,
-a.tab-link{
+button.mp-tab-link,
+a.mp-tab-link{
 	padding: 0 15px 10px;
 	position: relative;
 	color: #000000;
@@ -100,18 +100,18 @@ a.tab-link{
 	margin-right: 35px;
 	font-size: 16px;
 }
-button.tab-link:last-child,
-a.tab-link:last-child{
+button.mp-tab-link:last-child,
+a.mp-tab-link:last-child{
 	margin-right: 0;
 }
-button.tab-link:hover,
-button.tab-link.current,
-a.tab-link:hover,
-a.tab-link.current{
+button.mp-tab-link:hover,
+button.mp-tab-link.current,
+a.mp-tab-link:hover,
+a.mp-tab-link.current{
 	color: #0054FD;
 }
-button.tab-link:after,
-a.tab-link:after{
+button.mp-tab-link:after,
+a.mp-tab-link:after{
 	content: "";
 	background: #0055FF;
 	position: absolute;
@@ -123,14 +123,14 @@ a.tab-link:after{
 	-ms-transition: all 0.5s;
 	-webkit-transition: all 0.5s;	
 }
-button.tab-link:hover:after,
-button.tab-link.current:after{
+button.mp-tab-link:hover:after,
+button.mp-tab-link.current:after{
 	width: 100%;
 }
-.fl-tab-content{
+.mp-tab-content{
 	display: none;
 }
-.fl-tab-content.current{
+.mp-tab-content.current{
 	display: block;
 }
 
@@ -666,8 +666,8 @@ a.linkedin-login-btn:hover{
 	padding: 50px 0 105px;
 }
 
-.user-profile-sec-tab button.tab-link,
-.user-profile-sec-tab a.tab-link{
+.user-profile-sec-tab button.mp-tab-link,
+.user-profile-sec-tab a.mp-tab-link{
 	padding-left: 0;
 	padding-right: 0;
 }
@@ -2057,7 +2057,7 @@ a.ui-datepicker-next:after {
 .job-grd-item > div{
 	padding-bottom: 1px;
 }
-.job-grd-item{
+.mpac-grd{
 	box-shadow: 0 0 5px #e6e3e3;
 	padding: 15px 15px;
 }
@@ -2174,6 +2174,28 @@ a.ui-datepicker-next:after {
 	-ms-transform: translate(-50%, -50%);
 	-webkit-transform: translate(-50%, -50%);
 }
+.driver-grd-item,
+.customer-grd-item{
+	text-align: center;
+}
+.author-info > div{
+	padding-bottom: 1px;
+}
+.author-pro-img{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 15px;	
+}
+.author-pro-img img{
+	max-width: 100px;
+	height: auto;
+	border-radius: 100% 100%;
+}
+.author-info p{
+	line-height: 1.4;
+}
+
 @media(max-width: 1499px){
 
 }
@@ -2448,8 +2470,8 @@ a.ui-datepicker-next:after {
 		text-align: center;
 
 	}
-	.ngo-profile-sec-iner .user-profile-sec-tab button.tab-link, 
-	.ngo-profile-sec-iner .user-profile-sec-tab a.tab-link{
+	.ngo-profile-sec-iner .user-profile-sec-tab button.mp-tab-link, 
+	.ngo-profile-sec-iner .user-profile-sec-tab a.mp-tab-link{
 		margin-right: 20px!important;
 		margin-left: 20px!important;
 		margin-bottom: 10px;
@@ -2493,7 +2515,7 @@ a.ui-datepicker-next:after {
 	.sort-by{
 		margin-left: 0
 	}
-	button.tab-link, a.tab-link{
+	button.mp-tab-link, a.mp-tab-link{
 		margin-top: 15px;
 	}
 }
