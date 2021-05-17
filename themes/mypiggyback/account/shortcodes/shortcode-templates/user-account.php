@@ -22,7 +22,7 @@ $user = wp_get_current_user();
                     <div class="profile-img-edit profile-edit-step-2 profile-img-step-2">
                       <input type="hidden" name="prfile_image" value="<?php echo esc_attr( get_the_author_meta( 'image', $user->ID ) ); ?>" id="_profile_logo">
                       <label for="choose-file">
-                        <i><img src="<?php echo THEME_URI; ?>/assets/images/plus-icon-2.png"></i>
+                        <i><img src="<?php echo THEME_URI; ?>/<?php echo THEME_URI; ?>/assets/images/plus-icon-2.png"></i>
                         <span class="file-up-instruction-txt">CLICK TO ADD<br> PROFILE PHOTO</span>
                       </label>
                     </div>
@@ -175,7 +175,7 @@ $user = wp_get_current_user();
                     <div class="profile-img-edit profile-edit-step-2 profile-img-step-2">
                       <input type="hidden" name="prfile_image" value="<?php echo esc_attr( get_the_author_meta( 'image', $user->ID ) ); ?>" id="_profile_logo">
                       <label for="choose-file">
-                        <i><img src="<?php echo THEME_URI; ?>/assets/images/plus-icon-2.png"></i>
+                        <i><img src="<?php echo THEME_URI; ?>/<?php echo THEME_URI; ?>/assets/images/plus-icon-2.png"></i>
                         <span class="file-up-instruction-txt">CLICK TO ADD<br> PROFILE PHOTO</span>
                       </label>
                     </div>
@@ -303,104 +303,46 @@ $user = wp_get_current_user();
             <div id="tab-3" class="mp-tab-content">
               <div class="tab-con-inr">
                 <div class="job-grds-cntlr">
+                  <?php 
+                    $users = get_users('role=driver');
+                  ?>
                   <ul class="reset-list clearfix">
+                    <?php foreach ( $users as $user_row ) { ?>
                     <li>
                       <div class="driver-grd-item mpac-grd">
                         <div class="author-pro-img mHc">
-                          <img src="assets/images/avater-img.png">
+                        <?php if( !empty(get_the_author_meta( 'image', $user_row->ID )) ){ ?>
+                          <img src="<?php echo esc_attr( get_the_author_meta( 'image', $user_row->ID ) ); ?>">
+                        <?php }else{ ?>
+                          <img src="<?php echo THEME_URI; ?>/assets/images/avater-img.png">
+                        <?php } ?>
                         </div>
                         <div class="mHc1 author-info">
-                          <h5 class="fl-h5">Driver Name</h5>
+                          <h5 class="fl-h5">
+                          <?php
+                            if(!empty($user_row->display_name)){
+                              echo $user_row->display_name;
+                            }else{
+                              echo $user_row->user_nicename;
+                            }
+                          ?>  
+                          </h5>
+                          <?php if( !empty(get_the_author_meta( 'description', $user_row->ID )) ): ?>
                           <div class="mHc2">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                          <p><?php echo esc_attr( get_the_author_meta( 'description', $user_row->ID ) ); ?></p>
                           </div>
+                          <?php endif; ?>
                           <div class="author-tel">
-                            <a href="tel:2025550191"><i class="fas fa-phone"></i>2025550191</a>
+                            <?php $driver_phone = get_the_author_meta( 'driver_phone', $user_row->ID ); ?> 
+                            <?php if( !empty($driver_phone) ) printf('<a href="tel:%s"><i class="fas fa-phone"></i>%s</a>', phone_preg($driver_phone), $driver_phone); ?>
                           </div>
                           <div class="author-mail">
-                            <a href="mailto:"><i class="far fa-envelope"></i>loremipsum@gmail.com</a>
+                            <a href="mailto:<?php echo esc_html( $user_row->user_email ); ?>"><i class="far fa-envelope"></i><?php echo esc_html( $user_row->user_email ); ?></a>
                           </div>
                         </div>
                       </div>
                     </li>
-                    <li>
-                      <div class="driver-grd-item mpac-grd">
-                        <div class="author-pro-img mHc">
-                          <img src="assets/images/avater-img.png">
-                        </div>
-                        <div class="mHc1 author-info">
-                          <h5 class="fl-h5">Driver Name</h5>
-                          <div class="mHc2">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-                          </div>
-                          <div class="author-tel">
-                            <a href="tel:2025550191"><i class="fas fa-phone"></i>2025550191</a>
-                          </div>
-                          <div class="author-mail">
-                            <a href="mailto:"><i class="far fa-envelope"></i>loremipsum@gmail.com</a>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="driver-grd-item mpac-grd">
-                        <div class="author-pro-img mHc">
-                          <img src="assets/images/avater-img.png">
-                        </div>
-                        <div class="mHc1 author-info">
-                          <h5 class="fl-h5">Driver Name</h5>
-                          <div class="mHc2">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-                          </div>
-                          <div class="author-tel">
-                            <a href="tel:2025550191"><i class="fas fa-phone"></i>2025550191</a>
-                          </div>
-                          <div class="author-mail">
-                            <a href="mailto:"><i class="far fa-envelope"></i>loremipsum@gmail.com</a>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="driver-grd-item mpac-grd">
-                        <div class="author-pro-img mHc">
-                          <img src="assets/images/avater-img.png">
-                        </div>
-                        <div class="mHc1 author-info">
-                          <h5 class="fl-h5">Driver Name</h5>
-                          <div class="mHc2">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-                          </div>
-                          <div class="author-tel">
-                            <a href="tel:2025550191"><i class="fas fa-phone"></i>2025550191</a>
-                          </div>
-                          <div class="author-mail">
-                            <a href="mailto:"><i class="far fa-envelope"></i>loremipsum@gmail.com</a>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="driver-grd-item mpac-grd">
-                        <div class="author-pro-img mHc">
-                          <img src="assets/images/avater-img.png">
-                        </div>
-                        <div class="mHc1 author-info">
-                          <h5 class="fl-h5">Driver Name</h5>
-                          <div class="mHc2">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-                          </div>
-                          <div class="author-tel">
-                            <a href="tel:2025550191"><i class="fas fa-phone"></i>2025550191</a>
-                          </div>
-                          <div class="author-mail">
-                            <a href="mailto:"><i class="far fa-envelope"></i>loremipsum@gmail.com</a>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-
-
+                    <?php } ?>
                   </ul>
                 </div>
               </div>
@@ -412,7 +354,7 @@ $user = wp_get_current_user();
                     <li>
                       <div class="customer-grd-item mpac-grd">
                         <div class="author-pro-img mHc">
-                          <img src="assets/images/avater-img.png">
+                          <img src="<?php echo THEME_URI; ?>/assets/images/avater-img.png">
                         </div>
                         <div class="mHc1 author-info">
                           <h5 class="fl-h5">Customer Name</h5>
@@ -431,7 +373,7 @@ $user = wp_get_current_user();
                     <li>
                       <div class="customer-grd-item mpac-grd">
                         <div class="author-pro-img mHc">
-                          <img src="assets/images/avater-img.png">
+                          <img src="<?php echo THEME_URI; ?>/assets/images/avater-img.png">
                         </div>
                         <div class="mHc1 author-info">
                           <h5 class="fl-h5">Customer Name</h5>
@@ -450,7 +392,7 @@ $user = wp_get_current_user();
                     <li>
                       <div class="customer-grd-item mpac-grd">
                         <div class="author-pro-img mHc">
-                          <img src="assets/images/avater-img.png">
+                          <img src="<?php echo THEME_URI; ?>/assets/images/avater-img.png">
                         </div>
                         <div class="mHc1 author-info">
                           <h5 class="fl-h5">Customer Name</h5>
@@ -469,7 +411,7 @@ $user = wp_get_current_user();
                     <li>
                       <div class="customer-grd-item mpac-grd">
                         <div class="author-pro-img mHc">
-                          <img src="assets/images/avater-img.png">
+                          <img src="<?php echo THEME_URI; ?>/assets/images/avater-img.png">
                         </div>
                         <div class="mHc1 author-info">
                           <h5 class="fl-h5">Customer Name</h5>
@@ -488,7 +430,7 @@ $user = wp_get_current_user();
                     <li>
                       <div class="customer-grd-item mpac-grd">
                         <div class="author-pro-img mHc">
-                          <img src="assets/images/avater-img.png">
+                          <img src="<?php echo THEME_URI; ?>/assets/images/avater-img.png">
                         </div>
                         <div class="mHc1 author-info">
                           <h5 class="fl-h5">Customer Name</h5>
