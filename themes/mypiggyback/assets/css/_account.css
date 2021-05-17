@@ -799,6 +799,7 @@ span.file-up-instruction-txt {
 .profile-img-step-1 img{
 	max-width: 120px;
 	height: auto;
+	border-radius: 100% 100%;
 }
 .profile-img-edit:hover{
 	background: #e1e2e9;
