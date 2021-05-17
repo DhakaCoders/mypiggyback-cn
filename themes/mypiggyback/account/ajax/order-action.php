@@ -35,7 +35,7 @@ function mpb_order_create(){
             if( isset($_POST['from_location']) && !empty($_POST['from_location']) ){
                 update_field( 'order_from_location', sanitize_text_field($_POST['from_location']), $pid );
             }
-            if( isset($_POST['order_to_location']) && !empty($_POST['order_to_location']) ){
+            if( isset($_POST['to_location']) && !empty($_POST['to_location']) ){
                 update_field( 'order_to_location', sanitize_text_field($_POST['to_location']), $pid );
             }
             if(isset($_POST['fullname']) && !empty($_POST['fullname'])){
@@ -87,8 +87,22 @@ function apply_driver_order(){
         $data['error'] = 'error';
     }
     else {
+        $postid = $_POST['id'];
         $user_id = get_current_user_id();
-        $data['userid'] = $user_id;
+        $applied_ids = get_field('driver_applied_ids', $postid);
+        if(!empty($applied_ids)){
+            if(in_array($user_id, $applied_ids)){
+              $data['applied'] = 'yes';
+            }else{
+               $ids_array = array($user_id); 
+               update_field('driver_applied_ids',array_merge($applied_ids,$ids_array),$postid);
+               $data['apply_send'] = 'send';
+            }
+        }else{
+            $ids_array = array($user_id);
+            update_field('driver_applied_ids',$ids_array,$postid);
+        }
+        
         $data['success'] = 'success';
     }
     echo json_encode($data);

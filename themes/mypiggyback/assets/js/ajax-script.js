@@ -15,7 +15,11 @@ jQuery(document).ready(function($) {
             success: function( data ) {
                 console.log(data);
                 if(typeof(data['success']) != "undefined" &&  data['success'].length != 0 && data['success'] == 'success'){
-                    
+                  if(typeof(data['applied']) != "undefined" &&  data['applied'].length != 0 && data['applied'] == 'yes'){
+                    $('#apply_btn_wrap').html('<span class="applied">You have already applied for this job.</span>');
+                  }else{
+                    $('#apply_btn_wrap').html('<span class="sent-apply">Sent succsessfully for this job.</span>');
+                  } 
                 }else{
 
                 }

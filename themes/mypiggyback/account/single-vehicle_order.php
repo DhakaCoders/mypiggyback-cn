@@ -11,6 +11,15 @@ $order_type = get_field('order_type', $thisID);
         <div class="row">
           <div class="col-sm-12">
             <div class="block-700">
+              <?php 
+                if ( current_user_can( 'driver' ) && is_user_logged_in() ){
+                  $user_id = get_current_user_id();
+                  $applied_ids = get_field('driver_applied_ids', $thisID);
+                  if(in_array($user_id, $applied_ids)){
+                    echo '<span class="applied topbar">You have already applied for this job.</span>';
+                  }
+                }
+              ?>
               <div class="thankyou-page-con">
                 <h1 class="fl-h3"><?php the_title(); ?></h1>
                 <div class="job-points">
@@ -31,9 +40,10 @@ $order_type = get_field('order_type', $thisID);
               <?php if ( current_user_can( 'driver' ) && is_user_logged_in() ){ ?>
               <div class="gap-50"></div>
               <div class="applytojob">
-                <p><small>Dev note : Apply button only for drivers</small></p>
-                <div class="vcl-btn vcl-fst-btn">
+                <div class="vcl-btn vcl-fst-btn" id="apply_btn_wrap">
+                  <?php if(!in_array($user_id, $applied_ids)){ ?>
                   <a class="fl-red-btn" id="driver_apply" href="#" data-id="<?php the_ID() ?>" data-nonce="<?php echo wp_create_nonce('apply_nonce') ?>">Apply</a>
+                  <?php } ?>
                 </div>
               </div>
               <?php } ?>
