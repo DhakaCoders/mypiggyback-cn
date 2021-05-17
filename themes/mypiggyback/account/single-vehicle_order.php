@@ -33,7 +33,7 @@ $order_type = get_field('order_type', $thisID);
               <div class="applytojob">
                 <p><small>Dev note : Apply button only for drivers</small></p>
                 <div class="vcl-btn vcl-fst-btn">
-                  <a class="fl-red-btn" href="#">Apply</a>
+                  <a class="fl-red-btn" id="driver_apply" href="#" data-id="<?php the_ID() ?>" data-nonce="<?php echo wp_create_nonce('apply_nonce') ?>">Apply</a>
                 </div>
               </div>
               <?php } ?>

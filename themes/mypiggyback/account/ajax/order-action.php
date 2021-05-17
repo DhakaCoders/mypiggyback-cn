@@ -1,6 +1,9 @@
 <?php
 add_action('wp_enqueue_scripts', 'mpb_order_action_hooks');
 function mpb_order_action_hooks(){
+        if(is_user_logged_in()){
+            ajax_mpb_driver_apply_init();
+        }
 		ajax_mpb_order_init();
 }
 
@@ -62,4 +65,33 @@ function mpb_order_create(){
         echo json_encode($data);
         wp_die();
 	}
+}
+
+
+
+function ajax_mpb_driver_apply_init(){
+    wp_register_script('ajax-apply-order-script', get_stylesheet_directory_uri(). '/assets/js/ajax-script.js', array('jquery') );
+    wp_enqueue_script('ajax-apply-order-script');
+
+    wp_localize_script( 'ajax-apply-order-script', 'ajax_driver_apply_object', array(
+        'ajaxurl' => admin_url( 'admin-ajax.php' )
+    ));
+    // Enable the user with no privileges to run ajax_login() in AJAX
+}
+add_action('wp_ajax_nopriv_apply_driver_order', 'apply_driver_order');
+add_action('wp_ajax_apply_driver_order', 'apply_driver_order');
+function apply_driver_order(){
+    $data = array();
+    $permission = check_ajax_referer( 'apply_nonce', 'nonce', false );
+    if( $permission == false ) {
+        $data['error'] = 'error';
+    }
+    else {
+        $user_id = get_current_user_id();
+        $data['userid'] = $user_id;
+        $data['success'] = 'success';
+    }
+    echo json_encode($data);
+    wp_die();
+
 }
