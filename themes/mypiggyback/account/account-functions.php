@@ -1,6 +1,6 @@
 <?php
 defined('ACC_TEMP_PATH') or define('ACC_TEMP_PATH', 'account/shortcodes/shortcode-templates');
-
+include_once(THEME_DIR .'/account/lib/query.php');
 include_once(THEME_DIR .'/account/lib/country-lists.php');
 include_once(THEME_DIR .'/account/ajax/order-action.php');
 include_once(THEME_DIR .'/account/core-functions.php');
@@ -214,3 +214,8 @@ function user_register_update(){
     }
      return false;
 }
+
+
+/* table crate hook*/
+include_once(THEME_DIR .'/account/lib/table.php');
+add_action('init', array('cbv_create_tables','create_tables'));

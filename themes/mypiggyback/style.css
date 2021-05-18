@@ -21,6 +21,7 @@ Text Domain: mypiggyback
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 .applicants ul li{
 	margin-bottom: 20px;
@@ -36,5 +37,11 @@ Text Domain: mypiggyback
 .details{
 	margin-left: 30px;
 }
-.diverListhook{}
+.details.mHc1{
+	margin-left:15px!important;
+}
+.details.mHc1 ul li {
+    width: 100%;
+    padding: 0;
+}
 

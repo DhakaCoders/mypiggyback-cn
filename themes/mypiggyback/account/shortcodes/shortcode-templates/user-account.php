@@ -11,6 +11,8 @@ $user = wp_get_current_user();
             <div class="mp-tabs clearfix text-center">
               <button class="mp-tab-link current" data-tab="tab-1"><span>Profile</span></button>
               <button class="mp-tab-link " data-tab="tab-2"><span>Jobs</span></button>
+              <button class="mp-tab-link " data-tab="tab-3"><span>Ongoing Jobs</span></button>
+              <button class="mp-tab-link " data-tab="tab-4"><span>Completed Jobs</span></button>
             </div>
             <div id="tab-1" class="mp-tab-content current">
               <div class="tab-con-inr">
@@ -119,6 +121,13 @@ $user = wp_get_current_user();
                       'posts_per_page'=> -1,
                       'orderby' => 'date',
                       'order'=> 'desc',
+                      'meta_query' => array(
+                          array(
+                              'key' => 'order_status_by_author',
+                              'value' => '0',
+                              'compare' => '='
+                          )
+                      )
 
                     ));
                   if( $Query->have_posts() ):
@@ -126,15 +135,19 @@ $user = wp_get_current_user();
                   <ul class="reset-list clearfix">
                     <?php 
                       while($Query->have_posts()): $Query->the_post(); 
+                        $from_location = get_field('order_from_location', get_the_ID());
+                        $to_location = get_field('order_to_location', get_the_ID());
                     ?>
                     <li>
                       <div class="job-grd-item mpac-grd">
                         <div class="mHc">
                           <h5 class="fl-h5"><?php the_title(); ?></h5>
                         </div>
-                        <div class="mHc1">
-                          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                          tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <div class="details mHc1">
+                          <ul>
+                            <li><strong>From:</strong> <?php if( !empty($from_location) ) printf('%s', $from_location);?></li>
+                            <li><strong>To:</strong> <?php if( !empty($to_location) ) printf('%s', $to_location);?></li>
+                          </ul>
                         </div>
                         <div class="mHc2">
                           <a href="<?php the_permalink(); ?>">More</a>
@@ -143,11 +156,124 @@ $user = wp_get_current_user();
                     </li>
                     <?php endwhile; ?>
                   </ul>
+                  <?php else: ?>
+                  <p><small>Here not available new jobs.</small><p>
                   <?php endif; wp_reset_postdata(); ?>
                 </div>
               </div>
             </div>
+            <div id="tab-3" class="mp-tab-content">
+              <div class="tab-con-inr">
+                <div class="job-grds-cntlr">
+                  <?php 
+                    $ongo_Query = new WP_Query(array(
+                      'post_type' => 'vehicle_order',
+                      'posts_per_page'=> -1,
+                      'orderby' => 'date',
+                      'order'=> 'desc',
+                      'meta_query' => array(
+                        'relation' => 'AND',
+                          array(
+                              'key' => 'order_status_by_author',
+                              'value' => '1',
+                              'compare' => '='
+                          ),
+                          array(
+                              'key' => 'order_appointed_to',
+                              'value' => $user->ID,
+                              'compare' => '='
+                          )
+                      )
 
+                    ));
+                  if( $ongo_Query->have_posts() ):
+                  ?>
+                  <ul class="reset-list clearfix">
+                    <?php 
+                      while($ongo_Query->have_posts()): $ongo_Query->the_post(); 
+                        $from_location = get_field('order_from_location', get_the_ID());
+                        $to_location = get_field('order_to_location', get_the_ID());
+                    ?>
+                    <li>
+                      <div class="job-grd-item mpac-grd">
+                        <div class="mHc">
+                          <h5 class="fl-h5"><?php the_title(); ?></h5>
+                        </div>
+                        <div class="details mHc1">
+                          <ul>
+                            <li><strong>From:</strong> <?php if( !empty($from_location) ) printf('%s', $from_location);?></li>
+                            <li><strong>To:</strong> <?php if( !empty($to_location) ) printf('%s', $to_location);?></li>
+                          </ul>
+                        </div>
+                        <div class="mHc2">
+                          <a href="<?php the_permalink(); ?>">More</a>
+                        </div>
+                      </div>
+                    </li>
+                    <?php endwhile; ?>
+                  </ul>
+                  <?php else: ?>
+                    <p><small>Here not available ongoing jobs.</small><p>
+                  <?php endif; wp_reset_postdata(); ?>
+                </div>
+              </div>
+            </div>
+            <div id="tab-4" class="mp-tab-content">
+              <div class="tab-con-inr">
+                <div class="job-grds-cntlr">
+                  <?php 
+                    $comp_Query = new WP_Query(array(
+                      'post_type' => 'vehicle_order',
+                      'posts_per_page'=> -1,
+                      'orderby' => 'date',
+                      'order'=> 'desc',
+                      'meta_query' => array(
+                        'relation' => 'AND',
+                          array(
+                              'key' => 'order_status_by_author',
+                              'value' => '2',
+                              'compare' => '='
+                          ),
+                          array(
+                              'key' => 'order_appointed_to',
+                              'value' => $user->ID,
+                              'compare' => '='
+                          )
+                      )
+
+                    ));
+                  if( $comp_Query->have_posts() ):
+                  ?>
+                  <ul class="reset-list clearfix">
+                    <?php 
+                      while($comp_Query->have_posts()): $comp_Query->the_post(); 
+                        $from_location = get_field('order_from_location', get_the_ID());
+                        $to_location = get_field('order_to_location', get_the_ID());
+                    ?>
+                    <li>
+                      <div class="job-grd-item mpac-grd">
+                        <div class="mHc">
+                          <h5 class="fl-h5"><?php the_title(); ?></h5>
+                        </div>
+                        <div class="details mHc1">
+                          <ul>
+                            <li><strong>From:</strong> <?php if( !empty($from_location) ) printf('%s', $from_location);?></li>
+                            <li><strong>To:</strong> <?php if( !empty($to_location) ) printf('%s', $to_location);?></li>
+                          </ul>
+                        </div>
+                        <div class="mHc2">
+                          <a href="<?php the_permalink(); ?>">More</a>
+                        </div>
+                      </div>
+                    </li>
+                    <?php endwhile; ?>
+                  </ul>
+                  <?php else: ?>
+                  <p><small>Here not available completed jobs.</small><p>
+                  <?php endif; wp_reset_postdata(); ?>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -271,23 +397,26 @@ $user = wp_get_current_user();
                       'post_type' => 'vehicle_order',
                       'posts_per_page'=> -1,
                       'orderby' => 'date',
-                      'order'=> 'desc',
-
+                      'order'=> 'desc'
                     ));
                   if( $Query->have_posts() ):
                   ?>
                   <ul class="reset-list clearfix">
                     <?php 
                       while($Query->have_posts()): $Query->the_post(); 
+                        $from_location = get_field('order_from_location', get_the_ID());
+                        $to_location = get_field('order_to_location', get_the_ID());
                     ?>
                     <li>
                       <div class="job-grd-item mpac-grd">
                         <div class="mHc">
                           <h5 class="fl-h5"><?php the_title(); ?></h5>
                         </div>
-                        <div class="mHc1">
-                          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                          tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <div class="details mHc1">
+                          <ul>
+                            <li><strong>From:</strong> <?php if( !empty($from_location) ) printf('%s', $from_location);?></li>
+                            <li><strong>To:</strong> <?php if( !empty($to_location) ) printf('%s', $to_location);?></li>
+                          </ul>
                         </div>
                         <div class="mHc2">
                           <a href="<?php the_permalink(); ?>">More</a>

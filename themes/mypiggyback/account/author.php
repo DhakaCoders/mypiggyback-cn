@@ -42,7 +42,7 @@ get_header();
               </div>
               <?php } ?>
               <?php }else{ ?>
-                <p><small>You have no permission to see the content.</small></p>
+                <p><small>You have no permission to see the details.</small></p>
               <?php } ?>
             </div>
           </div>

@@ -12,6 +12,8 @@ $order_type = get_field('order_type', $thisID);
           <div class="col-sm-12">
             <div class="block-700">
               <?php 
+                $status_by_author = get_field('order_status_by_author', $thisID);
+                $appointed_to = get_field('order_appointed_to', $thisID);
                 $applied_ids = get_field('driver_applied_ids', $thisID);
                 if ( current_user_can( 'driver' ) && is_user_logged_in() ){
                   $user_id = get_current_user_id();
@@ -76,8 +78,12 @@ $order_type = get_field('order_type', $thisID);
                           ?> 
                         </strong>
                       </div>
-                      <div class="details"><a target="_blank" href="#">See Profile</a></div>
-                      <div class="details"><a href="#">Appoint</a></div>
+                      <div class="details"><a target="_blank" href="<?php echo esc_url(home_url('author/'.$applied_user->user_login)); ?>">See Profile</a></div>
+                      <?php if($status_by_author == 1 && $appointed_to == $applied_user->ID){ ?>
+                        <div class="details"><a href="#"  onclick="return false;">Appointed</a></div>
+                      <?php }else{ ?>
+                        <div class="details" style="<?php echo ($status_by_author == 1)?'display:none;':'';?>"><a href="#" id="order_appoint_<?php echo $applied_user->ID; ?>" onclick="orderAppoint(<?php the_ID() ?>, <?php echo $applied_user->ID; ?>); return false;">Appoint</a></div>
+                      <?php } ?>
                     </div>
                   </li>
                   <?php } ?>
