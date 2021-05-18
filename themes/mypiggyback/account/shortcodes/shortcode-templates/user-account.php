@@ -288,8 +288,9 @@ $user = wp_get_current_user();
             <div class="mp-tabs clearfix text-center">
               <button class="mp-tab-link " data-tab="tab-1"><span>Profile</span></button>
               <button class="mp-tab-link " data-tab="tab-2"><span>Jobs</span></button>
-              <button class="mp-tab-link current" data-tab="tab-3"><span>Drivers</span></button>
-              <button class="mp-tab-link " data-tab="tab-4"><span>Customers</span></button>
+              <button class="mp-tab-link " data-tab="tab-3"><span>Ongoing Jobs</span></button>
+              <button class="mp-tab-link " data-tab="tab-4"><span>Completed Jobs</span></button>
+              <button class="mp-tab-link current" data-tab="tab-5"><span>Drivers</span></button>
             </div>
             <div id="tab-1" class="mp-tab-content">
               <div class="tab-con-inr">
@@ -397,7 +398,14 @@ $user = wp_get_current_user();
                       'post_type' => 'vehicle_order',
                       'posts_per_page'=> -1,
                       'orderby' => 'date',
-                      'order'=> 'desc'
+                      'order'=> 'desc',
+                      'meta_query' => array(
+                          array(
+                              'key' => 'order_status_by_author',
+                              'value' => '0',
+                              'compare' => '='
+                          )
+                      )
                     ));
                   if( $Query->have_posts() ):
                   ?>
@@ -430,6 +438,100 @@ $user = wp_get_current_user();
               </div>
             </div>
             <div id="tab-3" class="mp-tab-content">
+              <div class="tab-con-inr">
+                <div class="job-grds-cntlr">
+                  <?php 
+                    $Query = new WP_Query(array(
+                      'post_type' => 'vehicle_order',
+                      'posts_per_page'=> -1,
+                      'orderby' => 'date',
+                      'order'=> 'desc',
+                      'meta_query' => array(
+                          array(
+                              'key' => 'order_status_by_author',
+                              'value' => '1',
+                              'compare' => '='
+                          )
+                      )
+                    ));
+                  if( $Query->have_posts() ):
+                  ?>
+                  <ul class="reset-list clearfix">
+                    <?php 
+                      while($Query->have_posts()): $Query->the_post(); 
+                        $from_location = get_field('order_from_location', get_the_ID());
+                        $to_location = get_field('order_to_location', get_the_ID());
+                    ?>
+                    <li>
+                      <div class="job-grd-item mpac-grd">
+                        <div class="mHc">
+                          <h5 class="fl-h5"><?php the_title(); ?></h5>
+                        </div>
+                        <div class="details mHc1">
+                          <ul>
+                            <li><strong>From:</strong> <?php if( !empty($from_location) ) printf('%s', $from_location);?></li>
+                            <li><strong>To:</strong> <?php if( !empty($to_location) ) printf('%s', $to_location);?></li>
+                          </ul>
+                        </div>
+                        <div class="mHc2">
+                          <a href="<?php the_permalink(); ?>">More</a>
+                        </div>
+                      </div>
+                    </li>
+                    <?php endwhile; ?>
+                  </ul>
+                  <?php endif; wp_reset_postdata(); ?>
+                </div>
+              </div>
+            </div>
+            <div id="tab-4" class="mp-tab-content">
+              <div class="tab-con-inr">
+                <div class="job-grds-cntlr">
+                  <?php 
+                    $Query = new WP_Query(array(
+                      'post_type' => 'vehicle_order',
+                      'posts_per_page'=> -1,
+                      'orderby' => 'date',
+                      'order'=> 'desc',
+                      'meta_query' => array(
+                          array(
+                              'key' => 'order_status_by_author',
+                              'value' => '2',
+                              'compare' => '='
+                          )
+                      )
+                    ));
+                  if( $Query->have_posts() ):
+                  ?>
+                  <ul class="reset-list clearfix">
+                    <?php 
+                      while($Query->have_posts()): $Query->the_post(); 
+                        $from_location = get_field('order_from_location', get_the_ID());
+                        $to_location = get_field('order_to_location', get_the_ID());
+                    ?>
+                    <li>
+                      <div class="job-grd-item mpac-grd">
+                        <div class="mHc">
+                          <h5 class="fl-h5"><?php the_title(); ?></h5>
+                        </div>
+                        <div class="details mHc1">
+                          <ul>
+                            <li><strong>From:</strong> <?php if( !empty($from_location) ) printf('%s', $from_location);?></li>
+                            <li><strong>To:</strong> <?php if( !empty($to_location) ) printf('%s', $to_location);?></li>
+                          </ul>
+                        </div>
+                        <div class="mHc2">
+                          <a href="<?php the_permalink(); ?>">More</a>
+                        </div>
+                      </div>
+                    </li>
+                    <?php endwhile; ?>
+                  </ul>
+                  <?php endif; wp_reset_postdata(); ?>
+                </div>
+              </div>
+            </div>
+            <div id="tab-5" class="mp-tab-content">
               <div class="tab-con-inr">
                 <div class="job-grds-cntlr">
                   <?php 
@@ -472,109 +574,6 @@ $user = wp_get_current_user();
                       </div>
                     </li>
                     <?php } ?>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div id="tab-4" class="mp-tab-content current">
-              <div class="tab-con-inr">
-                <div class="job-grds-cntlr">
-                  <ul class="reset-list clearfix">
-                    <li>
-                      <div class="customer-grd-item mpac-grd">
-                        <div class="author-pro-img mHc">
-                          <img src="<?php echo THEME_URI; ?>/assets/images/avater-img.png">
-                        </div>
-                        <div class="mHc1 author-info">
-                          <h5 class="fl-h5">Customer Name</h5>
-                          <div class="mHc2">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-                          </div>
-                          <div class="author-tel">
-                            <a href="tel:2025550191"><i class="fas fa-phone"></i>2025550191</a>
-                          </div>
-                          <div class="author-mail">
-                            <a href="mailto:"><i class="far fa-envelope"></i>loremipsum@gmail.com</a>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="customer-grd-item mpac-grd">
-                        <div class="author-pro-img mHc">
-                          <img src="<?php echo THEME_URI; ?>/assets/images/avater-img.png">
-                        </div>
-                        <div class="mHc1 author-info">
-                          <h5 class="fl-h5">Customer Name</h5>
-                          <div class="mHc2">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-                          </div>
-                          <div class="author-tel">
-                            <a href="tel:2025550191"><i class="fas fa-phone"></i>2025550191</a>
-                          </div>
-                          <div class="author-mail">
-                            <a href="mailto:"><i class="far fa-envelope"></i>loremipsum@gmail.com</a>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="customer-grd-item mpac-grd">
-                        <div class="author-pro-img mHc">
-                          <img src="<?php echo THEME_URI; ?>/assets/images/avater-img.png">
-                        </div>
-                        <div class="mHc1 author-info">
-                          <h5 class="fl-h5">Customer Name</h5>
-                          <div class="mHc2">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-                          </div>
-                          <div class="author-tel">
-                            <a href="tel:2025550191"><i class="fas fa-phone"></i>2025550191</a>
-                          </div>
-                          <div class="author-mail">
-                            <a href="mailto:"><i class="far fa-envelope"></i>loremipsum@gmail.com</a>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="customer-grd-item mpac-grd">
-                        <div class="author-pro-img mHc">
-                          <img src="<?php echo THEME_URI; ?>/assets/images/avater-img.png">
-                        </div>
-                        <div class="mHc1 author-info">
-                          <h5 class="fl-h5">Customer Name</h5>
-                          <div class="mHc2">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-                          </div>
-                          <div class="author-tel">
-                            <a href="tel:2025550191"><i class="fas fa-phone"></i>2025550191</a>
-                          </div>
-                          <div class="author-mail">
-                            <a href="mailto:"><i class="far fa-envelope"></i>loremipsum@gmail.com</a>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="customer-grd-item mpac-grd">
-                        <div class="author-pro-img mHc">
-                          <img src="<?php echo THEME_URI; ?>/assets/images/avater-img.png">
-                        </div>
-                        <div class="mHc1 author-info">
-                          <h5 class="fl-h5">Customer Name</h5>
-                          <div class="mHc2">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-                          </div>
-                          <div class="author-tel">
-                            <a href="tel:2025550191"><i class="fas fa-phone"></i>2025550191</a>
-                          </div>
-                          <div class="author-mail">
-                            <a href="mailto:"><i class="far fa-envelope"></i>loremipsum@gmail.com</a>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
                   </ul>
                 </div>
               </div>
