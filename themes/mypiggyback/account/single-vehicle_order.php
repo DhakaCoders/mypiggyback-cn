@@ -12,9 +12,10 @@ $order_type = get_field('order_type', $thisID);
           <div class="col-sm-12">
             <div class="block-700">
               <?php 
+                $applied_ids = get_field('driver_applied_ids', $thisID);
                 if ( current_user_can( 'driver' ) && is_user_logged_in() ){
                   $user_id = get_current_user_id();
-                  $applied_ids = get_field('driver_applied_ids', $thisID);
+                  
                   if(in_array($user_id, $applied_ids)){
                     echo '<span class="applied topbar">You have already applied for this job.</span>';
                   }
@@ -51,41 +52,39 @@ $order_type = get_field('order_type', $thisID);
               <div class="gap-50"></div>
               <div class="applicants">
                 <h2 class="fl-h3">Interested drivers:</h2>
+                <?php 
+                $applied_users = get_users( array( 'include' => $applied_ids ) );
+                if($applied_users){
+                ?>
                 <ul class="reset-list">
+                  <?php foreach( $applied_users as $applied_user ){ ?>
                   <li>
                     <div class="diverListhook clearfix">
-                      <div class="profile-photo">Photo</div>
-                      <div class="name"><strong>Driver Name</strong></div>
+                      <?php if( !empty(get_the_author_meta( 'image', $applied_user->ID )) ){ ?>
+                        <div class="profile-photo"><img src="<?php echo esc_attr( get_the_author_meta( 'image', $applied_user->ID ) ); ?>"></div>
+                      <?php }else{ ?>
+                        <div class="profile-photo"><img src="<?php echo THEME_URI; ?>/assets/images/avater-img.png"></div>
+                      <?php } ?>
+                      <div class="name">
+                        <strong>
+                          <?php
+                            if(!empty($applied_user->display_name)){
+                              echo $applied_user->display_name;
+                            }else{
+                              echo $applied_user->user_nicename;
+                            }
+                          ?> 
+                        </strong>
+                      </div>
                       <div class="details"><a target="_blank" href="#">See Profile</a></div>
                       <div class="details"><a href="#">Appoint</a></div>
                     </div>
                   </li>
-                  <li>
-                    <div class="diverListhook clearfix">
-                      <div class="profile-photo">Photo</div>
-                      <div class="name"><strong>Driver Name</strong></div>
-                      <div class="details"><a target="_blank" href="#">See Profile</a></div>
-                      <div class="details"><a href="#">Appoint</a></div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="diverListhook clearfix">
-                      <div class="profile-photo">Photo</div>
-                      <div class="name"><strong>Driver Name</strong></div>
-                      <div class="details"><a target="_blank" href="#">See Profile</a></div>
-                      <div class="details"><a href="#">Appoint</a></div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="diverListhook clearfix">
-                      <div class="profile-photo">Photo</div>
-                      <div class="name"><strong>Driver Name</strong></div>
-                      <div class="details"><a target="_blank" href="#">See Profile</a></div>
-                      <div class="details"><a href="#">Appoint</a></div>
-                    </div>
-                  </li>
+                  <?php } ?>
                 </ul>
-                <p><small>Dev note : only admin will see this list</small></p>
+              <?php }else{ ?>
+                <p><small>Here not available applied driver.</small></p>
+              <?php } ?>
               </div>
               <?php } ?>
             </div>
