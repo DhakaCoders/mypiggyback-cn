@@ -78,27 +78,32 @@
               <div id="tab-1" class="fl-tab-content vcl-tab-content current">
                 <div class="vehicle-recovery-form vehicle-form">
                   <div class="recovery_msg"></div>
-                  <form id="vehicle-recovery" onsubmit="vehicleRecoveryOrder(); return false">
+                  <form id="vehicle-recovery" onsubmit="vehicleRecoveryOrder('recov'); return false">
                     <input type="hidden" name="action" value="mpb_order_create">
                     <input type="hidden" name="order_type" value="recovery">
                     <div class="input-field-row">
                       <input type="text" name="from_location" placeholder="From location A (Postcode)">
+                      <span class="error recov_fromloc_error"></span>
                     </div>
                     <div class="input-field-row">
                       <input type="text" name="to_location" placeholder="To location B (Postcode)">
+                      <span class="error recov_toloc_error"></span>
                     </div>
                     <div class="input-field-row">
                       <input type="text" name="fullname" placeholder="Full Name">
+                      <span class="error recov_name_error"></span>
                     </div>
                     <div class="input-field-row">
                       <input type="text" name="email_address" placeholder="Email Address">
+                      <span class="error recov_email_error"></span>
                     </div>
                     <div class="input-field-row">
                       <input type="text" name="telephone" placeholder="Telephone Number">
+                      <span class="error recov_phone_error"></span>
                     </div>
                     <div class="input-field-row input-field-row-submit">
                       <input type="hidden" name="mpb_order_nonce" value="<?php echo wp_create_nonce('mpb-order-nonce'); ?>"/>
-                      <input type="submit" name="submit" id="recoverybtn" value="SUPER-FASTBOOKING A">
+                      <input type="submit" name="submit" id="recoverybtn" value="SUPER-FASTBOOKING">
                     </div>
                   </form>
                 </div>
@@ -106,23 +111,28 @@
               <div id="tab-2" class="fl-tab-content vcl-tab-content">
                <div class="vehicle-transport-form vehicle-form">
                   <div class="transport_msg"></div>
-                  <form id="vehicle-transport" onsubmit="vehicleTransportOrder(); return false">
+                  <form id="vehicle-transport" onsubmit="vehicleTransportOrder('trans'); return false">
                     <input type="hidden" name="action" value="mpb_order_create">
                     <input type="hidden" name="order_type" value="transport">
                     <div class="input-field-row">
                       <input type="text" name="from_location" placeholder="From location A (Postcode)">
+                      <span class="error trans_fromloc_error"></span>
                     </div>
                     <div class="input-field-row">
                       <input type="text" name="to_location" placeholder="To location B (Postcode)">
+                      <span class="error trans_toloc_error"></span>
                     </div>
                     <div class="input-field-row">
                       <input type="text" name="fullname" placeholder="Full Name">
+                      <span class="error trans_name_error"></span>
                     </div>
                     <div class="input-field-row">
                       <input type="text" name="email_address" placeholder="Email Address">
+                      <span class="error trans_email_error"></span>
                     </div>
                     <div class="input-field-row">
                       <input type="text" name="telephone" placeholder="Telephone Number">
+                      <span class="error trans_phone_error"></span>
                     </div>
                     <div class="input-field-row input-field-row-submit">
                       <input type="hidden" name="mpb_order_nonce" value="<?php echo wp_create_nonce('mpb-order-nonce'); ?>"/>

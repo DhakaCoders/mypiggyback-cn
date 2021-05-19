@@ -136,7 +136,7 @@ function orderConfirmationByAuthor(orderid){
     })
     return false;
 }
-function vehicleRecoveryOrder(){
+function vehicleRecoveryOrder(prefix){
     var error = false;
     var serialized = jQuery( '#vehicle-recovery' ).serialize();
     console.log(serialized);
@@ -154,24 +154,48 @@ function vehicleRecoveryOrder(){
                 }
                 setTimeout(redirect_page,3000);
             }else{
-               
+                if(typeof(data['fromloc']) != "undefined" &&  data['fromloc'].length != 0){
+                    jQuery('.'+prefix+'_fromloc_error').text(data['fromloc']); 
+                }else{
+                    jQuery('.'+prefix+'_fromloc_error').text('');
+                }
+                if(typeof(data['toloc']) != "undefined" &&  data['toloc'].length != 0){
+                    jQuery('.'+prefix+'_toloc_error').text(data['toloc']);
+                }else{
+                    jQuery('.'+prefix+'_toloc_error').text('');
+                }
+                if(typeof(data['name']) != "undefined" &&  data['name'].length != 0){
+                    jQuery('.'+prefix+'_name_error').text(data['name']);
+                }else{
+                    jQuery('.'+prefix+'_name_error').text('');
+                }
+                if(typeof(data['email']) != "undefined" &&  data['email'].length != 0){
+                    jQuery('.'+prefix+'_email_error').text(data['email']);
+                }else{
+                    jQuery('.'+prefix+'_email_error').text('');
+                }
+                if(typeof(data['phone']) != "undefined" &&  data['phone'].length != 0){
+                    jQuery('.'+prefix+'_phone_error').text(data['phone']);
+                }else{
+                    jQuery('.'+prefix+'_phone_error').text('');
+                } 
             }
         }
     });
 
     return false
 }
-function vehicleTransportOrder(){
+function vehicleTransportOrder(prefix){
     var error = false;
     var serialized = jQuery( '#vehicle-transport' ).serialize();
-    console.log(serialized);
+    console.log(prefix);
     jQuery.ajax({
         type: 'POST',
         dataType: 'JSON',
         url: ajax_mpb_order_object.ajaxurl,
         data: serialized,
         success: function(data){
-            console.log(data);
+            
             if(typeof(data['success']) != "undefined" &&  data['success'].length != 0 && data['success'] == 'success'){
                 jQuery("#transport_msg").text(data['success_msg']);
                 function redirect_page(){
@@ -179,7 +203,31 @@ function vehicleTransportOrder(){
                 }
                 setTimeout(redirect_page,3000);
             }else{
-               
+                if(typeof(data['fromloc']) != "undefined" &&  data['fromloc'].length != 0){
+                    jQuery('.'+prefix+'_fromloc_error').text(data['fromloc']); 
+                }else{
+                    jQuery('.'+prefix+'_fromloc_error').text('');
+                }
+                if(typeof(data['toloc']) != "undefined" &&  data['toloc'].length != 0){
+                    jQuery('.'+prefix+'_toloc_error').text(data['toloc']);
+                }else{
+                    jQuery('.'+prefix+'_toloc_error').text('');
+                }
+                if(typeof(data['name']) != "undefined" &&  data['name'].length != 0){
+                    jQuery('.'+prefix+'_name_error').text(data['name']);
+                }else{
+                    jQuery('.'+prefix+'_name_error').text('');
+                }
+                if(typeof(data['email']) != "undefined" &&  data['email'].length != 0){
+                    jQuery('.'+prefix+'_email_error').text(data['email']);
+                }else{
+                    jQuery('.'+prefix+'_email_error').text('');
+                }
+                if(typeof(data['phone']) != "undefined" &&  data['phone'].length != 0){
+                    jQuery('.'+prefix+'_phone_error').text(data['phone']);
+                }else{
+                    jQuery('.'+prefix+'_phone_error').text('');
+                }  
             }
         }
     });

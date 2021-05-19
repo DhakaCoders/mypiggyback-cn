@@ -27,7 +27,37 @@ add_action('wp_ajax_mpb_order_create', 'mpb_order_create');
 function mpb_order_create(){
 	$data = array();
 	if (isset( $_POST["email_address"] ) && wp_verify_nonce($_POST['mpb_order_nonce'], 'mpb-order-nonce')) {
-        if(empty($msg)){
+        $success = true;
+        if(empty($_POST['from_location'])) {
+            $data['fromloc'] = 'From location is required.';
+            $success = false;
+        }
+        if(empty($_POST['to_location'])) {
+            $data['toloc'] = 'To location is required.';
+            $success = false;
+        }
+        if(empty($_POST['fullname'])) {
+            $data['name'] = 'Name is required.';
+            $success = false;
+        }elseif(!preg_match("/^[a-zA-Z .-]+$/", $_POST['fullname'])) {
+            $data['name'] = 'Only latter, space, dot and dash are supported.';
+            $success = false;
+        }
+        if(empty($_POST['email_address'])) {
+            $data['email'] = 'Email is required.';
+            $success = false;
+        }elseif(!is_email($_POST['email_address'])) {
+            $data['email'] = 'Invalid email address.';
+            $success = false;
+        }
+        if(empty($_POST['telephone'])) {
+            $data['phone'] = 'Phone is required.';
+            $success = false;
+        }elseif(!is_numeric($_POST['telephone'])) {
+            $data['phone'] = 'Phone number must numeric.';
+            $success = false;
+        }    
+        if($success){
             $type = (isset($_POST['order_type']) && !empty($_POST['order_type']))?sanitize_text_field($_POST['order_type']):'';
             $post_information = array(
                 'post_author'=> 1,
