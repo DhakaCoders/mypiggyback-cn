@@ -37,6 +37,15 @@ Text Domain: mypiggyback
 .details{
 	margin-left: 30px;
 }
+
+#disMap{
+	height: 500px;
+	width: 600px;
+}
+/*#disMap > div + div{
+	display: none;
+}
+*/
 .details.mHc1{
 	margin-left:15px!important;
 }
