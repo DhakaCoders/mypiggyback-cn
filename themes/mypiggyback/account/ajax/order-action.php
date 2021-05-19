@@ -58,11 +58,10 @@ function mpb_order_create(){
             update_field( 'order_status_by_author', '0', $pid );
             update_field( 'order_status_by_driver', '0', $pid );
             update_field( 'order_appointed_to', '0', $pid );
-            wp_redirect( home_url('order-payment/'.$pid) );
 
             $data['success'] = 'success';
             $data['success_msg'] = 'Order has been completed successfully.';
-            $data['redirect'] = home_url('order-payment/'.$pid);
+            $data['redirect'] = home_url('order-payment/?order-id='.$pid);
         }else{
             $data['error'] = 'Could not create order.';
         }

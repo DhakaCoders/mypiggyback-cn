@@ -73,3 +73,14 @@ span.applied.topbar {
     font-weight: 600;
     color: #F2101C;
 }
+/*payment*/
+.mpb-payment {
+    margin: 50px 0;
+}
+.mpb-payment-inner {
+    max-width: 500px;
+    margin: auto;
+    background: #f9f9f9;
+    padding: 30px;
+}
+
