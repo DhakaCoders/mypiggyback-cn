@@ -85,6 +85,57 @@ function orderAppoint(orderid, driverid){
     })
     return false;
 }
+function orderConfirmation(orderid, driverid){
+    jQuery.ajax({
+        type: 'post',
+        dataType: 'JSON',
+        url: ajax_confirmation_by_driver_object.ajaxurl,
+        data: {
+            action: 'order_confirmation_by_driver',
+            nonce: 'confirm_driver_nonce',
+            driver: driverid,
+            id: orderid
+        },
+        success: function( data ) {
+            console.log(data);
+            if(typeof(data['success']) != "undefined" &&  data['success'].length != 0 && data['success'] == 'success'){
+              if(typeof(data['confirm_sent']) != "undefined" &&  data['confirm_sent'].length != 0 && data['confirm_sent'] == 'sent'){
+                jQuery('.jobconfirm.by_driver').html('<span><label>By Driver: </label>Completed</span>');
+              }else{
+                jQuery('.jobconfirm.by_driver').html('<span><label>By Driver: </label>Completed</span>');
+              } 
+            }else{
+
+            }
+        }
+    })
+    return false;
+}
+function orderConfirmationByAuthor(orderid){
+    jQuery.ajax({
+        type: 'post',
+        dataType: 'JSON',
+        url: ajax_confirmation_by_author_object.ajaxurl,
+        data: {
+            action: 'order_confirmation_by_author',
+            nonce: 'confirm_author_nonce',
+            id: orderid
+        },
+        success: function( data ) {
+            console.log(data);
+            if(typeof(data['success']) != "undefined" &&  data['success'].length != 0 && data['success'] == 'success'){
+              if(typeof(data['confirm_sent']) != "undefined" &&  data['confirm_sent'].length != 0 && data['confirm_sent'] == 'sent'){
+                jQuery('.jobconfirm.by_author').html('<span><label>By Author: </label>Completed</span>');
+              }else{
+                jQuery('.jobconfirm.by_author').html('<span><label>By Author: </label>Completed</span>');
+              } 
+            }else{
+
+            }
+        }
+    })
+    return false;
+}
 function vehicleRecoveryOrder(){
     var error = false;
     var serialized = jQuery( '#vehicle-recovery' ).serialize();

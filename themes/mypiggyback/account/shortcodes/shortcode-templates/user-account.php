@@ -205,8 +205,9 @@ $user = wp_get_current_user();
                             <li><strong>To:</strong> <?php if( !empty($to_location) ) printf('%s', $to_location);?></li>
                           </ul>
                         </div>
-                        <div class="mHc2">
+                        <div class="process-btn mHc2">
                           <a href="<?php the_permalink(); ?>">More</a>
+                          <span>Ongoing</span>
                         </div>
                       </div>
                     </li>
@@ -261,8 +262,9 @@ $user = wp_get_current_user();
                             <li><strong>To:</strong> <?php if( !empty($to_location) ) printf('%s', $to_location);?></li>
                           </ul>
                         </div>
-                        <div class="mHc2">
+                        <div class="process-btn mHc2">
                           <a href="<?php the_permalink(); ?>">More</a>
+                          <span>Completed</span>
                         </div>
                       </div>
                     </li>
@@ -473,8 +475,9 @@ $user = wp_get_current_user();
                             <li><strong>To:</strong> <?php if( !empty($to_location) ) printf('%s', $to_location);?></li>
                           </ul>
                         </div>
-                        <div class="mHc2">
+                        <div class="process-btn mHc2">
                           <a href="<?php the_permalink(); ?>">More</a>
+                          <span>Ongoing</span>
                         </div>
                       </div>
                     </li>
@@ -520,8 +523,9 @@ $user = wp_get_current_user();
                             <li><strong>To:</strong> <?php if( !empty($to_location) ) printf('%s', $to_location);?></li>
                           </ul>
                         </div>
-                        <div class="mHc2">
+                        <div class="process-btn mHc2">
                           <a href="<?php the_permalink(); ?>">More</a>
+                          <span>Completed</span>
                         </div>
                       </div>
                     </li>

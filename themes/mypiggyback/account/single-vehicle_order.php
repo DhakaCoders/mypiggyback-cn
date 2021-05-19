@@ -11,19 +11,19 @@ $order_type = get_field('order_type', $thisID);
         <div class="row">
           <div class="col-sm-12">
             <div class="block-700">
-              <?php 
+              <div class="thankyou-page-con">
+                <?php 
                 $status_by_author = get_field('order_status_by_author', $thisID);
                 $appointed_to = get_field('order_appointed_to', $thisID);
                 $applied_ids = get_field('driver_applied_ids', $thisID);
+                $status_by_driver = get_field('order_status_by_driver', $thisID);
+                $user_id = get_current_user_id();
                 if ( current_user_can( 'driver' ) && is_user_logged_in() ){
-                  $user_id = get_current_user_id();
-                  
-                  if(in_array($user_id, $applied_ids)){
+                  if(in_array($user_id, $applied_ids) && $status_by_author == 0){
                     echo '<span class="applied topbar">You have already applied for this job.</span>';
                   }
                 }
-              ?>
-              <div class="thankyou-page-con">
+                ?>
                 <h1 class="fl-h3"><?php the_title(); ?></h1>
                 <div class="job-points">
                   <ul>
@@ -47,10 +47,46 @@ $order_type = get_field('order_type', $thisID);
                   <?php if(!in_array($user_id, $applied_ids)){ ?>
                   <a class="fl-red-btn" id="driver_apply" href="#" data-id="<?php the_ID() ?>" data-nonce="<?php echo wp_create_nonce('apply_nonce') ?>">Apply</a>
                   <?php } ?>
+                    <?php if($status_by_driver == 1): ?>
+                    <h2 class="fl-h3">Job status:</h2>
+                    <?php 
+                      if($status_by_author == 1 && $status_by_driver == 0 && $appointed_to == $user_id){
+                    ?>
+                      <div class="jobconfirm by_driver"><a href="#"  id="job-confirmation" onclick="orderConfirmation(<?php the_ID() ?>, <?php echo $user_id; ?>); return false;">Job Complete Confirmation</a></div>
+                      <?php
+                    }else{
+                      if($status_by_driver == 1 && $appointed_to == $user_id){
+                        echo '<div class="jobconfirm"><span><label>By Driver: </label>Completed</span></div>';
+                      }
+                      if($status_by_author == 2 && $appointed_to == $user_id){
+                        echo '<div class="jobconfirm"><span><label>By Author: </label>Completed</span></div>';
+                      }
+                    }
+                    ?>
+                  <?php endif; ?>
                 </div>
               </div>
               <?php } ?>
               <?php if ( current_user_can( 'administrator' ) && is_user_logged_in() ){ ?>
+              <?php if($status_by_driver == 1): ?>
+              <div class="gap-50"></div>
+              <div class="applicants">
+                <h2 class="fl-h3">Job status:</h2>
+                <?php
+                  if($status_by_driver == 1){
+                    echo '<div class="jobconfirm"><span><label>By Driver: </label>Completed</span></div>';
+                  }
+                  if($status_by_author == 2){
+                    echo '<div class="jobconfirm"><span><label>By Author: </label>Completed</span></div>';
+                  }
+                  if($status_by_author == 1 && $status_by_driver == 1 ){
+                ?>
+                  <div class="jobconfirm by_author"><a href="#"  id="job-confirmation-author" onclick="orderConfirmationByAuthor(<?php the_ID() ?>); return false;">Job Complete Confirmation</a></div>
+                  <?php
+                }
+                ?>
+              </div>
+              <?php endif; ?>
               <div class="gap-50"></div>
               <div class="applicants">
                 <h2 class="fl-h3">Interested drivers:</h2>
