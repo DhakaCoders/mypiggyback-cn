@@ -11,16 +11,19 @@ $order_type = get_field('order_type', $thisID);
         <div class="row">
           <div class="col-sm-12">
             <div class="block-700">
-              <?php 
+              <div class="thankyou-page-con">
+                <?php 
+                $status_by_author = get_field('order_status_by_author', $thisID);
+                $appointed_to = get_field('order_appointed_to', $thisID);
+                $applied_ids = get_field('driver_applied_ids', $thisID);
+                $status_by_driver = get_field('order_status_by_driver', $thisID);
+                $user_id = get_current_user_id();
                 if ( current_user_can( 'driver' ) && is_user_logged_in() ){
-                  $user_id = get_current_user_id();
-                  $applied_ids = get_field('driver_applied_ids', $thisID);
-                  if(in_array($user_id, $applied_ids)){
+                  if(in_array($user_id, $applied_ids) && $status_by_author == 0){
                     echo '<span class="applied topbar">You have already applied for this job.</span>';
                   }
                 }
-              ?>
-              <div class="thankyou-page-con">
+                ?>
                 <h1 class="fl-h3"><?php the_title(); ?></h1>
                 <div class="job-points">
                   <ul>
@@ -44,48 +47,86 @@ $order_type = get_field('order_type', $thisID);
                   <?php if(!in_array($user_id, $applied_ids)){ ?>
                   <a class="fl-red-btn" id="driver_apply" href="#" data-id="<?php the_ID() ?>" data-nonce="<?php echo wp_create_nonce('apply_nonce') ?>">Apply</a>
                   <?php } ?>
+                    <?php if($status_by_driver == 1): ?>
+                    <h2 class="fl-h3">Job status:</h2>
+                    <?php 
+                      if($status_by_author == 1 && $status_by_driver == 0 && $appointed_to == $user_id){
+                    ?>
+                      <div class="jobconfirm by_driver"><a href="#"  id="job-confirmation" onclick="orderConfirmation(<?php the_ID() ?>, <?php echo $user_id; ?>); return false;">Job Complete Confirmation</a></div>
+                      <?php
+                    }else{
+                      if($status_by_driver == 1 && $appointed_to == $user_id){
+                        echo '<div class="jobconfirm"><span><label>By Driver: </label>Completed</span></div>';
+                      }
+                      if($status_by_author == 2 && $appointed_to == $user_id){
+                        echo '<div class="jobconfirm"><span><label>By Author: </label>Completed</span></div>';
+                      }
+                    }
+                    ?>
+                  <?php endif; ?>
                 </div>
               </div>
               <?php } ?>
               <?php if ( current_user_can( 'administrator' ) && is_user_logged_in() ){ ?>
+              <?php if($status_by_driver == 1): ?>
+              <div class="gap-50"></div>
+              <div class="applicants">
+                <h2 class="fl-h3">Job status:</h2>
+                <?php
+                  if($status_by_driver == 1){
+                    echo '<div class="jobconfirm"><span><label>By Driver: </label>Completed</span></div>';
+                  }
+                  if($status_by_author == 2){
+                    echo '<div class="jobconfirm"><span><label>By Author: </label>Completed</span></div>';
+                  }
+                  if($status_by_author == 1 && $status_by_driver == 1 ){
+                ?>
+                  <div class="jobconfirm by_author"><a href="#"  id="job-confirmation-author" onclick="orderConfirmationByAuthor(<?php the_ID() ?>); return false;">Job Complete Confirmation</a></div>
+                  <?php
+                }
+                ?>
+              </div>
+              <?php endif; ?>
               <div class="gap-50"></div>
               <div class="applicants">
                 <h2 class="fl-h3">Interested drivers:</h2>
+                <?php 
+                $applied_users = get_users( array( 'include' => $applied_ids ) );
+                if($applied_users){
+                ?>
                 <ul class="reset-list">
+                  <?php foreach( $applied_users as $applied_user ){ ?>
                   <li>
                     <div class="diverListhook clearfix">
-                      <div class="profile-photo">Photo</div>
-                      <div class="name"><strong>Driver Name</strong></div>
-                      <div class="details"><a target="_blank" href="#">See Profile</a></div>
-                      <div class="details"><a href="#">Appoint</a></div>
+                      <?php if( !empty(get_the_author_meta( 'image', $applied_user->ID )) ){ ?>
+                        <div class="profile-photo"><img src="<?php echo esc_attr( get_the_author_meta( 'image', $applied_user->ID ) ); ?>"></div>
+                      <?php }else{ ?>
+                        <div class="profile-photo"><img src="<?php echo THEME_URI; ?>/assets/images/avater-img.png"></div>
+                      <?php } ?>
+                      <div class="name">
+                        <strong>
+                          <?php
+                            if(!empty($applied_user->display_name)){
+                              echo $applied_user->display_name;
+                            }else{
+                              echo $applied_user->user_nicename;
+                            }
+                          ?> 
+                        </strong>
+                      </div>
+                      <div class="details"><a target="_blank" href="<?php echo esc_url(home_url('author/'.$applied_user->user_login)); ?>">See Profile</a></div>
+                      <?php if($status_by_author == 1 && $appointed_to == $applied_user->ID){ ?>
+                        <div class="details"><a href="#"  onclick="return false;">Appointed</a></div>
+                      <?php }else{ ?>
+                        <div class="details" style="<?php echo ($status_by_author == 1)?'display:none;':'';?>"><a href="#" id="order_appoint_<?php echo $applied_user->ID; ?>" onclick="orderAppoint(<?php the_ID() ?>, <?php echo $applied_user->ID; ?>); return false;">Appoint</a></div>
+                      <?php } ?>
                     </div>
                   </li>
-                  <li>
-                    <div class="diverListhook clearfix">
-                      <div class="profile-photo">Photo</div>
-                      <div class="name"><strong>Driver Name</strong></div>
-                      <div class="details"><a target="_blank" href="#">See Profile</a></div>
-                      <div class="details"><a href="#">Appoint</a></div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="diverListhook clearfix">
-                      <div class="profile-photo">Photo</div>
-                      <div class="name"><strong>Driver Name</strong></div>
-                      <div class="details"><a target="_blank" href="#">See Profile</a></div>
-                      <div class="details"><a href="#">Appoint</a></div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="diverListhook clearfix">
-                      <div class="profile-photo">Photo</div>
-                      <div class="name"><strong>Driver Name</strong></div>
-                      <div class="details"><a target="_blank" href="#">See Profile</a></div>
-                      <div class="details"><a href="#">Appoint</a></div>
-                    </div>
-                  </li>
+                  <?php } ?>
                 </ul>
-                <p><small>Dev note : only admin will see this list</small></p>
+              <?php }else{ ?>
+                <p><small>Here not available applied driver.</small></p>
+              <?php } ?>
               </div>
               <?php } ?>
             </div>

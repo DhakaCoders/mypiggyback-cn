@@ -1,8 +1,14 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 add_action('wp_enqueue_scripts', 'mpb_order_action_hooks');
 function mpb_order_action_hooks(){
         if(is_user_logged_in()){
             ajax_mpb_driver_apply_init();
+            ajax_mpb_appoint_driver_init();
+            ajax_mpb_confirm_driver_init();
+            ajax_mpb_confirm_author_init();
         }
 		ajax_mpb_order_init();
 }
@@ -52,13 +58,13 @@ function mpb_order_create(){
             }
             update_field( 'driver_applied_ids', '', $pid );
             update_field( 'order_status', 'publish', $pid );
-            update_field( 'order_ongoing_status', '0', $pid );
-            update_field( 'order_completed_status', '0', $pid );
-            wp_redirect( home_url('order-payment/'.$pid) );
+            update_field( 'order_status_by_author', '0', $pid );
+            update_field( 'order_status_by_driver', '0', $pid );
+            update_field( 'order_appointed_to', '0', $pid );
 
             $data['success'] = 'success';
             $data['success_msg'] = 'Order has been completed successfully.';
-            $data['redirect'] = home_url('order-payment/'.$pid);
+            $data['redirect'] = home_url('order-payment/?order-id='.$pid);
         }else{
             $data['error'] = 'Could not create order.';
         }
@@ -78,7 +84,7 @@ function ajax_mpb_driver_apply_init(){
     ));
     // Enable the user with no privileges to run ajax_login() in AJAX
 }
-add_action('wp_ajax_nopriv_apply_driver_order', 'apply_driver_order');
+//add_action('wp_ajax_nopriv_apply_driver_order', 'apply_driver_order');
 add_action('wp_ajax_apply_driver_order', 'apply_driver_order');
 function apply_driver_order(){
     $data = array();
@@ -103,6 +109,123 @@ function apply_driver_order(){
             update_field('driver_applied_ids',$ids_array,$postid);
         }
         
+        $data['success'] = 'success';
+    }
+    echo json_encode($data);
+    wp_die();
+
+}
+
+function ajax_mpb_appoint_driver_init(){
+    wp_register_script('ajax-appoint-order-script', get_stylesheet_directory_uri(). '/assets/js/ajax-script.js', array('jquery') );
+    wp_enqueue_script('ajax-appoint-order-script');
+
+    wp_localize_script( 'ajax-appoint-order-script', 'ajax_appoint_driver_by_admin_object', array(
+        'ajaxurl' => admin_url( 'admin-ajax.php' )
+    ));
+    // Enable the user with no privileges to run ajax_login() in AJAX
+}
+//add_action('wp_ajax_nopriv_apply_driver_order', 'apply_driver_order');
+add_action('wp_ajax_appoint_driver_by_admin', 'appoint_driver_by_admin');
+function appoint_driver_by_admin(){
+    global $wpdb;
+    $data = array();
+    if (!isset( $_POST["nonce"] ) && $_POST["nonce"] != 'appoint_nonce') {
+        $data['error'] = 'error';
+    }
+    else {
+        $table = $wpdb->prefix.'order_appoint'; 
+        $postid = $_POST['id'];
+        $driver_id = $_POST['driver'];
+        $author_id = get_current_user_id();
+        $get_status = get_field('order_status_by_author', $postid);
+        if($get_status > 0){
+            $data['appoint_sent'] = 'sent';
+        }else{
+            $result = update_field('order_status_by_author',1,$postid);
+            update_field('order_appointed_to',$driver_id,$postid);
+            if( $result ){
+                Cbv_Db_Query::create($table, array(
+                    'order_id' => $postid,
+                    'author_id' => $author_id,
+                    'driver_id' => $driver_id,
+                    'created_at' => date('Y-m-d H:i:s'),
+                ));
+                $data['appoint_send'] = 'send';
+            }
+            
+        }
+        $data['success'] = 'success';
+    }
+    echo json_encode($data);
+    wp_die();
+
+}
+
+function ajax_mpb_confirm_driver_init(){
+    wp_register_script('ajax-confirm-driver-script', get_stylesheet_directory_uri(). '/assets/js/ajax-script.js', array('jquery') );
+    wp_enqueue_script('ajax-confirm-driver-script');
+
+    wp_localize_script( 'ajax-confirm-driver-script', 'ajax_confirmation_by_driver_object', array(
+        'ajaxurl' => admin_url( 'admin-ajax.php' )
+    ));
+}
+add_action('wp_ajax_order_confirmation_by_driver', 'order_confirmation_by_driver');
+function order_confirmation_by_driver(){
+    global $wpdb;
+    $data = array();
+    if (!isset( $_POST["nonce"] ) && $_POST["nonce"] != 'confirm_driver_nonce') {
+        $data['error'] = 'error';
+    }
+    else {
+        $postid = $_POST['id'];
+        $get_status = get_field('order_status_by_driver', $postid);
+        if($get_status > 0){
+            $data['confirm_sent'] = 'sent';
+        }else{
+            update_field('order_status_by_driver',1,$postid);
+            $data['confirm_send'] = 'send';
+        }
+        $data['success'] = 'success';
+    }
+    echo json_encode($data);
+    wp_die();
+
+}
+
+function ajax_mpb_confirm_author_init(){
+    wp_register_script('ajax-confirm-author-script', get_stylesheet_directory_uri(). '/assets/js/ajax-script.js', array('jquery') );
+    wp_enqueue_script('ajax-confirm-author-script');
+
+    wp_localize_script( 'ajax-confirm-author-script', 'ajax_confirmation_by_author_object', array(
+        'ajaxurl' => admin_url( 'admin-ajax.php' )
+    ));
+}
+add_action('wp_ajax_order_confirmation_by_author', 'order_confirmation_by_author');
+function order_confirmation_by_author(){
+    global $wpdb;
+    $data = array();
+    if (!isset( $_POST["nonce"] ) && $_POST["nonce"] != 'confirm_author_nonce') {
+        $data['error'] = 'error';
+    }
+    else {
+        $postid = $_POST['id'];
+        $get_status = get_field('order_status_by_author', $postid);
+        if($get_status == 2){
+            $data['confirm_sent'] = 'sent';
+        }else{
+            $table = $wpdb->prefix.'order_appoint'; 
+            update_field('order_status_by_author',2,$postid);
+            Cbv_Db_Query::update($table, 
+                array(
+                    'status' => 'completed',
+                ),
+                array(
+                    'order_id' => $postid,
+                )
+            );
+            $data['confirm_send'] = 'send';
+        }
         $data['success'] = 'success';
     }
     echo json_encode($data);

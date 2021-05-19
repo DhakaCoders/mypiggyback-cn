@@ -396,7 +396,22 @@ $('.humberger-menu-items > ul > li.menu-item-has-children > a').on('click', func
 });
 
 
+if ($("#paypal_type").is(":checked")) {
+    $('#paypal_payment').addClass('show-method');
+}
 
+$("#paypal_type").on('change', function(){
+    if ($(this).is(":checked")) {
+        $('#paypal_payment').addClass('show-method');
+        $('#stripe_payment').removeClass('show-method');
+    }
+});
+$("#stripe_type").on('change', function(){
+    if ($(this).is(":checked")) {
+      $('#paypal_payment').removeClass('show-method');
+      $('#stripe_payment').addClass('show-method');
+    }
+});
     new WOW().init();
 
 })(jQuery);

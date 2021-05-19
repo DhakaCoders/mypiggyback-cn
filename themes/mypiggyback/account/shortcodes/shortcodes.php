@@ -23,6 +23,14 @@ function get_order_payment($atts) {
 }
 add_shortcode('order_payment', 'get_order_payment');
 
+function get_thank_you($atts) {
+  ob_start();
+  get_template_part(ACC_TEMP_PATH.'/thank', 'you');
+  return ob_get_clean();
+}
+add_shortcode('mpb_thank_you', 'get_thank_you');
+
+
 function get_user_account($atts) {
   wpCheckLogout();
   ob_start();
