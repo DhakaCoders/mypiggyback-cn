@@ -11,6 +11,7 @@
 ?>
 <div class="mpb-payment">
 	<div class="mpb-payment-inner">
+		<h2 class="payment-title">Payment Method</h2>
 		<div class="payment-type">
 			<input type="radio" name="payment_type" id="paypal_type" value="paypal" checked>&nbsp; Paypal
 			<input type="radio" name="payment_type" id="stripe_type" value="stripe">&nbsp; Stripe
