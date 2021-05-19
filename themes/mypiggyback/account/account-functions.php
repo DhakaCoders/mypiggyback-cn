@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 defined('ACC_TEMP_PATH') or define('ACC_TEMP_PATH', 'account/shortcodes/shortcode-templates');
 include_once(THEME_DIR .'/account/vendor/autoload.php');
 include_once(THEME_DIR .'/account/lib/query.php');

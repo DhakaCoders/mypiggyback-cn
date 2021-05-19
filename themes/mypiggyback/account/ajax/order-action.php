@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 add_action('wp_enqueue_scripts', 'mpb_order_action_hooks');
 function mpb_order_action_hooks(){
         if(is_user_logged_in()){
