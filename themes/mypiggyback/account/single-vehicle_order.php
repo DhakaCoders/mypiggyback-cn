@@ -15,7 +15,7 @@ $order_type = get_field('order_type', $thisID);
                 <?php 
                 $status_by_author = get_field('order_status_by_author', $thisID);
                 $appointed_to = get_field('order_appointed_to', $thisID);
-                $applied_ids = get_field('driver_applied_ids', $thisID);
+                $applied_ids = !empty(get_field('driver_applied_ids', $thisID))?get_field('driver_applied_ids', $thisID):array();
                 $status_by_driver = get_field('order_status_by_driver', $thisID);
                 $user_id = get_current_user_id();
                 if ( current_user_can( 'driver' ) && is_user_logged_in() ){
