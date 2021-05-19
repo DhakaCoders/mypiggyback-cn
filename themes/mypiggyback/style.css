@@ -83,4 +83,14 @@ span.applied.topbar {
     background: #f9f9f9;
     padding: 30px;
 }
-
+.paypal-payment,
+.stripe-payment{
+    display: none;
+}
+.paypal-payment.show-method,
+.stripe-payment.show-method {
+    display: block;
+}
+.payment-type {
+    text-align: center;
+}
