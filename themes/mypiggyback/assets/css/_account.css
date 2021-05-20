@@ -1589,7 +1589,7 @@ a.ui-datepicker-next:after {
 .hdr-login-profile ul li{
 	font-size: 13px;
 	line-height: 16px;
-	padding-bottom: 25px;
+	padding-bottom: 15px;
 }
 .hdr-login-profile ul li a{
 	color: #000;
@@ -1598,8 +1598,11 @@ a.ui-datepicker-next:after {
 	border-top: 1px solid #BCBCBC;
 	padding-top: 15px;
 }
+.hdr-login-profile ul li i{
+	margin-right: 5px;
+}
 .hdr-login-profile ul li:last-child i{
-	margin-right: 10px;
+	margin-right: 5px;
 	width: 20px;
 	height: 20px;
 	border-radius: 100% 100%;
@@ -2054,6 +2057,20 @@ span.error {
 	}
 	.diverListhook{
 		flex-wrap: wrap;
+		justify-content: center;
+		margin-bottom: 40px;
+	}
+	.profile-photo-cntlr{
+		width: 100%;
+		padding-bottom: 15px;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+	}
+	.diverListhook .name,
+	.diverListhook .details{
+		margin-left: 10px;
+		margin-right: 10px;
 	}
 }
 
