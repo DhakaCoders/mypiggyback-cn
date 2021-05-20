@@ -4,6 +4,9 @@ $thisID = get_the_ID();
 $from_location = get_field('order_from_location', $thisID);
 $to_location = get_field('order_to_location', $thisID);
 $order_type = get_field('order_type', $thisID);
+$fullname = get_field('order_fullname', $thisID);
+$order_email = get_field('order_email', $thisID);
+$order_phone = get_field('order_telephone', $thisID);
 ?>
 <div class="ac-page-cntlr">
   <section class="thankyou-page-cntlr">
