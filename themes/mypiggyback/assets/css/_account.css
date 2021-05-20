@@ -272,7 +272,8 @@ button.mp-tab-link.current:after{
 	text-decoration: underline;
 }
 
-.fl-submit-btn input[type="submit"]{
+.fl-submit-btn input[type="submit"],
+.mp-btn{
 	background: #d61324;
 	border-radius: 5px;
 	color: #fff;
@@ -292,7 +293,8 @@ button.mp-tab-link.current:after{
 }
 .fl-submit-btn input[type="submit"]:hover,
 .profile-submit-btn input[type="submit"]:hover, 
-.profile-submit-btn a:hover{
+.profile-submit-btn a:hover,
+.mp-btn:hover{
 	background-color: #c10913;
 }
 .w-full input[type="submit"]{
@@ -1860,8 +1862,15 @@ span.error {
 	align-items: center;
 	font-size: 14px;
 }
-
-
+.gmapprac{
+	padding-bottom: 70px;
+}
+.adsfa-form{
+	padding-bottom: 40px;
+}
+#disMap{
+	width: 100%!important;
+}
 @media(max-width: 1499px){
 
 }
