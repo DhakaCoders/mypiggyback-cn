@@ -2032,6 +2032,10 @@ span.error {
 	.fl-input-field-row .bootstrap-select > .dropdown-toggle{
 		height: 45px;
 	}
+	.drivers-tab-con-cntlr .job-grds-cntlr ul li,
+	.customer-tab-con-cntlr .job-grds-cntlr ul li{
+		width: 50%;
+	}
 }
 
 @media(max-width: 639px){
@@ -2122,8 +2126,15 @@ span.error {
 	span.file-up-instruction-txt{
 		bottom: -20px;
 	}
-	.job-grds-cntlr ul li{
+	.job-grds-cntlr ul li,
+	.drivers-tab-con-cntlr .job-grds-cntlr ul li,
+	.customer-tab-con-cntlr .job-grds-cntlr ul li{
 		width: 100%;
+	}
+	.customer-grd-item p{
+		max-width: 300px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 }
 
