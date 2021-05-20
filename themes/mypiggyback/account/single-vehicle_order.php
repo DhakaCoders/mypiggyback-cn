@@ -99,7 +99,9 @@ $order_type = get_field('order_type', $thisID);
                   <li>
                     <div class="diverListhook clearfix">
                       <?php if( !empty(get_the_author_meta( 'image', $applied_user->ID )) ){ ?>
-                        <div class="profile-photo"><img src="<?php echo esc_attr( get_the_author_meta( 'image', $applied_user->ID ) ); ?>"></div>
+                        <div class="profile-photo-cntlr">
+                          <div class="profile-photo"><img src="<?php echo esc_attr( get_the_author_meta( 'image', $applied_user->ID ) ); ?>"></div>
+                        </div>
                       <?php }else{ ?>
                         <div class="profile-photo"><img src="<?php echo THEME_URI; ?>/assets/images/avater-img.png"></div>
                       <?php } ?>
