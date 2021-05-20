@@ -216,7 +216,108 @@ if( is_array($logoObj) ){
 }
 $hdlogotext = get_field('hdlogotext', 'options');
 $hdinfo = get_field('headerinfo', 'options');
-?>  
+?> 
+<?php if ( current_user_can( 'driver' ) && is_user_logged_in() ){ ?> 
+<header class="header-wrap logged-header">
+  <div class="top-bar">
+    <span></span>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="top-bar-cntlr">
+            <div class="top-bar-left">
+              <?php if( !empty( $hdlogotext ) ) printf('<p>%s</p>', $hdlogotext); ?>
+            </div>
+            <div class="top-bar-rt">
+              <ul class="reset-list">
+                <?php if( !empty( $hdinfo['telephone'] ) ): ?>
+                <li class="hdr-tel">
+                  <a href="tel:<?php echo phone_preg($hdinfo['telephone']); ?>">
+                    <span><?php echo $hdinfo['telephone']; ?></span>
+                    <i><svg class="tell-icon" width="16" height="15.2" viewBox="0 0 16 15.2" fill="#ffffff">
+                      <use xlink:href="#tell-icon"></use></svg></i>
+                  </a>
+                </li>
+                <?php endif; ?>
+                <?php if( !empty( $hdinfo['email'] ) ): ?>
+                <li class="hdr-mail">
+                  <a href="mailto:<?php echo $hdinfo['email']; ?>">
+                    <span><?php echo $hdinfo['email']; ?></span>
+                    <i><svg class="mail-icon" width="18" height="12" viewBox="0 0 18 12" fill="#ffffff">
+                      <use xlink:href="#mail-icon"></use></svg></i>
+                  </a>
+                </li>
+                <?php endif; ?>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="header-inr clearfix">
+            <div class="hdr-lft">
+              <?php if( !empty($logo_tag) ): ?>
+              <div class="logo">
+               <a href="<?php echo esc_url(home_url('/')); ?>">
+                  <?php echo $logo_tag; ?>
+                 </a>
+              </div>
+              <?php endif; ?>
+            </div>
+            <div class="hdr-right">
+              <div class="hdr-login-profile login-btn-expend">
+                <div class="hdr-login-profile-img">
+                  <?php get_user_image(); ?>
+                </div>
+                <strong><?php get_current_user_name(); ?></strong>
+                <ul class="reset-list clearfix">
+                  <li>
+                    <i class="fas fa-sign-out-alt"></i>
+                    <a href="<?php get_custom_logout('signin'); ?>">Log out</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="hdr-menu">
+                <nav class="main-nav">
+                  <?php 
+                    $mmenuOptions = array( 
+                        'theme_location' => 'cbv_main_menu', 
+                        'menu_class' => 'clearfix reset-list',
+                        'container' => '',
+                        'container_class' => ''
+                      );
+                    wp_nav_menu( $mmenuOptions ); 
+                  ?>
+                </nav>
+              </div>
+              <div class="xs-hamburger">
+                <div class="hamburger-icon">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <strong class="hamburger-title">MENU</strong>
+              </div>
+              <div class="hdr-order-icon">
+                <i><img src="<?php echo THEME_URI; ?>/assets/images/card-icon.svg" alt=""></i>
+                <a href="#">
+                  <span>1</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<?php }else{ ?>
 <header class="header-wrap">
   <div class="top-bar">
     <span></span>
@@ -303,3 +404,4 @@ $hdinfo = get_field('headerinfo', 'options');
     </div>
   </div>
 </header>
+<?php } ?>
