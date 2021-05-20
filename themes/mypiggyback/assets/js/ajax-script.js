@@ -1,33 +1,4 @@
 jQuery(document).ready(function($) {
-/*    $(document).on( 'click', '#driver_apply', function(e) {
-        e.preventDefault();
-        var id = $(this).data('id');
-        var nonce = $(this).data('nonce');
-        $.ajax({
-            type: 'post',
-            dataType: 'JSON',
-            url: ajax_driver_apply_object.ajaxurl,
-            data: {
-                action: 'apply_driver_order',
-                nonce: nonce,
-                id: id
-            },
-            success: function( data ) {
-                console.log(data);
-                if(typeof(data['success']) != "undefined" &&  data['success'].length != 0 && data['success'] == 'success'){
-                  if(typeof(data['applied']) != "undefined" &&  data['applied'].length != 0 && data['applied'] == 'yes'){
-                    $('#apply_btn_wrap').html('<span class="applied">You have already applied for this job.</span>');
-                  }else{
-                    $('#apply_btn_wrap').html('<span class="sent-apply">Sent succsessfully for this job.</span>');
-                  } 
-                }else{
-
-                }
-            }
-        })
-        return false;
-    });*/
-
     $(document).on( 'click', '#driver_appoint', function(e) {
         e.preventDefault();
         var id = $(this).data('order_id');

@@ -68,8 +68,9 @@ function get_current_user_name(){
    return false;
 }
 
-function get_total_completed_job($driverID){
+function get_total_completed_job($driverID = ''){
   global $wpdb;
+  if( empty($driverID) ) return;
   $table = $wpdb->prefix.'order_appoint'; 
   $rowcount = $wpdb->get_var("SELECT COUNT(*) FROM $table WHERE driver_id = $driverID AND status = 'completed'");
   if($rowcount > 0){
@@ -78,7 +79,18 @@ function get_total_completed_job($driverID){
     return 0;
   }
 }
-
+function get_last_completed_job($driverID = ''){
+  global $wpdb;
+  if( empty($driverID) ) return;
+  $table = $wpdb->prefix.'order_appoint'; 
+  $result = $wpdb->get_row("SELECT * FROM $table WHERE driver_id = $driverID AND status = 'completed' ORDER BY created_at DESC LIMIT 1");
+  if($result){
+    $lastdate = date("d, M, Y", strtotime( $result->created_at ) );
+    return $lastdate;
+  }else{
+    return false;
+  }
+}
 function get_user_image(){
   $user = wp_get_current_user();
   if( $user ):
