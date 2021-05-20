@@ -29,7 +29,9 @@ get_header();
                     <li><strong>Years of experiece:</strong> <?php echo get_the_author_meta( 'driving_year', $user->ID ); ?></li>
                     <li><strong>Member since:</strong><?php printf( ' %s', date("d, M, Y", strtotime( $registered ) ) );?></li>
                     <li><strong>Total completed job:</strong> <?php echo get_total_completed_job($user->ID); ?></li>
-                    <li><strong>Last job completed on:</strong> 13, Martch, 2021</li>
+                    <?php if(get_last_completed_job($user->ID)): ?>
+                    <li><strong>Last job completed on:</strong> <?php echo get_last_completed_job($user->ID); ?></li>
+                  <?php endif; ?>
                     <li><strong>Phone:</strong> <?php echo get_the_author_meta( 'driver_phone', $user->ID ); ?> </li>
                     <li><strong>E-mail:</strong> <?php echo esc_html( $user->user_email ); ?></li>
                   </ul>
