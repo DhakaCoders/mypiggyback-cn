@@ -18,3 +18,6 @@ function completed_job_mail_by_author($orderID){
 function job_create_mail_by_customer($orderID){
 	
 }
+function payment_send_mail_by_customer($token, $amount, $orderID){
+	
+}

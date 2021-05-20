@@ -42,6 +42,19 @@ function get_custom_logout($page_link = ''){
     
 }
 
+add_action('admin_head', 'redirect_user_frontend_dashboard');
+function redirect_user_frontend_dashboard(){
+  $user = wp_get_current_user();
+  if( is_admin() ){
+    if ( in_array( 'driver', (array) $user->roles ) && is_user_logged_in() ) {
+      $redirect_to = site_url('account');
+      echo '<script>window.location.href="'.$redirect_to.'"</script>';
+      exit();
+    }
+  }
+   return false;
+}
+
 add_action( 'wp_enqueue_scripts', 'get_enqueue_media' );
 function get_enqueue_media() {
 	wp_enqueue_media();

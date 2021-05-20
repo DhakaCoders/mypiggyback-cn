@@ -63,7 +63,7 @@ function mpb_order_create(){
                 'post_author'=> 1,
                 'post_title' => wp_strip_all_tags( 'Vehicle '.$type.' #'. rand(11,50)),
                 'post_type' => 'vehicle_order',
-                'post_status' => 'publish'
+                'post_status' => 'draft'
             );
              
             $pid = wp_insert_post($post_information);
@@ -87,7 +87,7 @@ function mpb_order_create(){
                 update_field('order_type', sanitize_text_field($type), $pid );
             }
             update_field( 'driver_applied_ids', '', $pid );
-            update_field( 'order_status', 'publish', $pid );
+            update_field( 'order_status', 'draft', $pid );
             update_field( 'order_status_by_author', '0', $pid );
             update_field( 'order_status_by_driver', '0', $pid );
             update_field( 'order_appointed_to', '0', $pid );
