@@ -34,6 +34,19 @@ $order_type = get_field('order_type', $thisID);
                   </ul>
                 </div>
               </div>
+              <?php if ( current_user_can( 'administrator' ) && is_user_logged_in() ){ ?>
+              <div class="gap-50"></div>
+              <div class="thankyou-page-con">
+                <h1 class="fl-h3">Customer Details:</h1>
+                <div class="job-points">
+                  <ul>
+                    <li><strong>Name:</strong> London 1</li>
+                    <li><strong>Email:</strong> London 2</li>
+                    <li><strong>Phone:</strong> Vehicle Recovery</li>
+                  </ul>
+                </div>
+              </div>
+              <?php } ?>
               <div class="gap-50"></div>
               <div class="job-location1">
                 <h2 class="fl-h3">Job location:</h2>
@@ -47,12 +60,12 @@ $order_type = get_field('order_type', $thisID);
                   <?php if(!in_array($user_id, $applied_ids)){ $nonce = wp_create_nonce('apply_nonce'); ?>
                  <a class="fl-red-btn" id="driver_apply" href="#" onclick='driverApplyJob(<?php the_ID() ?>, "<?php echo $nonce; ?>"); return false;'>Apply</a>
                   <?php } ?>
-                    <?php if($status_by_driver == 1): ?>
+                    <?php if($status_by_author > 0 ): ?>
                     <h2 class="fl-h3">Job status:</h2>
                     <?php 
                       if($status_by_author == 1 && $status_by_driver == 0 && $appointed_to == $user_id){
                     ?>
-                      <div class="jobconfirm by_driver"><a href="#"  id="job-confirmation" onclick="orderConfirmation(<?php the_ID() ?>, <?php echo $user_id; ?>); return false;">Job Complete Confirmation</a></div>
+                      <div class="jobconfirm by_driver"><a class="fl-red-btn" href="#"  id="job-confirmation" onclick="orderConfirmation(<?php the_ID() ?>, <?php echo $user_id; ?>); return false;">Submit for review</a></div>
                       <?php
                     }else{
                       if($status_by_driver == 1 && $appointed_to == $user_id){
@@ -81,7 +94,7 @@ $order_type = get_field('order_type', $thisID);
                   }
                   if($status_by_author == 1 && $status_by_driver == 1 ){
                 ?>
-                  <div class="jobconfirm by_author"><a href="#"  id="job-confirmation-author" onclick="orderConfirmationByAuthor(<?php the_ID() ?>); return false;">Job Complete Confirmation</a></div>
+                  <div class="jobconfirm by_author"><a class="fl-red-btn" href="#"  id="job-confirmation-author" onclick="orderConfirmationByAuthor(<?php the_ID() ?>); return false;">Mark as completed</a></div>
                   <?php
                 }
                 ?>

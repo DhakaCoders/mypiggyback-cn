@@ -193,6 +193,7 @@ $user = wp_get_current_user();
                       while($ongo_Query->have_posts()): $ongo_Query->the_post(); 
                         $from_location = get_field('order_from_location', get_the_ID());
                         $to_location = get_field('order_to_location', get_the_ID());
+                        $status_by_driver = get_field('order_status_by_driver', get_the_ID());
                     ?>
                     <li>
                       <div class="job-grd-item mpac-grd">
@@ -207,7 +208,12 @@ $user = wp_get_current_user();
                         </div>
                         <div class="process-btn mHc2">
                           <a href="<?php the_permalink(); ?>">More</a>
-                          <span>Ongoing</span>
+                          <?php 
+                            if( $status_by_driver == 1 )
+                              echo '<span>Submitted for review</span>';
+                            else
+                              echo '<span>Ongoing</span>';
+                          ?>
                         </div>
                       </div>
                     </li>
@@ -463,6 +469,7 @@ $user = wp_get_current_user();
                       while($Query->have_posts()): $Query->the_post(); 
                         $from_location = get_field('order_from_location', get_the_ID());
                         $to_location = get_field('order_to_location', get_the_ID());
+                        $status_by_driver = get_field('order_status_by_driver', get_the_ID());
                     ?>
                     <li>
                       <div class="job-grd-item mpac-grd">
@@ -477,7 +484,12 @@ $user = wp_get_current_user();
                         </div>
                         <div class="process-btn mHc2">
                           <a href="<?php the_permalink(); ?>">More</a>
-                          <span>Ongoing</span>
+                          <?php 
+                            if( $status_by_driver == 1 )
+                              echo '<span>Submitted for review</span>';
+                            else
+                              echo '<span>Ongoing</span>';
+                          ?>
                         </div>
                       </div>
                     </li>
