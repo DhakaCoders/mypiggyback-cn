@@ -201,3 +201,18 @@ function sidebar_hide_spacific_page(){
   }
   return true;
 }
+
+// add a link to the WP Toolbar
+function mpb_custom_toolbar_link($wp_admin_bar) {
+    $args = array(
+        'id' => 'mpb_myaccount',
+        'title' => 'My Account', 
+        'href' => home_url('account'),  
+        'meta' => array(
+            'class' => 'mpb-account', 
+            'title' => 'My Account'
+            )
+    );
+    $wp_admin_bar->add_node($args);
+}
+add_action('admin_bar_menu', 'mpb_custom_toolbar_link', 999);
