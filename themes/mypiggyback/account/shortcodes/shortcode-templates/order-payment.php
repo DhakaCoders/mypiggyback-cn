@@ -13,11 +13,17 @@
 	<div class="mpb-payment-inner">
 		<h2 class="payment-title">Payment Method</h2>
 		<div class="payment-type">
-			<div>
-				<input type="radio" name="payment_type" id="paypal_type" value="paypal" checked>&nbsp; Paypal
+			<div class="payment-type-col">
+				<label for="paypal_type">
+					<input type="radio" name="payment_type" id="paypal_type" value="paypal" checked>&nbsp;
+					<i><img src="<?php echo THEME_URI; ?>/assets/images/paypal-icon.png"></i>
+				</label>
 			</div>
-			<div>
-				<input type="radio" name="payment_type" id="stripe_type" value="stripe">&nbsp; Stripe
+			<div class="payment-type-col">
+				<label for="stripe_type">
+					<input type="radio" name="payment_type" id="stripe_type" value="stripe">&nbsp;
+					<i><img src="<?php echo THEME_URI; ?>/assets/images/stripe-icon.png"></i>
+				</label>
 			</div>
 		</div>
 		<div class="total_amount">
