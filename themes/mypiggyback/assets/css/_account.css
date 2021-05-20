@@ -1851,6 +1851,16 @@ span.error {
     font-size: 14px;
 }
 
+.fl-input-field-row .bootstrap-select > .dropdown-toggle{
+	height: 50px;
+}
+.fl-input-field-row .bootstrap-select > .dropdown-toggle .filter-option-inner{
+	height: 100%;
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+}
+
 
 @media(max-width: 1499px){
 
@@ -2009,7 +2019,8 @@ span.error {
 		margin-right: auto;
 	}
 	.mp-input input[type="text"], .mp-input input[type="email"], 
-	.mp-input input[type="number"], .mp-input input[type="password"]{
+	.mp-input input[type="number"], .mp-input input[type="password"],
+	.fl-input-field-row .bootstrap-select > .dropdown-toggle{
 		height: 45px;
 	}
 }
