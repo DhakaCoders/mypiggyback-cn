@@ -10,7 +10,7 @@ $order_type = get_field('order_type', $thisID);
     <div class="container">
         <div class="row">
           <div class="col-sm-12">
-            <div class="block-700">
+            <div class="block-800">
               <div class="thankyou-page-con">
                 <?php 
                 $status_by_author = get_field('order_status_by_author', $thisID);
