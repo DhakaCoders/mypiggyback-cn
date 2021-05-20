@@ -2211,8 +2211,33 @@ a.ui-datepicker-next:after {
 	transform: rotate(90deg);
 	top: 3px;
 }
+.payment-title{
+	font-size: 28px;
+	text-align: center;
+	padding-bottom: 10px;
+	position: relative;
+}
+.payment-title:after{
+	content: "";
+	width: 50px;
+	height: 2px;
+	background: #F2101C;
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+}
 h2.media-frame-actions-heading.screen-reader-text {
     display: none !important;
+}
+.payment-type{
+	display: flex;
+	justify-content: center;
+}
+.payment-type > div{
+	padding: 5px;
 }
 @media(max-width: 1499px){
 
