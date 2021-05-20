@@ -180,17 +180,23 @@ function restricted_page_visit(){
         'page-vehicle-recovery.php', 
         'page-vehicle-transport.php', 
         'page-services.php', 
-        'page-about.php'
+        'page-about.php',
+        'page-contact.php'
       )
     )){
       wp_redirect(home_url('account'));
+      exit();
+    }
+  }else{
+    if(is_page('thank-you')){
+      wp_redirect(home_url('/'));
       exit();
     }
   }
 }
 
 function sidebar_hide_spacific_page(){
-  if(is_page('account') || is_page('thank-you')){
+  if( (is_page('account') || is_page('thank-you') ) && is_user_logged_in()){
     return false;
   }
   return true;
