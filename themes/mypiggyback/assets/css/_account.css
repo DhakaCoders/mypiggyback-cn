@@ -2035,7 +2035,12 @@ span.error {
 }
 
 @media(max-width: 639px){
-
+	.fl-submit-btn input[type="submit"], .mp-btn{
+		height: 45px;
+	}
+	.job-grds-cntlr ul li{
+		width: 50%;
+	}
 }
 
 @media(max-width: 575px){
@@ -2105,6 +2110,20 @@ span.error {
 	.profile-submit-btn input[type="reset"], 
 	.profile-submit-btn #edit-profile-cancle-btn{
 		width: 83px;
+	}
+	.profile-img-edit {
+	    width: 125px;
+	    height: 125px;
+	}
+	.profile-img-edit label i img{
+		max-width: 27px;
+		height: auto;
+	}
+	span.file-up-instruction-txt{
+		bottom: -20px;
+	}
+	.job-grds-cntlr ul li{
+		width: 100%;
 	}
 }
 
