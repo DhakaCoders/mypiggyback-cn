@@ -290,8 +290,10 @@ button.mp-tab-link.current:after{
 	margin-left: auto;
 	margin-right: auto;
 }
-.fl-submit-btn input[type="submit"]:hover{
-	background-color: #000000;
+.fl-submit-btn input[type="submit"]:hover,
+.profile-submit-btn input[type="submit"]:hover, 
+.profile-submit-btn a:hover{
+	background-color: #c10913;
 }
 .w-full input[type="submit"]{
 	width: 100%;
