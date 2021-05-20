@@ -7,7 +7,7 @@ $user = wp_get_current_user();
   <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <div class="dashboard-cn block-700">
+          <div class="dashboard-cn block-800">
             <div class="mp-tabs clearfix text-center">
               <button class="mp-tab-link current" data-tab="tab-1"><span>Profile</span></button>
               <button class="mp-tab-link " data-tab="tab-2"><span>Jobs</span></button>

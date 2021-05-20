@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
           <div class="col-sm-12">
-            <div class="registrar-form block-700">
+            <div class="registrar-form block-800">
               <div class="ac-page-hdr">
                 <h1 class="fl-h3 acph-title">Registration</h1>
               </div>
