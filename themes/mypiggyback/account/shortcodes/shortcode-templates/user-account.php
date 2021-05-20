@@ -14,7 +14,7 @@ $user = wp_get_current_user();
               <button class="mp-tab-link " data-tab="tab-3"><span>Ongoing Jobs</span></button>
               <button class="mp-tab-link " data-tab="tab-4"><span>Completed Jobs</span></button>
             </div>
-            <div id="tab-1" class="mp-tab-content current">
+            <div id="tab-1" class="mp-tab-content current profile-tab-con-cntlr">
               <div class="tab-con-inr">
                 <form action="" method="post">
                   <div class="fl-input-field-row mp-input profile-edit-step-cntlr" id="choose-file">
@@ -112,7 +112,7 @@ $user = wp_get_current_user();
                 </form>
               </div>
             </div>
-            <div id="tab-2" class="mp-tab-content">
+            <div id="tab-2" class="mp-tab-content jobs-tab-con-cntlr">
               <div class="tab-con-inr">
                 <div class="job-grds-cntlr">
                   <?php 
@@ -162,7 +162,7 @@ $user = wp_get_current_user();
                 </div>
               </div>
             </div>
-            <div id="tab-3" class="mp-tab-content">
+            <div id="tab-3" class="mp-tab-content drivers-tab-con-cntlr">
               <div class="tab-con-inr">
                 <div class="job-grds-cntlr">
                   <?php 
@@ -225,7 +225,7 @@ $user = wp_get_current_user();
                 </div>
               </div>
             </div>
-            <div id="tab-4" class="mp-tab-content">
+            <div id="tab-4" class="mp-tab-content customer-tab-con-cntlr">
               <div class="tab-con-inr">
                 <div class="job-grds-cntlr">
                   <?php 
