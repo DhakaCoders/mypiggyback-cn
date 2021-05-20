@@ -44,8 +44,8 @@ $order_type = get_field('order_type', $thisID);
               <div class="gap-50"></div>
               <div class="applytojob">
                 <div class="vcl-btn vcl-fst-btn" id="apply_btn_wrap">
-                  <?php if(!in_array($user_id, $applied_ids)){ ?>
-                  <a class="fl-red-btn" id="driver_apply" href="#" data-id="<?php the_ID() ?>" data-nonce="<?php echo wp_create_nonce('apply_nonce') ?>">Apply</a>
+                  <?php if(!in_array($user_id, $applied_ids)){ $nonce = wp_create_nonce('apply_nonce'); ?>
+                 <a class="fl-red-btn" id="driver_apply" href="#" onclick='driverApplyJob(<?php the_ID() ?>, "<?php echo $nonce; ?>"); return false;''>Apply</a>
                   <?php } ?>
                     <?php if($status_by_driver == 1): ?>
                     <h2 class="fl-h3">Job status:</h2>
@@ -90,9 +90,9 @@ $order_type = get_field('order_type', $thisID);
               <div class="gap-50"></div>
               <div class="applicants">
                 <h2 class="fl-h3">Interested drivers:</h2>
-                <?php 
+                <?php
                 $applied_users = get_users( array( 'include' => $applied_ids ) );
-                if($applied_users){
+                if($applied_users && $applied_ids){
                 ?>
                 <ul class="reset-list">
                   <?php foreach( $applied_users as $applied_user ){ ?>

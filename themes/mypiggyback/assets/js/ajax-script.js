@@ -1,5 +1,5 @@
 jQuery(document).ready(function($) {
-    $(document).on( 'click', '#driver_apply', function(e) {
+/*    $(document).on( 'click', '#driver_apply', function(e) {
         e.preventDefault();
         var id = $(this).data('id');
         var nonce = $(this).data('nonce');
@@ -26,7 +26,7 @@ jQuery(document).ready(function($) {
             }
         })
         return false;
-    });
+    });*/
 
     $(document).on( 'click', '#driver_appoint', function(e) {
         e.preventDefault();
@@ -59,6 +59,32 @@ jQuery(document).ready(function($) {
         return false;
     });
 });
+
+function driverApplyJob(id, nonce){
+    jQuery.ajax({
+        type: 'post',
+        dataType: 'JSON',
+        url: ajax_driver_apply_object.ajaxurl,
+        data: {
+            action: 'apply_driver_order',
+            nonce: nonce,
+            id: id
+        },
+        success: function( data ) {
+            console.log(data);
+            if(typeof(data['success']) != "undefined" &&  data['success'].length != 0 && data['success'] == 'success'){
+              if(typeof(data['applied']) != "undefined" &&  data['applied'].length != 0 && data['applied'] == 'yes'){
+                jQuery('#apply_btn_wrap').html('<span class="applied">You have already applied for this job.</span>');
+              }else{
+                jQuery('#apply_btn_wrap').html('<span class="sent-apply">Your application has been sent successfully.</span>');
+              } 
+            }else{
+
+            }
+        }
+    })
+    return false;
+}
 function orderAppoint(orderid, driverid){
     jQuery.ajax({
         type: 'post',
