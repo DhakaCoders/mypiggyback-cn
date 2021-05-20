@@ -278,6 +278,10 @@ $hdinfo = get_field('headerinfo', 'options');
                 <ul class="reset-list clearfix">
                   <li>
                     <i class="fas fa-sign-out-alt"></i>
+                    <a href="<?php echo esc_url(home_url('account')); ?>">Dashboard</a>
+                  </li>
+                  <li>
+                    <i class="fas fa-sign-out-alt"></i>
                     <a href="<?php get_custom_logout('signin'); ?>">Log out</a>
                   </li>
                 </ul>
