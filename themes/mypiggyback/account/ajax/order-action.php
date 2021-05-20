@@ -95,6 +95,7 @@ function mpb_order_create(){
             $data['success'] = 'success';
             $data['success_msg'] = 'Order has been completed successfully.';
             $data['redirect'] = home_url('order-payment/?order-id='.$pid);
+            job_create_mail_by_customer($pid);
         }else{
             $data['error'] = 'Could not create order.';
         }
@@ -133,10 +134,12 @@ function apply_driver_order(){
                $ids_array = array($user_id); 
                update_field('driver_applied_ids',array_merge($applied_ids,$ids_array),$postid);
                $data['apply_send'] = 'send';
+               driver_apply_job_mail($postid, $user_id);
             }
         }else{
             $ids_array = array($user_id);
             update_field('driver_applied_ids',$ids_array,$postid);
+            driver_apply_job_mail($postid, $user_id);
         }
         
         $data['success'] = 'success';
@@ -183,7 +186,7 @@ function appoint_driver_by_admin(){
                 ));
                 $data['appoint_send'] = 'send';
             }
-            
+            appoint_job_mail_by_author($postid, $driver_id);
         }
         $data['success'] = 'success';
     }
@@ -215,6 +218,7 @@ function order_confirmation_by_driver(){
         }else{
             update_field('order_status_by_driver',1,$postid);
             $data['confirm_send'] = 'send';
+            review_job_mail_by_driver($postid);
         }
         $data['success'] = 'success';
     }
@@ -255,6 +259,7 @@ function order_confirmation_by_author(){
                 )
             );
             $data['confirm_send'] = 'send';
+            completed_job_mail_by_author($postid);
         }
         $data['success'] = 'success';
     }

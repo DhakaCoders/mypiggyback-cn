@@ -43,9 +43,11 @@ $order_phone = get_field('order_telephone', $thisID);
                 <h1 class="fl-h3">Customer Details:</h1>
                 <div class="job-points">
                   <ul>
-                    <li><strong>Name:</strong> London 1</li>
-                    <li><strong>Email:</strong> London 2</li>
-                    <li><strong>Phone:</strong> Vehicle Recovery</li>
+                    <?php 
+                      if( !empty($fullname) ) printf('<li><strong>Name:</strong> %s</li>', $fullname);  
+                      if( !empty($order_email) ) printf('<li><strong>Email:</strong> %s</li>', $order_email);  
+                      if( !empty($order_phone) ) printf('<li><strong>Phone:</strong> %s</li>', $order_phone);  
+                    ?>
                   </ul>
                 </div>
               </div>
@@ -131,10 +133,10 @@ $order_phone = get_field('order_telephone', $thisID);
                         </strong>
                       </div>
                       <div class="details"><a target="_blank" href="<?php echo esc_url(home_url('author/'.$applied_user->user_login)); ?>">See Profile</a></div>
-                      <?php if($status_by_author == 1 && $appointed_to == $applied_user->ID){ ?>
+                      <?php if($status_by_author > 0 && $appointed_to == $applied_user->ID){ ?>
                         <div class="details"><a href="#"  onclick="return false;">Appointed</a></div>
                       <?php }else{ ?>
-                        <div class="details" style="<?php echo ($status_by_author == 1)?'display:none;':'';?>"><a href="#" id="order_appoint_<?php echo $applied_user->ID; ?>" onclick="orderAppoint(<?php the_ID() ?>, <?php echo $applied_user->ID; ?>); return false;">Appoint</a></div>
+                        <div class="details" style="<?php echo ($status_by_author > 0)?'display:none;':'';?>"><a href="#" id="order_appoint_<?php echo $applied_user->ID; ?>" onclick="orderAppoint(<?php the_ID() ?>, <?php echo $applied_user->ID; ?>); return false;">Appoint</a></div>
                       <?php } ?>
                     </div>
                   </li>
