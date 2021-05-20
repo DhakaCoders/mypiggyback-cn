@@ -18,6 +18,13 @@
 	margin-left: auto;
 	margin-right: auto;
 }
+
+.block-600{
+	max-width: 600px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
 .ac-page-cntlr{
 	padding: 100px 0 50px;
 }

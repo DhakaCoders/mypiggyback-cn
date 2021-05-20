@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row">
           <div class="col-sm-12">
-            <div class="login-form block-800">
+            <div class="login-form block-600">
               <div class="ac-page-hdr">
                 <h1 class="fl-h3 acph-title">Login</h1>
               </div>
