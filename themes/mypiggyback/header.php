@@ -1,3 +1,4 @@
+<?php restricted_page_visit(); ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>> 
 <head> 
@@ -277,7 +278,7 @@ $hdinfo = get_field('headerinfo', 'options');
                 <strong><?php get_current_user_name(); ?></strong>
                 <ul class="reset-list clearfix">
                   <li>
-                    <i class="fas fa-sign-out-alt"></i>
+                    <i class="fas fa-home"></i>
                     <a href="<?php echo esc_url(home_url('account')); ?>">Dashboard</a>
                   </li>
                   <li>
@@ -291,7 +292,7 @@ $hdinfo = get_field('headerinfo', 'options');
                 <nav class="main-nav">
                   <?php 
                     $mmenuOptions = array( 
-                        'theme_location' => 'cbv_main_menu', 
+                        'theme_location' => 'cbv_logged_main_menu', 
                         'menu_class' => 'clearfix reset-list',
                         'container' => '',
                         'container_class' => ''

@@ -90,6 +90,15 @@
             </div>
             <div class="ftr-menu ftr-col-2">
               <h4 class="ftr-menu-title fl-h4"><?php _e( 'Site Links', THEME_NAME ); ?>...</h4>
+              <?php if ( current_user_can( 'driver' ) && is_user_logged_in() ){ ?> 
+                <?php 
+                  wp_nav_menu( array(
+                  'menu_class'     => 'clearfix reset-list',
+                  'theme_location' => 'cbv_logged_main_menu',
+                  'container' => false,
+                  ) );
+                ?>
+              <?php }else{ ?>
               <?php 
                 wp_nav_menu( array(
                 'menu_class'     => 'clearfix reset-list',
@@ -97,6 +106,7 @@
                 'container' => false,
                 ) );
               ?>
+              <?php } ?>
             </div>
             <div class="ftr-menu ftr-col-3">
               <h4 class="ftr-menu-title fl-h4">Newsletter Signup...</h4>

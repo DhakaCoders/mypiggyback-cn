@@ -172,3 +172,26 @@ function is_default_page(){
   return $class;
 }
 
+
+function restricted_page_visit(){
+  if ( current_user_can( 'driver' ) && is_user_logged_in() ){
+    if( is_front_page() || is_page_template(
+      array(
+        'page-vehicle-recovery.php', 
+        'page-vehicle-transport.php', 
+        'page-services.php', 
+        'page-about.php'
+      )
+    )){
+      wp_redirect(home_url('account'));
+      exit();
+    }
+  }
+}
+
+function sidebar_hide_spacific_page(){
+  if(is_page('account') || is_page('thank-you')){
+    return false;
+  }
+  return true;
+}

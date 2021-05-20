@@ -1,7 +1,7 @@
 <?php
 get_header(); 
 $thisID = get_the_ID();
-if(!is_page('account')){
+if(sidebar_hide_spacific_page()){
 	get_template_part('templates/page', 'breadcrumb');
 }
 ?>
