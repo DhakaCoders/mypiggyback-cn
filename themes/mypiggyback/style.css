@@ -103,6 +103,9 @@ span.applied.topbar {
 .payment-type {
     text-align: center;
 }
+span.sent-apply{
+    color: #D61225;
+}
 span.error {
     color: #D61225;
     margin-top: 2px;

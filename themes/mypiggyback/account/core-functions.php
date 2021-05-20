@@ -68,6 +68,16 @@ function get_current_user_name(){
    return false;
 }
 
+function get_total_completed_job($driverID){
+  global $wpdb;
+  $table = $wpdb->prefix.'order_appoint'; 
+  $rowcount = $wpdb->get_var("SELECT COUNT(*) FROM $table WHERE driver_id = $driverID AND status = 'completed'");
+  if($rowcount > 0){
+    return $rowcount;
+  }else{
+    return 0;
+  }
+}
 
 function get_user_image(){
   $user = wp_get_current_user();
