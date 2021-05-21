@@ -279,11 +279,11 @@ $hdinfo = get_field('headerinfo', 'options');
                 <ul class="reset-list clearfix">
                   <li>
                     <i class="fas fa-home"></i>
-                    <a href="<?php echo esc_url(home_url('account')); ?>">Dashboard</a>
+                    <a href="<?php echo esc_url(home_url('account')); ?>"><?php _e( 'Address', 'Dashboard' ); ?></a>
                   </li>
                   <li>
                     <i class="fas fa-sign-out-alt"></i>
-                    <a href="<?php get_custom_logout('signin'); ?>">Log out</a>
+                    <a href="<?php get_custom_logout('signin'); ?>"><?php _e( 'Log out', 'Dashboard' ); ?></a>
                   </li>
                 </ul>
               </div>
@@ -307,7 +307,7 @@ $hdinfo = get_field('headerinfo', 'options');
                   <span></span>
                   <span></span>
                 </div>
-                <strong class="hamburger-title">MENU</strong>
+                <strong class="hamburger-title"><?php _e( 'MENU', 'Dashboard' ); ?></strong>
               </div>
               <div class="hdr-order-icon">
                 <i><img src="<?php echo THEME_URI; ?>/assets/images/card-icon.svg" alt=""></i>
@@ -394,7 +394,7 @@ $hdinfo = get_field('headerinfo', 'options');
                   <span></span>
                   <span></span>
                 </div>
-                <strong class="hamburger-title">MENU</strong>
+                <strong class="hamburger-title"><?php _e( 'MENU', 'Dashboard' ); ?></strong>
               </div>
               <div class="hdr-order-icon">
                 <i><img src="<?php echo THEME_URI; ?>/assets/images/card-icon.svg" alt=""></i>
