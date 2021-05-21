@@ -64,7 +64,7 @@ function mpb_order_create(){
                 $title_no = 1;
             }else{
                 $title_no = get_option( 'job_title_no' );
-                $title_no += $title_no;
+                $title_no = $title_no+1;
                 update_option( 'job_title_no', $title_no );
             }
             
