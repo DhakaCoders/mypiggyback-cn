@@ -59,9 +59,18 @@ function mpb_order_create(){
         }    
         if($success){
             $type = (isset($_POST['order_type']) && !empty($_POST['order_type']))?sanitize_text_field($_POST['order_type']):'';
+            if( get_option( 'job_title_no' ) == false ){
+                update_option( 'job_title_no', 1 );
+                $title_no = 1;
+            }else{
+                $title_no = get_option( 'job_title_no' );
+                $title_no += $title_no;
+                update_option( 'job_title_no', $title_no );
+            }
+            
             $post_information = array(
                 'post_author'=> 1,
-                'post_title' => wp_strip_all_tags( 'Vehicle '.$type.' #'. rand(11,50)),
+                'post_title' => wp_strip_all_tags( 'Vehicle '.$type.' #'. $title_no),
                 'post_type' => 'vehicle_order',
                 'post_status' => 'draft'
             );

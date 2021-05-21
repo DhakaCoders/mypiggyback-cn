@@ -48,24 +48,32 @@ get_template_part('templates/page', 'breadcrumb');
                 </div>
               </div>
               <div class="vehicle-recovery-form vehicle-form">
-                <form>
+                <form id="vehicle-recovery" onsubmit="vehicleRecoveryOrder('recov'); return false">
+                  <input type="hidden" name="action" value="mpb_order_create">
+                  <input type="hidden" name="order_type" value="recovery">
                   <div class="input-field-row">
-                    <input type="text" name="" placeholder="From location A (Postcode)">
+                    <input type="text" name="from_location" placeholder="From location A (Postcode)">
+                    <span class="error recov_fromloc_error"></span>
                   </div>
                   <div class="input-field-row">
-                    <input type="text" name="" placeholder="To location B (Postcode)">
+                    <input type="text" name="to_location" placeholder="To location B (Postcode)">
+                    <span class="error recov_toloc_error"></span>
                   </div>
                   <div class="input-field-row">
-                    <input type="text" name="" placeholder="Full Name">
+                    <input type="text" name="fullname" placeholder="Full Name">
+                    <span class="error recov_name_error"></span>
                   </div>
                   <div class="input-field-row">
-                    <input type="text" name="" placeholder="Email Address">
+                    <input type="text" name="email_address" placeholder="Email Address">
+                    <span class="error recov_email_error"></span>
                   </div>
                   <div class="input-field-row">
-                    <input type="text" name="" placeholder="Telephone Number">
+                    <input type="text" name="telephone" placeholder="Telephone Number">
+                    <span class="error recov_phone_error"></span>
                   </div>
                   <div class="input-field-row input-field-row-submit">
-                    <input type="submit" name="" value="SUPER-FASTBOOKING">
+                    <input type="hidden" name="mpb_order_nonce" value="<?php echo wp_create_nonce('mpb-order-nonce'); ?>"/>
+                    <input type="submit" name="submit" id="recoverybtn" value="SUPER-FASTBOOKING">
                   </div>
                 </form>
               </div>

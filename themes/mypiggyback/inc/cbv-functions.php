@@ -187,7 +187,6 @@ function restricted_page_visit(){
       wp_redirect(home_url('account'));
       exit();
     }
-  }else{
     if(is_page('thank-you')){
       wp_redirect(home_url('/'));
       exit();
