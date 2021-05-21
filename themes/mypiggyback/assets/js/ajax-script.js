@@ -149,7 +149,7 @@ function vehicleRecoveryOrder(prefix){
                 function redirect_page(){
                     window.location.href = data['redirect'];
                 }
-                setTimeout(redirect_page,3000);
+                setTimeout(redirect_page,1000);
             }else{
                 if(typeof(data['fromloc']) != "undefined" &&  data['fromloc'].length != 0){
                     jQuery('.'+prefix+'_fromloc_error').text(data['fromloc']); 
