@@ -5,7 +5,8 @@
 .home-page-bnr{
 	position: relative;
 }
-.home-page-bnr iframe{
+.home-page-bnr iframe,
+#route_map{
 	height: 655px;
 }
 
@@ -418,7 +419,8 @@
 	    box-shadow: none;
 	    border: 1px solid #CCCCCC;
 	}
-	.home-page-bnr iframe {
+	.home-page-bnr iframe,
+	#route_map{
 	    height: 500px;
 	}
 }

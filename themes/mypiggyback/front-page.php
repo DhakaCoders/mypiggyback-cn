@@ -1,16 +1,18 @@
 <?php get_header(); ?>
 <section class="home-page-bnr">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d66815.33056846341!2d-0.14238880307146762!3d51.51248988308131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2sbd!4v1615400813839!5m2!1sen!2sbd" width="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  <div id="route_map"></div>
   <div class="loc-searching-form-cntlr show-sm">
     <div style="position: relative;">
-      <form>
+      <form id="distance-form">
         <div class="input-field-row starting-field">
           <span>A</span>
-          <input type="text" name="" placeholder="Choose your starting point">
+          <input type="text" id="from_placesm" name="from_places" placeholder="Choose your starting point">
+          <input id="originm" name="origin" required="" type="hidden"/>
         </div>
         <div class="input-field-row ending-field">
           <span>B</span>
-          <input type="text" name="" placeholder="Choose your ending point">
+          <input type="text" id="to_placesm" name="to_places" placeholder="Choose your ending point">
+          <input id="destination" name="destination" required="" type="hidden"/>
         </div>
         <span class="destination-switcher-button">
           <i>
@@ -34,14 +36,17 @@
           <div class="home-page-bnr-con-inr">
             <div class="loc-searching-form-cntlr hide-sm">
               <div style="position: relative;">
-                <form>
+                <form id="distance-form">
                   <div class="input-field-row starting-field">
                     <span>A</span>
-                    <input type="text" name="" placeholder="Choose your starting point">
+                    <input type="text" id="from_places" name="from_places" placeholder="Choose your starting point">
+                    <input id="origin" name="origin" required="" type="hidden"/>
+                    <a class="current_location" href="#"><i class="far fa-compass"></i></a>
                   </div>
                   <div class="input-field-row ending-field">
                     <span>B</span>
-                    <input type="text" name="" placeholder="Choose your ending point">
+                    <input type="text" id="to_places" name="to_places" placeholder="Choose your ending point">
+                    <input id="destination" name="destination" required="" type="hidden"/>
                   </div>
                   <span class="destination-switcher-button">
                     <i>
@@ -50,10 +55,8 @@
                       </i>
                   </span>
                 </form>
-                <div class="loc-distance-miles">
-                  <div>
-                    <strong>15.6</strong>
-                    <span>miles</span>
+                <div class="loc-distance-miles" id="results" style="display: none;">
+                  <div class="mgs">
                   </div>
                 </div>
               </div>

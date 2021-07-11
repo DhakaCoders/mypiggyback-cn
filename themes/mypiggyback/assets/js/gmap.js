@@ -1,6 +1,7 @@
 (function($) {
-	
-	var mylatln = {lat: 51.513100, lng: -0.135590};
+    //https://github.com/webeasystep/draw_route_google_maps
+    //https://www.youtube.com/watch?v=I1laO8TRiws	
+    var mylatln = {lat: 51.513100, lng: -0.135590};
     var mapProp = {
       center: mylatln,
       mapTypeControl:true,
