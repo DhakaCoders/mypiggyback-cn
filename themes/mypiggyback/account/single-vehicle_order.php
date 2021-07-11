@@ -4,13 +4,16 @@ $thisID = get_the_ID();
 $from_location = get_field('order_from_location', $thisID);
 $to_location = get_field('order_to_location', $thisID);
 $order_type = get_field('order_type', $thisID);
+$fullname = get_field('order_fullname', $thisID);
+$order_email = get_field('order_email', $thisID);
+$order_phone = get_field('order_telephone', $thisID);
 ?>
 <div class="ac-page-cntlr">
   <section class="thankyou-page-cntlr">
     <div class="container">
         <div class="row">
           <div class="col-sm-12">
-            <div class="block-700">
+            <div class="block-800">
               <div class="thankyou-page-con">
                 <?php 
                 $status_by_author = get_field('order_status_by_author', $thisID);
@@ -34,6 +37,21 @@ $order_type = get_field('order_type', $thisID);
                   </ul>
                 </div>
               </div>
+              <?php if ( current_user_can( 'administrator' ) && is_user_logged_in() ){ ?>
+              <div class="gap-50"></div>
+              <div class="thankyou-page-con">
+                <h1 class="fl-h3">Customer Details:</h1>
+                <div class="job-points">
+                  <ul>
+                    <?php 
+                      if( !empty($fullname) ) printf('<li><strong>Name:</strong> %s</li>', $fullname);  
+                      if( !empty($order_email) ) printf('<li><strong>Email:</strong> %s</li>', $order_email);  
+                      if( !empty($order_phone) ) printf('<li><strong>Phone:</strong> %s</li>', $order_phone);  
+                    ?>
+                  </ul>
+                </div>
+              </div>
+              <?php } ?>
               <div class="gap-50"></div>
               <div class="customer-details">
                 <h2 class="fl-h3">Customer Details:</h2>
@@ -56,15 +74,15 @@ $order_type = get_field('order_type', $thisID);
               <div class="gap-50"></div>
               <div class="applytojob">
                 <div class="vcl-btn vcl-fst-btn" id="apply_btn_wrap">
-                  <?php if(!in_array($user_id, $applied_ids)){ ?>
-                  <a class="fl-red-btn" id="driver_apply" href="#" data-id="<?php the_ID() ?>" data-nonce="<?php echo wp_create_nonce('apply_nonce') ?>">Apply</a>
+                  <?php if(!in_array($user_id, $applied_ids)){ $nonce = wp_create_nonce('apply_nonce'); ?>
+                 <a class="fl-red-btn" id="driver_apply" href="#" onclick='driverApplyJob(<?php the_ID() ?>, "<?php echo $nonce; ?>"); return false;'>Apply</a>
                   <?php } ?>
-                    <?php if($status_by_driver == 1): ?>
+                    <?php if($status_by_author > 0 ): ?>
                     <h2 class="fl-h3">Job status:</h2>
                     <?php 
                       if($status_by_author == 1 && $status_by_driver == 0 && $appointed_to == $user_id){
                     ?>
-                      <div class="jobconfirm by_driver"><a href="#"  id="job-confirmation" onclick="orderConfirmation(<?php the_ID() ?>, <?php echo $user_id; ?>); return false;">Job Complete Confirmation</a></div>
+                      <div class="jobconfirm by_driver"><a class="fl-red-btn" href="#"  id="job-confirmation" onclick="orderConfirmation(<?php the_ID() ?>, <?php echo $user_id; ?>); return false;">Submit for review</a></div>
                       <?php
                     }else{
                       if($status_by_driver == 1 && $appointed_to == $user_id){
@@ -93,7 +111,7 @@ $order_type = get_field('order_type', $thisID);
                   }
                   if($status_by_author == 1 && $status_by_driver == 1 ){
                 ?>
-                  <div class="jobconfirm by_author"><a href="#"  id="job-confirmation-author" onclick="orderConfirmationByAuthor(<?php the_ID() ?>); return false;">Job Complete Confirmation</a></div>
+                  <div class="jobconfirm by_author"><a class="fl-red-btn" href="#"  id="job-confirmation-author" onclick="orderConfirmationByAuthor(<?php the_ID() ?>); return false;">Mark as completed</a></div>
                   <?php
                 }
                 ?>
@@ -102,16 +120,18 @@ $order_type = get_field('order_type', $thisID);
               <div class="gap-50"></div>
               <div class="applicants">
                 <h2 class="fl-h3">Interested drivers:</h2>
-                <?php 
+                <?php
                 $applied_users = get_users( array( 'include' => $applied_ids ) );
-                if($applied_users){
+                if($applied_users && $applied_ids){
                 ?>
                 <ul class="reset-list">
                   <?php foreach( $applied_users as $applied_user ){ ?>
                   <li>
                     <div class="diverListhook clearfix">
                       <?php if( !empty(get_the_author_meta( 'image', $applied_user->ID )) ){ ?>
-                        <div class="profile-photo"><img src="<?php echo esc_attr( get_the_author_meta( 'image', $applied_user->ID ) ); ?>"></div>
+                        <div class="profile-photo-cntlr">
+                          <div class="profile-photo"><img src="<?php echo esc_attr( get_the_author_meta( 'image', $applied_user->ID ) ); ?>"></div>
+                        </div>
                       <?php }else{ ?>
                         <div class="profile-photo"><img src="<?php echo THEME_URI; ?>/assets/images/avater-img.png"></div>
                       <?php } ?>
@@ -127,10 +147,10 @@ $order_type = get_field('order_type', $thisID);
                         </strong>
                       </div>
                       <div class="details"><a target="_blank" href="<?php echo esc_url(home_url('author/'.$applied_user->user_login)); ?>">See Profile</a></div>
-                      <?php if($status_by_author == 1 && $appointed_to == $applied_user->ID){ ?>
+                      <?php if($status_by_author > 0 && $appointed_to == $applied_user->ID){ ?>
                         <div class="details"><a href="#"  onclick="return false;">Appointed</a></div>
                       <?php }else{ ?>
-                        <div class="details" style="<?php echo ($status_by_author == 1)?'display:none;':'';?>"><a href="#" id="order_appoint_<?php echo $applied_user->ID; ?>" onclick="orderAppoint(<?php the_ID() ?>, <?php echo $applied_user->ID; ?>); return false;">Appoint</a></div>
+                        <div class="details" style="<?php echo ($status_by_author > 0)?'display:none;':'';?>"><a href="#" id="order_appoint_<?php echo $applied_user->ID; ?>" onclick="orderAppoint(<?php the_ID() ?>, <?php echo $applied_user->ID; ?>); return false;">Appoint</a></div>
                       <?php } ?>
                     </div>
                   </li>

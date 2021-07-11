@@ -7,14 +7,14 @@ $user = wp_get_current_user();
   <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <div class="dashboard-cn block-700">
+          <div class="dashboard-cn block-800">
             <div class="mp-tabs clearfix text-center">
               <button class="mp-tab-link current" data-tab="tab-1"><span>Profile</span></button>
               <button class="mp-tab-link " data-tab="tab-2"><span>Jobs</span></button>
               <button class="mp-tab-link " data-tab="tab-3"><span>Ongoing Jobs</span></button>
               <button class="mp-tab-link " data-tab="tab-4"><span>Completed Jobs</span></button>
             </div>
-            <div id="tab-1" class="mp-tab-content current">
+            <div id="tab-1" class="mp-tab-content current profile-tab-con-cntlr">
               <div class="tab-con-inr">
                 <form action="" method="post">
                   <div class="fl-input-field-row mp-input profile-edit-step-cntlr" id="choose-file">
@@ -112,7 +112,7 @@ $user = wp_get_current_user();
                 </form>
               </div>
             </div>
-            <div id="tab-2" class="mp-tab-content">
+            <div id="tab-2" class="mp-tab-content jobs-tab-con-cntlr">
               <div class="tab-con-inr">
                 <div class="job-grds-cntlr">
                   <?php 
@@ -162,7 +162,7 @@ $user = wp_get_current_user();
                 </div>
               </div>
             </div>
-            <div id="tab-3" class="mp-tab-content">
+            <div id="tab-3" class="mp-tab-content drivers-tab-con-cntlr">
               <div class="tab-con-inr">
                 <div class="job-grds-cntlr">
                   <?php 
@@ -193,6 +193,7 @@ $user = wp_get_current_user();
                       while($ongo_Query->have_posts()): $ongo_Query->the_post(); 
                         $from_location = get_field('order_from_location', get_the_ID());
                         $to_location = get_field('order_to_location', get_the_ID());
+                        $status_by_driver = get_field('order_status_by_driver', get_the_ID());
                     ?>
                     <li>
                       <div class="job-grd-item mpac-grd">
@@ -207,7 +208,12 @@ $user = wp_get_current_user();
                         </div>
                         <div class="process-btn mHc2">
                           <a href="<?php the_permalink(); ?>">More</a>
-                          <span>Ongoing</span>
+                          <?php 
+                            if( $status_by_driver == 1 )
+                              echo '<span>Submitted for review</span>';
+                            else
+                              echo '<span>Ongoing</span>';
+                          ?>
                         </div>
                       </div>
                     </li>
@@ -219,7 +225,7 @@ $user = wp_get_current_user();
                 </div>
               </div>
             </div>
-            <div id="tab-4" class="mp-tab-content">
+            <div id="tab-4" class="mp-tab-content customer-tab-con-cntlr">
               <div class="tab-con-inr">
                 <div class="job-grds-cntlr">
                   <?php 
@@ -463,6 +469,7 @@ $user = wp_get_current_user();
                       while($Query->have_posts()): $Query->the_post(); 
                         $from_location = get_field('order_from_location', get_the_ID());
                         $to_location = get_field('order_to_location', get_the_ID());
+                        $status_by_driver = get_field('order_status_by_driver', get_the_ID());
                     ?>
                     <li>
                       <div class="job-grd-item mpac-grd">
@@ -477,7 +484,12 @@ $user = wp_get_current_user();
                         </div>
                         <div class="process-btn mHc2">
                           <a href="<?php the_permalink(); ?>">More</a>
-                          <span>Ongoing</span>
+                          <?php 
+                            if( $status_by_driver == 1 )
+                              echo '<span>Submitted for review</span>';
+                            else
+                              echo '<span>Ongoing</span>';
+                          ?>
                         </div>
                       </div>
                     </li>

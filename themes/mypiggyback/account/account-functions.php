@@ -10,6 +10,8 @@ include_once(THEME_DIR .'/account/ajax/order-action.php');
 include_once(THEME_DIR .'/account/core-functions.php');
 include_once(THEME_DIR .'/account/shortcodes/shortcodes.php');
 include_once(THEME_DIR .'/account/lib/stripe.php');
+include_once(THEME_DIR .'/account/lib/paypal.php');
+include_once(THEME_DIR .'/account/lib/mail-functions.php');
 
 add_action('init', 'action_init_hooks');
 function action_init_hooks(){

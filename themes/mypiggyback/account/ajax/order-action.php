@@ -59,11 +59,20 @@ function mpb_order_create(){
         }    
         if($success){
             $type = (isset($_POST['order_type']) && !empty($_POST['order_type']))?sanitize_text_field($_POST['order_type']):'';
+            if( get_option( 'job_title_no' ) == false ){
+                update_option( 'job_title_no', 1 );
+                $title_no = 1;
+            }else{
+                $title_no = get_option( 'job_title_no' );
+                $title_no = $title_no+1;
+                update_option( 'job_title_no', $title_no );
+            }
+            
             $post_information = array(
                 'post_author'=> 1,
-                'post_title' => wp_strip_all_tags( 'Vehicle '.$type.' #'. rand(11,50)),
+                'post_title' => wp_strip_all_tags( 'Vehicle '.$type.' #'. $title_no),
                 'post_type' => 'vehicle_order',
-                'post_status' => 'publish'
+                'post_status' => 'draft'
             );
              
             $pid = wp_insert_post($post_information);
@@ -87,7 +96,7 @@ function mpb_order_create(){
                 update_field('order_type', sanitize_text_field($type), $pid );
             }
             update_field( 'driver_applied_ids', '', $pid );
-            update_field( 'order_status', 'publish', $pid );
+            update_field( 'order_status', 'draft', $pid );
             update_field( 'order_status_by_author', '0', $pid );
             update_field( 'order_status_by_driver', '0', $pid );
             update_field( 'order_appointed_to', '0', $pid );
@@ -95,6 +104,7 @@ function mpb_order_create(){
             $data['success'] = 'success';
             $data['success_msg'] = 'Order has been completed successfully.';
             $data['redirect'] = home_url('order-payment/?order-id='.$pid);
+            job_create_mail_by_customer($pid);
         }else{
             $data['error'] = 'Could not create order.';
         }
@@ -133,10 +143,12 @@ function apply_driver_order(){
                $ids_array = array($user_id); 
                update_field('driver_applied_ids',array_merge($applied_ids,$ids_array),$postid);
                $data['apply_send'] = 'send';
+               driver_apply_job_mail($postid, $user_id);
             }
         }else{
             $ids_array = array($user_id);
             update_field('driver_applied_ids',$ids_array,$postid);
+            driver_apply_job_mail($postid, $user_id);
         }
         
         $data['success'] = 'success';
@@ -183,7 +195,7 @@ function appoint_driver_by_admin(){
                 ));
                 $data['appoint_send'] = 'send';
             }
-            
+            appoint_job_mail_by_author($postid, $driver_id);
         }
         $data['success'] = 'success';
     }
@@ -215,6 +227,7 @@ function order_confirmation_by_driver(){
         }else{
             update_field('order_status_by_driver',1,$postid);
             $data['confirm_send'] = 'send';
+            review_job_mail_by_driver($postid);
         }
         $data['success'] = 'success';
     }
@@ -255,6 +268,7 @@ function order_confirmation_by_author(){
                 )
             );
             $data['confirm_send'] = 'send';
+            completed_job_mail_by_author($postid);
         }
         $data['success'] = 'success';
     }

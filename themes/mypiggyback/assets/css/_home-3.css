@@ -204,6 +204,14 @@
 }
 .vehicle-form .input-field-row{
 	padding-bottom: 17px;
+	position: relative;
+}
+.vehicle-form .input-field-row span.error{
+	position: absolute;
+	left: 0;
+	bottom: -2px;
+	font-size: 10px;
+
 }
 .vehicle-form input[type="text"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 	color: #7F7F7F;

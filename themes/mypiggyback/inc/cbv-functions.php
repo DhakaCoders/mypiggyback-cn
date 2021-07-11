@@ -172,3 +172,46 @@ function is_default_page(){
   return $class;
 }
 
+
+function restricted_page_visit(){
+  if ( current_user_can( 'driver' ) && is_user_logged_in() ){
+    if( is_front_page() || is_page_template(
+      array(
+        'page-vehicle-recovery.php', 
+        'page-vehicle-transport.php', 
+        'page-services.php', 
+        'page-about.php',
+        'page-contact.php'
+      )
+    )){
+      wp_redirect(home_url('account'));
+      exit();
+    }
+    if(is_page('thank-you')){
+      wp_redirect(home_url('/'));
+      exit();
+    }
+  }
+}
+
+function sidebar_hide_spacific_page(){
+  if( (is_page('account') || is_page('thank-you') ) && is_user_logged_in()){
+    return false;
+  }
+  return true;
+}
+
+// add a link to the WP Toolbar
+function mpb_custom_toolbar_link($wp_admin_bar) {
+    $args = array(
+        'id' => 'mpb_myaccount',
+        'title' => 'My Account', 
+        'href' => home_url('account'),  
+        'meta' => array(
+            'class' => 'mpb-account', 
+            'title' => 'My Account'
+            )
+    );
+    $wp_admin_bar->add_node($args);
+}
+add_action('admin_bar_menu', 'mpb_custom_toolbar_link', 999);

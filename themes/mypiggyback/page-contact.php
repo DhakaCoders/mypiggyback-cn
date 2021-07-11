@@ -83,7 +83,7 @@ $contact_sec = get_field('contact_section', $thisID);
             ?>
             <li>
               <div class="contact-info-box mHc1">
-                <h3 class="contact-info-box-title fl-h3">Address
+                <h3 class="contact-info-box-title fl-h3"><?php _e( 'Address', 'mypiggyback' ); ?>
                   <i><svg class="contact-info-map-svg" width="22.5" height="30" viewBox="0 0 22.5 30" fill="#fff">
                 <use xlink:href="#contact-info-map-svg"></use></svg></i>
                 </h3>
@@ -99,7 +99,7 @@ $contact_sec = get_field('contact_section', $thisID);
             ?>
             <li>
               <div class="contact-info-box mHc1">
-                <h3 class="contact-info-box-title fl-h3">Telephone
+                <h3 class="contact-info-box-title fl-h3"><?php _e( 'Telephone', 'mypiggyback' ); ?>
                   <i><svg class="contact-info-phn-icon-svg" width="30" height="30" viewBox="0 0 30 30" fill="#fff">
                   <use xlink:href="#contact-info-phn-icon-svg"></use></svg></i>
                 </h3>
@@ -119,7 +119,7 @@ $contact_sec = get_field('contact_section', $thisID);
             ?>
             <li>
               <div class="contact-info-box mHc1">
-                <h3 class="contact-info-box-title fl-h3">Email
+                <h3 class="contact-info-box-title fl-h3"><?php _e( 'Email', 'mypiggyback' ); ?>
                   <i><svg class="contact-info-mail-icon-svg" width="30" height="29.999" viewBox="0 0 30 29.999" fill="#fff">
                   <use xlink:href="#contact-info-mail-icon-svg"></use></svg></i>
                 </h3>

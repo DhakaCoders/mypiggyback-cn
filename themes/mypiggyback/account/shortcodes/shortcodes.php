@@ -16,7 +16,6 @@ function get_register_form($atts) {
 add_shortcode('register_form', 'get_register_form');
 
 function get_order_payment($atts) {
-  wpCheckLoggedin();
   ob_start();
   get_template_part(ACC_TEMP_PATH.'/order', 'payment');
   return ob_get_clean();

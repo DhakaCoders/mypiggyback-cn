@@ -42,6 +42,19 @@ function get_custom_logout($page_link = ''){
     
 }
 
+add_action('admin_head', 'redirect_user_frontend_dashboard');
+function redirect_user_frontend_dashboard(){
+  $user = wp_get_current_user();
+  if( is_admin() ){
+    if ( in_array( 'driver', (array) $user->roles ) && is_user_logged_in() ) {
+      $redirect_to = site_url('account');
+      echo '<script>window.location.href="'.$redirect_to.'"</script>';
+      exit();
+    }
+  }
+   return false;
+}
+
 add_action( 'wp_enqueue_scripts', 'get_enqueue_media' );
 function get_enqueue_media() {
 	wp_enqueue_media();
@@ -68,7 +81,29 @@ function get_current_user_name(){
    return false;
 }
 
-
+function get_total_completed_job($driverID = ''){
+  global $wpdb;
+  if( empty($driverID) ) return;
+  $table = $wpdb->prefix.'order_appoint'; 
+  $rowcount = $wpdb->get_var("SELECT COUNT(*) FROM $table WHERE driver_id = $driverID AND status = 'completed'");
+  if($rowcount > 0){
+    return $rowcount;
+  }else{
+    return 0;
+  }
+}
+function get_last_completed_job($driverID = ''){
+  global $wpdb;
+  if( empty($driverID) ) return;
+  $table = $wpdb->prefix.'order_appoint'; 
+  $result = $wpdb->get_row("SELECT * FROM $table WHERE driver_id = $driverID AND status = 'completed' ORDER BY created_at DESC LIMIT 1");
+  if($result){
+    $lastdate = date("d, M, Y", strtotime( $result->created_at ) );
+    return $lastdate;
+  }else{
+    return false;
+  }
+}
 function get_user_image(){
   $user = wp_get_current_user();
   if( $user ):

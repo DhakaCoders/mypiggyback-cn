@@ -8,15 +8,11 @@ function application_form_create(){
 		global $msgs, $wpdb; $error = false;
 		if (isset( $_POST["stripeToken"] ) && wp_verify_nonce($_POST['application_form_nonce'], 'application-form-nonce')) {
             $amount = 0;
-	        if( isset( $_POST['email'] ) && !empty($_POST['email']) )
-                $email = $_POST['email'];
-            else
-                $email = '';
-
-            if( isset( $_POST['description'] ) && !empty($_POST['description']) )
-                $desc = $_POST['description'];
-            else
-                $desc = '';
+            $orderid = $email = $desc = '';
+	           if( isset( $_POST['order_id'] ) && !empty($_POST['order_id']) ) $orderid = $_POST['order_id'];
+            if( isset( $_POST['email'] ) && !empty($_POST['email']) ) $email = $_POST['email'];
+                  
+            if( isset( $_POST['description'] ) && !empty($_POST['description']) ) $desc = $_POST['description'];
 
             if( isset( $_POST['mile'] ) && !empty($_POST['mile']) ){
                 $toal_mile = $_POST['mile'];
@@ -47,7 +43,7 @@ function application_form_create(){
                     ));
                     
                 if($charge->amount_refunded == 0 && empty($charge->failure_code) && $charge->paid == 1 && $charge->captured == 1){ 
-                    $table = $wpdb->prefix . 'applications_form'; 
+                $table = $wpdb->prefix . 'applications_form'; 
         			/*$status = CBV_DB_Query::create($table, array(
         				'personal_firstname' => $firstName,
         				'email' => $email,
@@ -56,12 +52,22 @@ function application_form_create(){
         				'course_total_price' => $mamount,
         				'created_at' => date('Y-m-d H:i:s'),
         			));*/
+              $order_info = array(
+                'ID' =>  $orderid,
+                'post_status' => 'publish'
+              );
+       
+              $get_id = wp_update_post($order_info);
+              if($get_id){
+                update_field( 'order_status', 'publish', $get_id );
+              }
+              payment_send_mail_by_customer($token, $amount, $orderid);
         			echo '<script>window.location.href="'.home_url('thank-you').'"</script>';
-                      exit();
+              exit();
         			if(isset($status)){
 
-                      echo '<script>window.location.href="'.home_url('thank-you').'"</script>';
-                      exit();
+                echo '<script>window.location.href="'.home_url('thank-you').'"</script>';
+                exit();
         				
         			}else{
         				//$msgs['error'] = 'Could not submit something was wrong please try again!';
