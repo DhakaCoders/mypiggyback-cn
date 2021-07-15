@@ -129,7 +129,9 @@
 	background: #f2101c!important;
 	color: #fff!important;
 }
-
+#routeMapID{
+	height: 450px;
+}
 /*responsive*/
 @media(max-width: 1299px){
 	.super-piggs-img img{

@@ -19,12 +19,16 @@ $user = wp_get_current_user();
                 <form action="" method="post">
                   <div class="fl-input-field-row mp-input profile-edit-step-cntlr" id="choose-file">
                     <div class="profile-img-edit profile-edit-step-1 profile-img-step-1" id="profile-priview">
-                      <img src="<?php echo esc_attr( get_the_author_meta( 'image', $user->ID ) ); ?>">
+                      <?php if( !empty(get_the_author_meta( 'image', $user->ID )) ):?>
+                      <img src="<?php echo esc_attr( get_the_author_meta( 'image', $user->ID ) ); ?>" alt="Image">
+                      <?php else: ?>
+                        <img src="<?php echo THEME_URI; ?>/assets/images/avater-img.png" alt="Image">
+                      <?php endif; ?>
                     </div>
                     <div class="profile-img-edit profile-edit-step-2 profile-img-step-2">
                       <input type="hidden" name="prfile_image" value="<?php echo esc_attr( get_the_author_meta( 'image', $user->ID ) ); ?>" id="_profile_logo">
                       <label for="choose-file">
-                        <i><img src="<?php echo THEME_URI; ?>/<?php echo THEME_URI; ?>/assets/images/plus-icon-2.png"></i>
+                        <i><img src="<?php echo THEME_URI; ?>/assets/images/plus-icon-2.png" alt="plug icon"></i>
                         <span class="file-up-instruction-txt">CLICK TO ADD<br> PROFILE PHOTO</span>
                       </label>
                     </div>
@@ -305,12 +309,16 @@ $user = wp_get_current_user();
                 <form action="" method="post">
                   <div class="fl-input-field-row mp-input profile-edit-step-cntlr" id="choose-file">
                     <div class="profile-img-edit profile-edit-step-1 profile-img-step-1" id="profile-priview">
-                      <img src="<?php echo esc_attr( get_the_author_meta( 'image', $user->ID ) ); ?>">
+                      <?php if( !empty(get_the_author_meta( 'image', $user->ID )) ):?>
+                      <img src="<?php echo esc_attr( get_the_author_meta( 'image', $user->ID ) ); ?>" alt="Image">
+                      <?php else: ?>
+                        <img src="<?php echo THEME_URI; ?>/assets/images/avater-img.png" alt="Image">
+                      <?php endif; ?>
                     </div>
                     <div class="profile-img-edit profile-edit-step-2 profile-img-step-2">
                       <input type="hidden" name="prfile_image" value="<?php echo esc_attr( get_the_author_meta( 'image', $user->ID ) ); ?>" id="_profile_logo">
                       <label for="choose-file">
-                        <i><img src="<?php echo THEME_URI; ?>/<?php echo THEME_URI; ?>/assets/images/plus-icon-2.png"></i>
+                        <i><img src="<?php echo THEME_URI; ?>/assets/images/plus-icon-2.png" alt="Plugs Icon"></i>
                         <span class="file-up-instruction-txt">CLICK TO ADD<br> PROFILE PHOTO</span>
                       </label>
                     </div>

@@ -6,7 +6,8 @@
 	$get_order = get_post( $_GET['order-id'] );
 	$order_email = get_field('order_email', $get_order->ID); 
 	$per_mile_rate = (int)get_field('per_mile','options'); 
-	$toal_mile = 30;
+	$order_miles = get_field('amount_of_miles', $get_order->ID);
+	$toal_mile = $order_miles;
 	$total_amount = $per_mile_rate*$toal_mile;
 ?>
 <div class="mpb-payment">
@@ -31,12 +32,12 @@
 		</div>
 		<div class="paypal-payment" id="paypal_payment">
 			<form action="" method="post" name="form-pp">
-			<input type="hidden" name="orderid" value="<?php echo $get_order->ID; ?>">
-			<input type="hidden" name="itemname" value="<?php echo $get_order->post_title; ?>">
-			<input type="hidden" name="amount" value="<?php echo $total_amount; ?>">
-			<input type="hidden" name="payer_email" value="<?php echo $order_email; ?>"/>
-			<input type="submit" name="submit" value="Pay Now" >
-			<input type="hidden" name="paypal_form_nonce" value="<?php echo wp_create_nonce('paypal-form-nonce'); ?>"/>
+				<input type="hidden" name="orderid" value="<?php echo $get_order->ID; ?>">
+				<input type="hidden" name="itemname" value="<?php echo $get_order->post_title; ?>">
+				<input type="hidden" name="amount" value="<?php echo $total_amount; ?>">
+				<input type="hidden" name="payer_email" value="<?php echo $order_email; ?>"/>
+				<input type="submit" name="submit" value="Pay Now" >
+				<input type="hidden" name="paypal_form_nonce" value="<?php echo wp_create_nonce('paypal-form-nonce'); ?>"/>
 			</form>
 		</div>
 		<div class="stripe-payment" id="stripe_payment">

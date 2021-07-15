@@ -5,7 +5,7 @@ $thisID = get_the_ID();
 get_template_part('templates/page', 'breadcrumb');
 ?>
 <section class="home-page-bnr">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d66815.33056846341!2d-0.14238880307146762!3d51.51248988308131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2sbd!4v1615400813839!5m2!1sen!2sbd" width="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  <div id="route_map"></div>
   <div class="home-page-bnr-con-cntlr">
     <div class="container">
       <div class="row">
@@ -16,11 +16,14 @@ get_template_part('templates/page', 'breadcrumb');
                 <form>
                   <div class="input-field-row starting-field">
                     <span>A</span>
-                    <input type="text" name="" placeholder="Choose your starting point">
+                    <input type="text" id="from_places" name="from_places" placeholder="Choose your starting point">
+                    <input id="origin" name="origin" required="" type="hidden"/>
+                    <a class="current_location" href="#"><i class="far fa-compass"></i></a>
                   </div>
                   <div class="input-field-row ending-field">
                     <span>B</span>
-                    <input type="text" name="" placeholder="Choose your ending point">
+                    <input type="text" id="to_places" name="to_places" placeholder="Choose your ending point">
+                    <input id="destination" name="destination" required="" type="hidden"/>
                   </div>
                   <span class="destination-switcher-button">
                     <i>
@@ -29,10 +32,8 @@ get_template_part('templates/page', 'breadcrumb');
                       </i>
                   </span>
                 </form>
-                <div class="loc-distance-miles">
-                  <div>
-                    <strong>15.6</strong>
-                    <span>miles</span>
+                <div class="loc-distance-miles" id="results" style="display: none;">
+                  <div class="mgs">
                   </div>
                 </div>
               </div>
@@ -51,12 +52,13 @@ get_template_part('templates/page', 'breadcrumb');
                 <form id="vehicle-transport" onsubmit="vehicleTransportOrder('trans'); return false">
                   <input type="hidden" name="action" value="mpb_order_create">
                   <input type="hidden" name="order_type" value="transport">
+                  <input type="hidden" name="amount_of_miles" id="trans_miles" value="0">
                   <div class="input-field-row">
-                    <input type="text" name="from_location" placeholder="From location A (Postcode)">
+                    <input type="text" name="from_location" id="trans_origin" placeholder="From location A (Postcode)">
                     <span class="error trans_fromloc_error"></span>
                   </div>
                   <div class="input-field-row">
-                    <input type="text" name="to_location" placeholder="To location B (Postcode)">
+                    <input type="text" name="to_location" id="trans_destin" placeholder="To location B (Postcode)">
                     <span class="error trans_toloc_error"></span>
                   </div>
                   <div class="input-field-row">

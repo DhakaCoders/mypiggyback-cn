@@ -26,8 +26,8 @@ if (isset( $_POST["amount"] ) && wp_verify_nonce($_POST['paypal_form_nonce'], 'p
 	$data['notify_url'] = stripslashes($paypalConfig['notify_url']);
     $data['item_name'] = $itemname;
 	$data['amount'] = $total_amount;
-	$data['item_number'] = $total_amount;
-	$data['paymentaction'] = 'order';
+	$data['item_number'] = 1;
+	//$data['paymentaction'] = 'order';
 	$data['currency_code'] = 'USD';
 	$data['charset'] = 'utf8';
 	$data['cmd'] = '_xclick';

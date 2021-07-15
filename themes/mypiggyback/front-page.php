@@ -84,12 +84,13 @@
                   <form id="vehicle-recovery" onsubmit="vehicleRecoveryOrder('recov'); return false">
                     <input type="hidden" name="action" value="mpb_order_create">
                     <input type="hidden" name="order_type" value="recovery">
+                    <input type="hidden" name="amount_of_miles" id="recov_miles" value="0">
                     <div class="input-field-row">
-                      <input type="text" name="from_location" placeholder="From location A (Postcode)">
+                      <input type="text" name="from_location" id="recv_origin" placeholder="From location A (Postcode)">
                       <span class="error recov_fromloc_error"></span>
                     </div>
                     <div class="input-field-row">
-                      <input type="text" name="to_location" placeholder="To location B (Postcode)">
+                      <input type="text" name="to_location" id="recov_destin" placeholder="To location B (Postcode)">
                       <span class="error recov_toloc_error"></span>
                     </div>
                     <div class="input-field-row">
@@ -117,12 +118,13 @@
                   <form id="vehicle-transport" onsubmit="vehicleTransportOrder('trans'); return false">
                     <input type="hidden" name="action" value="mpb_order_create">
                     <input type="hidden" name="order_type" value="transport">
+                    <input type="hidden" name="amount_of_miles" id="trans_miles" value="0">
                     <div class="input-field-row">
-                      <input type="text" name="from_location" placeholder="From location A (Postcode)">
+                      <input type="text" name="from_location" id="trans_origin" placeholder="From location A (Postcode)">
                       <span class="error trans_fromloc_error"></span>
                     </div>
                     <div class="input-field-row">
-                      <input type="text" name="to_location" placeholder="To location B (Postcode)">
+                      <input type="text" name="to_location" id="trans_destin" placeholder="To location B (Postcode)">
                       <span class="error trans_toloc_error"></span>
                     </div>
                     <div class="input-field-row">

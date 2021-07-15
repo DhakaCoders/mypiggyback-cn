@@ -178,7 +178,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
 }
 
 
-
 /* BS form Validator*/
 (function() {
   'use strict';

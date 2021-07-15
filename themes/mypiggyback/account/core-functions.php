@@ -116,6 +116,9 @@ function get_user_image(){
   }
   endif;
 }
+function milesToKilometers($miles){
+    return $miles * 1.60934;
+}
 add_filter( 'template_include', 'single_vehicle_order_callback' );
 function single_vehicle_order_callback( $original_template ) {
   if ( is_singular( 'vehicle_order' ) ) {
