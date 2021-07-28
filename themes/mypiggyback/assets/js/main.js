@@ -411,6 +411,37 @@ $("#stripe_type").on('change', function(){
       $('#stripe_payment').addClass('show-method');
     }
 });
-    new WOW().init();
+new WOW().init();
 
+
+navigator.geolocation.getCurrentPosition(success, error);
+
+function success(position) {
+    console.log(position.coords.latitude)
+    console.log(position.coords.longitude)
+
+    var GEOCODING = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + position.coords.latitude + '%2C' + position.coords.longitude + '&sensor=true&key=AIzaSyACXBV45f9aF1yxlE0P8ofSJaD30yPyhbg';
+
+    $.getJSON(GEOCODING).done(function(data) {
+        console.log(data)
+        var sliceWord = data.results[4].address_components[0].long_name;
+        var firstWord = sliceWord.replace(/ .*/,'');
+        //x.innerHTML = firstWord;
+        console.log(firstWord);
+
+        var user = getCookie("alloffLoc");
+        if (user != "") {
+          console.log("Welcome again " + user);
+        } else {
+          setCookie("alloffLoc", firstWord, 1);
+        }
+    })
+
+
+
+}
+
+function error(err) {
+    console.log(err)
+}
 })(jQuery);
