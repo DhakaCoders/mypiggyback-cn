@@ -1,0 +1,27 @@
+.order-payment-sec-cntlr{
+	background: #f9f9f9;
+}
+.order-payment-sec-inr{
+	display: flex;
+	padding-top: 40px;
+}
+.order-payment-con{
+	order: 1;
+	width: 70%;
+}
+.order-payment-sidebar{
+	order:  2;
+	width: 30%;
+}
+
+.order-step-title span{
+	background: #f2101c;
+	color: #fff;
+	display: inline;
+	padding: 3px 15px 3px 12px;
+}
+
+.box-white{
+	background: #fff;
+	padding: 40px 30px 30px 30px;
+}
