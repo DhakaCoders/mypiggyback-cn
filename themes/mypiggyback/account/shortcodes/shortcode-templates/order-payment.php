@@ -191,17 +191,18 @@
 										deliver it to your final destination at location B.</p>
 									</div>
 									<div class="form-fields-block">
-										<div class="ops-form-field-row">
-											<label>MOST POPULAR</label>
-											<input type="text" name="">
+										<div class="ops-form-field-radio">
+											<span>MOST POPULAR</span>
+											<input type="radio" id="mp-lbl" name="">
+											<label for="mp-lbl"></label>
 										</div>
 										<div class="ops-form-field-row">
-											<label>RECOMMENDED</label>
-											<input type="text" name="">
+											<span>RECOMMENDED</span>
+											<input type="radio" name="">
 										</div>
 										<div class="ops-form-field-row">
-											<label>SLOWEST</label>
-											<input type="text" name="">
+											<span>SLOWEST</span>
+											<input type="radio" name="">
 										</div>
 									</div>
 									<div class="osp-btns">
