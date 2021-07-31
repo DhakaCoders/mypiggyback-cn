@@ -106,7 +106,7 @@ function mpb_order_create(){
 
             $data['success'] = 'success';
             $data['success_msg'] = 'Order has been completed successfully.';
-            $data['redirect'] = home_url('order-payment/?order-id='.$pid);
+            $data['redirect'] = home_url('order/?order-id='.$pid);
             job_create_mail_by_customer($pid);
         }else{
             $data['error'] = 'Could not create order.';
