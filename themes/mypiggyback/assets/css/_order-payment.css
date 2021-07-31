@@ -1,0 +1,66 @@
+.order-payment-sec-cntlr{
+	background: #f9f9f9;
+}
+.order-payment-sec-inr{
+	display: flex;
+	padding-top: 40px;
+}
+.order-payment-con{
+	order: 1;
+	width: 70%;
+}
+.order-payment-sidebar{
+	order:  2;
+	width: 30%;
+}
+
+.order-step-title span{
+	background: #f2101c;
+	color: #fff;
+	display: inline;
+	padding: 3px 15px 3px 12px;
+}
+
+.box-white{
+	background: #fff;
+	padding: 40px 30px 30px 30px;
+}
+
+.ops-title{
+	margin-bottom: 40px;
+	line-height: 1.2;
+}
+.order-payment-sidebar-map #route_map{
+	height: 396px;
+}
+
+.opsd-row{
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-bottom: 2px solid #cecece;
+}
+
+.opsd-loc strong{
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.opsd-loc-1 strong{
+	color: #F2101C;
+}
+.opsd-loc-2 strong{
+	color: #0074D3;
+}
+.opsd-line{
+	display: flex;
+	align-items: center;
+}
+.opsd-row:last-child{
+	border: none;
+}
+
+.opsd-subtotal{
+	font-size: 28px;
+	color: #141414;
+	text-transform: capitalize;
+}
