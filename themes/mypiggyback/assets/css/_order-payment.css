@@ -219,6 +219,35 @@
 .ops-form-field-row .bootstrap-select button{
 	text-transform: capitalize!important;
 }
+.ops-form-field-row{
+	position: relative;
+}
+.ops-form-field-row.starting-field span,
+.ops-form-field-row.ending-field span{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	width: 40px;
+	height: 40px;
+	color: #fff;
+	font-family: 'GoboldExtra2';
+	font-size: 22px;
+	line-height: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.ops-form-field-row.starting-field span{
+	background: #E53930;
+}
+.ops-form-field-row.ending-field span{
+	background: #4089FF;
+}
+.ops-form-field-row.starting-field input,
+.ops-form-field-row.ending-field input{
+	padding-right: 70px!important;
+}
 .ops-form-field-row label {
     position: absolute;
     left: 10px;

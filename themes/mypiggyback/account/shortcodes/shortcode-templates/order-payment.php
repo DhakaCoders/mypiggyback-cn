@@ -64,13 +64,15 @@
 								<div class="order-payment-step order-payment-step-1">
 									<h2 class="fl-h2 order-step-title"> <span>Step 1</span>  Your Journey</h2>
 									<div class="form-fields-block">
-										<div class="ops-form-field-row">
+										<div class="ops-form-field-row starting-field">
 											<label>Veichle Location</label>
 											<input type="text" name="">
+											<span>A</span>
 										</div>
-										<div class="ops-form-field-row">
+										<div class="ops-form-field-row ending-field">
 											<label>Veichle Delivery</label>
 											<input type="text" name="">
+											<span>B</span>
 										</div>
 										<div class="ops-form-field-row">
 											<label>Veichle Service</label>
