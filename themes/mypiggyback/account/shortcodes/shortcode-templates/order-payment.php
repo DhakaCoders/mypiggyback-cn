@@ -46,3 +46,47 @@
 		</div>
 	</div>
 </section>
+
+
+
+<?php 
+$thisID = get_the_ID();
+$payment_sec = get_field('payment_section', $thisID);
+  if( $payment_sec ): 
+?>
+<section class="we-accept-sec-wrp">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="we-accept-wrp clearfix">
+          <div class="we-accept-lft">
+          <?php 
+            if( !empty($payment_sec['title']) ) :
+          ?>
+          <h4 class="we-accept-title left-icon-title fl-h4">
+           <i class="far fa-bell"></i>
+           <?php  printf('<span>%s</span>', $payment_sec['title']); ?> 
+          </h4>
+          <?php endif; ?>
+          </div>
+
+          <?php 
+            $images = $payment_sec['gallery'];
+            $size = 'full';
+            if( $images ): 
+          ?>
+          <div class="we-accept-rgt">
+            <ul class="clearfix reset-list">
+              <?php foreach( $images as $image_id ): ?>
+              <li><?php echo wp_get_attachment_image( $image_id, $size ); ?></li>
+              <?php endforeach; ?>
+            </ul>
+          </div>
+          <?php endif; ?>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<?php endif; ?>
