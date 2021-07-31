@@ -196,8 +196,9 @@
 	padding: 40px 40px 35px;
 }
 
-.fl-h2.order-step-title{
-	margin-bottom: 30px;
+.fl-h2.order-step-title {
+    margin-bottom: 44px;
+    line-height: 1.2;
 }
 .ops-form-field-row{
 	position: relative;
