@@ -411,6 +411,16 @@ $("#stripe_type").on('change', function(){
       $('#stripe_payment').addClass('show-method');
     }
 });
-    new WOW().init();
+    
+
+
+/* oder payment*/
+var circleCount1 = $(".order-payment-step-bar-radio-cntlr ul li").outerWidth();
+var circleCount2 = $(".order-payment-step-bar-radio-cntlr ul li span").outerWidth(); 
+var circleCount3 = (circleCount1 - circleCount2 ) / 2;
+$(".line-eraser").width(circleCount3); 
+
+
+//alert(circleCount1);
 
 })(jQuery);

@@ -39,7 +39,29 @@
 						</div>
 					</div>
 					<div class="order-payment-con">
-						<h2 class="fl-h2 order-step-title"> <span>Step 1</span>  Your Journey</h2>
+						<div class="order-payment-step-bar">
+							<div class="order-payment-step-bar-titles">
+								<ul class="reset-list">
+									<li class="active"><span>Journey</span></li>
+									<li><span>Vehicle</span></li>
+									<li><span>Response</span></li>
+									<li><span>Payment</span></li>
+								</ul>
+							</div>
+							<div class="order-payment-step-bar-radio-cntlr">
+								<span class="line-eraser-lft line-eraser"></span>
+								<span class="line-eraser-rgt line-eraser"></span>
+								<ul class="reset-list">
+									<li class="active"><span><i></i></span></li>
+									<li><span><i></i></span></li>
+									<li><span><i></i></span></li>
+									<li><span><i></i></span></li>
+								</ul>
+							</div>
+						</div>
+						<div>
+							<h2 class="fl-h2 order-step-title"> <span>Step 1</span>  Your Journey</h2>
+						</div>
 					</div>
 				</div>
 			</div>
