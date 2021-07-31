@@ -62,8 +62,8 @@
 						</div>
 						<div class="box-white-lft">
 							<form>
-								<div class="order-payment-step order-payment-step-1">
-									<h2 class="fl-h2 order-step-title"> <span>Step 1</span>  Your Journey</h2>
+								<div class="order-payment-step order-payment-step-1 d-none">
+									<h2 class="fl-h2 order-step-title"> <span>Step 2</span>  Your Journey</h2>
 									<div class="form-fields-block">
 										<div class="ops-form-field-row starting-field">
 											<label>Veichle Location</label>
@@ -136,12 +136,53 @@
 											</div>
 										</div>
 									</div>
-								</div>
-								<div class="osp-btns">
-									<div class="osp-btn-nxt">
-										<button><span>next</span></button>
+									<div class="osp-btns">
+										<div class="osp-btn-nxt">
+											<button><span>next</span></button>
+										</div>
 									</div>
 								</div>
+
+								<div class="order-payment-step order-payment-step-2">
+									<h2 class="fl-h2 order-step-title"> <span>Step 2</span>  Your Vehicle</h2>
+									<div class="gap-50"></div>
+									<div class="form-fields-block">
+										<div class="ops-form-field-row">
+											<label>Vehicle Type</label>
+											<select class="selectpicker">
+												<option>Car</option>
+												<option>Bus</option>
+											</select>
+										</div>
+										<div class="ops-form-field-row">
+											<label>Vehicle Make</label>
+											<input type="text" name="">
+										</div>
+										<div class="gap-50"></div>
+										<div class="gap-50"></div>
+										<div class="ops-form-field-row">
+											<label>Vehicle Problem</label>
+											<select class="selectpicker">
+												<option>Engine Trouble</option>
+												<option>Others</option>
+											</select>
+										</div>
+										<div class="ops-form-field-row">
+											<label>Vehicle Requests & Requirements</label>
+											<textarea></textarea>
+										</div>
+										
+									</div>
+									<div class="osp-btns">
+										<div class="osp-btn-back">
+											<button><span>back</span></button>
+										</div>
+										<div class="osp-btn-nxt">
+											<button><span>next</span></button>
+										</div>
+									</div>
+								</div>
+								
 							</form>
 						</div>
 					</div>

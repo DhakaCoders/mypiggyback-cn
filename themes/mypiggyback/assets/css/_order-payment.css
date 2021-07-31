@@ -215,7 +215,8 @@
 }
 .ops-form-field-row input[type="text"],
 .ops-form-field-row input[type="email"],
-.ops-form-field-row .bootstrap-select button{
+.ops-form-field-row .bootstrap-select button,
+.ops-form-field-row textarea{
 	border: 1px solid #AAAAAA;
 	height: 40px!important;
 	width: 100%!important;
@@ -224,6 +225,10 @@
 	font-size: 16px!important;
 	padding-left: 15px!important;
 	padding-right: 15px!important;
+}
+.ops-form-field-row textarea{
+	min-height: 150px;
+	resize: none;
 }
 .ops-form-field-row .bootstrap-select button{
 	text-transform: capitalize!important;
@@ -302,6 +307,8 @@
 .osp-btns{
 	display: flex;
 	padding-top: 10px;
+	padding-left: 25px;
+	padding-right: 25px;
 }
 .osp-btn-nxt{
 	margin-left: auto;
@@ -321,8 +328,15 @@
 	border: 0;
 	
 }
+.osp-btn-nxt button:hover{
+	background: #c10913 ;
+}
+.osp-btn-nxt button:hover:after{
+	border-left-color: #c10913;
+}
 .osp-btn-nxt button span{
 	padding-left: 10px;
+	text-shadow: 1.27px 1px 1.27px rgb(212 0 53 / 65%);
 }
 .osp-btn-nxt button:after{
 	content: "";
@@ -334,7 +348,55 @@
 	bottom:0;
 	left: 100%;
 	margin-left: -1px;
+		transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
 }
+
+
+
+.osp-btn-back button{
+	height: 50px;
+	background: #4089FF;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 22px;
+	font-family: 'GoboldExtra2';
+	line-height: 1;
+	min-width: 135px;
+	text-align: center;
+	position: relative;
+	cursor: pointer;
+	border: 0;
+	
+}
+
+.osp-btn-back button span{
+	padding-right: 10px;
+	text-shadow: 1.27px 1px 1.27px rgb(212 0 53 / 65%);
+}
+.osp-btn-back button:after{
+	content: "";
+	border-top: 25px solid transparent;
+	border-bottom: 25px solid transparent;
+	border-right: 21px solid #4089FF;
+	position: absolute;
+	top: 0;
+	bottom:0;
+	right: 100%;
+	margin-right: -1px;
+		transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+}
+.osp-btn-back button:hover{
+	background: #3578e4 ;
+}
+.osp-btn-back button:hover:after{
+	border-right-color: #3578e4;
+}
+
+
 @media(max-width: 1699px){
 	.fl-h2.ops-title,
 	.fl-h2.order-step-title,
