@@ -143,7 +143,7 @@
 									</div>
 								</div>
 
-								<div class="order-payment-step order-payment-step-2">
+								<div class="order-payment-step order-payment-step-2 d-none">
 									<h2 class="fl-h2 order-step-title"> <span>Step 2</span>  Your Vehicle</h2>
 									<div class="gap-50"></div>
 									<div class="form-fields-block">
@@ -183,6 +183,36 @@
 									</div>
 								</div>
 								
+								<div class="order-payment-step order-payment-step-3">
+									<h2 class="fl-h2 order-step-title"> <span>Step 3</span>  Response time</h2>
+									<div class="ops-form-field-row-des">
+										<p>The response time is the time you want to wait for one of our super fast
+										recovery drivers to pick up and service your car at location A, and then 
+										deliver it to your final destination at location B.</p>
+									</div>
+									<div class="form-fields-block">
+										<div class="ops-form-field-row">
+											<label>MOST POPULAR</label>
+											<input type="text" name="">
+										</div>
+										<div class="ops-form-field-row">
+											<label>RECOMMENDED</label>
+											<input type="text" name="">
+										</div>
+										<div class="ops-form-field-row">
+											<label>SLOWEST</label>
+											<input type="text" name="">
+										</div>
+									</div>
+									<div class="osp-btns">
+										<div class="osp-btn-back">
+											<button><span>back</span></button>
+										</div>
+										<div class="osp-btn-nxt">
+											<button><span>next</span></button>
+										</div>
+									</div>
+								</div>
 							</form>
 						</div>
 					</div>

@@ -395,7 +395,17 @@
 .osp-btn-back button:hover:after{
 	border-right-color: #3578e4;
 }
-
+.ops-form-field-row-des{
+	padding-bottom: 15px;
+}
+.ops-form-field-row-des p{
+	font-weight: 300;
+	color: #514C4E;
+}
+.ops-form-field-row-des p strong{
+	color: #514C4E;
+	font-weight: 400;
+}
 
 @media(max-width: 1699px){
 	.fl-h2.ops-title,
