@@ -6,6 +6,7 @@
 
 
 <section class="order-payment-sec-cntlr">
+
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
@@ -147,6 +148,9 @@
 				</div>
 			</div>
 		</div>
+	</div>
+	<div class="order-page-graphics">
+		<img src="<?php echo THEME_URI; ?>/assets/images/order-page-graphics.png">
 	</div>
 </section>
 

@@ -1,10 +1,19 @@
 .order-payment-sec-cntlr{
 	background: #f9f9f9;
+	position: relative;
+}
+.order-page-graphics{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
 }
 .order-payment-sec-inr{
 	display: flex;
 	padding-top: 40px;
 	padding-bottom: 95px;
+	position: relative;
+	z-index: 2;
 }
 .order-payment-con{
 	order: 1;
@@ -292,6 +301,7 @@
 }
 .osp-btns{
 	display: flex;
+	padding-top: 10px;
 }
 .osp-btn-nxt{
 	margin-left: auto;
