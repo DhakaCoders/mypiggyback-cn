@@ -59,8 +59,87 @@
 								</ul>
 							</div>
 						</div>
-						<div>
-							<h2 class="fl-h2 order-step-title"> <span>Step 1</span>  Your Journey</h2>
+						<div class="box-white-lft">
+							<form>
+								<div class="order-payment-step order-payment-step-1">
+									<h2 class="fl-h2 order-step-title"> <span>Step 1</span>  Your Journey</h2>
+									<div class="form-fields-block">
+										<div class="ops-form-field-row">
+											<label>Veichle Location</label>
+											<input type="text" name="">
+										</div>
+										<div class="ops-form-field-row">
+											<label>Veichle Delivery</label>
+											<input type="text" name="">
+										</div>
+										<div class="ops-form-field-row">
+											<label>Veichle Service</label>
+											<select class="selectpicker">
+												<option>Vehicle Recovery</option>
+												<option>Vehicle Transport</option>
+											</select>
+										</div>
+									</div>
+									<h2 class="fl-h2 order-step-details-title"> Your Details</h2>
+									<div class="form-fields-block">
+										<div class="ops-form-field-row">
+											<label>Full Name</label>
+											<input type="text" name="">
+										</div>
+										<div class="ops-form-field-row">
+											<label>Email Address</label>
+											<input type="email" name="">
+										</div>
+										<div class="ops-form-field-row">
+											<label>Telephone Number</label>
+											<input type="text" name="">
+										</div>
+										<div class="ops-form-field-row">
+											<label>Billing Address</label>
+											<select class="selectpicker">
+												<option>Different to my vehicle address</option>
+												<option>Different to my vehicle address 2</option>
+											</select>
+										</div>
+										<div class="ops-form-field-row ops-gray-label">
+											<label>Address</label>
+											<input type="text" name="">
+											<label class="ops-label-2">Address Line 1</label>
+										</div>
+										<div class="ops-form-field-row ops-gray-label">
+											<input type="text" name="">
+											<label class="ops-label-2">Address Line 2</label>
+										</div>
+										<div class="ops-form-field-row ops-form-field-cols">
+											<div class="ops-form-field-col">
+												<div>
+													<input type="text" name="">
+													<label class="ops-label-2">City</label>
+												</div>
+											</div>
+											<div class="ops-form-field-col">
+												<div>
+													<input type="text" name="">
+													<label class="ops-label-2">County</label>
+												</div>
+											</div>
+										</div>
+										<div class="ops-form-field-row ops-form-field-cols">
+											<div class="ops-form-field-col">
+												<div>
+													<input type="text" name="">
+													<label class="ops-label-2">Postcode</label>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="osp-btns">
+									<div class="osp-btn-nxt">
+										<button><span>next</span></button>
+									</div>
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>

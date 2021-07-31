@@ -4,6 +4,7 @@
 .order-payment-sec-inr{
 	display: flex;
 	padding-top: 40px;
+	padding-bottom: 95px;
 }
 .order-payment-con{
 	order: 1;
@@ -12,7 +13,7 @@
 .order-payment-sidebar{
 	order:  2;
 	width: 42%;
-	margin-top: 105px;
+	margin-top: 107px;
 	padding-left: 30px;
 }
 
@@ -35,7 +36,9 @@
 .order-payment-sidebar-map #route_map{
 	height: 396px;
 }
-
+.order-payment-sidebar-des{
+	padding-top: 15px;
+}
 .opsd-row{
 	padding-top: 15px;
 	padding-bottom: 15px;
@@ -57,14 +60,23 @@
 	display: flex;
 	align-items: center;
 }
+.opsd-line strong{
+	padding-left: 10px;
+	color: #514c4e;
+}
 .opsd-row:last-child{
 	border: none;
 }
 
-.opsd-subtotal{
+.opsd-subtotal strong{
+	padding-top: 5px;
 	font-size: 28px;
+	line-height: 1.2;
 	color: #141414;
 	text-transform: capitalize;
+	font-weight: normal;
+	 font-family: 'GoboldLowplus';
+	 display: block;
 }
 
 
@@ -179,8 +191,113 @@
     border: 1px solid #E21327;
 }
 
+.box-white-lft{
+	background: #fff;
+	padding: 40px 40px 35px;
+}
+
+.fl-h2.order-step-title{
+	margin-bottom: 30px;
+}
+.ops-form-field-row{
+	position: relative;
+	margin-bottom: 30px;
+}
+.ops-form-field-row input[type="text"],
+.ops-form-field-row input[type="email"],
+.ops-form-field-row .bootstrap-select button{
+	border: 1px solid #AAAAAA;
+	height: 40px!important;
+	width: 100%!important;
+	color: #141414!important;
+	border-radius: 0!important;
+	font-size: 16px!important;
+	padding-left: 15px!important;
+	padding-right: 15px!important;
+}
+.ops-form-field-row .bootstrap-select button{
+	text-transform: capitalize!important;
+}
+.ops-form-field-row label {
+    position: absolute;
+    left: 10px;
+    top: -6px;
+    padding-left: 8px;
+    padding-right: 8px;
+    color: #E53930;
+    font-size: 12px;
+    line-height: 1;
+    background: #fff;
+    display: inline-block;
+    vertical-align: baseline;
+    font-weight: 400;
+    z-index: 2;
+    margin: 0;
+}
+
+.fl-h2.order-step-details-title{
+	padding-top: 25px;
+	margin-bottom: 45px;
+}
+.ops-form-field-cols{
+	margin-left: -15px;
+	margin-right: -15px;
+	display: flex;
+}
+.ops-form-field-col{
+	width: 50%;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.ops-form-field-cols .ops-form-field-col > div{
+	position: relative;
+}
+.ops-form-field-cols .ops-form-field-col > div label.ops-label-2,
+.ops-form-field-row.ops-gray-label label.ops-label-2{
+	color: #514C4E;
+	font-size: 10px;
+	font-weight: 300;
+	top: auto;
+	bottom: -17px;
+}
+.osp-btns{
+	display: flex;
+}
+.osp-btn-nxt{
+	margin-left: auto;
+}
+.osp-btn-nxt button{
+	height: 50px;
+	background: #F2101C;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 22px;
+	font-family: 'GoboldExtra2';
+	line-height: 1;
+	min-width: 135px;
+	text-align: center;
+	position: relative;
+	cursor: pointer;
+	border: 0;
+	
+}
+.osp-btn-nxt button span{
+	padding-left: 10px;
+}
+.osp-btn-nxt button:after{
+	content: "";
+	border-top: 25px solid transparent;
+	border-bottom: 25px solid transparent;
+	border-left: 21px solid #F2101C;
+	position: absolute;
+	top: 0;
+	bottom:0;
+	left: 100%;
+	margin-left: -1px;
+}
 @media(max-width: 1699px){
 	.fl-h2.ops-title,
+	.fl-h2.order-step-title,
 	.fl-h2.order-step-title{
 		font-size: 40px!important;
 	}
