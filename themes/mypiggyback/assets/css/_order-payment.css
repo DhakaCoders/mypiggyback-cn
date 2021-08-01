@@ -263,7 +263,7 @@
 .ops-form-field-row.ending-field input{
 	padding-right: 70px!important;
 }
-.ops-form-field-row ,
+.ops-form-field-row label,
 .label-text {
     position: absolute;
     left: 10px;

@@ -223,7 +223,7 @@
 									</div>
 								</div>
 
-								<div class="order-payment-step order-payment-step-4">
+								<div class="order-payment-step order-payment-step-4 ">
 									<h2 class="fl-h2 order-step-title"> <span>Step 4</span>  Review & pay</h2>
 									<div class="ops-form-field-row-des">
 										<p>The response time is the time you want to wait for one of our super fast
