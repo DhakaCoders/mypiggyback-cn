@@ -225,6 +225,7 @@
 	font-size: 16px!important;
 	padding-left: 15px!important;
 	padding-right: 15px!important;
+	position: relative;
 }
 .ops-form-field-row textarea{
 	min-height: 150px;
@@ -262,7 +263,8 @@
 .ops-form-field-row.ending-field input{
 	padding-right: 70px!important;
 }
-.ops-form-field-row label {
+.ops-form-field-row ,
+.label-text {
     position: absolute;
     left: 10px;
     top: -6px;
@@ -405,6 +407,112 @@
 .ops-form-field-row-des p strong{
 	color: #514C4E;
 	font-weight: 400;
+}
+
+.ops-form-field-radio{
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+	height: 55px!important;
+	position: relative;
+}
+/*
+.ops-form-field-radio{
+	
+	height: 40px!important;
+	width: 100%!important;
+	color: #141414!important;
+	border-radius: 0!important;
+	font-size: 16px!important;
+	padding-left: 15px!important;
+	padding-right: 15px!important;
+	
+}*/
+
+.ops-form-field-radio input[type="radio"]{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	z-index: 5;
+}
+.ops-form-field-radio label{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	padding-left: 55px;
+	border: 1px solid #AAAAAA;
+	padding-right: 15px;
+}
+.ops-form-field-radio label p{
+	margin: 0;
+}
+.ops-form-field-radio label p strong{
+	font-weight: 700;
+	color: #141414;
+}
+.ops-form-field-radio label span{
+	margin-left: auto;
+	display: inline-block;
+	color: #7F7F7F;
+	font-weight: 700;
+}
+.ops-radio-bx{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	left: 13px;
+	width: 30px;
+	height: 30px;
+	border: 1px solid #AAAAAA;
+	border-radius: 100%;
+}
+.ops-radio-bx:after{
+	content: "";
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	background: #E53930;
+	border-radius: 100% 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	opacity: 0;
+}
+
+.order-payment-step-3 .osp-btns{
+	padding-top: 30px;
+}
+.ops-form-field-radio input:checked ~ .ops-radio-bx{
+	background: #fff;
+}
+.ops-form-field-radio input:checked ~ .ops-radio-bx:after {
+    opacity: 1;
+}
+.ops-form-field-radio input:checked ~ label p strong,
+.ops-form-field-radio input:checked ~ label span,
+.ops-form-field-radio input:checked ~ label p{
+	color: #fff;
+}
+.ops-form-field-radio input:checked + + .ops-radio-bx{
+	border-color: #A02525;
+}
+.ops-form-field-radio input:checked + .label-text{
+	background: #fff;
+}
+.ops-form-field-radio input:checked ~ label{
+	background: #F2101C;
+	border-color: #A02525;
 }
 
 @media(max-width: 1699px){

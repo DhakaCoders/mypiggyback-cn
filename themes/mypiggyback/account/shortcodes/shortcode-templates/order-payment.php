@@ -40,6 +40,7 @@
 						</div>
 					</div>
 					<div class="order-payment-con">
+						<form>
 						<div class="order-payment-step-bar">
 							<div class="order-payment-step-bar-titles">
 								<ul class="reset-list">
@@ -61,7 +62,7 @@
 							</div>
 						</div>
 						<div class="box-white-lft">
-							<form>
+							
 								<div class="order-payment-step order-payment-step-1 d-none">
 									<h2 class="fl-h2 order-step-title"> <span>Step 2</span>  Your Journey</h2>
 									<div class="form-fields-block">
@@ -183,26 +184,33 @@
 									</div>
 								</div>
 								
-								<div class="order-payment-step order-payment-step-3">
+								<div class="order-payment-step order-payment-step-3 d-none">
 									<h2 class="fl-h2 order-step-title"> <span>Step 3</span>  Response time</h2>
 									<div class="ops-form-field-row-des">
 										<p>The response time is the time you want to wait for one of our super fast
-										recovery drivers to pick up and service your car at location A, and then 
-										deliver it to your final destination at location B.</p>
+										recovery drivers to pick up and service your car at <strong>location A</strong>, and then 
+										deliver it to your final destination at <strong>location B</strong>.</p>
 									</div>
 									<div class="form-fields-block">
 										<div class="ops-form-field-radio">
-											<span>MOST POPULAR</span>
-											<input type="radio" id="mp-lbl" name="">
-											<label for="mp-lbl"></label>
+											<input type="radio" id="mp-lbl1" name="response_time" value="gold_service">
+											<span class="label-text">MOST POPULAR</span>
+											<span class="ops-radio-bx"></span>
+											<label for="mp-lbl1"><p>Gold Service <strong>(45 mins - 1 hr)</strong> </p>  <span>+£150</span></label>
 										</div>
-										<div class="ops-form-field-row">
-											<span>RECOMMENDED</span>
-											<input type="radio" name="">
+										<div class="ops-form-field-radio">
+											
+											<input type="radio" id="mp-lbl2" name="response_time"  value="silver_service">
+											<span class="label-text">RECOMMENDED</span>
+											<span class="ops-radio-bx"></span>
+											<label for="mp-lbl2"><p>Silver Service <strong>(3 hrs - 5 hrs)</strong> </p>  <span>+£100</span></label>
 										</div>
-										<div class="ops-form-field-row">
-											<span>SLOWEST</span>
-											<input type="radio" name="">
+										<div class="ops-form-field-radio">
+											
+											<input type="radio" id="mp-lbl3" name="response_time"  value="brozne_service">
+											<span class="label-text">SLOWEST</span>
+											<span class="ops-radio-bx"></span>
+											<label for="mp-lbl3"><p>Brozne Service <strong> (Next Working Day)</strong> </p>  <span>+£50</span></label>
 										</div>
 									</div>
 									<div class="osp-btns">
@@ -214,8 +222,49 @@
 										</div>
 									</div>
 								</div>
-							</form>
+
+								<div class="order-payment-step order-payment-step-4">
+									<h2 class="fl-h2 order-step-title"> <span>Step 4</span>  Review & pay</h2>
+									<div class="ops-form-field-row-des">
+										<p>The response time is the time you want to wait for one of our super fast
+										recovery drivers to pick up and service your car at <strong>location A</strong>, and then 
+										deliver it to your final destination at <strong>location B</strong>.</p>
+									</div>
+									<div class="form-fields-block">
+										<div class="ops-form-field-radio">
+											<input type="radio" id="mp-lbl1" name="response_time" value="gold_service">
+											<span class="label-text">MOST POPULAR</span>
+											<span class="ops-radio-bx"></span>
+											<label for="mp-lbl1"><p>Gold Service <strong>(45 mins - 1 hr)</strong> </p>  <span>+£150</span></label>
+										</div>
+										<div class="ops-form-field-radio">
+											
+											<input type="radio" id="mp-lbl2" name="response_time"  value="silver_service">
+											<span class="label-text">RECOMMENDED</span>
+											<span class="ops-radio-bx"></span>
+											<label for="mp-lbl2"><p>Silver Service <strong>(3 hrs - 5 hrs)</strong> </p>  <span>+£100</span></label>
+										</div>
+										<div class="ops-form-field-radio">
+											
+											<input type="radio" id="mp-lbl3" name="response_time"  value="brozne_service">
+											<span class="label-text">SLOWEST</span>
+											<span class="ops-radio-bx"></span>
+											<label for="mp-lbl3"><p>Brozne Service <strong> (Next Working Day)</strong> </p>  <span>+£50</span></label>
+										</div>
+									</div>
+									<div class="osp-btns">
+										<div class="osp-btn-back">
+											<button><span>back</span></button>
+										</div>
+										<div class="osp-btn-nxt">
+											<button><span>next</span></button>
+										</div>
+									</div>
+								</div>
+
+							
 						</div>
+						</form>
 					</div>
 				</div>
 			</div>
