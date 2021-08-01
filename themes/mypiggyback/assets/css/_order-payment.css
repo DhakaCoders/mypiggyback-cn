@@ -509,11 +509,12 @@
 .ops-form-edit-row{
 	position: relative;
 }
-.opsfer-title{
+.ops-form-edit-row .opsfer-title{
 	color: #141414;
 	margin-bottom: 25px;
 	padding-right: 80px;
-	text-transform: capitalize!important;
+	text-transform: capitalize;
+	font-family: 'GoboldLowplus';
 }
 
 .ops-form-edit-btn{
@@ -532,9 +533,61 @@
 	font-family: 'GoboldExtra2';
 	color: #F2101C;
 }
+.ops-form-edit-row{
+	padding-bottom: 10px;
+}
+ul.list-cols li{
+	margin-bottom: 25px;
+}
+
+ul.list-cols li div{
+	display: flex;
+}
+ul.list-cols li div strong{
+	font-weight: 400;
+	padding-right: 15px;
+	width: 30%;
+}
+ul.list-cols li div span{
+	margin-left: auto;
+	font-weight: 300;
+	text-align: right;
+	line-height: 2;
+	width: 70%;
+	margin-top: -4px;
+}
+
+.ops-form-edit-row:last-of-type{
+	padding-bottom: 0;
+}
+.ops-form-edit-row:last-of-type ul li:last-child{
+	margin-bottom: 0;
+}
+
+.hh-accordion-des{
+	display: none;
+}
 
 
+.ops-form-accordion-cntlr{
+	margin-top: 40px;
+}
+.ops-form-accordion-cntlr .hh-accordion-title,
+.ops-form-accordion-cntlr .hh-accordion-des{
+	padding-left: 40px;
+	padding-right: 40px;
+}
 
+.ops-form-accordion-cntlr .ops-form-accordion-des{
+	padding-top: 40px;
+}
+
+.hh-accordion-title{
+	margin-bottom: 0;
+}
+.hh-accordion-tab-row{
+	margin-bottom: 40px;
+}
 @media(max-width: 1699px){
 	.fl-h2.ops-title,
 	.fl-h2.order-step-title,

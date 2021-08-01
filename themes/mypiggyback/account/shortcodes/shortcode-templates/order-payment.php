@@ -41,260 +41,311 @@
 					</div>
 					<div class="order-payment-con">
 						<form>
-						<div class="order-payment-step-bar">
-							<div class="order-payment-step-bar-titles">
-								<ul class="reset-list">
-									<li class="active"><span>Journey</span></li>
-									<li><span>Vehicle</span></li>
-									<li><span>Response</span></li>
-									<li><span>Payment</span></li>
-								</ul>
+							<div class="order-payment-step-bar">
+								<div class="order-payment-step-bar-titles">
+									<ul class="reset-list">
+										<li class="active"><span>Journey</span></li>
+										<li><span>Vehicle</span></li>
+										<li><span>Response</span></li>
+										<li><span>Payment</span></li>
+									</ul>
+								</div>
+								<div class="order-payment-step-bar-radio-cntlr">
+									<span class="line-eraser-lft line-eraser"></span>
+									<span class="line-eraser-rgt line-eraser"></span>
+									<ul class="reset-list">
+										<li class="active"><span><i></i></span></li>
+										<li><span><i></i></span></li>
+										<li><span><i></i></span></li>
+										<li><span><i></i></span></li>
+									</ul>
+								</div>
 							</div>
-							<div class="order-payment-step-bar-radio-cntlr">
-								<span class="line-eraser-lft line-eraser"></span>
-								<span class="line-eraser-rgt line-eraser"></span>
-								<ul class="reset-list">
-									<li class="active"><span><i></i></span></li>
-									<li><span><i></i></span></li>
-									<li><span><i></i></span></li>
-									<li><span><i></i></span></li>
-								</ul>
-							</div>
-						</div>
-						<div class="box-white-lft">
-							
-								<div class="order-payment-step order-payment-step-1 d-none">
-									<h2 class="fl-h2 order-step-title"> <span>Step 2</span>  Your Journey</h2>
-									<div class="form-fields-block">
-										<div class="ops-form-field-row starting-field">
-											<label>Veichle Location</label>
-											<input type="text" name="">
-											<span>A</span>
-										</div>
-										<div class="ops-form-field-row ending-field">
-											<label>Veichle Delivery</label>
-											<input type="text" name="">
-											<span>B</span>
-										</div>
-										<div class="ops-form-field-row">
-											<label>Veichle Service</label>
-											<select class="selectpicker">
-												<option>Vehicle Recovery</option>
-												<option>Vehicle Transport</option>
-											</select>
-										</div>
-									</div>
-									<h2 class="fl-h2 order-step-details-title"> Your Details</h2>
-									<div class="form-fields-block">
-										<div class="ops-form-field-row">
-											<label>Full Name</label>
-											<input type="text" name="">
-										</div>
-										<div class="ops-form-field-row">
-											<label>Email Address</label>
-											<input type="email" name="">
-										</div>
-										<div class="ops-form-field-row">
-											<label>Telephone Number</label>
-											<input type="text" name="">
-										</div>
-										<div class="ops-form-field-row">
-											<label>Billing Address</label>
-											<select class="selectpicker">
-												<option>Different to my vehicle address</option>
-												<option>Different to my vehicle address 2</option>
-											</select>
-										</div>
-										<div class="ops-form-field-row ops-gray-label">
-											<label>Address</label>
-											<input type="text" name="">
-											<label class="ops-label-2">Address Line 1</label>
-										</div>
-										<div class="ops-form-field-row ops-gray-label">
-											<input type="text" name="">
-											<label class="ops-label-2">Address Line 2</label>
-										</div>
-										<div class="ops-form-field-row ops-form-field-cols">
-											<div class="ops-form-field-col">
-												<div>
-													<input type="text" name="">
-													<label class="ops-label-2">City</label>
-												</div>
+
+							<div class="order-payment-steps-con">
+								<div class="box-white-lft order-payment-step-1 d-none">
+									<div class="order-payment-step">
+										<h2 class="fl-h2 order-step-title"> <span>Step 2</span>  Your Journey</h2>
+										<div class="form-fields-block">
+											<div class="ops-form-field-row starting-field">
+												<label>Veichle Location</label>
+												<input type="text" name="">
+												<span>A</span>
 											</div>
-											<div class="ops-form-field-col">
-												<div>
-													<input type="text" name="">
-													<label class="ops-label-2">County</label>
-												</div>
+											<div class="ops-form-field-row ending-field">
+												<label>Veichle Delivery</label>
+												<input type="text" name="">
+												<span>B</span>
+											</div>
+											<div class="ops-form-field-row">
+												<label>Veichle Service</label>
+												<select class="selectpicker">
+													<option>Vehicle Recovery</option>
+													<option>Vehicle Transport</option>
+												</select>
 											</div>
 										</div>
-										<div class="ops-form-field-row ops-form-field-cols">
-											<div class="ops-form-field-col">
-												<div>
-													<input type="text" name="">
-													<label class="ops-label-2">Postcode</label>
+										<h2 class="fl-h2 order-step-details-title"> Your Details</h2>
+										<div class="form-fields-block">
+											<div class="ops-form-field-row">
+												<label>Full Name</label>
+												<input type="text" name="">
+											</div>
+											<div class="ops-form-field-row">
+												<label>Email Address</label>
+												<input type="email" name="">
+											</div>
+											<div class="ops-form-field-row">
+												<label>Telephone Number</label>
+												<input type="text" name="">
+											</div>
+											<div class="ops-form-field-row">
+												<label>Billing Address</label>
+												<select class="selectpicker">
+													<option>Different to my vehicle address</option>
+													<option>Different to my vehicle address 2</option>
+												</select>
+											</div>
+											<div class="ops-form-field-row ops-gray-label">
+												<label>Address</label>
+												<input type="text" name="">
+												<label class="ops-label-2">Address Line 1</label>
+											</div>
+											<div class="ops-form-field-row ops-gray-label">
+												<input type="text" name="">
+												<label class="ops-label-2">Address Line 2</label>
+											</div>
+											<div class="ops-form-field-row ops-form-field-cols">
+												<div class="ops-form-field-col">
+													<div>
+														<input type="text" name="">
+														<label class="ops-label-2">City</label>
+													</div>
+												</div>
+												<div class="ops-form-field-col">
+													<div>
+														<input type="text" name="">
+														<label class="ops-label-2">County</label>
+													</div>
+												</div>
+											</div>
+											<div class="ops-form-field-row ops-form-field-cols">
+												<div class="ops-form-field-col">
+													<div>
+														<input type="text" name="">
+														<label class="ops-label-2">Postcode</label>
+													</div>
 												</div>
 											</div>
 										</div>
-									</div>
-									<div class="osp-btns">
-										<div class="osp-btn-nxt">
-											<button><span>next</span></button>
+										<div class="osp-btns">
+											<div class="osp-btn-nxt">
+												<button><span>next</span></button>
+											</div>
 										</div>
 									</div>
 								</div>
 
-								<div class="order-payment-step order-payment-step-2 d-none">
-									<h2 class="fl-h2 order-step-title"> <span>Step 2</span>  Your Vehicle</h2>
-									<div class="gap-50"></div>
-									<div class="form-fields-block">
-										<div class="ops-form-field-row">
-											<label>Vehicle Type</label>
-											<select class="selectpicker">
-												<option>Car</option>
-												<option>Bus</option>
-											</select>
-										</div>
-										<div class="ops-form-field-row">
-											<label>Vehicle Make</label>
-											<input type="text" name="">
-										</div>
+								<div class="box-white-lft order-payment-step-2 d-none">
+									<div class="order-payment-step">
+										<h2 class="fl-h2 order-step-title"> <span>Step 2</span>  Your Vehicle</h2>
 										<div class="gap-50"></div>
-										<div class="gap-50"></div>
-										<div class="ops-form-field-row">
-											<label>Vehicle Problem</label>
-											<select class="selectpicker">
-												<option>Engine Trouble</option>
-												<option>Others</option>
-											</select>
-										</div>
-										<div class="ops-form-field-row">
-											<label>Vehicle Requests & Requirements</label>
-											<textarea></textarea>
-										</div>
-										
-									</div>
-									<div class="osp-btns">
-										<div class="osp-btn-back">
-											<button><span>back</span></button>
-										</div>
-										<div class="osp-btn-nxt">
-											<button><span>next</span></button>
-										</div>
-									</div>
-								</div>
-								
-								<div class="order-payment-step order-payment-step-3 d-none">
-									<h2 class="fl-h2 order-step-title"> <span>Step 3</span>  Response time</h2>
-									<div class="ops-form-field-row-des">
-										<p>The response time is the time you want to wait for one of our super fast
-										recovery drivers to pick up and service your car at <strong>location A</strong>, and then 
-										deliver it to your final destination at <strong>location B</strong>.</p>
-									</div>
-									<div class="form-fields-block">
-										<div class="ops-form-field-radio">
-											<input type="radio" id="mp-lbl1" name="response_time" value="gold_service">
-											<span class="label-text">MOST POPULAR</span>
-											<span class="ops-radio-bx"></span>
-											<label for="mp-lbl1"><p>Gold Service <strong>(45 mins - 1 hr)</strong> </p>  <span>+£150</span></label>
-										</div>
-										<div class="ops-form-field-radio">
+										<div class="form-fields-block">
+											<div class="ops-form-field-row">
+												<label>Vehicle Type</label>
+												<select class="selectpicker">
+													<option>Car</option>
+													<option>Bus</option>
+												</select>
+											</div>
+											<div class="ops-form-field-row">
+												<label>Vehicle Make</label>
+												<input type="text" name="">
+											</div>
+											<div class="gap-50"></div>
+											<div class="gap-50"></div>
+											<div class="ops-form-field-row">
+												<label>Vehicle Problem</label>
+												<select class="selectpicker">
+													<option>Engine Trouble</option>
+													<option>Others</option>
+												</select>
+											</div>
+											<div class="ops-form-field-row">
+												<label>Vehicle Requests & Requirements</label>
+												<textarea></textarea>
+											</div>
 											
-											<input type="radio" id="mp-lbl2" name="response_time"  value="silver_service">
-											<span class="label-text">RECOMMENDED</span>
-											<span class="ops-radio-bx"></span>
-											<label for="mp-lbl2"><p>Silver Service <strong>(3 hrs - 5 hrs)</strong> </p>  <span>+£100</span></label>
 										</div>
-										<div class="ops-form-field-radio">
-											
-											<input type="radio" id="mp-lbl3" name="response_time"  value="brozne_service">
-											<span class="label-text">SLOWEST</span>
-											<span class="ops-radio-bx"></span>
-											<label for="mp-lbl3"><p>Brozne Service <strong> (Next Working Day)</strong> </p>  <span>+£50</span></label>
-										</div>
-									</div>
-									<div class="osp-btns">
-										<div class="osp-btn-back">
-											<button><span>back</span></button>
-										</div>
-										<div class="osp-btn-nxt">
-											<button><span>next</span></button>
-										</div>
-									</div>
-								</div>
-
-								<div class="order-payment-step order-payment-step-4 ">
-									<h2 class="fl-h2 order-step-title"> <span>Step 4</span>  Review & pay</h2>
-									<div class="ops-form-field-rows">
-										<div class="ops-form-edit-row">
-											<h3 class="fl-h3 opsfer-title">Your Journey</h3>
-											<ul class="reset-list">
-												<li>
-													<div>
-														<strong>Vehicle Location:</strong>
-														<span>48 Woodstock Ave, Romford RM3 9NF</span>
-													</div>
-												</li>
-												<li>
-													<div>
-														<strong>Vehicle Delivery:</strong>
-														<span>18 Earlsfield Dr, Chelmsford CM2 6SX</span>
-													</div>
-												</li>
-												<li>
-													<div>
-														<strong>Vehicle Service:</strong>
-														<span>Vehicle Recovery</span>
-													</div>
-												</li>
-											</ul>
-											<div class="ops-form-edit-btn">
-												<a href="#">EDIT</a>
+										<div class="osp-btns">
+											<div class="osp-btn-back">
+												<button><span>back</span></button>
+											</div>
+											<div class="osp-btn-nxt">
+												<button><span>next</span></button>
 											</div>
 										</div>
-										<div class="ops-form-edit-row">
-											<h3 class="fl-h3 opsfer-title">Your Details</h3>
-											<ul class="reset-list">
-												<li>
-													<div>
-														<strong>Full Name:</strong>
-														<span>Thomas Fide</span>
-													</div>
-												</li>
-												<li>
-													<div>
-														<strong>Email Address:</strong>
-														<span>tom@tradesitewales.co.uk</span>
-													</div>
-												</li>
-												<li>
-													<div>
-														<strong>Phone Number:</strong>
-														<span>07850 740357</span>
-													</div>
-												</li>
-												<li>
-													<div>
-														<strong>Billing Address:</strong>
-														<span>62 New Zealand Road <br>
-																Gabalfa <br>
-																Cardiff <br>
-																South Glamorgan<br>
-																CF14 3BS</span>
-													</div>
-												</li>
-
+									</div>
+								</div>
+									
+								<div class="box-white-lft order-payment-step-3 d-none">
+									<div class="order-payment-step">
+										<h2 class="fl-h2 order-step-title"> <span>Step 3</span>  Response time</h2>
+										<div class="ops-form-field-row-des">
+											<p>The response time is the time you want to wait for one of our super fast
+											recovery drivers to pick up and service your car at <strong>location A</strong>, and then 
+											deliver it to your final destination at <strong>location B</strong>.</p>
+										</div>
+										<div class="form-fields-block">
+											<div class="ops-form-field-radio">
+												<input type="radio" id="mp-lbl1" name="response_time" value="gold_service">
+												<span class="label-text">MOST POPULAR</span>
+												<span class="ops-radio-bx"></span>
+												<label for="mp-lbl1"><p>Gold Service <strong>(45 mins - 1 hr)</strong> </p>  <span>+£150</span></label>
+											</div>
+											<div class="ops-form-field-radio">
 												
-											</ul>
-											<div class="ops-form-edit-btn">
-												<a href="#">EDIT</a>
+												<input type="radio" id="mp-lbl2" name="response_time"  value="silver_service">
+												<span class="label-text">RECOMMENDED</span>
+												<span class="ops-radio-bx"></span>
+												<label for="mp-lbl2"><p>Silver Service <strong>(3 hrs - 5 hrs)</strong> </p>  <span>+£100</span></label>
+											</div>
+											<div class="ops-form-field-radio">
+												
+												<input type="radio" id="mp-lbl3" name="response_time"  value="brozne_service">
+												<span class="label-text">SLOWEST</span>
+												<span class="ops-radio-bx"></span>
+												<label for="mp-lbl3"><p>Brozne Service <strong> (Next Working Day)</strong> </p>  <span>+£50</span></label>
+											</div>
+										</div>
+										<div class="osp-btns">
+											<div class="osp-btn-back">
+												<button><span>back</span></button>
+											</div>
+											<div class="osp-btn-nxt">
+												<button><span>next</span></button>
 											</div>
 										</div>
 									</div>
 								</div>
 
-							
-						</div>
+								<div class="order-payment-step-4">
+									<div class="box-white-lft">
+										<div class="order-payment-step">
+											<h2 class="fl-h2 order-step-title"> <span>Step 4</span>  Review & pay</h2>
+											<div class="ops-form-field-rows">
+												<div class="ops-form-edit-row">
+													<h3 class="fl-h3 opsfer-title">Your Journey</h3>
+													<ul class="reset-list list-cols">
+														<li>
+															<div>
+																<strong>Vehicle Location:</strong>
+																<span>48 Woodstock Ave, Romford RM3 9NF</span>
+															</div>
+														</li>
+														<li>
+															<div>
+																<strong>Vehicle Delivery:</strong>
+																<span>18 Earlsfield Dr, Chelmsford CM2 6SX</span>
+															</div>
+														</li>
+														<li>
+															<div>
+																<strong>Vehicle Service:</strong>
+																<span>Vehicle Recovery</span>
+															</div>
+														</li>
+													</ul>
+													<div class="ops-form-edit-btn">
+														<a href="#">EDIT</a>
+													</div>
+												</div>
+												<div class="ops-form-edit-row">
+													<h3 class="fl-h3 opsfer-title">Your Details</h3>
+													<ul class="reset-list list-cols">
+														<li>
+															<div>
+																<strong>Full Name:</strong>
+																<span>Thomas Fide</span>
+															</div>
+														</li>
+														<li>
+															<div>
+																<strong>Email Address:</strong>
+																<span>tom@tradesitewales.co.uk</span>
+															</div>
+														</li>
+														<li>
+															<div>
+																<strong>Phone Number:</strong>
+																<span>07850 740357</span>
+															</div>
+														</li>
+														<li>
+															<div>
+																<strong>Billing Address:</strong>
+																<span>62 New Zealand Road <br>
+																		Gabalfa <br>
+																		Cardiff <br>
+																		South Glamorgan<br>
+																		CF14 3BS</span>
+															</div>
+														</li>
+													</ul>
+													<div class="ops-form-edit-btn">
+														<a href="#">EDIT</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="ops-form-accordion-cntlr">
+										<div class="hh-accordion-tab-row">
+				              <h3 class="hh-accordion-title hh-accordion-active">Your Vehicle</h3>
+				              <div class="hh-accordion-des hh-accordion-active">
+				                <div class="ops-form-accordion-des">
+				                  <ul class="reset-list list-cols">
+														<li>
+															<div>
+																<strong>Vehicle Type:</strong>
+																<span>Car</span>
+															</div>
+														</li>
+														<li>
+															<div>
+																<strong>Vehicle Make:</strong>
+																<span>Mini</span>
+															</div>
+														</li>
+														<li>
+															<div>
+																<strong>Vehicle Problem:</strong>
+																<span>Engine Trouble</span>
+															</div>
+														</li>
+														<li>
+															<div>
+																<strong>Vehicle Comments:</strong>
+																<span>My car engine light came on all of a sudden and then I could smell rubber burning. I have pulled into a residential area but now the engine will not start and the engine light on my dashboard is still on. Could you bring some engine oil for my car with you.</span>
+															</div>
+														</li>
+													</ul>
+				                </div>
+				              </div>
+				            </div>
+				            <div class="hh-accordion-tab-row">
+				              <h3 class="hh-accordion-title">Response Time</h3>
+				              <div class="hh-accordion-des">
+				                <div>
+				                  <p>
+				                    This form of financing allows yoy to obtain funds without incurring debt; in other words, without having to repay a specific amount of money at any particular time. The major disadvantage to equity financing is the dilution of your ownership interests and the passible loss of control that may accompany a sharing of ownership with additional investors. Visit www.jumpstart.org for more information.
+				                    </p>
+				                </div>
+				              </div>
+				            </div>
+									</div>
+								</div>
+							</div>
 						</form>
 					</div>
 				</div>

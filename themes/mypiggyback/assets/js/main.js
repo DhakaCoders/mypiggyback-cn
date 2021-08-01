@@ -421,6 +421,13 @@ var circleCount3 = (circleCount1 - circleCount2 ) / 2;
 $(".line-eraser").width(circleCount3); 
 
 
+$('.hh-accordion-title').click(function(){
+    $(this).next().slideToggle(300);
+    $(this).parent().siblings().find('.hh-accordion-des').slideUp(300);
+    $(this).toggleClass('hh-accordion-active');
+    $(this).parent().siblings().find('.hh-accordion-title').removeClass('hh-accordion-active');
+});
+
 //alert(circleCount1);
 
 })(jQuery);
