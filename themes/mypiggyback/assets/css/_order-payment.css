@@ -416,18 +416,7 @@
 	height: 55px!important;
 	position: relative;
 }
-/*
-.ops-form-field-radio{
-	
-	height: 40px!important;
-	width: 100%!important;
-	color: #141414!important;
-	border-radius: 0!important;
-	font-size: 16px!important;
-	padding-left: 15px!important;
-	padding-right: 15px!important;
-	
-}*/
+
 
 .ops-form-field-radio input[type="radio"]{
 	position: absolute;
@@ -514,6 +503,37 @@
 	background: #F2101C;
 	border-color: #A02525;
 }
+
+
+
+.ops-form-edit-row{
+	position: relative;
+}
+.opsfer-title{
+	color: #141414;
+	margin-bottom: 25px;
+	padding-right: 80px;
+	text-transform: capitalize!important;
+}
+
+.ops-form-edit-btn{
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.ops-form-edit-btn a{
+	display: inline-block;
+	vertical-align: baseline;
+	border:  1px dashed #F2101C;
+	padding:  4px 14px;
+	font-size: 14px;
+	line-height: 1;
+	text-transform: uppercase;
+	font-family: 'GoboldExtra2';
+	color: #F2101C;
+}
+
+
 
 @media(max-width: 1699px){
 	.fl-h2.ops-title,

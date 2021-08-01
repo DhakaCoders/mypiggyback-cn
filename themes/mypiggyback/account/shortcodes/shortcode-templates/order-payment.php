@@ -225,39 +225,70 @@
 
 								<div class="order-payment-step order-payment-step-4 ">
 									<h2 class="fl-h2 order-step-title"> <span>Step 4</span>  Review & pay</h2>
-									<div class="ops-form-field-row-des">
-										<p>The response time is the time you want to wait for one of our super fast
-										recovery drivers to pick up and service your car at <strong>location A</strong>, and then 
-										deliver it to your final destination at <strong>location B</strong>.</p>
-									</div>
-									<div class="form-fields-block">
-										<div class="ops-form-field-radio">
-											<input type="radio" id="mp-lbl1" name="response_time" value="gold_service">
-											<span class="label-text">MOST POPULAR</span>
-											<span class="ops-radio-bx"></span>
-											<label for="mp-lbl1"><p>Gold Service <strong>(45 mins - 1 hr)</strong> </p>  <span>+£150</span></label>
+									<div class="ops-form-field-rows">
+										<div class="ops-form-edit-row">
+											<h3 class="fl-h3 opsfer-title">Your Journey</h3>
+											<ul class="reset-list">
+												<li>
+													<div>
+														<strong>Vehicle Location:</strong>
+														<span>48 Woodstock Ave, Romford RM3 9NF</span>
+													</div>
+												</li>
+												<li>
+													<div>
+														<strong>Vehicle Delivery:</strong>
+														<span>18 Earlsfield Dr, Chelmsford CM2 6SX</span>
+													</div>
+												</li>
+												<li>
+													<div>
+														<strong>Vehicle Service:</strong>
+														<span>Vehicle Recovery</span>
+													</div>
+												</li>
+											</ul>
+											<div class="ops-form-edit-btn">
+												<a href="#">EDIT</a>
+											</div>
 										</div>
-										<div class="ops-form-field-radio">
-											
-											<input type="radio" id="mp-lbl2" name="response_time"  value="silver_service">
-											<span class="label-text">RECOMMENDED</span>
-											<span class="ops-radio-bx"></span>
-											<label for="mp-lbl2"><p>Silver Service <strong>(3 hrs - 5 hrs)</strong> </p>  <span>+£100</span></label>
-										</div>
-										<div class="ops-form-field-radio">
-											
-											<input type="radio" id="mp-lbl3" name="response_time"  value="brozne_service">
-											<span class="label-text">SLOWEST</span>
-											<span class="ops-radio-bx"></span>
-											<label for="mp-lbl3"><p>Brozne Service <strong> (Next Working Day)</strong> </p>  <span>+£50</span></label>
-										</div>
-									</div>
-									<div class="osp-btns">
-										<div class="osp-btn-back">
-											<button><span>back</span></button>
-										</div>
-										<div class="osp-btn-nxt">
-											<button><span>next</span></button>
+										<div class="ops-form-edit-row">
+											<h3 class="fl-h3 opsfer-title">Your Details</h3>
+											<ul class="reset-list">
+												<li>
+													<div>
+														<strong>Full Name:</strong>
+														<span>Thomas Fide</span>
+													</div>
+												</li>
+												<li>
+													<div>
+														<strong>Email Address:</strong>
+														<span>tom@tradesitewales.co.uk</span>
+													</div>
+												</li>
+												<li>
+													<div>
+														<strong>Phone Number:</strong>
+														<span>07850 740357</span>
+													</div>
+												</li>
+												<li>
+													<div>
+														<strong>Billing Address:</strong>
+														<span>62 New Zealand Road <br>
+																Gabalfa <br>
+																Cardiff <br>
+																South Glamorgan<br>
+																CF14 3BS</span>
+													</div>
+												</li>
+
+												
+											</ul>
+											<div class="ops-form-edit-btn">
+												<a href="#">EDIT</a>
+											</div>
 										</div>
 									</div>
 								</div>
