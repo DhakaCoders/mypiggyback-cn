@@ -89,6 +89,39 @@
 }
 
 
+.order-payment-step-4-sidebar-des .opsd-row:first-of-type{
+	border-top: 2px solid #cecece;
+}
+.order-payment-step-4-sidebar-des  .opsd-subtotal strong{
+	color: #F2101C;
+}
+.opsd-place-order-btn{
+	padding-top: 20px;
+}
+.opsd-place-order-btn button{
+	width: 100%;
+    height: 50px;
+    font-size: 20px;
+    background: #F2101C;
+    line-height: 1;
+    color: #fff;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 0 #c90f1d;
+    text-transform: uppercase;
+    font-family: 'GoboldExtra2';
+    padding-top: 2px;
+    cursor: pointer;
+    
+}
+.opsd-place-order-btn button:hover{
+	    background: #c10913;
+}
+.opsd-card-option{
+	margin-top: 30px;
+}
+.order-payment-step-4-sidebar-des .opsd-line strong{
+	margin-left: auto;
+}
 
 
 /*--- --*/
@@ -533,6 +566,10 @@
 	font-family: 'GoboldExtra2';
 	color: #F2101C;
 }
+.ops-form-edit-btn a:hover{
+	color: #000;
+	border-color: #000;
+}
 .ops-form-edit-row{
 	padding-bottom: 10px;
 }
@@ -564,16 +601,18 @@ ul.list-cols li div span{
 	margin-bottom: 0;
 }
 
-.hh-accordion-des{
+.pg-accordion-des{
 	display: none;
+	background: #fff;
+	padding-bottom: 50px;
 }
 
 
 .ops-form-accordion-cntlr{
 	margin-top: 40px;
 }
-.ops-form-accordion-cntlr .hh-accordion-title,
-.ops-form-accordion-cntlr .hh-accordion-des{
+.pg-accordion-title,
+.pg-accordion-des{
 	padding-left: 40px;
 	padding-right: 40px;
 }
@@ -582,12 +621,78 @@ ul.list-cols li div span{
 	padding-top: 40px;
 }
 
-.hh-accordion-title{
+.pg-accordion-title{
 	margin-bottom: 0;
+	border: 1px solid #AAAAAA;
+	background: #EAEAEA;
+	color: #141414;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-family: 'GoboldLowplus';
+	cursor: pointer;
+	position: relative;
 }
-.hh-accordion-tab-row{
+.pg-accordion-toggle-icon{
+	position: absolute;
+	right: 45px;
+	top: 50%;
+	transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	width: 36px;
+	height: 36px;
+	border-radius: 100% 100%;
+	border: 1px solid #AAAAAA;
+	background: #fff;
+}
+.pg-accordion-toggle-icon:after{
+	content: "";
+	background: url('../images/plus-accordion.png');
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	background-position: center center;
+	width: 14px;
+	height: 14px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+}
+
+.pg-accordion-title.pg-accordion-active .pg-accordion-toggle-icon:after{
+	content: "";
+	background: url('../images/minus-accordion.png');
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	background-position: center center;
+	width: 14px;
+	height: 14px;
+}
+.pg-accordion-title.pg-accordion-active{
+	background: #F2101C;
+	border-color: #A02525;
+	color: #fff;
+}
+.pg-accordion-title.pg-accordion-active .pg-accordion-toggle-icon{
+	border-color: #A02525;
+}
+.pg-accordion-tab-row{
 	margin-bottom: 40px;
 }
+.ops-form-accordion-des .ops-form-edit-btn{
+	position: static;
+	margin-left: auto;
+	text-align: right;
+}
+.pg-accordion-active{
+	display: block;
+}
+
+
+
+
 @media(max-width: 1699px){
 	.fl-h2.ops-title,
 	.fl-h2.order-step-title,

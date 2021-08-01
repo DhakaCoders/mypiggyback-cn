@@ -37,6 +37,22 @@
 									<div class="opsd-subtotal"><strong> Subtotal: £131</strong></div>
 								</div>
 							</div>
+							<div class="order-payment-step-4-sidebar-des">
+								<div class="">
+									<div class="opsd-row">
+										<div class="opsd-journey-time opsd-line"><span>Taxes & Fees</span> <strong> £26.20</strong></div>
+									</div>
+									<div class="opsd-row">
+										<div class="opsd-subtotal"><strong> Total: £157.20</strong></div>
+									</div>
+								</div>
+								<div class="opsd-card-option">
+									<img src="<?php echo THEME_URI; ?>/assets/images/Stripe.png">
+								</div>
+								<div class="opsd-place-order-btn">
+									<button>PLACE ORDER</button>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="order-payment-con">
@@ -300,9 +316,9 @@
 										</div>
 									</div>
 									<div class="ops-form-accordion-cntlr">
-										<div class="hh-accordion-tab-row">
-				              <h3 class="hh-accordion-title hh-accordion-active">Your Vehicle</h3>
-				              <div class="hh-accordion-des hh-accordion-active">
+										<div class="pg-accordion-tab-row">
+				              <h3 class="fl-h3 pg-accordion-title pg-accordion-active">Your Vehicle <span class="pg-accordion-toggle-icon"></span></h3>
+				              <div class="pg-accordion-des pg-accordion-active">
 				                <div class="ops-form-accordion-des">
 				                  <ul class="reset-list list-cols">
 														<li>
@@ -330,16 +346,45 @@
 															</div>
 														</li>
 													</ul>
+													<div class="ops-form-edit-btn">
+														<a href="#">EDIT</a>
+													</div>
 				                </div>
 				              </div>
 				            </div>
-				            <div class="hh-accordion-tab-row">
-				              <h3 class="hh-accordion-title">Response Time</h3>
-				              <div class="hh-accordion-des">
-				                <div>
-				                  <p>
-				                    This form of financing allows yoy to obtain funds without incurring debt; in other words, without having to repay a specific amount of money at any particular time. The major disadvantage to equity financing is the dilution of your ownership interests and the passible loss of control that may accompany a sharing of ownership with additional investors. Visit www.jumpstart.org for more information.
-				                    </p>
+				            <div class="pg-accordion-tab-row">
+				              <h3 class="fl-h3 pg-accordion-title">Response Time <span class="pg-accordion-toggle-icon"></span></h3>
+				              <div class="pg-accordion-des">
+				                <div class="ops-form-accordion-des">
+				                  <ul class="reset-list list-cols">
+														<li>
+															<div>
+																<strong>Vehicle Type:</strong>
+																<span>Car</span>
+															</div>
+														</li>
+														<li>
+															<div>
+																<strong>Vehicle Make:</strong>
+																<span>Mini</span>
+															</div>
+														</li>
+														<li>
+															<div>
+																<strong>Vehicle Problem:</strong>
+																<span>Engine Trouble</span>
+															</div>
+														</li>
+														<li>
+															<div>
+																<strong>Vehicle Comments:</strong>
+																<span>My car engine light came on all of a sudden and then I could smell rubber burning. I have pulled into a residential area but now the engine will not start and the engine light on my dashboard is still on. Could you bring some engine oil for my car with you.</span>
+															</div>
+														</li>
+													</ul>
+													<div class="ops-form-edit-btn">
+														<a href="#">EDIT</a>
+													</div>
 				                </div>
 				              </div>
 				            </div>
