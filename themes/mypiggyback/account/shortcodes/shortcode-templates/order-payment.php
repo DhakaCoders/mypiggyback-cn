@@ -79,9 +79,9 @@
 							</div>
 
 							<div class="order-payment-steps-con">
-								<div class="box-white-lft order-payment-step-1 d-none">
+								<div class="box-white-lft order-payment-step-1">
 									<div class="order-payment-step">
-										<h2 class="fl-h2 order-step-title"> <span>Step 2</span>  Your Journey</h2>
+										<h2 class="fl-h2 order-step-title"> <span>Step 1</span>  Your Journey</h2>
 										<div class="form-fields-block">
 											<div class="ops-form-field-row starting-field">
 												<label>Veichle Location</label>
@@ -162,7 +162,7 @@
 									</div>
 								</div>
 
-								<div class="box-white-lft order-payment-step-2 d-none">
+								<div class="box-white-lft order-payment-step-2">
 									<div class="order-payment-step">
 										<h2 class="fl-h2 order-step-title"> <span>Step 2</span>  Your Vehicle</h2>
 										<div class="gap-50"></div>
@@ -178,8 +178,6 @@
 												<label>Vehicle Make</label>
 												<input type="text" name="">
 											</div>
-											<div class="gap-50"></div>
-											<div class="gap-50"></div>
 											<div class="ops-form-field-row">
 												<label>Vehicle Problem</label>
 												<select class="selectpicker">
@@ -204,7 +202,7 @@
 									</div>
 								</div>
 									
-								<div class="box-white-lft order-payment-step-3 d-none">
+								<div class="box-white-lft order-payment-step-3">
 									<div class="order-payment-step">
 										<h2 class="fl-h2 order-step-title"> <span>Step 3</span>  Response time</h2>
 										<div class="ops-form-field-row-des">
