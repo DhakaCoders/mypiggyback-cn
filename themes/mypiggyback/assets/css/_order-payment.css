@@ -1023,6 +1023,7 @@ ul.list-cols li div span{
 	}
 	.order-payment-step-bar-radio-cntlr ul li span i:after {
 	    width: 16px;
+	    height: 14px;
 	}
 	.order-payment-step-bar{
 		margin-bottom: 25px;
