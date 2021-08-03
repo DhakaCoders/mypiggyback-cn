@@ -274,6 +274,9 @@
 .ops-form-field-row{
 	position: relative;
 }
+.ops-form-field-row .filter-option-inner-inner{
+	padding-top: 2px;
+}
 .ops-form-field-row.starting-field span,
 .ops-form-field-row.ending-field span{
 	position: absolute;
@@ -751,7 +754,9 @@ ul.list-cols li div span{
 	}
 }
 @media(max-width: 1499px){
-
+	.ops-sm-bdr-cntlr, .opsd-loc strong {
+	    font-size: 16px;
+	}
 }
 
 @media(max-width: 1399px){
@@ -826,6 +831,12 @@ ul.list-cols li div span{
 	.ops-form-field-row input[type="text"], .ops-form-field-row input[type="email"], .ops-form-field-row .bootstrap-select button, .ops-form-field-row textarea{
 		font-size: 15px!important;
 	}
+	.ops-form-field-row form .dropdown-menu{
+		font-size: 15px;
+	}
+	.fl-h2.order-step-details-title {
+	    font-size: 30px!important;
+	}
 }
 
 @media(max-width: 767px){
@@ -881,18 +892,122 @@ ul.list-cols li div span{
 		margin-bottom: 30px;
 		margin-top: 37px;
 	}
+	.fl-h2.order-step-details-title {
+	    font-size: 28px!important;
+	}
+	.fl-h2.order-step-details-title{
+		margin-bottom: 40px;
+	}
+	.order-payment-step-bar-titles ul li span {
+	    font-size: 17px;
+	}
 }
 
 @media(max-width: 575px){
 	.order-payment-sidebar-map #route_map {
 	    height: 350px;
 	}
-
+	.ops-sm-bdr-cntlr{
+		padding-bottom: 5px;
+	}
+	.fl-h2.order-step-details-title {
+	    font-size: 26px!important;
+	}
+	.ops-form-field-row input[type="text"], .ops-form-field-row input[type="email"], .ops-form-field-row .bootstrap-select button, .ops-form-field-row textarea {
+	    font-size: 14px!important;
+	}
+	.ops-form-field-row form .dropdown-menu{
+		font-size: 14px;
+	}
+	.fl-h2.order-step-details-title{
+		margin-bottom: 30px;
+	}
+	.fl-trnsprnt-btn,
+	.fl-red-btn{
+		height: 45px!important;
+		width: 135px!important;
+		font-size: 18px!important;
+	}
+	.fl-h2.ops-title, .fl-h2.order-step-title, .fl-h2.order-step-title{
+		font-size: 26px!important;
+	}
+	.order-payment-step-bar-titles ul li span {
+	    font-size: 15px;
+	}
+	.ops-sm-bdr-cntlr, .opsd-loc strong {
+	    font-size: 14px;
+	}
+	.opsd-row{
+		padding-top: 12px;
+		padding-bottom: 12px;
+	}
 }
 
 @media(max-width: 479px){
-
-
+	.order-payment-step-1 .osp-btn-nxt{
+		width: 100%;
+		min-width: auto;
+	}
+	.order-payment-step-1 .osp-btns{
+		padding-left: 0;
+	}
+	.order-payment-step-1 .osp-btn-nxt button{
+		width: 100%;
+	}
+	.fl-h2.order-step-details-title{
+		margin-bottom: 25px;
+	}
+	.fl-h2.ops-title, .fl-h2.order-step-title, .fl-h2.order-step-title{
+		font-size: 24px!important;
+	}
+	.fl-h2.order-step-details-title {
+	    font-size: 21px!important;
+	}
+	.ops-form-field-cols{
+		display: block;
+	}
+	.ops-form-field-col{
+		width: 100%;
+	}
+	.ops-form-field-cols .ops-form-field-col:not(:last-child){
+		margin-bottom: 30px;
+	}
+	.ops-form-field-row input[type="text"], .ops-form-field-row input[type="email"], .ops-form-field-row .bootstrap-select button, .ops-form-field-row textarea {
+	    font-size: 12px!important;
+	}
+	.ops-form-field-row form .dropdown-menu{
+		font-size: 12px;
+	}
+	.order-payment-step-bar-titles ul li span {
+	    font-size: 14px;
+	}
+	.order-payment-step-bar-radio-cntlr ul li span i{
+		width: 28px;
+		height: 28px;
+	}
+	.order-payment-step-bar-radio-cntlr ul li span{
+		height: 28px;
+		width: 35px;
+	}
+	.order-payment-step-bar-radio-cntlr ul li span i:after {
+	    width: 16px;
+	}
+	.order-payment-step-bar{
+		margin-bottom: 25px;
+	}
+	.ops-form-field-row.starting-field span, .ops-form-field-row.ending-field span{
+		display: none;
+	}
+	.ops-form-field-row.starting-field input, .ops-form-field-row.ending-field input {
+	    padding-right: 15px!important;
+	}
+	.ops-sm-bdr-cntlr, .opsd-loc strong {
+	    font-size: 12px;
+	}
+	.opsd-row{
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
 }
 
 @media(max-width: 359px){
