@@ -48,6 +48,10 @@
 .order-payment-sidebar-des{
 	padding-top: 15px;
 }
+.ops-sm-bdr-cntlr,
+.opsd-loc strong{
+	font-size: 18px;
+}
 .opsd-row{
 	padding-top: 15px;
 	padding-bottom: 15px;
@@ -741,6 +745,10 @@ ul.list-cols li div span{
 	.ops-form-field-row.starting-field span, .ops-form-field-row.ending-field span{
 		font-size: 20px;
 	}
+	.ops-sm-bdr-cntlr,
+	.opsd-loc strong{
+		font-size: 17px;
+	}
 }
 @media(max-width: 1499px){
 
@@ -808,8 +816,9 @@ ul.list-cols li div span{
 	.order-payment-sidebar{
 		padding-left: 20px;
 	}
-	.order-payment-sidebar-des{
-		font-size: 15px;
+	.ops-sm-bdr-cntlr,
+	.opsd-loc strong{
+		font-size: 16px;
 	}
 	.order-payment-step-bar {
 	    margin-bottom: 35px;
