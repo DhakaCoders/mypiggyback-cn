@@ -430,4 +430,82 @@ $('.pg-accordion-title').click(function(){
 
 //alert(circleCount1);
 
+//Steps - next, prev, status
+$('.osp-btn-nxt button').on('click', function(e){
+  e.preventDefault();
+  var data = $(this).attr('data-next');
+  var datat = $(this).attr('data-this');
+  var vs = validation(datat);
+  if( !vs ){
+    $('#step1, #step2, #step3, #step4').hide();
+    $('#'+data).show();
+    activeStatus(data);
+  }
+});
+
+$('.osp-btn-back button').on('click', function(e){
+  e.preventDefault();
+  var data = $(this).attr('data-prev');
+  var datat = $(this).attr('data-this');
+  var vs = validation(datat);
+  if( !vs ){
+    $('#step1, #step2, #step3, #step4').hide();
+    $('#'+data).show();
+    activeStatus(data);
+  }
+});
+
+$('.ops-form-edit-btn a').on('click', function(e){
+  e.preventDefault();
+  var data = $(this).attr('href');
+  $('#step1, #step2, #step3, #step4').hide();
+  $('#'+data).show();
+  activeStatus(data);
+});
+
+function activeStatus(data){
+  $('.order-payment-step-bar li').removeClass('active');
+  if( data == 'step1' ){
+    $('li.step1li').addClass('active');
+  }else if( data == 'step2' ){
+    $('li.step2li').addClass('active');
+  }else if( data == 'step3' ){
+    $('li.step3li').addClass('active');
+  }else if( data == 'step4' ){
+    $('li.step4li').addClass('active');
+  }
+}
+
+function validation(data){
+  var step = $('#'+data);
+  var err = false;
+  if( step.find('.requiredt').length > 0 ){
+    step.find('.requiredt').each(function(){
+      var val = $(this).find('input').val();
+      if( val == '' || val == null || val == undefined ){
+        $(this).addClass('hasError');
+        err = true;
+      }else{
+        $(this).removeClass('hasError');
+        err = false;
+      }
+    });
+  }
+  if( step.find('.requiredta').length > 0 ){
+    step.find('.requiredta').each(function(){
+      var val = $(this).find('textarea').val();
+      if( val == '' || val == null || val == undefined ){
+        $(this).addClass('hasError');
+        err = true;
+      }else{
+        $(this).removeClass('hasError');
+        err = false;
+      }
+    });
+  }
+  return err;
+}
+
+//Steps - validation
+
 })(jQuery);

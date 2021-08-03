@@ -691,8 +691,18 @@ ul.list-cols li div span{
 }
 
 
-
-
+#step1, #step2, #step3, #step4,
+.order-payment-step-4-sidebar-des{
+	display: none;
+}
+#step1{
+	display: block;
+}
+.ops-form-field-row.hasError input[type="text"], 
+.ops-form-field-row.hasError input[type="email"], 
+.ops-form-field-row.hasError textarea{
+	border-color: #f44336;
+}
 @media(max-width: 1699px){
 	.fl-h2.ops-title,
 	.fl-h2.order-step-title,

@@ -81,7 +81,7 @@
               <div id="tab-1" class="fl-tab-content vcl-tab-content current">
                 <div class="vehicle-recovery-form vehicle-form">
                   <div class="recovery_msg"></div>
-                  <form id="vehicle-recovery" onsubmit="vehicleRecoveryOrder('recov'); return false">
+                  <form method="post" id="vehicle-recovery" onsubmit="vehicleRecoveryOrder('recov'); return false">
                     <input type="hidden" name="action" value="mpb_order_create">
                     <input type="hidden" name="order_type" value="recovery">
                     <input type="hidden" name="amount_of_miles" id="recov_miles" value="0">
