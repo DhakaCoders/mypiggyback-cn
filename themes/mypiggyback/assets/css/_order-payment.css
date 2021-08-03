@@ -627,7 +627,7 @@ ul.list-cols li div span{
 	background: #EAEAEA;
 	color: #141414;
 	padding-top: 15px;
-	padding-bottom: 15px;
+	padding-bottom: 12px;
 	font-family: 'GoboldLowplus';
 	cursor: pointer;
 	position: relative;
@@ -699,13 +699,47 @@ ul.list-cols li div span{
 	.fl-h2.order-step-title{
 		font-size: 40px!important;
 	}
+	.fl-h2.order-step-details-title{
+		font-size: 35px!important;
+	}
+	.ops-form-edit-row .opsfer-title,
+	.pg-accordion-title,
+	.opsd-subtotal strong{
+		font-size: 25px!important;
+	}
+	.osp-btn-back button,
+	.osp-btn-nxt button{
+		font-size: 20px!important;
+		height: 47px;
+	}
+	.osp-btn-back button:after,
+	.osp-btn-nxt button:after{
+		border-bottom-width: 23px;
+		border-top-width: 23px;
+	}
+	.order-payment-step-bar-titles ul li span{
+		font-size: 18px;
+	}
+	.order-payment-step-bar-radio-cntlr ul li span i{
+		width: 37px;
+		height: 37px;
+	}
+	.order-payment-step-bar-radio-cntlr ul li span{
+		height: 37px;
+		width: 48px;
+	}
+	.ops-form-field-row.starting-field span, .ops-form-field-row.ending-field span{
+		font-size: 20px;
+	}
 }
 @media(max-width: 1499px){
 
 }
 
 @media(max-width: 1399px){
-	
+	.fl-h2.ops-title, .fl-h2.order-step-title, .fl-h2.order-step-title {
+	    font-size: 35px!important;
+	}
 }
 
 @media(max-width: 1299px){
@@ -713,11 +747,127 @@ ul.list-cols li div span{
 }
 
 @media(max-width: 991px){
+	.box-white-lft,
+	.pg-accordion-title, .pg-accordion-des{
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	ul.list-cols li div strong{
+		width: 40%;
+	}
+	ul.list-cols li div span{
+		width: 60%;
+	}
+	.pg-accordion-toggle-icon{
+		right: 20px;
+		width: 30px;
+		height: 30px;
+	}
+	.pg-accordion-title.pg-accordion-active .pg-accordion-toggle-icon:after{
+		width: 12px;
+	}
+	.osp-btn-back button,
+	.osp-btn-nxt button{
+		min-width: 120px;
+	}
+	.fl-h2.ops-title, .fl-h2.order-step-title, .fl-h2.order-step-title {
+	    font-size: 33px!important;
+	}
+	.order-payment-sidebar-map #route_map {
+	    height: 300px;
+	}
+	.opsd-place-order-btn button{
+		height: 47px;
+	}
+	.ops-form-field-radio label{
+		font-size: 15px;
+	}
+	.ops-radio-bx{
+		width: 27px;
+		height: 27px;
+	}
+	.ops-form-field-radio label{
+		padding-left: 50px;
+	}
+	ul.list-cols li {
+	    margin-bottom: 20px;
+	}
+	.order-payment-step-bar-radio-cntlr ul li span i:after{
+		width: 18px;
+	}
+	.order-payment-sidebar{
+		padding-left: 20px;
+	}
+	.order-payment-sidebar-des{
+		font-size: 15px;
+	}
+	.order-payment-step-bar {
+	    margin-bottom: 35px;
+	}
+	.ops-form-field-row input[type="text"], .ops-form-field-row input[type="email"], .ops-form-field-row .bootstrap-select button, .ops-form-field-row textarea{
+		font-size: 15px!important;
+	}
+}
 
+@media(max-width: 767px){
+	.order-payment-sec-inr{
+		display: block;
+		padding-top: 0;
+	}
+	.order-payment-con{
+		width: 100%;
+	}
+	.order-payment-sidebar {
+	    width: 100%;
+	    margin-top: 0;
+	    padding-left: 0;
+	    padding-right: 0;
+	}
+	.box-white{
+		padding: 0;
+		background: transparent;
+	}
+	.order-payment-sidebar-map #route_map{
+		margin-left: -20px;
+		margin-right: -20px;
+	}
+	.ops-sm-bdr-cntlr{
+		border: 1px solid #CCCCCC;
+		background: #fff;
+		padding: 16px 15px 20px;
+		margin-top: -20px;
+		position: relative;
+		z-index: 10;
+	}
+	.opsd-card-option img{
+		width: 100%;
+	}
+	.opsd-card-option{
+		margin-top: 20px;
+	}
+	.fl-h2.ops-title{
+		margin-bottom: 0!important;
+	}
+	.fl-h2.ops-title, .fl-h2.order-step-title, .fl-h2.order-step-title {
+	    font-size: 30px!important;
+	}
+	.order-payment-sidebar-map #route_map {
+	    height: 350px;
+	}
+	.box-white-lft, .pg-accordion-title, .pg-accordion-des{
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.order-payment-step-bar{
+		margin-bottom: 30px;
+		margin-top: 37px;
+	}
 }
 
 @media(max-width: 575px){
-
+	.order-payment-sidebar-map #route_map {
+	    height: 350px;
+	}
 
 }
 
