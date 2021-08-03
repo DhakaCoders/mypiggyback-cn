@@ -831,11 +831,14 @@ ul.list-cols li div span{
 	.ops-form-field-row input[type="text"], .ops-form-field-row input[type="email"], .ops-form-field-row .bootstrap-select button, .ops-form-field-row textarea{
 		font-size: 15px!important;
 	}
-	.ops-form-field-row form .dropdown-menu{
-		font-size: 15px;
+	.ops-form-field-row .dropdown-menu{
+		font-size: 15px!important;
 	}
 	.fl-h2.order-step-details-title {
 	    font-size: 30px!important;
+	}
+	.fl-h2.order-step-title {
+	    margin-bottom: 40px;
 	}
 }
 
@@ -916,8 +919,8 @@ ul.list-cols li div span{
 	.ops-form-field-row input[type="text"], .ops-form-field-row input[type="email"], .ops-form-field-row .bootstrap-select button, .ops-form-field-row textarea {
 	    font-size: 14px!important;
 	}
-	.ops-form-field-row form .dropdown-menu{
-		font-size: 14px;
+	.ops-form-field-row .dropdown-menu{
+		font-size: 14px!important;
 	}
 	.fl-h2.order-step-details-title{
 		margin-bottom: 30px;
@@ -972,11 +975,12 @@ ul.list-cols li div span{
 	.ops-form-field-cols .ops-form-field-col:not(:last-child){
 		margin-bottom: 30px;
 	}
-	.ops-form-field-row input[type="text"], .ops-form-field-row input[type="email"], .ops-form-field-row .bootstrap-select button, .ops-form-field-row textarea {
+	.ops-form-field-row input[type="text"], .ops-form-field-row input[type="email"], 
+	.ops-form-field-row .bootstrap-select button, .ops-form-field-row textarea {
 	    font-size: 12px!important;
 	}
-	.ops-form-field-row form .dropdown-menu{
-		font-size: 12px;
+	.ops-form-field-row .dropdown-menu{
+		font-size: 12px!important;
 	}
 	.order-payment-step-bar-titles ul li span {
 	    font-size: 14px;
