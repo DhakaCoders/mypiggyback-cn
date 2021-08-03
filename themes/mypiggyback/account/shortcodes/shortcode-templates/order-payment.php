@@ -2,6 +2,8 @@
 	if ( ! defined( 'ABSPATH' ) ) {
 		exit;
 	}
+
+	printr($_POST);
 ?>
 
 
@@ -56,39 +58,39 @@
 						</div>
 					</div>
 					<div class="order-payment-con">
-						<form>
+						<form id="stepsForm">
 							<div class="order-payment-step-bar">
 								<div class="order-payment-step-bar-titles">
 									<ul class="reset-list">
-										<li class="active"><span>Journey</span></li>
-										<li><span>Vehicle</span></li>
-										<li><span>Response</span></li>
-										<li><span>Payment</span></li>
+										<li class="step1li active"><span>Journey</span></li>
+										<li class="step2li"><span>Vehicle</span></li>
+										<li class="step3li"><span>Response</span></li>
+										<li class="step4li"><span>Payment</span></li>
 									</ul>
 								</div>
 								<div class="order-payment-step-bar-radio-cntlr">
 									<span class="line-eraser-lft line-eraser"></span>
 									<span class="line-eraser-rgt line-eraser"></span>
 									<ul class="reset-list">
-										<li class="active"><span><i></i></span></li>
-										<li><span><i></i></span></li>
-										<li><span><i></i></span></li>
-										<li><span><i></i></span></li>
+										<li class="step1li active"><span><i></i></span></li>
+										<li class="step2li"><span><i></i></span></li>
+										<li class="step3li"><span><i></i></span></li>
+										<li class="step4li"><span><i></i></span></li>
 									</ul>
 								</div>
 							</div>
 
 							<div class="order-payment-steps-con">
-								<div class="box-white-lft order-payment-step-1">
+								<div id="step1" class="box-white-lft order-payment-step-1">
 									<div class="order-payment-step">
 										<h2 class="fl-h2 order-step-title"> <span>Step 1</span>  Your Journey</h2>
 										<div class="form-fields-block">
-											<div class="ops-form-field-row starting-field">
+											<div class="requiredt ops-form-field-row starting-field">
 												<label>Veichle Location</label>
 												<input type="text" name="">
 												<span>A</span>
 											</div>
-											<div class="ops-form-field-row ending-field">
+											<div class="requiredt ops-form-field-row ending-field">
 												<label>Veichle Delivery</label>
 												<input type="text" name="">
 												<span>B</span>
@@ -103,15 +105,15 @@
 										</div>
 										<h2 class="fl-h2 order-step-details-title"> Your Details</h2>
 										<div class="form-fields-block">
-											<div class="ops-form-field-row">
+											<div class="requiredt ops-form-field-row">
 												<label>Full Name</label>
 												<input type="text" name="">
 											</div>
-											<div class="ops-form-field-row">
+											<div class="requirede ops-form-field-row">
 												<label>Email Address</label>
 												<input type="email" name="">
 											</div>
-											<div class="ops-form-field-row">
+											<div class="requiredt ops-form-field-row">
 												<label>Telephone Number</label>
 												<input type="text" name="">
 											</div>
@@ -122,7 +124,7 @@
 													<option>Different to my vehicle address 2</option>
 												</select>
 											</div>
-											<div class="ops-form-field-row ops-gray-label">
+											<div class="requiredt ops-form-field-row ops-gray-label">
 												<label>Address</label>
 												<input type="text" name="">
 												<label class="ops-label-2">Address Line 1</label>
@@ -156,13 +158,13 @@
 										</div>
 										<div class="osp-btns">
 											<div class="osp-btn-nxt">
-												<button><span>next</span></button>
+												<button data-this="step1" data-next="step2"><span>next</span></button>
 											</div>
 										</div>
 									</div>
 								</div>
 
-								<div class="box-white-lft order-payment-step-2">
+								<div id="step2" class="box-white-lft order-payment-step-2">
 									<div class="order-payment-step">
 										<h2 class="fl-h2 order-step-title"> <span>Step 2</span>  Your Vehicle</h2>
 										<div class="gap-50"></div>
@@ -174,7 +176,7 @@
 													<option>Bus</option>
 												</select>
 											</div>
-											<div class="ops-form-field-row">
+											<div class="requiredt ops-form-field-row">
 												<label>Vehicle Make</label>
 												<input type="text" name="">
 											</div>
@@ -185,7 +187,7 @@
 													<option>Others</option>
 												</select>
 											</div>
-											<div class="ops-form-field-row">
+											<div class="requiredta ops-form-field-row">
 												<label>Vehicle Requests & Requirements</label>
 												<textarea></textarea>
 											</div>
@@ -193,16 +195,16 @@
 										</div>
 										<div class="osp-btns">
 											<div class="osp-btn-back">
-												<button><span>back</span></button>
+												<button data-this="step2" data-prev="step1"><span>back</span></button>
 											</div>
 											<div class="osp-btn-nxt">
-												<button><span>next</span></button>
+												<button data-this="step2" data-next="step3"><span>next</span></button>
 											</div>
 										</div>
 									</div>
 								</div>
 									
-								<div class="box-white-lft order-payment-step-3">
+								<div id="step3" class="box-white-lft order-payment-step-3">
 									<div class="order-payment-step">
 										<h2 class="fl-h2 order-step-title"> <span>Step 3</span>  Response time</h2>
 										<div class="ops-form-field-row-des">
@@ -219,7 +221,7 @@
 											</div>
 											<div class="ops-form-field-radio">
 												
-												<input type="radio" id="mp-lbl2" name="response_time"  value="silver_service">
+												<input type="radio" id="mp-lbl2" name="response_time"  value="silver_service" checked>
 												<span class="label-text">RECOMMENDED</span>
 												<span class="ops-radio-bx"></span>
 												<label for="mp-lbl2"><p>Silver Service <strong>(3 hrs - 5 hrs)</strong> </p>  <span>+£100</span></label>
@@ -234,16 +236,16 @@
 										</div>
 										<div class="osp-btns">
 											<div class="osp-btn-back">
-												<button><span>back</span></button>
+												<button data-this="step3" data-prev="step2"><span>back</span></button>
 											</div>
 											<div class="osp-btn-nxt">
-												<button><span>next</span></button>
+												<button data-this="step3" data-next="step4"><span>next</span></button>
 											</div>
 										</div>
 									</div>
 								</div>
 
-								<div class="order-payment-step-4">
+								<div id="step4" class="order-payment-step-4">
 									<div class="box-white-lft">
 										<div class="order-payment-step">
 											<h2 class="fl-h2 order-step-title"> <span>Step 4</span>  Review & pay</h2>
@@ -271,7 +273,7 @@
 														</li>
 													</ul>
 													<div class="ops-form-edit-btn">
-														<a href="#">EDIT</a>
+														<a href="step1">EDIT</a>
 													</div>
 												</div>
 												<div class="ops-form-edit-row">
@@ -307,7 +309,7 @@
 														</li>
 													</ul>
 													<div class="ops-form-edit-btn">
-														<a href="#">EDIT</a>
+														<a href="step1">EDIT</a>
 													</div>
 												</div>
 											</div>
@@ -345,7 +347,7 @@
 														</li>
 													</ul>
 													<div class="ops-form-edit-btn">
-														<a href="#">EDIT</a>
+														<a href="step2">EDIT</a>
 													</div>
 				                </div>
 				              </div>
@@ -381,7 +383,7 @@
 														</li>
 													</ul>
 													<div class="ops-form-edit-btn">
-														<a href="#">EDIT</a>
+														<a href="step3">EDIT</a>
 													</div>
 				                </div>
 				              </div>
