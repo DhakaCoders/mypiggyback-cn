@@ -224,21 +224,21 @@ if( isset($_GET['order-id']) && !empty($_GET['order-id'])){
 													<input type="radio" id="mp-lbl1" name="response_time" value="gold_service">
 													<span class="label-text">MOST POPULAR</span>
 													<span class="ops-radio-bx"></span>
-													<label for="mp-lbl1"><p>Gold Service <strong>(45 mins - 1 hr)</strong> </p>  <span>+£150</span></label>
+													<label for="mp-lbl1"><p>Gold <span>Service</span> <strong>(45 mins - 1 hr)</strong> </p>  <span>+£150</span></label>
 												</div>
 												<div class="ops-form-field-radio">
 													
 													<input type="radio" id="mp-lbl2" name="response_time"  value="silver_service" checked>
 													<span class="label-text">RECOMMENDED</span>
 													<span class="ops-radio-bx"></span>
-													<label for="mp-lbl2"><p>Silver Service <strong>(3 hrs - 5 hrs)</strong> </p>  <span>+£100</span></label>
+													<label for="mp-lbl2"><p>Silver <span>Service</span> <strong>(3 hrs - 5 hrs)</strong> </p>  <span>+£100</span></label>
 												</div>
 												<div class="ops-form-field-radio">
 													
 													<input type="radio" id="mp-lbl3" name="response_time"  value="brozne_service">
 													<span class="label-text">SLOWEST</span>
 													<span class="ops-radio-bx"></span>
-													<label for="mp-lbl3"><p>Brozne Service <strong> (Next Working Day)</strong> </p>  <span>+£50</span></label>
+													<label for="mp-lbl3"><p>Brozne <span>Service</span> <strong> (Next Working Day)</strong> </p>  <span>+£50</span></label>
 												</div>
 											</div>
 											<div class="osp-btns">

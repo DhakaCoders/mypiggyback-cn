@@ -486,7 +486,7 @@
 	font-weight: 700;
 	color: #141414;
 }
-.ops-form-field-radio label span{
+.ops-form-field-radio label > span{
 	margin-left: auto;
 	display: inline-block;
 	color: #7F7F7F;
@@ -840,6 +840,9 @@ ul.list-cols li div span{
 	.fl-h2.order-step-title {
 	    margin-bottom: 40px;
 	}
+	.ops-form-edit-row .opsfer-title, .pg-accordion-title, .opsd-subtotal strong {
+	    font-size: 23px!important;
+	}
 }
 
 @media(max-width: 767px){
@@ -904,6 +907,9 @@ ul.list-cols li div span{
 	.order-payment-step-bar-titles ul li span {
 	    font-size: 17px;
 	}
+	.ops-form-edit-row .opsfer-title, .pg-accordion-title, .opsd-subtotal strong {
+	    font-size: 20px!important;
+	}
 }
 
 @media(max-width: 575px){
@@ -937,12 +943,33 @@ ul.list-cols li div span{
 	.order-payment-step-bar-titles ul li span {
 	    font-size: 15px;
 	}
-	.ops-sm-bdr-cntlr, .opsd-loc strong {
+	.ops-sm-bdr-cntlr, .opsd-loc strong,
+	.ops-form-field-radio label {
 	    font-size: 14px;
 	}
 	.opsd-row{
 		padding-top: 12px;
 		padding-bottom: 12px;
+	}
+	.ops-form-edit-row .opsfer-title, .pg-accordion-title, .opsd-subtotal strong {
+	    font-size: 18px!important;
+	}
+	.order-step-title span{
+		padding-left: 7px;
+		padding-right: 10px;
+	}
+	.ops-radio-bx {
+	    width: 24px;
+	    height: 24px;
+	}
+	.order-payment-step-4-sidebar-des{
+		padding-bottom: 10px;
+	}
+	.opsd-place-order-btn button {
+	    height: 44px;
+	}
+	.pg-accordion-tab-row {
+	    margin-bottom: 35px;
 	}
 }
 
@@ -979,7 +1006,8 @@ ul.list-cols li div span{
 	.ops-form-field-row .bootstrap-select button, .ops-form-field-row textarea {
 	    font-size: 12px!important;
 	}
-	.ops-form-field-row .dropdown-menu{
+	.ops-form-field-row .dropdown-menu,
+	.ops-form-field-radio label{
 		font-size: 12px!important;
 	}
 	.order-payment-step-bar-titles ul li span {
@@ -1012,8 +1040,87 @@ ul.list-cols li div span{
 		padding-top: 10px;
 		padding-bottom: 10px;
 	}
+	.ops-form-edit-row .opsfer-title, .pg-accordion-title, .opsd-subtotal strong {
+	    font-size: 16px!important;
+	}
+	.osp-btn-back button, .osp-btn-nxt button {
+	    min-width: 95px;
+	}
+	.osp-btn-back button:after{
+		border-right-width: 18px;
+	}
+	.osp-btn-nxt button:after{
+		border-left-width: 18px;
+	}
+	.box-white-lft{
+		padding-bottom: 30px;
+	}
+	.osp-btn-back button, .osp-btn-nxt button {
+	    min-width: 90px;
+	}
+	.ops-form-field-radio label p span{
+		display: none;
+	}
+	.ops-radio-bx {
+	    width: 20px;
+	    height: 20px;
+	}
+	.ops-form-field-radio label{
+		padding-left: 40px;
+	}
+	.osp-btn-back button, .osp-btn-nxt button{
+		height: 45px;
+	}
+	.osp-btn-back button:after, .osp-btn-nxt button:after {
+	    border-bottom-width: 22px;
+	    border-top-width: 22px;
+	}
+	ul.list-cols li div{
+		display: block;
+	}
+	ul.list-cols li div strong,
+	ul.list-cols li div span{
+		width: 100%;
+		display: block;
+		text-align: left;
+	}
+	.ops-form-edit-btn{
+		position: static;
+		margin-bottom: 20px;
+	}
+	.ops-form-edit-row:last-of-type ul li:last-child {
+	    margin-bottom: 20px;
+	}
+	.order-payment-step-4 .box-white-lft, .order-payment-step-4 .pg-accordion-des {
+	    padding-bottom: 10px;
+	}
+	.ops-form-accordion-des .ops-form-edit-btn {
+	    text-align: left;
+	}
+	.pg-accordion-toggle-icon {
+	    right: 10px;
+	    width: 28px;
+	    height: 28px;
+	}
+	.pg-accordion-toggle-icon:after{
+		width: 11px;
+	}
+	.ops-form-accordion-cntlr .ops-form-accordion-des {
+	    padding-top: 35px;
+	}
+	.ops-form-accordion-cntlr .ops-form-accordion-des .ops-form-edit-btn{
+		padding-top: 10px;
+	}
+	.pg-accordion-tab-row {
+	    margin-bottom: 32px;
+	}
 }
 
 @media(max-width: 359px){
-
+	.ops-form-field-radio label {
+	    padding-left: 37px;
+	}
+	.ops-form-field-radio label{
+		padding-right: 10px;
+	}
 }

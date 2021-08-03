@@ -419,20 +419,21 @@ var circleCount1 = $(".order-payment-step-bar-radio-cntlr ul li").outerWidth();
 var circleCount2 = $(".order-payment-step-bar-radio-cntlr ul li span").outerWidth(); 
 var circleCount3 = (circleCount1 - circleCount2 ) / 2;
 $(".line-eraser").width(circleCount3); 
+
+$(window).resize(function() { 
+  var circleCount1 = $(".order-payment-step-bar-radio-cntlr ul li").outerWidth();
+  var circleCount2 = $(".order-payment-step-bar-radio-cntlr ul li span").outerWidth(); 
+  var circleCount3 = (circleCount1 - circleCount2 ) / 2;
+  $(".line-eraser").width(circleCount3); 
+});
+
 $('.pg-accordion-title').click(function(){
     $(this).next().slideToggle(300);
     $(this).parent().siblings().find('.pg-accordion-des').slideUp(300);
     $(this).toggleClass('pg-accordion-active');
     $(this).parent().siblings().find('.pg-accordion-title').removeClass('pg-accordion-active');
 });
-$(window).resize(function() { 
-  $('.pg-accordion-title').click(function(){
-      $(this).next().slideToggle(300);
-      $(this).parent().siblings().find('.pg-accordion-des').slideUp(300);
-      $(this).toggleClass('pg-accordion-active');
-      $(this).parent().siblings().find('.pg-accordion-title').removeClass('pg-accordion-active');
-  });
-});
+
 //alert(circleCount1);
 
 //Steps - next, prev, status
