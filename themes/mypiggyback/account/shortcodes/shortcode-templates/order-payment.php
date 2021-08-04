@@ -4,7 +4,7 @@
 	}
 if( isset($_GET['order-id']) && !empty($_GET['order-id'])){
 	$get_order = get_post( $_GET['order-id'] );
-	printr($get_order);
+	//printr($get_order);
 }
 ?>
 
