@@ -420,6 +420,12 @@ var circleCount2 = $(".order-payment-step-bar-radio-cntlr ul li span").outerWidt
 var circleCount3 = (circleCount1 - circleCount2 ) / 2;
 $(".line-eraser").width(circleCount3); 
 
+$(window).resize(function() { 
+  var circleCount1 = $(".order-payment-step-bar-radio-cntlr ul li").outerWidth();
+  var circleCount2 = $(".order-payment-step-bar-radio-cntlr ul li span").outerWidth(); 
+  var circleCount3 = (circleCount1 - circleCount2 ) / 2;
+  $(".line-eraser").width(circleCount3); 
+});
 
 $('.pg-accordion-title').click(function(){
     $(this).next().slideToggle(300);

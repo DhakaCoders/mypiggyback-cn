@@ -48,6 +48,10 @@
 .order-payment-sidebar-des{
 	padding-top: 15px;
 }
+.ops-sm-bdr-cntlr,
+.opsd-loc strong{
+	font-size: 18px;
+}
 .opsd-row{
 	padding-top: 15px;
 	padding-bottom: 15px;
@@ -270,6 +274,9 @@
 .ops-form-field-row{
 	position: relative;
 }
+.ops-form-field-row .filter-option-inner-inner{
+	padding-top: 2px;
+}
 .ops-form-field-row.starting-field span,
 .ops-form-field-row.ending-field span{
 	position: absolute;
@@ -479,7 +486,7 @@
 	font-weight: 700;
 	color: #141414;
 }
-.ops-form-field-radio label span{
+.ops-form-field-radio label > span{
 	margin-left: auto;
 	display: inline-block;
 	color: #7F7F7F;
@@ -627,7 +634,7 @@ ul.list-cols li div span{
 	background: #EAEAEA;
 	color: #141414;
 	padding-top: 15px;
-	padding-bottom: 15px;
+	padding-bottom: 12px;
 	font-family: 'GoboldLowplus';
 	cursor: pointer;
 	position: relative;
@@ -709,13 +716,53 @@ ul.list-cols li div span{
 	.fl-h2.order-step-title{
 		font-size: 40px!important;
 	}
+	.fl-h2.order-step-details-title{
+		font-size: 35px!important;
+	}
+	.ops-form-edit-row .opsfer-title,
+	.pg-accordion-title,
+	.opsd-subtotal strong{
+		font-size: 25px!important;
+	}
+	.osp-btn-back button,
+	.osp-btn-nxt button{
+		font-size: 20px!important;
+		height: 47px;
+	}
+	.osp-btn-back button:after,
+	.osp-btn-nxt button:after{
+		border-bottom-width: 23px;
+		border-top-width: 23px;
+	}
+	.order-payment-step-bar-titles ul li span{
+		font-size: 18px;
+	}
+	.order-payment-step-bar-radio-cntlr ul li span i{
+		width: 37px;
+		height: 37px;
+	}
+	.order-payment-step-bar-radio-cntlr ul li span{
+		height: 37px;
+		width: 48px;
+	}
+	.ops-form-field-row.starting-field span, .ops-form-field-row.ending-field span{
+		font-size: 20px;
+	}
+	.ops-sm-bdr-cntlr,
+	.opsd-loc strong{
+		font-size: 17px;
+	}
 }
 @media(max-width: 1499px){
-
+	.ops-sm-bdr-cntlr, .opsd-loc strong {
+	    font-size: 16px;
+	}
 }
 
 @media(max-width: 1399px){
-	
+	.fl-h2.ops-title, .fl-h2.order-step-title, .fl-h2.order-step-title {
+	    font-size: 35px!important;
+	}
 }
 
 @media(max-width: 1299px){
@@ -723,19 +770,358 @@ ul.list-cols li div span{
 }
 
 @media(max-width: 991px){
+	.box-white-lft,
+	.pg-accordion-title, .pg-accordion-des{
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	ul.list-cols li div strong{
+		width: 40%;
+	}
+	ul.list-cols li div span{
+		width: 60%;
+	}
+	.pg-accordion-toggle-icon{
+		right: 20px;
+		width: 30px;
+		height: 30px;
+	}
+	.pg-accordion-title.pg-accordion-active .pg-accordion-toggle-icon:after{
+		width: 12px;
+	}
+	.osp-btn-back button,
+	.osp-btn-nxt button{
+		min-width: 120px;
+	}
+	.fl-h2.ops-title, .fl-h2.order-step-title, .fl-h2.order-step-title {
+	    font-size: 33px!important;
+	}
+	.order-payment-sidebar-map #route_map {
+	    height: 300px;
+	}
+	.opsd-place-order-btn button{
+		height: 47px;
+	}
+	.ops-form-field-radio label{
+		font-size: 15px;
+	}
+	.ops-radio-bx{
+		width: 27px;
+		height: 27px;
+	}
+	.ops-form-field-radio label{
+		padding-left: 50px;
+	}
+	ul.list-cols li {
+	    margin-bottom: 20px;
+	}
+	.order-payment-step-bar-radio-cntlr ul li span i:after{
+		width: 18px;
+	}
+	.order-payment-sidebar{
+		padding-left: 20px;
+	}
+	.ops-sm-bdr-cntlr,
+	.opsd-loc strong{
+		font-size: 16px;
+	}
+	.order-payment-step-bar {
+	    margin-bottom: 35px;
+	}
+	.ops-form-field-row input[type="text"], .ops-form-field-row input[type="email"], .ops-form-field-row .bootstrap-select button, .ops-form-field-row textarea{
+		font-size: 15px!important;
+	}
+	.ops-form-field-row .dropdown-menu{
+		font-size: 15px!important;
+	}
+	.fl-h2.order-step-details-title {
+	    font-size: 30px!important;
+	}
+	.fl-h2.order-step-title {
+	    margin-bottom: 40px;
+	}
+	.ops-form-edit-row .opsfer-title, .pg-accordion-title, .opsd-subtotal strong {
+	    font-size: 23px!important;
+	}
+}
 
+@media(max-width: 767px){
+	.order-payment-sec-inr{
+		display: block;
+		padding-top: 0;
+	}
+	.order-payment-con{
+		width: 100%;
+	}
+	.order-payment-sidebar {
+	    width: 100%;
+	    margin-top: 0;
+	    padding-left: 0;
+	    padding-right: 0;
+	}
+	.box-white{
+		padding: 0;
+		background: transparent;
+	}
+	.order-payment-sidebar-map #route_map{
+		margin-left: -20px;
+		margin-right: -20px;
+	}
+	.ops-sm-bdr-cntlr{
+		border: 1px solid #CCCCCC;
+		background: #fff;
+		padding: 16px 15px 20px;
+		margin-top: -20px;
+		position: relative;
+		z-index: 10;
+	}
+	.opsd-card-option img{
+		width: 100%;
+	}
+	.opsd-card-option{
+		margin-top: 20px;
+	}
+	.fl-h2.ops-title{
+		margin-bottom: 0!important;
+	}
+	.fl-h2.ops-title, .fl-h2.order-step-title, .fl-h2.order-step-title {
+	    font-size: 30px!important;
+	}
+	.order-payment-sidebar-map #route_map {
+	    height: 350px;
+	}
+	.box-white-lft, .pg-accordion-title, .pg-accordion-des{
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.order-payment-step-bar{
+		margin-bottom: 30px;
+		margin-top: 37px;
+	}
+	.fl-h2.order-step-details-title {
+	    font-size: 28px!important;
+	}
+	.fl-h2.order-step-details-title{
+		margin-bottom: 40px;
+	}
+	.order-payment-step-bar-titles ul li span {
+	    font-size: 17px;
+	}
+	.ops-form-edit-row .opsfer-title, .pg-accordion-title, .opsd-subtotal strong {
+	    font-size: 20px!important;
+	}
 }
 
 @media(max-width: 575px){
-
-
+	.order-payment-sidebar-map #route_map {
+	    height: 350px;
+	}
+	.ops-sm-bdr-cntlr{
+		padding-bottom: 5px;
+	}
+	.fl-h2.order-step-details-title {
+	    font-size: 26px!important;
+	}
+	.ops-form-field-row input[type="text"], .ops-form-field-row input[type="email"], .ops-form-field-row .bootstrap-select button, .ops-form-field-row textarea {
+	    font-size: 14px!important;
+	}
+	.ops-form-field-row .dropdown-menu{
+		font-size: 14px!important;
+	}
+	.fl-h2.order-step-details-title{
+		margin-bottom: 30px;
+	}
+	.fl-trnsprnt-btn,
+	.fl-red-btn{
+		height: 45px!important;
+		width: 135px!important;
+		font-size: 18px!important;
+	}
+	.fl-h2.ops-title, .fl-h2.order-step-title, .fl-h2.order-step-title{
+		font-size: 26px!important;
+	}
+	.order-payment-step-bar-titles ul li span {
+	    font-size: 15px;
+	}
+	.ops-sm-bdr-cntlr, .opsd-loc strong,
+	.ops-form-field-radio label {
+	    font-size: 14px;
+	}
+	.opsd-row{
+		padding-top: 12px;
+		padding-bottom: 12px;
+	}
+	.ops-form-edit-row .opsfer-title, .pg-accordion-title, .opsd-subtotal strong {
+	    font-size: 18px!important;
+	}
+	.order-step-title span{
+		padding-left: 7px;
+		padding-right: 10px;
+	}
+	.ops-radio-bx {
+	    width: 24px;
+	    height: 24px;
+	}
+	.order-payment-step-4-sidebar-des{
+		padding-bottom: 10px;
+	}
+	.opsd-place-order-btn button {
+	    height: 44px;
+	}
+	.pg-accordion-tab-row {
+	    margin-bottom: 35px;
+	}
 }
 
 @media(max-width: 479px){
-
-
+	.order-payment-step-1 .osp-btn-nxt{
+		width: 100%;
+		min-width: auto;
+	}
+	.order-payment-step-1 .osp-btns{
+		padding-left: 0;
+	}
+	.order-payment-step-1 .osp-btn-nxt button{
+		width: 100%;
+	}
+	.fl-h2.order-step-details-title{
+		margin-bottom: 25px;
+	}
+	.fl-h2.ops-title, .fl-h2.order-step-title, .fl-h2.order-step-title{
+		font-size: 24px!important;
+	}
+	.fl-h2.order-step-details-title {
+	    font-size: 21px!important;
+	}
+	.ops-form-field-cols{
+		display: block;
+	}
+	.ops-form-field-col{
+		width: 100%;
+	}
+	.ops-form-field-cols .ops-form-field-col:not(:last-child){
+		margin-bottom: 30px;
+	}
+	.ops-form-field-row input[type="text"], .ops-form-field-row input[type="email"], 
+	.ops-form-field-row .bootstrap-select button, .ops-form-field-row textarea {
+	    font-size: 12px!important;
+	}
+	.ops-form-field-row .dropdown-menu,
+	.ops-form-field-radio label{
+		font-size: 12px!important;
+	}
+	.order-payment-step-bar-titles ul li span {
+	    font-size: 14px;
+	}
+	.order-payment-step-bar-radio-cntlr ul li span i{
+		width: 28px;
+		height: 28px;
+	}
+	.order-payment-step-bar-radio-cntlr ul li span{
+		height: 28px;
+		width: 35px;
+	}
+	.order-payment-step-bar-radio-cntlr ul li span i:after {
+	    width: 16px;
+	    height: 14px;
+	}
+	.order-payment-step-bar{
+		margin-bottom: 25px;
+	}
+	.ops-form-field-row.starting-field span, .ops-form-field-row.ending-field span{
+		display: none;
+	}
+	.ops-form-field-row.starting-field input, .ops-form-field-row.ending-field input {
+	    padding-right: 15px!important;
+	}
+	.ops-sm-bdr-cntlr, .opsd-loc strong {
+	    font-size: 12px;
+	}
+	.opsd-row{
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.ops-form-edit-row .opsfer-title, .pg-accordion-title, .opsd-subtotal strong {
+	    font-size: 16px!important;
+	}
+	.osp-btn-back button, .osp-btn-nxt button {
+	    min-width: 95px;
+	}
+	.osp-btn-back button:after{
+		border-right-width: 18px;
+	}
+	.osp-btn-nxt button:after{
+		border-left-width: 18px;
+	}
+	.box-white-lft{
+		padding-bottom: 30px;
+	}
+	.osp-btn-back button, .osp-btn-nxt button {
+	    min-width: 90px;
+	}
+	.ops-form-field-radio label p span{
+		display: none;
+	}
+	.ops-radio-bx {
+	    width: 20px;
+	    height: 20px;
+	}
+	.ops-form-field-radio label{
+		padding-left: 40px;
+	}
+	.osp-btn-back button, .osp-btn-nxt button{
+		height: 45px;
+	}
+	.osp-btn-back button:after, .osp-btn-nxt button:after {
+	    border-bottom-width: 22px;
+	    border-top-width: 22px;
+	}
+	ul.list-cols li div{
+		display: block;
+	}
+	ul.list-cols li div strong,
+	ul.list-cols li div span{
+		width: 100%;
+		display: block;
+		text-align: left;
+	}
+	.ops-form-edit-btn{
+		position: static;
+		margin-bottom: 20px;
+	}
+	.ops-form-edit-row:last-of-type ul li:last-child {
+	    margin-bottom: 20px;
+	}
+	.order-payment-step-4 .box-white-lft, .order-payment-step-4 .pg-accordion-des {
+	    padding-bottom: 10px;
+	}
+	.ops-form-accordion-des .ops-form-edit-btn {
+	    text-align: left;
+	}
+	.pg-accordion-toggle-icon {
+	    right: 10px;
+	    width: 28px;
+	    height: 28px;
+	}
+	.pg-accordion-toggle-icon:after{
+		width: 11px;
+	}
+	.ops-form-accordion-cntlr .ops-form-accordion-des {
+	    padding-top: 35px;
+	}
+	.ops-form-accordion-cntlr .ops-form-accordion-des .ops-form-edit-btn{
+		padding-top: 10px;
+	}
+	.pg-accordion-tab-row {
+	    margin-bottom: 32px;
+	}
 }
 
 @media(max-width: 359px){
-
+	.ops-form-field-radio label {
+	    padding-left: 37px;
+	}
+	.ops-form-field-radio label{
+		padding-right: 10px;
+	}
 }
