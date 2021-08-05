@@ -2,18 +2,16 @@
 	if ( ! defined( 'ABSPATH' ) ) {
 		exit;
 	}
-if( isset($_GET['order-id']) && !empty($_GET['order-id'])){
-	$get_order = get_post( $_GET['order-id'] );
-	//printr($get_order);
-}
 ?>
-
-
 <section class="order-payment-sec-cntlr">
 
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
+				<?php  
+					if( isset($_GET['order-id']) && !empty($_GET['order-id'])){
+					$get_order = get_post( $_GET['order-id'] );
+				?>
 				<form>
 					<div class="order-payment-sec-inr">
 						<div class="order-payment-sidebar">
@@ -402,6 +400,9 @@ if( isset($_GET['order-id']) && !empty($_GET['order-id'])){
 						</div>
 					</div>
 				</form>
+			<?php }else{ ?>
+				<div class="notfound"><?php _e('Somthing was wrong. Please try again.'); ?></div>
+			<?php } ?>
 			</div>
 		</div>
 	</div>
