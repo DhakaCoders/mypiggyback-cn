@@ -120,6 +120,7 @@ if( $('#route_map').length ){
                     $('#results .mgs').html("Sorry , not available to use this travel mode between " + origin + " and " + destination);
                     $('#resultssm .mgs').html("Sorry , not available to use this travel mode between " + origin + " and " + destination);
                 } else {
+                    console.log(response);
                     var distance = response.rows[0].elements[0].distance;
                     var duration = response.rows[0].elements[0].duration;
                     var distance_in_kilo = distance.value / 1000; // the kilo meter

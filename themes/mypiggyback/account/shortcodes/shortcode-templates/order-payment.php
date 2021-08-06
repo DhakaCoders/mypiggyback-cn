@@ -10,31 +10,43 @@
 			<div class="col-sm-12">
 				<?php  
 					if( isset($_GET['order-id']) && !empty($_GET['order-id'])){
-					$get_order = get_post( $_GET['order-id'] );
+					$order_obj = get_post( $_GET['order-id'] );
+					$thisID = $order_obj->ID;
+					$from_location = get_field('order_from_location', $thisID);
+					$to_location = get_field('order_to_location', $thisID);
+					$order_miles = get_field('amount_of_miles', $thisID);
+					$order_type = get_field('order_type', $thisID);
+					$fullname = get_field('order_fullname', $thisID);
+					$order_email = get_field('order_email', $thisID);
+					$order_phone = get_field('order_telephone', $thisID);
 				?>
+        <div class="trigger-checkbox" style="display: none;">
+          <input type="checkbox" id="from_places" value="<?php echo !empty($from_location)?$from_location:''; ?>">
+          <input type="checkbox" id="to_places" value="<?php echo !empty($to_location)?$to_location:''; ?>">
+        </div>
 				<form>
 					<div class="order-payment-sec-inr">
 						<div class="order-payment-sidebar">
 							<div class="box-white">
 								<h3 class="fl-h2 ops-title hide-sm">Order summary</h3>
 								<div class="order-payment-sidebar-map">
-									<div id="route_map"></div>
+									<div id="routeMapID"></div>
 								</div>
 
 								<div class="ops-sm-bdr-cntlr">
 									<h3 class="fl-h2 ops-title show-sm">Order summary</h3>
 									<div class="order-payment-sidebar-des">
 										<div class="opsd-row">
-											<div class="opsd-loc-1 opsd-loc"><strong>A:</strong> 48 Woodstock Ave, Romford RM3 9NF</div>
+											<div class="opsd-loc-1 opsd-loc"><strong>A:</strong> <?php echo !empty($from_location)?$from_location:''; ?></div>
 										</div>
 										<div class="opsd-row">
-											<div class="opsd-loc-2 opsd-loc"><strong>B:</strong> 18 Earlsfield Dr, Chelmsford CM2 6SX</div>
+											<div class="opsd-loc-2 opsd-loc"><strong>B:</strong> <?php echo !empty($to_location)?$to_location:''; ?></div>
 										</div>
 										<div class="opsd-row">
 											<div class="opsd-journey-time opsd-line"><span>Journey Time</span> <strong> 25 mins</strong></div>
 										</div>
 										<div class="opsd-row">
-											<div class="opsd-journey-time opsd-line"><span>Total Miles</span> <strong> 15.5  </strong></div>
+											<div class="opsd-journey-time opsd-line"><span>Total Miles</span> <strong> <?php if( !empty($order_miles) ) printf('%s',round($order_miles, 2));?>  </strong></div>
 										</div>
 										<div class="opsd-row">
 											<div class="opsd-journey-time opsd-line"><span>Cost per mile</span> <strong> £2.00</strong></div>
@@ -92,19 +104,19 @@
 											<div class="form-fields-block">
 												<div class="requiredt ops-form-field-row starting-field">
 													<label>Veichle Location</label>
-													<input type="text" name="">
+													<input type="text" name="from_location" value="<?php echo !empty($from_location)?$from_location:''; ?>">
 													<span>A</span>
 												</div>
 												<div class="requiredt ops-form-field-row ending-field">
 													<label>Veichle Delivery</label>
-													<input type="text" name="">
+													<input type="text" name="to_location" value="<?php echo !empty($to_location)?$to_location:''; ?>">
 													<span>B</span>
 												</div>
 												<div class="ops-form-field-row">
 													<label>Veichle Service</label>
-													<select class="selectpicker">
-														<option>Vehicle Recovery</option>
-														<option>Vehicle Transport</option>
+													<select class="selectpicker" name="order_type">
+														<option value="recovery" <?php echo ($order_type == 'recovery')?'selected':''; ?>>Vehicle Recovery</option>
+														<option value="transport"<?php echo ($order_type == 'transport')?'selected':''; ?>>Vehicle Transport</option>
 													</select>
 												</div>
 											</div>
@@ -112,15 +124,15 @@
 											<div class="form-fields-block">
 												<div class="requiredt ops-form-field-row">
 													<label>Full Name</label>
-													<input type="text" name="">
+													<input type="text" name="fullname" value="<?php echo !empty($fullname)?$fullname:''; ?>">
 												</div>
 												<div class="requirede ops-form-field-row">
 													<label>Email Address</label>
-													<input type="email" name="">
+													<input type="email" name="email_address" value="<?php echo !empty($order_email)?$order_email:''; ?>">
 												</div>
 												<div class="requiredt ops-form-field-row">
 													<label>Telephone Number</label>
-													<input type="text" name="">
+													<input type="text" name="telephone" value="<?php echo !empty($order_phone)?$order_phone:''; ?>">
 												</div>
 												<div class="ops-form-field-row">
 													<label>Billing Address</label>
