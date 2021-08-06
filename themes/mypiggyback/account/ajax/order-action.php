@@ -86,6 +86,9 @@ function mpb_order_create(){
             if( isset($_POST['amount_of_miles']) && !empty($_POST['amount_of_miles']) ){
                 update_field( 'amount_of_miles', sanitize_text_field($_POST['amount_of_miles']), $pid );
             }
+            if( isset($_POST['amount_of_time']) && !empty($_POST['amount_of_time']) ){
+                update_field( 'amount_of_time', sanitize_text_field($_POST['amount_of_time']), $pid );
+            }
             if(isset($_POST['fullname']) && !empty($_POST['fullname'])){
                 update_field( 'order_fullname', sanitize_text_field($_POST['fullname']), $pid );
             }

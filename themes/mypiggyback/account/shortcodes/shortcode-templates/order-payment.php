@@ -15,6 +15,7 @@
 					$from_location = get_field('order_from_location', $thisID);
 					$to_location = get_field('order_to_location', $thisID);
 					$order_miles = get_field('amount_of_miles', $thisID);
+					$amount_time = get_field('amount_of_time', $thisID);
 					$order_type = get_field('order_type', $thisID);
 					$fullname = get_field('order_fullname', $thisID);
 					$order_email = get_field('order_email', $thisID);
@@ -43,7 +44,7 @@
 											<div class="opsd-loc-2 opsd-loc"><strong>B:</strong> <?php echo !empty($to_location)?$to_location:''; ?></div>
 										</div>
 										<div class="opsd-row">
-											<div class="opsd-journey-time opsd-line"><span>Journey Time</span> <strong> 25 mins</strong></div>
+											<div class="opsd-journey-time opsd-line"><span>Journey Time</span> <strong> <?php if( !empty($amount_time) ) printf('%s', secondsToTime($amount_time));?></strong></div>
 										</div>
 										<div class="opsd-row">
 											<div class="opsd-journey-time opsd-line"><span>Total Miles</span> <strong> <?php if( !empty($order_miles) ) printf('%s',round($order_miles, 2));?>  </strong></div>

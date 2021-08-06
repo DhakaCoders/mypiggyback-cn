@@ -127,7 +127,7 @@ if( $('#route_map').length ){
                     var distance_in_mile = distance.value / 1609.34; // the mile
                     var duration_text = duration.text;
                     appendResults(distance_in_kilo, distance_in_mile, duration_text);
-                    setSourceDestination(origin, destination, distance_in_mile);
+                    setSourceDestination(origin, destination, distance_in_mile, duration.value);
                     //sendAjaxRequest(origin, destination, distance_in_kilo, distance_in_mile, duration_text);
                 }
             }
@@ -143,12 +143,16 @@ if( $('#route_map').length ){
                 $('#trans_miles').val(distance_in_mile.toFixed(1));
             }
         }
-        function setSourceDestination(origin, destination, distance_in_mile) {
+        function setSourceDestination(origin, destination, distance_in_mile, time) {
             if( origin !='' &&  destination !='' && distance_in_mile > 0 ){
                 $('#recv_origin').val(origin);
                 $('#recov_destin').val(destination);
                 $('#trans_origin').val(origin);
                 $('#trans_destin').val(destination);
+                if(time > 0 ){
+                    $('#recov_time').val(time);
+                    $('#trans_time').val(time);
+                }
             }
         }
         // get current Position
