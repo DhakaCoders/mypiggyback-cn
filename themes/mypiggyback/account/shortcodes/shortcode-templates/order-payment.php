@@ -25,7 +25,7 @@
           <input type="checkbox" id="from_places" value="<?php echo !empty($from_location)?$from_location:''; ?>">
           <input type="checkbox" id="to_places" value="<?php echo !empty($to_location)?$to_location:''; ?>">
         </div>
-				<form>
+				<form class="stripe" id="stripe_payment">
 					<div class="order-payment-sec-inr">
 						<div class="order-payment-sidebar">
 							<div class="box-white">
@@ -71,6 +71,25 @@
 										<div class="opsd-place-order-btn">
 											<button>PLACE ORDER</button>
 										</div>
+										<!-- Start stripe -->
+										<div class="stripe-pay">
+									    <div class="form-row">
+								        <div id="card-element" class="form-control">
+		                      <!-- a Stripe Element will be inserted here. -->
+		                    </div>
+		                    <!-- Used to display form errors -->
+		                    <div id="card-errors" role="alert"></div>
+									    </div>
+									    <input type="hidden" name="order_id" value="<?php echo $get_order->ID; ?>">
+									    <input type="hidden" name="description" value="<?php echo $get_order->post_title; ?>">
+									    <input type="hidden" name="mile" value="<?php echo $toal_mile; ?>">
+										<input type="hidden" name="email" value="<?php echo $order_email; ?>"/>
+										<input type="hidden" name="application_form_nonce" value="<?php echo wp_create_nonce('application-form-nonce'); ?>"/>
+										<div class="opsd-place-order-btn">
+										  <button type="submit" class="btn btn-primary btn-block mt-4">PLACE ORDER</button>
+										</div>
+										</div>
+										<!-- End stripe -->
 									</div>
 								</div>
 							</div>
