@@ -1,8 +1,22 @@
 <?php 
-	if ( ! defined( 'ABSPATH' ) ) {
-		exit;
-	}
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+$active = false;
+$fAdds = '';
+$tAdds = '';
+$type = '';
+if( isset($_GET['order-id']) && !empty($_GET['order-id'])){
+	$active = true;
+	$get_order = get_post( $_GET['order-id'] );
+	
+	$pID = $get_order->ID;
+	$fAdds = get_field('order_from_location', $pID);
+	$tAdds = get_field('order_to_location', $pID);
+	$type = get_field('order_type', $pID);
+}
 ?>
+<div id="mdata" data-fa="<?php echo $fAdds; ?>" data-ta="<?php echo $tAdds; ?>"></div>
 <section class="order-payment-sec-cntlr">
 
 	<div class="container">
@@ -15,54 +29,74 @@
 					$from_location = get_field('order_from_location', $thisID);
 					$to_location = get_field('order_to_location', $thisID);
 					$order_miles = get_field('amount_of_miles', $thisID);
+					$order_milesF = round($order_miles, 2);
 					$amount_time = get_field('amount_of_time', $thisID);
 					$order_type = get_field('order_type', $thisID);
 					$fullname = get_field('order_fullname', $thisID);
 					$order_email = get_field('order_email', $thisID);
 					$order_phone = get_field('order_telephone', $thisID);
+
+					$costPerMile = 2;
+					$subtotalCost = $order_milesF * $costPerMile;
 				?>
         <div class="trigger-checkbox" style="display: none;">
           <input type="checkbox" id="from_places" value="<?php echo !empty($from_location)?$from_location:''; ?>">
           <input type="checkbox" id="to_places" value="<?php echo !empty($to_location)?$to_location:''; ?>">
         </div>
 				<form class="stripe" id="stripe_payment">
+					<input id="isubtotalCost" type="hidden" value="<?php echo $subtotalCost; ?>">
+
 					<div class="order-payment-sec-inr">
 						<div class="order-payment-sidebar">
 							<div class="box-white">
 								<h3 class="fl-h2 ops-title hide-sm">Order summary</h3>
 								<div class="order-payment-sidebar-map">
-									<div id="routeMapID"></div>
+									<div id="route_map1"></div>
 								</div>
 
 								<div class="ops-sm-bdr-cntlr">
 									<h3 class="fl-h2 ops-title show-sm">Order summary</h3>
 									<div class="order-payment-sidebar-des">
 										<div class="opsd-row">
-											<div class="opsd-loc-1 opsd-loc"><strong>A:</strong> <?php echo !empty($from_location)?$from_location:''; ?></div>
+											<div id="location1" class="opsd-loc-1 opsd-loc">
+												<strong>A:</strong> 
+												<?php echo !empty($from_location)?$from_location:''; ?>
+											</div>
 										</div>
 										<div class="opsd-row">
-											<div class="opsd-loc-2 opsd-loc"><strong>B:</strong> <?php echo !empty($to_location)?$to_location:''; ?></div>
+											<div id="location2" class="opsd-loc-2 opsd-loc">
+												<strong>B:</strong> 
+												<?php echo !empty($to_location)?$to_location:''; ?>
+											</div>
 										</div>
 										<div class="opsd-row">
-											<div class="opsd-journey-time opsd-line"><span>Journey Time</span> <strong> <?php if( !empty($amount_time) ) printf('%s', secondsToTime($amount_time));?></strong></div>
+											<div id="jtime" class="opsd-journey-time opsd-line">
+												<span>Journey Time</span> 
+												<strong><?php if( !empty($amount_time) ) printf('%s', secondsToTime($amount_time));?></strong>
+											</div>
 										</div>
 										<div class="opsd-row">
-											<div class="opsd-journey-time opsd-line"><span>Total Miles</span> <strong> <?php if( !empty($order_miles) ) printf('%s',round($order_miles, 2));?>  </strong></div>
+											<div class="opsd-journey-time opsd-line"><span>Total Miles</span> <strong> 
+												<?php if( !empty($order_miles) ) printf('%s',round($order_miles, 2));?>  </strong></div>
 										</div>
 										<div class="opsd-row">
-											<div class="opsd-journey-time opsd-line"><span>Cost per mile</span> <strong> £2.00</strong></div>
+											<div id="cpermile" class="opsd-journey-time opsd-line"><span>Cost per mile</span> <strong> £2.00</strong></div>
+										</div>
+										<div class="opsd-row responseTime">
+											<div id="responseTime" class="opsd-journey-time opsd-line"><span>Response Time</span> <strong> £100</strong></div>
 										</div>
 										<div class="opsd-row">
-											<div class="opsd-subtotal"><strong> Subtotal: £131</strong></div>
+											<div class="opsd-subtotal"><strong> Subtotal: <span id="stotal">
+												£<?php echo $subtotalCost;?></span></strong></div>
 										</div>
 									</div>
-									<div class="order-payment-step-4-sidebar-des">
+									<div class="order-payment-step-4-sidebar-des" id="step4Calc">
 										<div class="">
 											<div class="opsd-row">
-												<div class="opsd-journey-time opsd-line"><span>Taxes & Fees</span> <strong> £26.20</strong></div>
+												<div id="taxes" class="opsd-journey-time opsd-line"><span>Taxes & Fees</span> <strong> £26.20</strong></div>
 											</div>
 											<div class="opsd-row">
-												<div class="opsd-subtotal"><strong> Total: £157.20</strong></div>
+												<div class="opsd-subtotal"><strong> Total: <span id="total">£157.20</span></strong></div>
 											</div>
 										</div>
 										<div class="opsd-card-option">
@@ -249,7 +283,7 @@
 												recovery drivers to pick up and service your car at <strong>location A</strong>, and then 
 												deliver it to your final destination at <strong>location B</strong>.</p>
 											</div>
-											<div class="form-fields-block">
+											<div class="form-fields-block" id="response_time_radio">
 												<div class="ops-form-field-radio">
 													<input type="radio" id="mp-lbl1" name="response_time" value="gold_service">
 													<span class="label-text">MOST POPULAR</span>
@@ -431,6 +465,7 @@
 							</div>
 						</div>
 					</div>
+					<input id="grandTotal" type="hidden" name="grandTotal" value="0">
 				</form>
 			<?php }else{ ?>
 				<div class="notfound"><?php _e('Somthing was wrong. Please try again.'); ?></div>

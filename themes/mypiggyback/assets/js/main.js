@@ -470,16 +470,60 @@ $('.ops-form-edit-btn a').on('click', function(e){
 });
 
 function activeStatus(data){
+  var isubtotalCost = parseFloat($('#isubtotalCost').val());
+  var resTimeCost = 0;
+  var taxes = 0;
+  var total = 0;
+  var resTime = $('#response_time_radio input:checked').val();
+  if( resTime == 'gold_service' ){ resTimeCost = 150; }
+  if( resTime == 'silver_service' ){ resTimeCost = 100; }
+  if( resTime == 'brozne_service' ){ resTimeCost = 50; }
+  var subTotal2 = isubtotalCost + resTimeCost;
+
   $('.order-payment-step-bar li').removeClass('active');
   if( data == 'step1' ){
     $('li.step1li').addClass('active');
+    $('.responseTime').hide(); $('#step4Calc').hide();
+    $('#stotal').html('£'+isubtotalCost);
+    $('#grandTotal').val(isubtotalCost);
+
   }else if( data == 'step2' ){
     $('li.step2li').addClass('active');
+    $('.responseTime').hide(); $('#step4Calc').hide();
+    $('#stotal').html('£'+isubtotalCost);
+    $('#grandTotal').val(isubtotalCost);
+
   }else if( data == 'step3' ){
     $('li.step3li').addClass('active');
+    $('.responseTime').show(); $('#step4Calc').hide();
+    $('#stotal').html('£'+subTotal2);
+    $('#grandTotal').val(subTotal2);
+
   }else if( data == 'step4' ){
+    taxes = percentage(subTotal2, 20).toFixed(2);
+    total = parseFloat(subTotal2) + parseFloat(taxes);
     $('li.step4li').addClass('active');
+    $('.responseTime, #step4Calc').show();
+    $('#taxes strong').html('£'+taxes);
+    $('#stotal').html('£'+subTotal2);
+    $('#total').html('£'+total);
+    $('#grandTotal').val(total);
   }
+}
+
+$('#response_time_radio input').on('change', function() {
+  var isubtotalCost = parseFloat($('#isubtotalCost').val());
+  var resTime = $('#response_time_radio input:checked').val(); 
+  if( resTime == 'gold_service' ){ resTimeCost = 150; }
+  if( resTime == 'silver_service' ){ resTimeCost = 100; }
+  if( resTime == 'brozne_service' ){ resTimeCost = 50; }
+  var subTotal2 = isubtotalCost + resTimeCost;
+  $('#stotal').html('£'+subTotal2);
+  $('#grandTotal').val(subTotal2);
+});
+
+function percentage(num, per){
+  return (num/100)*per;
 }
 
 function validation(data){
