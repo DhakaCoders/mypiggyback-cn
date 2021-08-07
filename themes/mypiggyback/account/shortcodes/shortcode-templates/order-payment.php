@@ -1,14 +1,22 @@
 <?php 
-	if ( ! defined( 'ABSPATH' ) ) {
-		exit;
-	}
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+$active = false;
+$fAdds = '';
+$tAdds = '';
+$type = '';
 if( isset($_GET['order-id']) && !empty($_GET['order-id'])){
+	$active = true;
 	$get_order = get_post( $_GET['order-id'] );
-	//printr($get_order);
+	
+	$pID = $get_order->ID;
+	$fAdds = get_field('order_from_location', $pID);
+	$tAdds = get_field('order_to_location', $pID);
+	$type = get_field('order_type', $pID);
 }
 ?>
-
-
+<div id="mdata" data-fa="<?php echo $fAdds; ?>" data-ta="<?php echo $tAdds; ?>"></div>
 <section class="order-payment-sec-cntlr">
 
 	<div class="container">
@@ -20,29 +28,33 @@ if( isset($_GET['order-id']) && !empty($_GET['order-id'])){
 							<div class="box-white">
 								<h3 class="fl-h2 ops-title hide-sm">Order summary</h3>
 								<div class="order-payment-sidebar-map">
-									<div id="route_map"></div>
+									<div id="route_map1"></div>
 								</div>
 
 								<div class="ops-sm-bdr-cntlr">
 									<h3 class="fl-h2 ops-title show-sm">Order summary</h3>
 									<div class="order-payment-sidebar-des">
 										<div class="opsd-row">
-											<div class="opsd-loc-1 opsd-loc"><strong>A:</strong> 48 Woodstock Ave, Romford RM3 9NF</div>
+											<div id="location1" class="opsd-loc-1 opsd-loc"><strong>A:</strong> 
+												<?php echo $fAdds; ?>
+											</div>
 										</div>
 										<div class="opsd-row">
-											<div class="opsd-loc-2 opsd-loc"><strong>B:</strong> 18 Earlsfield Dr, Chelmsford CM2 6SX</div>
+											<div id="location2" class="opsd-loc-2 opsd-loc"><strong>B:</strong> 
+												<?php echo $tAdds; ?>
+											</div>
 										</div>
 										<div class="opsd-row">
-											<div class="opsd-journey-time opsd-line"><span>Journey Time</span> <strong> 25 mins</strong></div>
+											<div id="jtime" class="opsd-journey-time opsd-line"><span>Journey Time</span> <strong> 25 mins</strong></div>
 										</div>
 										<div class="opsd-row">
-											<div class="opsd-journey-time opsd-line"><span>Total Miles</span> <strong> 15.5  </strong></div>
+											<div id="tmiles" class="opsd-journey-time opsd-line"><span>Total Miles</span> <strong> 15.5  </strong></div>
 										</div>
 										<div class="opsd-row">
-											<div class="opsd-journey-time opsd-line"><span>Cost per mile</span> <strong> £2.00</strong></div>
+											<div id="cpermile" class="opsd-journey-time opsd-line"><span>Cost per mile</span> <strong> £2.00</strong></div>
 										</div>
 										<div class="opsd-row">
-											<div class="opsd-subtotal"><strong> Subtotal: £131</strong></div>
+											<div class="opsd-subtotal"><strong> Subtotal: <span id="stotal">£131</span></strong></div>
 										</div>
 									</div>
 									<div class="order-payment-step-4-sidebar-des">
@@ -51,7 +63,7 @@ if( isset($_GET['order-id']) && !empty($_GET['order-id'])){
 												<div class="opsd-journey-time opsd-line"><span>Taxes & Fees</span> <strong> £26.20</strong></div>
 											</div>
 											<div class="opsd-row">
-												<div class="opsd-subtotal"><strong> Total: £157.20</strong></div>
+												<div class="opsd-subtotal"><strong> Total: <span id="total">£157.20</span></strong></div>
 											</div>
 										</div>
 										<div class="opsd-card-option">

@@ -42,7 +42,8 @@
 	margin-bottom: 40px;
 	line-height: 1.2;
 }
-.order-payment-sidebar-map #route_map{
+.order-payment-sidebar-map #route_map,
+#route_map1{
 	height: 396px;
 }
 .order-payment-sidebar-des{

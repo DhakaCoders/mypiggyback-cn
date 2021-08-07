@@ -218,4 +218,89 @@ if( $('#routeMapID').length ){
         .catch((e) => window.alert("Directions request failed due to " + status));
     }
 }
+
+if( $('#route_map1').length && $('#mdata').length ){
+    var fa = $('#mdata').attr('data-fa');
+    var ta = $('#mdata').attr('data-ta');
+    var travel_mode = 'DRIVING';
+    var directionsDisplay = new google.maps.DirectionsRenderer({'draggable': false});
+    var directionsService = new google.maps.DirectionsService();
+
+    initMapS();
+    displayRouteS(travel_mode, fa, ta, directionsService, directionsDisplay);
+    calculateDistanceS(travel_mode, fa, ta);
+
+    function initMapS() {
+        var myLatLng = {
+            lat: 51.513100,
+            lng: -0.135590
+        };
+        mapS = new google.maps.Map(document.getElementById('route_map1'), {zoom: 16, center: myLatLng,});
+    }
+    function displayRouteS(travel_mode, origin, destination, directionsService, directionsDisplay) {
+        directionsService.route({
+            origin: origin,
+            destination: destination,
+            travelMode: travel_mode,
+            avoidTolls: true
+        }, function (response, status) {
+            if (status === 'OK') {
+                directionsDisplay.setMap(mapS);
+                directionsDisplay.setDirections(response);
+            } else {
+                directionsDisplay.setMap(null);
+                directionsDisplay.setDirections(null);
+                alert('Could not display directions due to: ' + status);
+            }
+        });
+    }
+    function calculateDistanceS(travel_mode, origin, destination) {
+        var DistanceMatrixService = new google.maps.DistanceMatrixService();
+        DistanceMatrixService.getDistanceMatrix(
+            {
+                origins: [origin],
+                destinations: [destination],
+                travelMode: google.maps.TravelMode[travel_mode],
+                unitSystem: google.maps.UnitSystem.IMPERIAL, // miles and feet.
+                // unitSystem: google.maps.UnitSystem.metric, // kilometers and meters.
+                avoidHighways: false,
+                avoidTolls: false
+            }, show_resultsS);
+    }
+    function show_resultsS(response, status) {
+
+        if (status != google.maps.DistanceMatrixStatus.OK) {
+            $('#jtime strong').html('00');
+            $('#tmiles strong').html('00');
+            $('#cpermile strong').html('00');
+            $('#stotal').html('00');
+        } else {
+            var origin = response.originAddresses[0];
+            var destination = response.destinationAddresses[0];
+            if (response.rows[0].elements[0].status === "ZERO_RESULTS") {
+                $('#jtime strong').html('00');
+                $('#tmiles strong').html('00');
+                $('#cpermile strong').html('00');
+                $('#stotal').html('00');
+            } else {
+                var distance = response.rows[0].elements[0].distance;
+                var duration = response.rows[0].elements[0].duration;
+                var distance_in_kilo = distance.value / 1000; // the kilo meter
+                var distance_in_mile = distance.value / 1609.34; // the mile
+                var miles = distance_in_mile.toFixed(1);
+                var cpm = 2;
+                var duration_text = duration.text;
+                var subtotal = miles * cpm;
+                $('#jtime strong').html(duration_text);
+                $('#tmiles strong').html(miles);
+                $('#cpermile strong').html('£2');
+                $('#stotal').html('£'+subtotal);
+                console.log(duration);
+                //sendAjaxRequest(origin, destination, distance_in_kilo, distance_in_mile, duration_text);
+            }
+        }
+    }
+
+}
+
 })(jQuery);
