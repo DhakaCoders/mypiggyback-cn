@@ -233,7 +233,7 @@ if( $('#route_map1').length && $('#mdata').length ){
 
     initMapS();
     displayRouteS(travel_mode, fa, ta, directionsService, directionsDisplay);
-    calculateDistanceS(travel_mode, fa, ta);
+    //calculateDistanceS(travel_mode, fa, ta);
 
     function initMapS() {
         var myLatLng = {

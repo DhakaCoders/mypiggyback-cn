@@ -711,6 +711,9 @@ ul.list-cols li div span{
 .ops-form-field-row.hasError textarea{
 	border-color: #f44336;
 }
+.responseTime{
+	display: none;
+}
 @media(max-width: 1699px){
 	.fl-h2.ops-title,
 	.fl-h2.order-step-title,
