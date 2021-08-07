@@ -98,9 +98,9 @@ if( isset($_GET['order-id']) && !empty($_GET['order-id'])){
 												<div class="opsd-subtotal"><strong> Total: <span id="total">£157.20</span></strong></div>
 											</div>
 										</div>
-										<div class="opsd-card-option">
-											<img src="<?php echo THEME_URI; ?>/assets/images/Stripe.png">
-										</div>
+										<!-- <div class="opsd-card-option">
+											<img src="assets/images/Stripe.png">
+										</div> -->
 <!-- 										<div class="opsd-place-order-btn">
 											<button>PLACE ORDER</button>
 										</div> -->
@@ -197,7 +197,7 @@ if( isset($_GET['order-id']) && !empty($_GET['order-id'])){
 													<label class="ops-label-2">Address Line 1</label>
 												</div>
 												<div class="ops-form-field-row ops-gray-label">
-													<input type="text" name="bill_address_2">
+													<input type="text" name="bill_add_2">
 													<label class="ops-label-2">Address Line 2</label>
 												</div>
 												<div class="ops-form-field-row ops-form-field-cols">
@@ -367,11 +367,7 @@ if( isset($_GET['order-id']) && !empty($_GET['order-id'])){
 															<li>
 																<div>
 																	<strong>Billing Address:</strong>
-																	<span id="fAddress">62 New Zealand Road <br>
-																			Gabalfa <br>
-																			Cardiff <br>
-																			South Glamorgan<br>
-																			CF14 3BS</span>
+																	<span id="fAddress"></span>
 																</div>
 															</li>
 														</ul>

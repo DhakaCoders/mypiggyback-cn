@@ -563,7 +563,7 @@ function validation(data){
 // Review details
 
 function reveiwDetails(){
-  var fAddress;
+  var address2 = '', billCity = '', billCounty = '', billPostcode = '';
   $('#orderType').text($("select#odrType option").filter(":selected").text());
   $('#vType').text($("select#vhType option").filter(":selected").text());
   if($('[name=fullname]').val() !=''){
@@ -583,6 +583,23 @@ function reveiwDetails(){
   }
 
 
+  if($('[name=bill_add_2]').val() !=''){
+    address2 = '<br/>'+$('[name=bill_add_2]').val();
+  }
+  if($('[name=bill_city]').val() !=''){
+    billCity = '<br/>'+$('[name=bill_city]').val();
+  }
+  if($('[name=bill_county]').val() !=''){
+    billCounty = '<br/>'+$('[name=bill_county]').val();
+  }
+
+  if($('[name=bill_postcode]').val() !=''){
+    billPostcode = '<br/>'+$('[name=bill_postcode]').val();
+  }
+  if($('[name=bill_add_1]').val() !=''){
+    address1 = $('[name=bill_add_1]').val();
+    $('#fAddress').html(address1+address2+billCity+billCounty+billPostcode);
+  }
   if($('[name=vehicle_make]').val() !=''){
     $('#vMake').text($('[name=vehicle_make]').val());
   }
