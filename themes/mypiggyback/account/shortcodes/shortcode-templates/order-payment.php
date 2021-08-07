@@ -9,7 +9,6 @@ $type = '';
 if( isset($_GET['order-id']) && !empty($_GET['order-id'])){
 	$active = true;
 	$get_order = get_post( $_GET['order-id'] );
-	
 	$pID = $get_order->ID;
 	$fAdds = get_field('order_from_location', $pID);
 	$tAdds = get_field('order_to_location', $pID);
@@ -43,7 +42,7 @@ if( isset($_GET['order-id']) && !empty($_GET['order-id'])){
           <input type="checkbox" id="from_places" value="<?php echo !empty($from_location)?$from_location:''; ?>">
           <input type="checkbox" id="to_places" value="<?php echo !empty($to_location)?$to_location:''; ?>">
         </div>
-				<form class="stripe" id="stripe_payment">
+				<form class="stripe" id="stripe_payment" action="" method="post">
 					<input id="isubtotalCost" type="hidden" value="<?php echo $subtotalCost; ?>">
 
 					<div class="order-payment-sec-inr">
@@ -115,10 +114,7 @@ if( isset($_GET['order-id']) && !empty($_GET['order-id'])){
 		                    <div id="card-errors" role="alert"></div>
 									    </div>
 									    <input type="hidden" name="order_id" value="<?php echo $get_order->ID; ?>">
-									    <input type="hidden" name="description" value="<?php echo $get_order->post_title; ?>">
-									    <input type="hidden" name="mile" value="<?php echo $toal_mile; ?>">
-										<input type="hidden" name="email" value="<?php echo $order_email; ?>"/>
-										<input type="hidden" name="application_form_nonce" value="<?php echo wp_create_nonce('application-form-nonce'); ?>"/>
+										  <input type="hidden" name="application_form_nonce" value="<?php echo wp_create_nonce('application-form-nonce'); ?>"/>
 										<div class="opsd-place-order-btn">
 										  <button type="submit" class="btn btn-primary btn-block mt-4">PLACE ORDER</button>
 										</div>
@@ -158,17 +154,17 @@ if( isset($_GET['order-id']) && !empty($_GET['order-id'])){
 											<div class="form-fields-block">
 												<div class="requiredt ops-form-field-row starting-field">
 													<label>Veichle Location</label>
-													<input type="text" name="from_location" value="<?php echo !empty($from_location)?$from_location:''; ?>">
+													<input type="text" name="from_location" value="<?php echo !empty($from_location)?$from_location:''; ?>" readonly>
 													<span>A</span>
 												</div>
 												<div class="requiredt ops-form-field-row ending-field">
 													<label>Veichle Delivery</label>
-													<input type="text" name="to_location" value="<?php echo !empty($to_location)?$to_location:''; ?>">
+													<input type="text" name="to_location" value="<?php echo !empty($to_location)?$to_location:''; ?>" readonly>
 													<span>B</span>
 												</div>
 												<div class="ops-form-field-row">
 													<label>Veichle Service</label>
-													<select class="selectpicker" name="order_type">
+													<select class="selectpicker" id="odrType" name="order_type">
 														<option value="recovery" <?php echo ($order_type == 'recovery')?'selected':''; ?>>Vehicle Recovery</option>
 														<option value="transport"<?php echo ($order_type == 'transport')?'selected':''; ?>>Vehicle Transport</option>
 													</select>
@@ -190,30 +186,30 @@ if( isset($_GET['order-id']) && !empty($_GET['order-id'])){
 												</div>
 												<div class="ops-form-field-row">
 													<label>Billing Address</label>
-													<select class="selectpicker">
+													<select class="selectpicker" name="bill_add_type">
 														<option>Different to my vehicle address</option>
 														<option>Different to my vehicle address 2</option>
 													</select>
 												</div>
 												<div class="requiredt ops-form-field-row ops-gray-label">
 													<label>Address</label>
-													<input type="text" name="">
+													<input type="text" name="bill_add_1">
 													<label class="ops-label-2">Address Line 1</label>
 												</div>
 												<div class="ops-form-field-row ops-gray-label">
-													<input type="text" name="">
+													<input type="text" name="bill_address_2">
 													<label class="ops-label-2">Address Line 2</label>
 												</div>
 												<div class="ops-form-field-row ops-form-field-cols">
 													<div class="ops-form-field-col">
 														<div>
-															<input type="text" name="">
+															<input type="text" name="bill_city">
 															<label class="ops-label-2">City</label>
 														</div>
 													</div>
 													<div class="ops-form-field-col">
 														<div>
-															<input type="text" name="">
+															<input type="text" name="bill_county">
 															<label class="ops-label-2">County</label>
 														</div>
 													</div>
@@ -221,7 +217,7 @@ if( isset($_GET['order-id']) && !empty($_GET['order-id'])){
 												<div class="ops-form-field-row ops-form-field-cols">
 													<div class="ops-form-field-col">
 														<div>
-															<input type="text" name="">
+															<input type="text" name="bill_postcode">
 															<label class="ops-label-2">Postcode</label>
 														</div>
 													</div>
@@ -242,25 +238,25 @@ if( isset($_GET['order-id']) && !empty($_GET['order-id'])){
 											<div class="form-fields-block">
 												<div class="ops-form-field-row">
 													<label>Vehicle Type</label>
-													<select class="selectpicker">
+													<select class="selectpicker" id="vhType" name="vehicle_type">
 														<option>Car</option>
 														<option>Bus</option>
 													</select>
 												</div>
 												<div class="requiredt ops-form-field-row">
 													<label>Vehicle Make</label>
-													<input type="text" name="">
+													<input type="text" name="vehicle_make">
 												</div>
 												<div class="ops-form-field-row">
 													<label>Vehicle Problem</label>
-													<select class="selectpicker">
+													<select class="selectpicker" name="vehicle_issue">
 														<option>Engine Trouble</option>
 														<option>Others</option>
 													</select>
 												</div>
 												<div class="requiredta ops-form-field-row">
 													<label>Vehicle Requests & Requirements</label>
-													<textarea></textarea>
+													<textarea name="vehicle_requests"></textarea>
 												</div>
 												
 											</div>
@@ -288,21 +284,21 @@ if( isset($_GET['order-id']) && !empty($_GET['order-id'])){
 													<input type="radio" id="mp-lbl1" name="response_time" value="gold_service">
 													<span class="label-text">MOST POPULAR</span>
 													<span class="ops-radio-bx"></span>
-													<label for="mp-lbl1"><p>Gold <span>Service</span> <strong>(45 mins - 1 hr)</strong> </p>  <span>+£150</span></label>
+													<label for="mp-lbl1"><p id="gold_service_label">Gold <span>Service</span> <strong>(45 mins - 1 hr)</strong> </p>  <span id="gold_service_price">+£150</span></label>
 												</div>
 												<div class="ops-form-field-radio">
 													
 													<input type="radio" id="mp-lbl2" name="response_time"  value="silver_service" checked>
 													<span class="label-text">RECOMMENDED</span>
 													<span class="ops-radio-bx"></span>
-													<label for="mp-lbl2"><p>Silver <span>Service</span> <strong>(3 hrs - 5 hrs)</strong> </p>  <span>+£100</span></label>
+													<label for="mp-lbl2"><p id="silver_service_label">Silver <span>Service</span> <strong>(3 hrs - 5 hrs)</strong> </p>  <span id="silver_service_price">+£100</span></label>
 												</div>
 												<div class="ops-form-field-radio">
 													
 													<input type="radio" id="mp-lbl3" name="response_time"  value="brozne_service">
 													<span class="label-text">SLOWEST</span>
 													<span class="ops-radio-bx"></span>
-													<label for="mp-lbl3"><p>Brozne <span>Service</span> <strong> (Next Working Day)</strong> </p>  <span>+£50</span></label>
+													<label for="mp-lbl3"><p id="brozne_service_label">Brozne <span>Service</span> <strong> (Next Working Day)</strong> </p>  <span id="brozne_service_price">+£50</span></label>
 												</div>
 											</div>
 											<div class="osp-btns">
@@ -327,19 +323,19 @@ if( isset($_GET['order-id']) && !empty($_GET['order-id'])){
 															<li>
 																<div>
 																	<strong>Vehicle Location:</strong>
-																	<span>48 Woodstock Ave, Romford RM3 9NF</span>
+																	<?php if(!empty($from_location)) printf('<span>%s</span>', $from_location); ?>
 																</div>
 															</li>
 															<li>
 																<div>
 																	<strong>Vehicle Delivery:</strong>
-																	<span>18 Earlsfield Dr, Chelmsford CM2 6SX</span>
+																	<?php if(!empty($to_location)) printf('<span>%s</span>', $to_location); ?>
 																</div>
 															</li>
 															<li>
 																<div>
 																	<strong>Vehicle Service:</strong>
-																	<span>Vehicle Recovery</span>
+																	<span id="orderType"></span>
 																</div>
 															</li>
 														</ul>
@@ -353,25 +349,25 @@ if( isset($_GET['order-id']) && !empty($_GET['order-id'])){
 															<li>
 																<div>
 																	<strong>Full Name:</strong>
-																	<span>Thomas Fide</span>
+																	<span id="fName">Thomas Fide</span>
 																</div>
 															</li>
 															<li>
 																<div>
 																	<strong>Email Address:</strong>
-																	<span>tom@tradesitewales.co.uk</span>
+																	<span id="eAddress">tom@tradesitewales.co.uk</span>
 																</div>
 															</li>
 															<li>
 																<div>
 																	<strong>Phone Number:</strong>
-																	<span>07850 740357</span>
+																	<span id="pNumber">07850 740357</span>
 																</div>
 															</li>
 															<li>
 																<div>
 																	<strong>Billing Address:</strong>
-																	<span>62 New Zealand Road <br>
+																	<span id="fAddress">62 New Zealand Road <br>
 																			Gabalfa <br>
 																			Cardiff <br>
 																			South Glamorgan<br>
@@ -395,25 +391,25 @@ if( isset($_GET['order-id']) && !empty($_GET['order-id'])){
 															<li>
 																<div>
 																	<strong>Vehicle Type:</strong>
-																	<span>Car</span>
+																	<span id="vType">Car</span>
 																</div>
 															</li>
 															<li>
 																<div>
 																	<strong>Vehicle Make:</strong>
-																	<span>Mini</span>
+																	<span id="vMake">Mini</span>
 																</div>
 															</li>
 															<li>
 																<div>
 																	<strong>Vehicle Problem:</strong>
-																	<span>Engine Trouble</span>
+																	<span id="vIssue">Engine Trouble</span>
 																</div>
 															</li>
 															<li>
 																<div>
 																	<strong>Vehicle Comments:</strong>
-																	<span>My car engine light came on all of a sudden and then I could smell rubber burning. I have pulled into a residential area but now the engine will not start and the engine light on my dashboard is still on. Could you bring some engine oil for my car with you.</span>
+																	<span id="vCom">My car engine light came on all of a sudden and then I could smell rubber burning. I have pulled into a residential area but now the engine will not start and the engine light on my dashboard is still on. Could you bring some engine oil for my car with you.</span>
 																</div>
 															</li>
 														</ul>
@@ -430,26 +426,8 @@ if( isset($_GET['order-id']) && !empty($_GET['order-id'])){
 					                  <ul class="reset-list list-cols">
 															<li>
 																<div>
-																	<strong>Vehicle Type:</strong>
-																	<span>Car</span>
-																</div>
-															</li>
-															<li>
-																<div>
-																	<strong>Vehicle Make:</strong>
-																	<span>Mini</span>
-																</div>
-															</li>
-															<li>
-																<div>
-																	<strong>Vehicle Problem:</strong>
-																	<span>Engine Trouble</span>
-																</div>
-															</li>
-															<li>
-																<div>
-																	<strong>Vehicle Comments:</strong>
-																	<span>My car engine light came on all of a sudden and then I could smell rubber burning. I have pulled into a residential area but now the engine will not start and the engine light on my dashboard is still on. Could you bring some engine oil for my car with you.</span>
+																	<strong id="restlabel"></strong>
+																	<span id="restVal"></span>
 																</div>
 															</li>
 														</ul>

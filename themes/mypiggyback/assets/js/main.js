@@ -446,7 +446,9 @@ $('.osp-btn-nxt button').on('click', function(e){
     $('#step1, #step2, #step3, #step4').hide();
     $('#'+data).show();
     activeStatus(data);
+    reveiwDetails();
   }
+
 });
 
 $('.osp-btn-back button').on('click', function(e){
@@ -557,5 +559,44 @@ function validation(data){
 }
 
 //Steps - validation
+
+// Review details
+
+function reveiwDetails(){
+  var fAddress;
+  $('#orderType').text($("select#odrType option").filter(":selected").text());
+  $('#vType').text($("select#vhType option").filter(":selected").text());
+  if($('[name=fullname]').val() !=''){
+    $('#fName').text($('[name=fullname]').val());
+  }
+  if($('[name=fullname]').val() !=''){
+    $('#fName').text($('[name=fullname]').val());
+  }
+  if($('[name=email_address]').val() !=''){
+    $('#eAddress').text($('[name=email_address]').val());
+  }
+  if($('[name=telephone]').val() !=''){
+    $('#pNumber').text($('[name=telephone]').val());
+  }
+  if($('[name=fullname]').val() !=''){
+    $('#fName').text($('[name=fullname]').val());
+  }
+
+
+  if($('[name=vehicle_make]').val() !=''){
+    $('#vMake').text($('[name=vehicle_make]').val());
+  }
+  if($('[name=vehicle_issue]').val() !=''){
+    $('#vIssue').text($('[name=vehicle_issue]').val());
+  }
+  if($('[name=vehicle_requests]').val() !=''){
+    $('#vCom').text($('[name=vehicle_requests]').val());
+  }
+  var resTimeVal =  $("input[name='response_time']:checked").val();
+  var resLabel = $('#'+resTimeVal+'_label').html();
+  var priceVal = $('#'+resTimeVal+'_price').text();
+  $('#restlabel').html(resLabel);
+  $('#restVal').text(priceVal);
+}
 
 })(jQuery);
