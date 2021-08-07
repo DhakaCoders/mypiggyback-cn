@@ -120,13 +120,14 @@ if( $('#route_map').length ){
                     $('#results .mgs').html("Sorry , not available to use this travel mode between " + origin + " and " + destination);
                     $('#resultssm .mgs').html("Sorry , not available to use this travel mode between " + origin + " and " + destination);
                 } else {
+                    console.log(response);
                     var distance = response.rows[0].elements[0].distance;
                     var duration = response.rows[0].elements[0].duration;
                     var distance_in_kilo = distance.value / 1000; // the kilo meter
                     var distance_in_mile = distance.value / 1609.34; // the mile
                     var duration_text = duration.text;
                     appendResults(distance_in_kilo, distance_in_mile, duration_text);
-                    setSourceDestination(origin, destination, distance_in_mile);
+                    setSourceDestination(origin, destination, distance_in_mile, duration.value);
                     //sendAjaxRequest(origin, destination, distance_in_kilo, distance_in_mile, duration_text);
                 }
             }
@@ -142,12 +143,16 @@ if( $('#route_map').length ){
                 $('#trans_miles').val(distance_in_mile.toFixed(1));
             }
         }
-        function setSourceDestination(origin, destination, distance_in_mile) {
+        function setSourceDestination(origin, destination, distance_in_mile, time) {
             if( origin !='' &&  destination !='' && distance_in_mile > 0 ){
                 $('#recv_origin').val(origin);
                 $('#recov_destin').val(destination);
                 $('#trans_origin').val(origin);
                 $('#trans_destin').val(destination);
+                if(time > 0 ){
+                    $('#recov_time').val(time);
+                    $('#trans_time').val(time);
+                }
             }
         }
         // get current Position

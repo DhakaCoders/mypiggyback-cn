@@ -5,7 +5,7 @@ Theme specific styles and scripts
 	wp_enqueue_style( $handle, $src, $deps, $ver );
 */ 
 $place = 'places';
-if( is_single() ){
+if( is_single() || (isset($_GET['order-id']) && !empty($_GET['order-id'])) ){
 	$place = '&v';
 }
 wp_enqueue_script('cbv-google.js', 'https://maps.googleapis.com/maps/api/js?v=3&sensor=false&libraries='.$place.'&key=AIzaSyBsJC1Qvzh-486zUtJ6iDCOrWykQe2LDFw', array('jquery'), '', true);

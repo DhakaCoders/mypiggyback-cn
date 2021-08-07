@@ -85,6 +85,7 @@
                     <input type="hidden" name="action" value="mpb_order_create">
                     <input type="hidden" name="order_type" value="recovery">
                     <input type="hidden" name="amount_of_miles" id="recov_miles" value="0">
+                    <input type="hidden" name="amount_of_time" id="recov_time" value="0">
                     <div class="input-field-row">
                       <input type="text" name="from_location" id="recv_origin" placeholder="From location A (Postcode)">
                       <span class="error recov_fromloc_error"></span>
@@ -119,6 +120,7 @@
                     <input type="hidden" name="action" value="mpb_order_create">
                     <input type="hidden" name="order_type" value="transport">
                     <input type="hidden" name="amount_of_miles" id="trans_miles" value="0">
+                    <input type="hidden" name="amount_of_time" id="trans_time" value="0">
                     <div class="input-field-row">
                       <input type="text" name="from_location" id="trans_origin" placeholder="From location A (Postcode)">
                       <span class="error trans_fromloc_error"></span>

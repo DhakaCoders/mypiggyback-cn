@@ -129,3 +129,46 @@ function single_vehicle_order_callback( $original_template ) {
     return $original_template;
   }
 }
+
+
+function secondsToTime(int $seconds, int $requiredParts = null)
+{
+    $from     = new \DateTime('@0');
+    $to       = new \DateTime("@$seconds");
+    $interval = $from->diff($to);
+    $str      = '';
+
+    $parts = [
+        'h' => 'hour',
+        'i' => 'min'
+    ];
+
+    $includedParts = 0;
+
+    foreach ($parts as $key => $text) {
+        if ($requiredParts && $includedParts >= $requiredParts) {
+            break;
+        }
+
+        $currentPart = $interval->{$key};
+
+        if (empty($currentPart)) {
+            continue;
+        }
+
+        if (!empty($str)) {
+            $str .= ', ';
+        }
+
+        $str .= sprintf('%d %s', $currentPart, $text);
+
+        if ($currentPart > 1) {
+            // handle plural
+            $str .= 's';
+        }
+
+        $includedParts++;
+    }
+
+    return $str;
+}

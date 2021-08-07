@@ -22,7 +22,29 @@ if( isset($_GET['order-id']) && !empty($_GET['order-id'])){
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
+				<?php  
+					if( isset($_GET['order-id']) && !empty($_GET['order-id'])){
+					$order_obj = get_post( $_GET['order-id'] );
+					$thisID = $order_obj->ID;
+					$from_location = get_field('order_from_location', $thisID);
+					$to_location = get_field('order_to_location', $thisID);
+					$order_miles = get_field('amount_of_miles', $thisID);
+					$order_milesF = round($order_miles, 2);
+					$amount_time = get_field('amount_of_time', $thisID);
+					$order_type = get_field('order_type', $thisID);
+					$fullname = get_field('order_fullname', $thisID);
+					$order_email = get_field('order_email', $thisID);
+					$order_phone = get_field('order_telephone', $thisID);
+
+					$costPerMile = 2;
+					$subtotalCost = $order_milesF * $costPerMile;
+				?>
+        <div class="trigger-checkbox" style="display: none;">
+          <input type="checkbox" id="from_places" value="<?php echo !empty($from_location)?$from_location:''; ?>">
+          <input type="checkbox" id="to_places" value="<?php echo !empty($to_location)?$to_location:''; ?>">
+        </div>
 				<form>
+					<input id="isubtotalCost" type="hidden" value="<?php echo $subtotalCost; ?>">
 					<div class="order-payment-sec-inr">
 						<div class="order-payment-sidebar">
 							<div class="box-white">
@@ -35,32 +57,42 @@ if( isset($_GET['order-id']) && !empty($_GET['order-id'])){
 									<h3 class="fl-h2 ops-title show-sm">Order summary</h3>
 									<div class="order-payment-sidebar-des">
 										<div class="opsd-row">
-											<div id="location1" class="opsd-loc-1 opsd-loc"><strong>A:</strong> 
-												<?php echo $fAdds; ?>
+											<div id="location1" class="opsd-loc-1 opsd-loc">
+												<strong>A:</strong> 
+												<?php echo !empty($from_location)?$from_location:''; ?>
 											</div>
 										</div>
 										<div class="opsd-row">
-											<div id="location2" class="opsd-loc-2 opsd-loc"><strong>B:</strong> 
-												<?php echo $tAdds; ?>
+											<div id="location2" class="opsd-loc-2 opsd-loc">
+												<strong>B:</strong> 
+												<?php echo !empty($to_location)?$to_location:''; ?>
 											</div>
 										</div>
 										<div class="opsd-row">
-											<div id="jtime" class="opsd-journey-time opsd-line"><span>Journey Time</span> <strong> 25 mins</strong></div>
+											<div id="jtime" class="opsd-journey-time opsd-line">
+												<span>Journey Time</span> 
+												<strong><?php if( !empty($amount_time) ) printf('%s', secondsToTime($amount_time));?></strong>
+											</div>
 										</div>
 										<div class="opsd-row">
-											<div id="tmiles" class="opsd-journey-time opsd-line"><span>Total Miles</span> <strong> 15.5  </strong></div>
+											<div class="opsd-journey-time opsd-line"><span>Total Miles</span> <strong> 
+												<?php if( !empty($order_miles) ) printf('%s',round($order_miles, 2));?>  </strong></div>
 										</div>
 										<div class="opsd-row">
 											<div id="cpermile" class="opsd-journey-time opsd-line"><span>Cost per mile</span> <strong> £2.00</strong></div>
 										</div>
+										<div class="opsd-row responseTime">
+											<div id="responseTime" class="opsd-journey-time opsd-line"><span>Response Time</span> <strong> £100</strong></div>
+										</div>
 										<div class="opsd-row">
-											<div class="opsd-subtotal"><strong> Subtotal: <span id="stotal">£131</span></strong></div>
+											<div class="opsd-subtotal"><strong> Subtotal: <span id="stotal">
+												£<?php echo $subtotalCost;?></span></strong></div>
 										</div>
 									</div>
-									<div class="order-payment-step-4-sidebar-des">
+									<div class="order-payment-step-4-sidebar-des" id="step4Calc">
 										<div class="">
 											<div class="opsd-row">
-												<div class="opsd-journey-time opsd-line"><span>Taxes & Fees</span> <strong> £26.20</strong></div>
+												<div id="taxes" class="opsd-journey-time opsd-line"><span>Taxes & Fees</span> <strong> £26.20</strong></div>
 											</div>
 											<div class="opsd-row">
 												<div class="opsd-subtotal"><strong> Total: <span id="total">£157.20</span></strong></div>
@@ -106,19 +138,19 @@ if( isset($_GET['order-id']) && !empty($_GET['order-id'])){
 											<div class="form-fields-block">
 												<div class="requiredt ops-form-field-row starting-field">
 													<label>Veichle Location</label>
-													<input type="text" name="">
+													<input type="text" name="from_location" value="<?php echo !empty($from_location)?$from_location:''; ?>">
 													<span>A</span>
 												</div>
 												<div class="requiredt ops-form-field-row ending-field">
 													<label>Veichle Delivery</label>
-													<input type="text" name="">
+													<input type="text" name="to_location" value="<?php echo !empty($to_location)?$to_location:''; ?>">
 													<span>B</span>
 												</div>
 												<div class="ops-form-field-row">
 													<label>Veichle Service</label>
-													<select class="selectpicker">
-														<option>Vehicle Recovery</option>
-														<option>Vehicle Transport</option>
+													<select class="selectpicker" name="order_type">
+														<option value="recovery" <?php echo ($order_type == 'recovery')?'selected':''; ?>>Vehicle Recovery</option>
+														<option value="transport"<?php echo ($order_type == 'transport')?'selected':''; ?>>Vehicle Transport</option>
 													</select>
 												</div>
 											</div>
@@ -126,15 +158,15 @@ if( isset($_GET['order-id']) && !empty($_GET['order-id'])){
 											<div class="form-fields-block">
 												<div class="requiredt ops-form-field-row">
 													<label>Full Name</label>
-													<input type="text" name="">
+													<input type="text" name="fullname" value="<?php echo !empty($fullname)?$fullname:''; ?>">
 												</div>
 												<div class="requirede ops-form-field-row">
 													<label>Email Address</label>
-													<input type="email" name="">
+													<input type="email" name="email_address" value="<?php echo !empty($order_email)?$order_email:''; ?>">
 												</div>
 												<div class="requiredt ops-form-field-row">
 													<label>Telephone Number</label>
-													<input type="text" name="">
+													<input type="text" name="telephone" value="<?php echo !empty($order_phone)?$order_phone:''; ?>">
 												</div>
 												<div class="ops-form-field-row">
 													<label>Billing Address</label>
@@ -231,7 +263,7 @@ if( isset($_GET['order-id']) && !empty($_GET['order-id'])){
 												recovery drivers to pick up and service your car at <strong>location A</strong>, and then 
 												deliver it to your final destination at <strong>location B</strong>.</p>
 											</div>
-											<div class="form-fields-block">
+											<div class="form-fields-block" id="response_time_radio">
 												<div class="ops-form-field-radio">
 													<input type="radio" id="mp-lbl1" name="response_time" value="gold_service">
 													<span class="label-text">MOST POPULAR</span>
@@ -413,7 +445,11 @@ if( isset($_GET['order-id']) && !empty($_GET['order-id'])){
 							</div>
 						</div>
 					</div>
+					<input id="grandTotal" type="hidden" name="grandTotal" value="0">
 				</form>
+			<?php }else{ ?>
+				<div class="notfound"><?php _e('Somthing was wrong. Please try again.'); ?></div>
+			<?php } ?>
 			</div>
 		</div>
 	</div>
