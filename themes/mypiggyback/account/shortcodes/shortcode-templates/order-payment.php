@@ -102,9 +102,9 @@ if( isset($_GET['order-id']) && !empty($_GET['order-id'])){
 										<div class="opsd-card-option">
 											<img src="<?php echo THEME_URI; ?>/assets/images/Stripe.png">
 										</div>
-										<div class="opsd-place-order-btn">
+<!-- 										<div class="opsd-place-order-btn">
 											<button>PLACE ORDER</button>
-										</div>
+										</div> -->
 										<!-- Start stripe -->
 										<div class="stripe-pay">
 									    <div class="form-row">

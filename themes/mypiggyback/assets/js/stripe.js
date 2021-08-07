@@ -26,7 +26,7 @@ var style = {
 };
 
 // Style button with BS
-document.querySelector('#payment-form button').classList = 'btn btn-primary btn-block mt-4';
+document.querySelector('#stripe_payment button').classList = 'btn btn-primary btn-block mt-4';
 
 // Create an instance of the card Element
 var card = elements.create('card', { hidePostalCode: true, style: style });
@@ -45,7 +45,7 @@ card.addEventListener('change', function(event) {
 });
 
 // Handle form submission
-var form = document.getElementById('payment-form');
+var form = document.getElementById('stripe_payment');
 form.addEventListener('submit', function(event) {
   event.preventDefault();
 
@@ -63,7 +63,7 @@ form.addEventListener('submit', function(event) {
 
 function stripeTokenHandler(token) {
   // Insert the token ID into the form so it gets submitted to the server
-  var form = document.getElementById('payment-form');
+  var form = document.getElementById('stripe_payment');
   var hiddenInput = document.createElement('input');
   hiddenInput.setAttribute('type', 'hidden');
   hiddenInput.setAttribute('name', 'stripeToken');
